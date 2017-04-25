@@ -1,0 +1,106 @@
+﻿@{
+    ViewBag.Title = "Danh sách Bài Viết";
+    Layout = "~/Areas/Quanlywebsite/Views/Shared/_LayoutAdmin_List.cshtml";
+}
+@model IList<Web_Shop_SettingIphone.Models.Entity.GroupNewsNewsDetail>
+<div class="row">
+    <div class="col-lg-12">
+        <h1 class="page-header">Danh sách Bài Viết</h1>
+    </div>
+    <!-- /.col-lg-12 -->
+</div>
+<div class="row">
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <div class="row">
+                <div class="col-lg-6 col-md-6 col-sm-6">
+                    <span class="listgroup">
+                        <i class="fa fa-user"></i> Quản lý Danh sách Bài Viết @ViewBag.Group
+                    </span>
+                </div>
+
+                <div class="col-lg-6 col-md-6 col-sm-6 text-right" id="divright">
+                    <input id="box1" type="checkbox" onclick="toggle(this)" />
+                    <label for="box1">Tất cả/bỏ chọn</label>
+                    <button type="button" id="Deleteall" class="btn btn-primary"><i class="fa fa-trash-o"></i> Xóa đã chọn</button>
+                    <button type="button" id="Insert" class="btn btn-primary"><i class="fa  fa-plus-square"></i> Thêm dữ liệu</button>
+                </div>
+            </div>
+        </div>
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <div class="row">
+                    <div class="col-lg-8 col-md-8 col-sm-8">
+                        <a href="@Url.Action("Read", "CategoryNewsDetailsAdmin")" class="btn btn-danger" id="bt-All" data-container="body" data-toggle="popover" data-placement="left" data-original-title="" title="" aria-describedby="popover613464">
+                            Tất cả
+                        </a>
+                        <a href="@Url.Action("Read", "CategoryNewsDetailsAdmin", new { filter = "highlight" })" class="btn btn-default" id="bt-highlight" data-container="body" data-toggle="popover" data-placement="left" data-original-title="" title="" aria-describedby="popover613464">
+                            Nổi bật
+                        </a>
+                        <a href="@Url.Action("Read", "CategoryNewsDetailsAdmin", new { filter = "normal" })" class=" btn btn-default" id="bt-normal" data-container="body" data-toggle="popover" data-placement="left" data-original-title="" title="" aria-describedby="popover613464">
+                            Bình thường
+                        </a>
+                    </div>
+                    <div class="col-lg-4 col-md-4 col-sm-4 text-right" style="padding-top:5px; padding-right:10px">
+                        <span class="label label-danger"><i class="glyphicon glyphicon-thumbs-up"></i> Kết quả tìm kiếm có @ViewBag.Count Danh sách Bài Viết</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!--start search-->
+        <form action="/Quanlywebsite/CategoryNewsDetailsAdmin/Read" method="post">
+            <div class="form-group">
+                <div class="row">
+
+                    <div class="col-lg-12 col-md-12">
+                        <div class="col-md-1"><label>Bài viết</label></div>
+                        <div class="col-md-2"><input class="form-control" id="txtname_tk" name="txtname_tk" /></div>
+                        <div class="col-md-1"><label>Thể loại</label></div>
+                        <div class="col-md-2">@{Html.RenderAction("TK_MenuLeverMuti_lever1", "MenuLeverMuti");}</div>
+                        <div class="col-md-1"><label>kiểu loại</label></div>
+                        <div class="col-md-2 ">
+                            <select class="form-control chosen" id="SelectPriority_tk" name="SelectPriority_tk">
+                                <option value="0" selected="selected">tất cả</option>
+                                <option value="1">bình thường</option>
+                                <option value="2">nổi bật</option>
+                            </select>
+                        </div>
+                        <div class="col-md-1"><label>Kích hoạt</label></div>
+                        <div class="col-md-2">
+                            <select class="form-control chosen" id="Selectactive_tk" name="Selectactive_tk">
+                                <option value="0" selected="selected">tất cả</option>
+                                <option value="1">Có</option>
+                                <option value="2">Không</option>
+                            </select>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+            <div class="col-md-12 panel-body">
+                <div class="col-md-8 alert alert-info" id="alertinfo">
+                    @if (ViewBag.search == null)
+                    {
+                        @:<i class="fa fa-search"></i> Thao tác chức năng tìm kiếm giúp bạn hiệu quả hơn làm việc.
+                        }
+                    else
+                    {
+                        @:<i class="fa fa-search"></i> @ViewBag.search
+                        }
+                </div>
+                <div class="col-md-2"><a class="btn btn-danger" href="/Quanlywebsite/CategoryNewsDetailsAdmin/Read"><i class="fa fa-refresh"></i> Danh sách (ALL)</a></div>
+                <div class="col-md-2 text-right"><button type="submit" class="btn btn-danger"><i class="fa fa-filter"></i> Click tìm kiếm</button></div>
+            </div>
+        </form>
+        <div class="clear-fix"></div>
+        <!--end search-->
+        <!-- /.panel-heading -->
+        @{ Html.RenderPartial("_AjaxRead"); }
+
+        <!-- /.panel-body -->
+    </div>
+
+    <!-- /.col-lg-12 -->
+</div>
+

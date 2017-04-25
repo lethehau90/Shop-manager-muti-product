@@ -1,0 +1,27 @@
+﻿ @{Html.RenderAction("Setting_Config", "Home"); }
+<!-- start slider -->
+@{Html.RenderAction("slider", "Module");}
+<!-- end slider -->
+<div class="clear30"></div>
+@{Html.RenderAction("Setting_Maintained", "Module");}       <!--Images  quy trình sửa chữa-->
+<div class="clear50"></div>
+
+<!-- start main-1 -->
+<div class="main-1">
+    @{Html.RenderAction("TableRegisterInfo", "Module");}    <!--Bảng thông tin đăng ký bảo trì-->
+    @{Html.RenderAction("TablePriceInfo", "Module");}       <!--Bảng thông tin định giá thu mua-->
+</div>
+<div class="clear20"></div>
+
+<!-- end main-1 -->
+<div class="clear"></div>
+<!-- start slider-main -->
+@{Html.RenderAction("LinkAdvertiseService", "Module");}     <!--dẫn link bảng quảng cáo dịch vụ-->
+<!-- start slider-main -->
+<div class="clear20"></div>
+@{Html.RenderAction("CategorydichvuActiveHome", "Module");} <!--danh mục dịch vụ active trang chủ-->
+<div class="clear20"></div>
+
+@{Html.RenderAction("CategoryProductActiveHome", "Module");} <!--danh mục sản phẩm active trang chủ-->
+<div class="clear20"></div>
+

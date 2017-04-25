@@ -1,0 +1,66 @@
+﻿      li {
+          list-style: none;
+      }
+      #menu_wrapper {
+          width: 100%;
+          margin: 0px auto;
+          padding-right: 45px;
+      }
+      .button {
+          padding: 5px 10px;
+          color: white;
+          background: blue;
+          border: none;
+          cursor: pointer;
+      }
+      #menu_wrapper ul ul {
+          margin-left: 0px;
+      }
+      #menu_wrapper ul li {
+          margin-top: 10px;
+          list-style:disc;
+          font-family: Tahoma;
+       
+      }
+         #menu_wrapper ul li a{
+              
+          color: #2f353b;
+        font-family: Tahoma;
+        font-size: 14px;
+          padding-bottom:5px;
+
+         }
+      #menu_wrapper ul li a:last-child {
+          height: 30px;
+          color: #2f353b;
+          font-weight: bold;
+          /*display: block;
+         */
+           border: 1px solid #ccc !important;
+          line-height: 25px;
+         
+          background: #FAFAFA;
+          text-decoration: none;
+          padding-left: 0px;
+          text-align:left;
+      }
+
+    tr td .btn-info{
+         padding-top: 2px !important;
+         height: 28px !important;
+      }
+      
+      #menu_wrapper ul li div {
+          border: 1px solid #ccc !important;
+          border-top: 0px;
+          background: #FAFAFA;
+          display: none
+      }
+      #menu_wrapper ul li div tr td {
+          padding: 10px 20px;
+      }
+      input,
+      select {
+          border: solid 1px gray;
+          padding: 5px 10px;
+      }

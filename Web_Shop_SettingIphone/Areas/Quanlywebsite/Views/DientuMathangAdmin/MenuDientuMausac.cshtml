@@ -1,0 +1,17 @@
+﻿@model IList<Web_Shop_SettingIphone.Models.Entity.Mausac>
+
+<div class="col-md-2">
+    <div class="form-group">
+        <label class="checkbox-inline">Màu sắc</label>
+        <select id="SelectmausacCH" name="SelectmausacCH" class="form-group easyui-validatebox tb validatebox-text validatebox-invalid">
+            <option value="">Chọn màu</option>
+            @foreach (var item in Model)
+            {
+                <option value="@item.IDmau">
+                    @item.Tenmau
+                </option>
+            }
+        </select>
+
+    </div>
+</div>

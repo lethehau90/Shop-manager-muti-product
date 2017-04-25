@@ -1,0 +1,113 @@
+﻿<div class="panel-heading" id="update_paner">
+    <div class="portlet box green">
+        <div class="portlet-title">
+            <div class="caption">
+                <header>
+                    <i class="fa fa-User"></i> Cập nhật hộp thư khách <span class="Editcatelog"></span>
+                </header>
+            </div>
+            <div class="tools">
+                <a href="javascript:;" class="collapse"> </a> <!--collapse-->
+
+            </div>
+        </div>
+        <div class="portlet-body flip-scroll">
+            <!-- /.panel-heading -->
+            <div class="panel-body">
+                <!-- Nav tabs -->
+                <ul class="nav nav-tabs">
+                    <li class="active">
+                        <a href="#HtmlName" data-toggle="tab">Thông tin hộp thư</a>
+                    </li>
+         
+                </ul>
+                <!-- Tab panes -->
+                <div class="tab-content">
+                    <div class="tab-pane fade in active" id="HtmlName">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="form-group hidden">
+                                    <label>ID</label>
+                                    <input class="form-group" id="TxtId" placeholder="">
+                                </div>
+                                <div class="form-group">
+                                    <label>Hộp thư khách</label>
+                                    <input class="form-group easyui-validatebox tb" id="TxtName" data-options="prompt:'Nhập tên hộp thư khách ',required:true" type="text" placeholder="">
+                                </div>
+                                <div class="form-group hidden">
+                                    <label>Công ty</label>
+                                    <input class="form-group easyui-validatebox tb" id="TxtCompany" data-options="prompt:'Nhập Công ty',required:true" type="text" placeholder="">
+                                </div>
+                                <div class="form-group hidden">
+                                    <label>Địa chỉ</label>
+                                    <input class="form-group easyui-validatebox tb" id="TxtAddress" data-options="prompt:'Nhập Địa chỉ ',required:true" type="text" placeholder="">
+                                </div>
+                                <div class="form-group">
+                                    <label>Email</label>
+                                    <input class="form-group easyui-validatebox tb" id="TxtMail" data-options="prompt:'Nhập Email ',required:true" type="text" placeholder="">
+                                </div>
+                                <div class="form-group">
+                                    <label>Số điện thoại</label>
+                                    <input class="form-group easyui-validatebox tb" id="TxtTel" data-options="prompt:'Nhập Số điện thoại ',required:true" type="text" placeholder="">
+                                </div>
+                                <div class="form-group">
+                                    <label>Nội dung</label>
+                                    <textarea class="form-control" id="TxtDetail" rows="3"></textarea>
+                                </div>
+                                <div class="form-group">
+                                    <label class="checkbox-inline">Đã xem </label>
+                                    <input id="CKActive" class="checkbox-inline" type="checkbox" checked="checked" value="1">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                        </div>
+
+                        <div class="clear-fix"></div>
+                        <div class="padding-form">
+                            <div class="form-group">
+                                <button type="submit" id="Save" class="btn btn-default"><i class="fa fa-times-circle"></i> Lưu Lại</button>
+                                <button type="submit" id="Cancel" class="btn btn-default"><i class="fa fa-save"></i> Hủy bỏ</button>
+                            </div>
+                        </div>
+                    </div>
+            <!-- /.panel-body -->
+
+        </div>
+    </div>
+
+</div>
+
+
+
+ 
+<!--jquery action-->
+<script src="/Areas/Quanlywebsite/JavaScrip/ThongTin/Contact/Create.js"></script>
+<script src="/Areas/Quanlywebsite/JavaScrip/ThongTin/Contact/Update.js"></script>
+<script src="/Areas/Quanlywebsite/JavaScrip/ThongTin/Contact/read.js"></script>
+<script src="/Areas/Quanlywebsite/JavaScrip/ThongTin/Contact/Active.js"></script>
+<script src="/Areas/Quanlywebsite/JavaScrip/ThongTin/Contact/Delete.js"></script>
+<script src="/Areas/Quanlywebsite/JavaScrip/ThongTin/Contact/Cancel.js"></script>
+<script src="/Areas/Quanlywebsite/JavaScrip/ThongTin/Contact/Save.js"></script>
+
+
+
+<!--javascrip images ckfinder  -->
+
+
+
+<!--javascrip textbox ckeditor  -->
+<script type="text/javascript">
+    var editor;
+    function createEditor(languageCode, id) {
+        var editor = CKEDITOR.replace(id, {
+            language: languageCode
+        });
+       
+    }
+    $(function () {
+        createEditor('vi', 'TxtDetail');  //mã code 
+    });
+
+</script>

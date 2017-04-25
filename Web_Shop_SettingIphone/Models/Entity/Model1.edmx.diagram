@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="2.0" xmlns:edmx="http://schemas.microsoft.com/ado/2008/10/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2008/10/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="dac6764d0f23456995a4610efac51182" Name="Diagram1">
+        <EntityTypeShape EntityType="PNKTemplate_demoModel.Advertise" Width="1.5" PointX="0.75" PointY="14.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="PNKTemplate_demoModel.Bill_customers" Width="1.5" PointX="10" PointY="11.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="PNKTemplate_demoModel.Billdetail" Width="1.5" PointX="12.25" PointY="11" IsExpanded="true" />
+        <EntityTypeShape EntityType="PNKTemplate_demoModel.CommentProduc" Width="1.5" PointX="10.75" PointY="6.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="PNKTemplate_demoModel.Company" Width="1.5" PointX="3" PointY="11" IsExpanded="true" />
+        <EntityTypeShape EntityType="PNKTemplate_demoModel.Config" Width="1.5" PointX="2.75" PointY="14.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="PNKTemplate_demoModel.Contact" Width="1.5" PointX="4.75" PointY="14.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="PNKTemplate_demoModel.CTdonhang" Width="1.5" PointX="14.75" PointY="6.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="PNKTemplate_demoModel.Custumer" Width="1.5" PointX="7.75" PointY="11" IsExpanded="true" />
+        <EntityTypeShape EntityType="PNKTemplate_demoModel.Chitiethinh" Width="1.5" PointX="6.75" PointY="15.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="PNKTemplate_demoModel.DientuCapLoaithuoctinh" Width="1.5" PointX="8.75" PointY="15.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="PNKTemplate_demoModel.DientuChitiethinh" Width="1.5" PointX="10.75" PointY="15.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="PNKTemplate_demoModel.DientuDongSp" Width="1.5" PointX="14.75" PointY="12.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="PNKTemplate_demoModel.DientuDungluong" Width="1.5" PointX="12.75" PointY="15.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="PNKTemplate_demoModel.DientuInfo" Width="1.5" PointX="14.75" PointY="15.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="PNKTemplate_demoModel.DientuLoaithuoctinh" Width="1.5" PointX="15.75" PointY="1.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="PNKTemplate_demoModel.DientuMathang" Width="1.5" PointX="16.75" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="PNKTemplate_demoModel.DientuMenuSitemathang" Width="1.5" PointX="16.75" PointY="15.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="PNKTemplate_demoModel.DientuNsx" Width="1.5" PointX="17.75" PointY="1.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="PNKTemplate_demoModel.DientuTinhnang" Width="1.5" PointX="6.75" PointY="18.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="PNKTemplate_demoModel.DientuThuoctinh" Width="1.5" PointX="18.75" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="PNKTemplate_demoModel.Document" Width="1.5" PointX="5.25" PointY="5" IsExpanded="true" />
+        <EntityTypeShape EntityType="PNKTemplate_demoModel.DocumentType" Width="1.5" PointX="3" PointY="2" IsExpanded="true" />
+        <EntityTypeShape EntityType="PNKTemplate_demoModel.Donhang" Width="1.5" PointX="18.75" PointY="8.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="PNKTemplate_demoModel.EmailRegister" Width="1.5" PointX="18.75" PointY="14.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="PNKTemplate_demoModel.Even_Date" Width="1.5" PointX="18.75" PointY="17.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="PNKTemplate_demoModel.GroupLibrary" Width="1.5" PointX="6" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="PNKTemplate_demoModel.GroupMember" Width="1.5" PointX="0.75" PointY="6.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="PNKTemplate_demoModel.GroupMenuSanPham" Width="1.5" PointX="8.75" PointY="20.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="PNKTemplate_demoModel.GroupNewMenuSanPhamDetail" Width="1.5" PointX="10.75" PointY="20.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="PNKTemplate_demoModel.GroupNew" Width="1.5" PointX="12.75" PointY="20.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="PNKTemplate_demoModel.GroupNewsNewsDetail" Width="1.5" PointX="14.75" PointY="20.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="PNKTemplate_demoModel.GroupSupport" Width="1.5" PointX="10.75" PointY="2.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="PNKTemplate_demoModel.Html" Width="1.5" PointX="20.75" PointY="1.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="PNKTemplate_demoModel.information" Width="1.5" PointX="20.75" PointY="5.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="PNKTemplate_demoModel.Kichthuoc" Width="1.5" PointX="20.75" PointY="12.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="PNKTemplate_demoModel.Khoanggia" Width="1.5" PointX="20.75" PointY="15.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="PNKTemplate_demoModel.Language" Width="1.5" PointX="16.75" PointY="21.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="PNKTemplate_demoModel.Library" Width="1.5" PointX="8.25" PointY="5" IsExpanded="true" />
+        <EntityTypeShape EntityType="PNKTemplate_demoModel.MacodeKhuyenMai" Width="1.5" PointX="20.75" PointY="18.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="PNKTemplate_demoModel.Mausac" Width="1.5" PointX="18.75" PointY="21.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="PNKTemplate_demoModel.Member" Width="1.5" PointX="3" PointY="5.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="PNKTemplate_demoModel.Nuocsanxuat" Width="1.5" PointX="20.75" PointY="21.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="PNKTemplate_demoModel.Province" Width="1.5" PointX="0.75" PointY="11.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="PNKTemplate_demoModel.quantity_purchased" Width="1.5" PointX="0.75" PointY="22.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="PNKTemplate_demoModel.service_charge" Width="1.5" PointX="2.75" PointY="22.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="PNKTemplate_demoModel.Shop" Width="1.5" PointX="5.25" PointY="11.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="PNKTemplate_demoModel.SlideShow" Width="1.5" PointX="4.75" PointY="22.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="PNKTemplate_demoModel.Support" Width="1.5" PointX="13" PointY="2" IsExpanded="true" />
+        <EntityTypeShape EntityType="PNKTemplate_demoModel.Tax_ruler" Width="1.5" PointX="22.75" PointY="1.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="PNKTemplate_demoModel.TB_ThongKe" Width="1.5" PointX="22.75" PointY="5.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="PNKTemplate_demoModel.Tintuc" Width="1.5" PointX="22.75" PointY="8.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="PNKTemplate_demoModel.Thanhvien" Width="1.5" PointX="22.75" PointY="14.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="PNKTemplate_demoModel.Thuonghieu" Width="1.5" PointX="22.75" PointY="19.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="PNKTemplate_demoModel.Url_thanhtoan" Width="1.5" PointX="22.75" PointY="23.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="PNKTemplate_demoModel.User" Width="1.5" PointX="24.75" PointY="1.75" IsExpanded="true" />
+        <AssociationConnector Association="PNKTemplate_demoModel.FK_tbBill_customers_tbCUSTOMERS" ManuallyRouted="false" />
+        <AssociationConnector Association="PNKTemplate_demoModel.FK_tbBilldetail_tbBill_customers" ManuallyRouted="false" />
+        <AssociationConnector Association="PNKTemplate_demoModel.FK_Company_Province" ManuallyRouted="false" />
+        <AssociationConnector Association="PNKTemplate_demoModel.FK_Shop_Company" ManuallyRouted="false" />
+        <AssociationConnector Association="PNKTemplate_demoModel.FRK_Document_MemberId" ManuallyRouted="false" />
+        <AssociationConnector Association="PNKTemplate_demoModel.FRK_Document_TypeId" ManuallyRouted="false" />
+        <AssociationConnector Association="PNKTemplate_demoModel.FRK_Library_GroupLibraryId" ManuallyRouted="false" />
+        <AssociationConnector Association="PNKTemplate_demoModel.FRK_Member_GroupMemberId" ManuallyRouted="false" />
+        <AssociationConnector Association="PNKTemplate_demoModel.FRK_Support_GroupSupportId" ManuallyRouted="false" />
+        <AssociationConnector Association="PNKTemplate_demoModel.FRK_Library_MemberId" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

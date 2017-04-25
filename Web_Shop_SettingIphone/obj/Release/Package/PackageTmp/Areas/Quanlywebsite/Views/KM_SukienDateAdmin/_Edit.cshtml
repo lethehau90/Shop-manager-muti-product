@@ -1,0 +1,176 @@
+﻿<div class="panel-heading" id="update_paner">
+    <div class="portlet box green">
+        <div class="portlet-title">
+            <div class="caption">
+                <header>
+                    <i class="fa fa-user"></i> Cập nhật sự kiện <span class="Editcatelog"></span>
+                </header>
+            </div>
+            <div class="tools">
+                <a href="javascript:;" class="collapse"> </a> <!--collapse-->
+
+            </div>
+        </div>
+        <div class="portlet-body flip-scroll">
+            <!-- /.panel-heading -->
+            <div class="panel-body">
+                <!-- Nav tabs -->
+                <ul class="nav nav-tabs">
+                    <li class="active">
+                        <a href="#AdName" data-toggle="tab">Tên danh mục</a>
+                    </li>
+                    <li>
+                        <a href="#Adthietlap" data-toggle="tab">Thiết lập</a>
+                    </li>
+                    <li>
+                        <a href="#Admota" data-toggle="tab">Mô tả</a>
+                    </li>
+
+                </ul>
+                <!-- Tab panes -->
+                <div class="tab-content">
+
+                    <div class="tab-pane fade in active" id="AdName">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="form-group hidden">
+                                    <label>ID</label>
+                                    <input class="form-group" id="TxtId" placeholder="">
+                                </div>
+                                <div class="form-group">
+                                    <label>Tên sự kiện (Tiếng việt)</label>
+                                    <input class="form-group easyui-validatebox tb" id="TxtName" data-options="prompt:'Nhập tên sự kiện tiếng việt',required:true" type="text" placeholder="">
+                                </div>
+                                <div class="form-group">
+                                    <label>Tên sự kiện (Tiếng Anh)</label>
+                                    <input class="form-group easyui-validatebox tb" id="TxtNameEn" data-options="prompt:'Nhập tên sự kiện tiếng anh',required:true" type="text" placeholder="">
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="tab-pane fade" id="Adthietlap">
+                        <div class="row">
+                            <div class="col-md-12">
+
+                                <div role="form">
+                                    <label>Tỉ lệ % giảm</label> <br />
+                                    <div class="form-group input-group col-lg-2">
+
+                                        <input type="text" class="form-group  easyui-validatebox tb" id="TxtPrice_event" onkeypress="return isNumberKey(event);">
+                                        <span class="input-group-addon">%</span>
+                                    </div>
+                                    <span class="TxtPrice_event"></span>
+                                </div>
+
+                                <div class="form-group">
+                                    <label class="TxtOrd">Thứ tự</label> <br />
+                                    <input class="form-group" type="number" id="TxtOrd" value="1" min="1">
+                                </div>
+                              
+                                <div class="form-group">
+                                    <label>Ngày bắt đầu sự kiện</label> <br />
+                                    <input class="form-group" type="text" id="Date_event_start">
+                                </div>
+
+                                <div class="form-group">
+                                    <label>Ngày kết thúc sự kiện</label> <br />
+                                    <input class="form-group" type="text" id="Date_event_end">
+                                </div>
+
+                                <div class="form-group">
+                                    <label class="checkbox-inline">Kích hoạt </label>
+                                    <input id="CKActive" class="checkbox-inline" type="checkbox" checked="checked" value="1">
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="tab-pane fade" id="Admota">
+                        <div class="form-group">
+                            <label>Nội dung tiếng việt <span class="Txtcontent"></span></label>
+                            <textarea class="form-control" id="Txtcontent" rows="3"></textarea>
+                        </div>
+                        <div class="form-group">
+                            <label>Nội dung tiếng Anh<span class="TxtcontentEn"></span></label>
+                            <textarea class="form-control" id="TxtcontentEn" rows="3"></textarea>
+                        </div>
+                    </div>
+
+
+                </div>
+
+                <div class="clear-fix"></div>
+                <div class="padding-form">
+                    <div class="form-group">
+                        <button type="submit" id="Save" class="btn btn-default"><i class="fa fa-save"></i> Lưu Lại</button>
+                        <button type="submit" id="Cancel" class="btn btn-default"><i class="fa fa-times-circle"></i> Hủy bỏ</button>
+                    </div>
+                </div>
+            </div>
+            <!-- /.panel-body -->
+
+        </div>
+    </div>
+
+</div>
+
+<!--jquery action-->
+<script src="/Areas/Quanlywebsite/JavaScrip/Sanpham/Khuyenmai/KM_SukienDate/Create.js"></script>
+<script src="/Areas/Quanlywebsite/JavaScrip/Sanpham/Khuyenmai/KM_SukienDate/Update.js"></script>
+<script src="/Areas/Quanlywebsite/JavaScrip/Sanpham/Khuyenmai/KM_SukienDate/read.js"></script>
+<script src="/Areas/Quanlywebsite/JavaScrip/Sanpham/Khuyenmai/KM_SukienDate/Active.js"></script>
+<script src="/Areas/Quanlywebsite/JavaScrip/Sanpham/Khuyenmai/KM_SukienDate/Delete.js"></script>
+<script src="/Areas/Quanlywebsite/JavaScrip/Sanpham/Khuyenmai/KM_SukienDate/Cancel.js"></script>
+<script src="/Areas/Quanlywebsite/JavaScrip/Sanpham/Khuyenmai/KM_SukienDate/Save.js"></script>
+
+<!--javascrip images ckfinder  -->
+<!--javascrip textbox ckeditor  -->
+<script type="text/javascript">
+    var editor;
+    function createEditor(languageCode, id) {
+        var editor = CKEDITOR.replace(id, {
+            language: languageCode
+        });
+
+    }
+    $(function () {
+        createEditor('vi', 'Txtcontent');  //mã code tiếng việt
+        createEditor('vi', 'TxtcontentEn'); //mã code tiếng anh
+    });
+
+</script>
+
+<script type="text/javascript">
+    //chon ngay thang
+    $(function () {
+        $("#Date_event_start").datepicker({
+            changeMonth: true,
+            changeYear: true,
+            minDate: -0, maxDate: "+12M +10D",
+            showOn: "button",
+            buttonImage: "/images/calendar.png",
+            buttonImageOnly: true,
+            buttonText: "Select date"
+        });
+
+        $("#Date_event_end").datepicker({
+            changeMonth: true,
+            changeYear: true,
+            minDate: -0, maxDate: "+12M +10D",
+            showOn: "button",
+            buttonImage: "/images/calendar.png",
+            buttonImageOnly: true,
+            buttonText: "Select date"
+        });
+    });
+
+    $(function () {
+        $("#Date_event_start").datepicker("option", "dateFormat", "dd/mm/yy");
+        $("#Date_event_end").datepicker("option", "dateFormat", "dd/mm/yy");
+
+    });
+</script>
+

@@ -1,0 +1,23 @@
+﻿@model IList<Web_Shop_SettingIphone.Models.Entity.DientuNsx>
+<div class="row">
+    <div class="col-lg-12">
+        <div class="form-group">
+            <label class="control-label col-lg-12">Danh Mục</label>
+            <div class="col-md-3">
+                <select id="SelectThuonghieuDt" name="SelectThuonghieuDt" class="form-control chosen">
+                    <option value="">Chọn danh mục</option>
+                    @foreach (var item in Model)
+                    {
+                        <option value="@item.Id">
+                            @item.Name
+                        </option>
+                    }
+                </select>
+            </div>
+            <div class="col-md-3">
+                <label class="checkbox-inline"> Value default </label>
+                <input id="CKdisabled" class="checkbox-inline" type="checkbox" checked="checked">
+            </div>
+        </div>
+    </div>
+</div>

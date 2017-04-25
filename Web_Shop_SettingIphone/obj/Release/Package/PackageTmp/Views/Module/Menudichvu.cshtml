@@ -1,0 +1,29 @@
+﻿@model IList<Web_Shop_SettingIphone.Models.Entity.GroupNew>
+@if (Model.Count > 0)
+{
+    string aaa = ViewBag.menu;
+    if (ViewBag.menu == "dich-vu")
+    {
+        <li class="dropdown active">
+            <a href="/dich-vu" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dịch vụ <span class="caret"></span></a>
+            <ul class="dropdown-menu">
+                @foreach (var item in Model)
+                {
+                    <li><a href="/dich-vu/@item.Tag">@item.Name</a></li>
+                }
+            </ul>
+        </li>
+    }
+    else
+    {
+        <li class="dropdown">
+            <a href="/dich-vu" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dịch vụ <span class="caret"></span></a>
+            <ul class="dropdown-menu">
+                @foreach (var item in Model)
+                {
+                    <li><a href="/dich-vu/@item.Tag">@item.Name</a></li>
+                }
+            </ul>
+        </li>
+    }
+}

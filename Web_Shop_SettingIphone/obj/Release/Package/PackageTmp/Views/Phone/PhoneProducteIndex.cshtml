@@ -1,0 +1,47 @@
+﻿@{
+    Layout = "~/Views/Shared/_LayoutPhone.cshtml";
+}
+@using PagedList;
+@using PagedList.Mvc
+@model IPagedList<Web_Shop_SettingIphone.Models.Entity.DientuMathang>
+<title>@ViewBag.title</title>
+<meta name="description" content="@ViewBag.Description" />
+<meta name="keywords" content="@ViewBag.Keyword" />
+<div class="container">
+    
+    <h2 style="text-align: center;" class="tieudedichvu">@ViewBag.categoryproduct</h2>
+    <div class="clear20"></div>
+    <p style="text-align: center;" class="textdichvu">@ViewBag.categoryproductmota</p>
+    <div class="clear50"></div>
+    <div class="main-dichvu row">
+        @if (Model.Count > 0)
+        {
+            foreach (var item in Model)
+            {
+                double Giaban = Convert.ToDouble((Html.Action("_resurtPricebanmain", "ScreenProduct", new { tag = item.Tag }).ToHtmlString()));
+
+                <div class="spDanhMuc col-md-3 col-sm-3">
+                    <a href="/san-pham/@item.Cateprolevel3/@item.Tag">
+                        <img class="phoneimg" src="@Html.Action("_resurtImagesmain", "ScreenProduct", new { tag = item.Tag })" alt="">
+                        <p>@item.Tenhang</p>
+                        <h6>@string.Format("{0:0,0}", Giaban) (Vnđ)</h6>
+                        <span><img src="/images/Product/ic-tag-1.jpg" alt=""></span>
+                    </a>
+                </div>
+            }
+            <div class="col-md-12 pagination-top pw-default">
+                <div style="text-align: center;">
+                    @Html.PagedListPager(Model, trang => Url.Action("PhoneProducteIndex", "Phone", new { trang }), new PagedListRenderOptions() { Display = PagedListDisplayMode.IfNeeded, DisplayPageCountAndCurrentLocation = false, DisplayItemSliceAndTotal = false })
+                </div>
+            </div>
+        }
+        else
+        {
+            <div class="col-md-12 col-sm-12 col-xs-12">
+                <p style="text-align:center">Chưa có dịch vụ nào</p>
+            </div>
+        }
+
+    </div>
+</div>
+<div style="padding-bottom:20px"></div>

@@ -1,0 +1,159 @@
+﻿@model IList<Web_Shop_SettingIphone.Models.Entity.DientuMenuSitemathang>
+<!-- start main-2 -->
+@if (Model.Count > 0)
+{
+    foreach (var item in Model)
+    {
+    <div class="main-2 container">
+        <div class="ndhienthi col-md-6 col-xs-12 col-sm-12 col-lg-3">
+            <div class="pic">
+                @if (item.Logogroup != "")
+                {
+                    <a href="/san-pham/@item.Tag" class="img">
+                        <img src="@item.Logogroup" alt="@item.MenuName">
+                    </a>
+                }
+                else
+                {
+                    <a href="/san-pham/@item.Tag">
+                        <img src="/images/no-image.jpg" alt="@item.MenuName"></a>
+                }
+
+            </div>
+            <div class="event-info">
+                <a href="/san-pham/@item.Tag">
+                    <span class="main-title">XEM THÊM</span>
+                </a>
+            </div>
+        </div>
+        @{Html.RenderAction("ProductCategoryProductActiveHome", "Module", new { IdCategory = item.Id });}
+    </div>
+    }
+}
+<!-- end main-2 -->
+@*<div class="clear20"></div>
+    <!-- start main-3 -->
+        <div class="main-3 container">
+            <div class="ipad col-md-4  col-sm-12">
+                <img src="/images/Product/hinh-ipad-1.jpg" alt="">
+                <a href="">
+                    <button type="button">
+                        XEM THÊM
+                    </button>
+                </a>
+            </div>
+            <div class="hinh-ipad col-md-8 col-sm-12">
+                <div class="sp-ipad col-md-3 col-sm-3 ">
+                    <img src="/images/Product/hinh-ipad-2.jpg" alt="">
+                    <p>iPhone 258GB</p>
+                    <h6>24.590.000</h6>
+                    <span><img src="/images/Product/ic-tag-1.jpg" alt=""></span>
+                </div>
+                <div class="sp-ipad col-md-3 col-sm-3">
+                    <img src="/images/Product/hinh-ipad-3.jpg" alt="">
+                    <p>iPhone 258GB</p>
+                    <h6>24.590.000</h6>
+                    <span><img src="/images/Product/ic-tag-1.jpg" alt=""></span>
+                </div>
+                <div class="sp-ipad col-md-3 col-sm-3">
+                    <img src="/images/Product/hinh-ipad-4.jpg" alt="">
+                    <p>iPhone 258GB</p>
+                    <h6>24.590.000</h6>
+                    <span><img src="/images/Product/ic-tag-1.jpg" alt=""></span>
+                </div>
+                <div class="sp-ipad col-md-3 col-sm-3">
+                    <img src="/images/Product/hinh-ipad-7.jpg" alt="">
+                    <p>iPhone 258GB</p>
+                    <h6>24.590.000</h6>
+                    <span><img src="/images/Product/ic-tag-1.jpg" alt=""></span>
+                </div>
+                <div class="sp-ipad col-md-3 col-sm-3">
+                    <img src="/images/Product/hinh-ipad-5.jpg" alt="">
+                    <p>iPhone 258GB</p>
+                    <h6>24.590.000</h6>
+                    <span><img src="/images/Product/ic-tag-1.jpg" alt=""></span>
+                </div>
+                <div class="sp-ipad col-md-3 col-sm-3">
+                    <img src="/images/Product/hinh-ipad-6.jpg" alt="">
+                    <p>iPhone 258GB</p>
+                    <h6>24.590.000</h6>
+                    <span><img src="/images/Product/ic-tag-1.jpg" alt=""></span>
+                </div>
+                <div class="sp-ipad col-md-3 col-sm-3">
+                    <img src="/images/Product/hinh-ipad-7.jpg" alt="">
+                    <p>iPhone 258GB</p>
+                    <h6>24.590.000</h6>
+                    <span><img src="/images/Product/ic-tag-1.jpg" alt=""></span>
+                </div>
+                <div class="sp-ipad col-md-3 col-sm-3">
+                    <img src="/images/Product/hinh-ipad-2.jpg" alt="">
+                    <p>iPhone 258GB</p>
+                    <h6>24.590.000</h6>
+                    <span><img src="/images/Product/ic-tag-1.jpg" alt=""></span>
+                </div>
+            </div>
+        </div>
+        <!-- end main-3 -->
+        <div class="clear20"></div>
+        <!-- start main-4 -->
+        <div class="main-4 container">
+            <div class="samsung col-md-4 col-sm-12">
+                <img src="/images/Product/hinh-ipad-1.jpg" alt="">
+                <a href="">
+                    <button type="button">
+                        XEM THÊM
+                    </button>
+
+            </div>
+            <div class="hinh-samsung col-md-8 col-sm-12">
+                <div class="sp-samsung col-md-3 col-sm-3">
+                    <img src="/images/Product/hinh-samsung-2.jpg" alt="">
+                    <p>iPhone 258GB</p>
+                    <h6>24.590.000</h6>
+                    <span><img src="/images/Product/ic-tag-1.jpg" alt=""></span>
+                </div>
+                <div class="sp-samsung col-md-3 col-sm-3">
+                    <img src="/images/Product/hinh-samsung-2.jpg" alt="">
+                    <p>iPhone 258GB</p>
+                    <h6>24.590.000</h6>
+                    <span><img src="/images/Product/ic-tag-1.jpg" alt=""></span>
+                </div>
+                <div class="sp-samsung col-md-3 col-sm-3">
+                    <img src="/images/Product/hinh-samsung-2.jpg" alt="">
+                    <p>iPhone 258GB</p>
+                    <h6>24.590.000</h6>
+                    <span><img src="/images/Product/ic-tag-1.jpg" alt=""></span>
+                </div>
+                <div class="sp-samsung col-md-3 col-sm-3">
+                    <img src="/images/Product/hinh-samsung-2.jpg" alt="">
+                    <p>iPhone 258GB</p>
+                    <h6>24.590.000</h6>
+                    <span><img src="/images/Product/ic-tag-1.jpg" alt=""></span>
+                </div>
+                <div class="sp-samsung col-md-3 col-sm-3">
+                    <img src="/images/Product/hinh-samsung-2.jpg" alt="">
+                    <p>iPhone 258GB</p>
+                    <h6>24.590.000</h6>
+                    <span><img src="/images/Product/ic-tag-1.jpg" alt=""></span>
+                </div>
+                <div class="sp-samsung col-md-3 col-sm-3">
+                    <img src="/images/Product/hinh-samsung-2.jpg" alt="">
+                    <p>iPhone 258GB</p>
+                    <h6>24.590.000</h6>
+                    <span><img src="/images/Product/ic-tag-1.jpg" alt=""></span>
+                </div>
+                <div class="sp-samsung col-md-3 col-sm-3">
+                    <img src="/images/Product/hinh-samsung-2.jpg" alt="">
+                    <p>iPhone 258GB</p>
+                    <h6>24.590.000</h6>
+                    <span><img src="/images/Product/ic-tag-1.jpg" alt=""></span>
+                </div>
+                <div class="sp-samsung col-md-3 col-sm-3">
+                    <img src="/images/Product/hinh-samsung-2.jpg" alt="">
+                    <p>iPhone 258GB</p>
+                    <h6>24.590.000</h6>
+                    <span><img src="/images/Product/ic-tag-1.jpg" alt=""></span>
+                </div>
+            </div>
+        </div>
+        <!-- end main-4 -->*@

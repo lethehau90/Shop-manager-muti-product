@@ -1,0 +1,627 @@
+﻿<div class="panel-heading" id="update_paner">
+    <div class="portlet box green">
+        <div class="portlet-title">
+            <div class="caption">
+                <header>
+                    <i class="fa fa-user"></i>  Cập nhật bài đăng <span class="Editcatelog"></span>
+                </header>
+            </div>
+            <div class="tools">
+                <a href="javascript:;" class="collapse"> </a> <!--collapse-->
+
+            </div>
+        </div>
+        <div class="portlet-body flip-scroll">
+            <!-- /.panel-heading -->
+            <div class="panel-body">
+                <!-- Nav tabs -->
+                <ul class="nav nav-tabs">
+                    <li class="active">
+                        <a href="#NewsDetailProducttieude" data-toggle="tab">Tiêu đề Tin</a>
+                    </li>
+
+                    <li>
+                        <a href="#NewsDetailProductDetail" data-toggle="tab">Nội dung</a>
+                    </li>
+
+                    <li>
+                        <a href="#NewsDetailProductthietlap" data-toggle="tab">Thiết lập</a>
+                    </li>
+                    <li>
+                        <a href="#NewsDetailProductgiatri" data-toggle="tab">Giá trị</a>
+                    </li>
+                    <li>
+                        <a href="#NewsDetailProductthuoctinh" data-toggle="tab">Thuộc tính</a>
+                    </li>
+                    <li>
+                        <a href="#NewsDetailProductdactinh" data-toggle="tab">Đặc tính</a>
+                    </li>
+                    <li>
+                        <a href="#NewsDetailProductSeo" data-toggle="tab">Seo</a>
+                    </li>
+
+                    <li>
+                        <a href="#NewsDetailProducthinhanh" data-toggle="tab">Ảnh và Video (Sp)</a>
+                    </li>
+                    <li class="">
+                        <a href="#NewsDetailProducttrinhchieu" data-toggle="tab">Ảnh trình chiếu</a>
+                    </li>
+                
+                </ul>
+                <!-- Tab panes -->
+                <div class="tab-content">
+                    <div class="tab-pane fade in active" id="NewsDetailProducttieude">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="form-group hidden">
+                                    <label>Id</label>
+                                    <input class="form-group easyui-validatebox tb" id="TxtId" data-options="required:true" type="text" placeholder="">
+                                </div>
+                                <div class="form-group">
+                                    <label>Ngôn ngữ Tiếng việt</label>
+                                    <input class="form-group easyui-validatebox tb" id="TxtName" data-options="required:true" type="text" placeholder="">
+                                </div>
+                                <div class="form-group">
+                                    <label>Ngôn ngữ Tiếng Anh</label>
+                                    <input class="form-group easyui-validatebox tb" id="TxtNameEn" data-options="required:true" type="text" placeholder="">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="tab-pane fade" id="NewsDetailProductDetail">
+                        <div class="row">
+                            <div class="col-lg-12 col-md-12 col-sm-12">
+                                <div class="form-group">
+                                    <label class="TxtContent">Nội dung mô tả tiếng việt</label>
+                                    <textarea class="form-control" id="TxtContent" rows="3"></textarea>
+                                </div>
+                                <div class="form-group">
+                                    <label class="TxtDetail">Nội dung chi tiết tiếng việt</label>
+                                    <textarea class="form-control" id="TxtDetail" rows="3"></textarea>
+                                </div>
+
+                                <div class="form-group">
+                                    <label class="">Nội dung mô tả tiếng anh</label>
+                                    <textarea class="form-control" id="TxtContentEn" rows="3"></textarea>
+                                </div>
+                                <div class="form-group">
+                                    <label>Nội dung chi tiết tiếng anh</label>
+                                    <textarea class="form-control" id="TxtDetailEn" rows="3"></textarea>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div class="tab-pane fade" id="NewsDetailProductthietlap">
+                        <div class="row">
+                            
+                          <div class="form-group">
+                              @{Html.RenderAction("MenuLeverMuti_product_lever1", "MenuLeverMuti");}
+                          </div>
+                            <div class="clear-fix"></div>
+                            <div class="col-md-3">
+                                <div class="form-group">
+                                    <label>Chọn kiểu loại</label>
+                                    <select class="form-control" name="Type" id="SelectPriority">
+                                        <option value="1" selected="selected">bình thường</option>
+                                        <option value="2">nổi bật</option>
+                                        <option value="3">Seo</option>
+                                    </select>
+                                </div>
+
+                                <div class="form-group">
+                                    <label class="TxtOrder">Sắp xếp</label> <br />
+                                    <input class="form-group" type="number" id="TxtOrder" value="1" min="1">
+                                </div>
+                                <div class="form-group">
+                                    <label class="checkbox-inline">Kích hoạt </label>
+                                    <input id="CKActive" class="checkbox-inline" type="checkbox" checked="checked" value="1">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="tab-pane fade" id="NewsDetailProductgiatri">
+                        <div class="row">
+                            <!--hàng hóa-->
+                            <div class="col-lg-12 col-md-12 col-sm-12">
+                                <div class="col-lg-3 col-md-3 col-sm-3 form-group">
+                                    <label>Sản phẩm trong kho</label>
+                                    <select class="form-control" name="Type" id="SelectStock">
+                                        <option value="0">Hết hàng</option>
+                                        <option value="1" selected="selected">Còn hàng</option>
+                                    </select>
+                                </div>
+                                <div class="col-lg-3 col-md-3 col-sm-3 form-group">
+                                    <label><span class="TxtNumber_Stock">Số lượng trong kho</span></label>
+                                    <div class="input-group">
+                                        <input class="form-control col-lg-2 col-md-2 col-sm-2" type="number" id="TxtNumber_Stock" value="1" min="1">
+                                        <span class="input-group-addon">đơn vị</span>
+                                    </div>
+                                </div>
+                                <div class="col-lg-3 col-md-3 col-sm-3 form-group">
+                                    <label>Mã Số sản phẩm</label>
+                                    <input class="form-group easyui-validatebox tb" id="TxtSeri" data-options="required:true" type="text" placeholder="">
+                                </div>
+                                <div class="col-lg-3 col-md-3 col-sm-3 form-group">
+                                    <label>&nabla;</label>
+                                    <div class="form-group">
+                                        <label class="checkbox-inline">Được miễn thuế </label>
+                                        <input id="CKVat" class="checkbox-inline" type="checkbox" checked="checked" value="1">
+                                    </div>
+                                </div>
+                            </div>
+                            <!--Giá bán-->
+                            <div class="col-lg-12 col-md-12 col-sm-12">
+                                <div class="col-lg-6 col-md-6 col-sm-6 form-group">
+                                    <label><span class="TxtGianhaphang">Giá Nhập hàng</span></label>
+                                    <div class="input-group">
+                                        <input class="form-group easyui-validatebox tb" id="TxtGianhaphang" data-options="required:true" type="text" placeholder="" onkeypress="return isNumberKey(event);">
+                                        <span class="input-group-addon">Vnđ</span>
+                                    </div>
+                                </div>
+                                <div class="col-lg-6 col-md-6 col-sm-6 form-group">
+                                    <label><span class="TxtGiaban">Giá bán hàng</span></label>
+                                    <div class="input-group">
+                                        <input class="form-group easyui-validatebox tb" id="TxtGiaban" data-options="required:true" type="text" placeholder="" onkeypress="return isNumberKey(event);">
+                                        <span class="input-group-addon">Vnđ</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <!--Giá seo-->
+                            <div class="col-lg-12 col-md-12 col-sm-12">
+                                <div class="col-lg-4 col-md-4 col-sm-4 form-group">
+                                    <label><span class="TxtPhantramkhuyenmai">Phần trăm giảm giá</span></label>
+                                    <div class="input-group">
+                                        <input class="form-group easyui-validatebox tb" id="TxtPhantramkhuyenmai" data-options="required:true" type="text" placeholder="" onkeypress="return isNumberKey(event);">
+                                        <span class="input-group-addon">%</span>
+                                    </div>
+                                </div>
+                                <div class="col-lg-2 col-md-2 col-sm-2 form-group" >
+                                    <label>&nbsp;</label>
+                                    <a class="form-control" id="functiongiagiam">Tính giá giảm</a>
+                                </div>
+                                <div class="col-lg-6 col-md-6 col-sm-6 form-group">
+                                    <label><span class="TxtGiabankhuyenmai">Giá bán sau khi giảm</span></label>
+                                    <div class="input-group">
+                                        <input class="form-group easyui-validatebox tb" id="TxtGiabankhuyenmai" data-options="required:true" type="text" placeholder="" onkeypress="return isNumberKey(event);">
+                                        <span class="input-group-addon">Vnđ</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <!--giá theo sự kiện trong ngày-->
+                            <div class="col-lg-12 col-md-12 col-sm-12">
+                                <div class="col-lg-12 col-md-12 col-sm-12">
+                                    <div class="form-group">
+                                        <span class="label label-info form-group">Áp dụng giảm giá thêm ngày Sự kiện</span>
+                                    </div>
+                                </div>
+                               
+                            </div>
+
+                            <div class="col-lg-12 col-md-12 col-sm-12">
+                               
+                                <div class="col-lg-5 col-md-5 col-sm-5 form-group">
+                                   &nbsp; <label>Ngày bắt đầu</label>
+                                    <input class="form-group" type="text" id="datepickerDateStart_Event">
+                                </div>
+                                <div class="col-lg-5 col-md-5 col-sm-5 form-group">
+                                    <label>Ngày kết thúc</label>
+                                    <input class="form-group" type="text" id="datepickerDateEnd_Event">
+                                </div>
+                                
+                            </div>
+                            <div class="col-lg-12 col-md-12 col-sm-12">
+                                <div class="col-lg-6 col-md-6 col-sm-6">
+                                    <label>Giá được giảm thêm cho trong ngày sự kiện diễn ra</label>
+                                    <div class="input-group">
+                                        <input class="form-group easyui-validatebox tb" id="TxtGiaban_Event" data-options="required:true" type="text" placeholder="" onkeypress="return isNumberKey(event);">
+                                        <span class="input-group-addon">Vnđ</span>
+                                    </div>
+                                 </div>
+                            </div>
+                            
+                            <div class="col-lg-12 col-md-12 col-sm-12">
+                                <div class="col-lg-6 col-md-6 col-sm-6">
+                                    <label>Mô tả ngày sự kiện (tiếng việt)</label>
+                                    <textarea class="form-group easyui-validatebox tb" id="TxtContent_Event" rows="3"></textarea>
+                                </div>
+                                <div class="col-lg-6 col-md-6 col-sm-6">
+                                    <label>Mô tả ngày sự kiện (tiếng anh)</label>
+                                    <textarea class="form-group easyui-validatebox tb" id="TxtContent_EventEn" rows="3"></textarea>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div class="tab-pane fade" id="NewsDetailProductthuoctinh">
+                        <div class="row">
+                            <!--thông điệp sản phẩm-->
+                            <div class="col-lg-12 col-md-12 col-sm-12">
+                                <div class="col-lg-6 col-md-6 col-sm-6">
+                                    <div class="form-group">
+                                        <label>Thông điệp (tiếng việt)</label>
+                                        <textarea class="form-group easyui-validatebox tb" id="TxtThongdiep" rows="3"></textarea>
+                                    </div>
+                                </div>
+                                <div class="col-lg-6 col-md-6 col-sm-6">
+                                    <div class="form-group">
+                                        <label>Thông điệp (tiếng anh)</label>
+                                        <textarea class="form-group easyui-validatebox tb" id="TxtThongdiepEn" rows="3"></textarea>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!--Khuyến mãi sản phẩm-->
+                            <div class="col-lg-12 col-md-12 col-sm-12">
+                                <div class="col-lg-6 col-md-6 col-sm-6">
+                                    <div class="form-group">
+                                        <label>Khuyến mãi (tiếng việt)</label>
+                                        <textarea class="form-group easyui-validatebox tb" id="TxtKhuyenmai" rows="3"></textarea>
+                                    </div>
+                                </div>
+                                <div class="col-lg-6 col-md-6 col-sm-6">
+                                    <div class="form-group">
+                                        <label>Khuyến mãi (tiếng anh)</label>
+                                        <textarea class="form-group easyui-validatebox tb" id="TxtKhuyenmaiEn" rows="3"></textarea>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!--Bảo hành sản phẩm-->
+                            <div class="col-lg-12 col-md-12 col-sm-12">
+                                <div class="col-lg-6 col-md-6 col-sm-6">
+                                    <div class="form-group">
+                                        <label>Bảo hành (tiếng việt)</label>
+                                        <textarea class="form-group easyui-validatebox tb" id="TxtBaohanh" rows="3"></textarea>
+                                    </div>
+                                </div>
+                                <div class="col-lg-6 col-md-6 col-sm-6">
+                                    <div class="form-group">
+                                        <label>Bảo hành (tiếng anh)</label>
+                                        <textarea class="form-group easyui-validatebox tb" id="TxtBaohanhEn" rows="3"></textarea>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!--Đặc điểm nổi bật-->
+                            <div class="col-lg-12 col-md-12 col-sm-12">
+                                <div class="col-lg-6 col-md-6 col-sm-6">
+                                    <div class="form-group">
+                                        <label>Đặc điểm nổi bật (tiếng việt)</label>
+                                        <textarea class="form-group easyui-validatebox tb" id="TxtDacDiemNoiBat" rows="3"></textarea>
+                                    </div>
+                                </div>
+                                <div class="col-lg-6 col-md-6 col-sm-6">
+                                    <div class="form-group">
+                                        <label>Đặc điểm nổi bật (tiếng anh)</label>
+                                        <textarea class="form-group easyui-validatebox tb" id="TxtDacDiemNoiBatEn" rows="3"></textarea>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div class="tab-pane fade" id="NewsDetailProductdactinh">
+                        <div class="row">
+                            <div class="col-lg-12 col-md-12 col-sm-12">
+                                @{Html.RenderAction("List_check_Thuonghieu", "CategotyProductDactinh");}
+                                @{Html.RenderAction("List_check_Mausac", "CategotyProductDactinh");}
+                                @{Html.RenderAction("List_check_Kichco", "CategotyProductDactinh");}
+                                @{Html.RenderAction("List_check_Nguonsanxuat", "CategotyProductDactinh");}
+                                @{Html.RenderAction("MenuLeverMuti_lever1", "CategotyProductDactinh");}
+                            </div>
+                           
+                        </div>
+
+                    </div>
+                    <div class="tab-pane fade" id="NewsDetailProductSeo">
+                        <div class="row">
+                            <div class="col-lg-12 col-md-12 col-sm-12">
+                                <div class="form-group">
+                                    <label>Mô tả từ khóa</label>
+                                    <textarea class="form-control easyui-validatebox tb" id="TxtDescription" data-options="required:true" rows="3"></textarea>
+                                </div>
+                                <div class="form-group">
+                                    <label>Từ khóa nội dung</label>
+                                    <textarea class="form-control easyui-validatebox tb" id="TxtKeyword" data-options="prompt:'Nhập từ khóa người dùng',required:true" rows="3"></textarea>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div class="tab-pane fade" id="NewsDetailProducthinhanh">
+
+                        <div class="row">
+                            <div class="col-md-12 col-md-12 col-sm-12" >
+                                <div class="col-md-6 col-md-6 col-sm-6">
+                                    <div class="form-group">
+                                        <label>Up load hình ảnh <span class="TxtImage"></span></label>
+                                        <div class="form-group">
+                                            <div class="col-md-12 pading-left-Select">
+                                                <div class="col-md-10">
+                                                    <input class="form-group-sm easyui-validatebox tb" id="TxtImage" data-options=" prompt:'hình ảnh',required:true" type="text" placeholder="">
+                                                </div>
+                                                <div class="col-md-2">
+                                                    <span class="form-group">
+                                                        <button type="button" class="btn btn-white" id="SelectImage">Chọn Ảnh!</button>
+                                                    </span>
+                                                </div>
+                                                <div class="col-md-3">
+                                                    <!--chú thích ở đây-->
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <img class="ShowImgZoom img-responsive" src="/Images/no-image.jpg" id="imgShowScren">
+                                    </div>
+                                </div>
+                                <div class="col-md-6 col-md-6 col-sm-6">
+                                    <div class="form-group">
+                                        <label>Link Video Sản phẩm</label>
+                                        <input class="form-group easyui-validatebox tb" id="TxtVideo" data-options="required:true" type="text" placeholder="" >
+                                    </div>
+                                    <div class="form-group video">
+                                        <iframe width="100%" height="" src="https://www.youtube.com/embed/9Nw-i5v9xm4" frameborder="0" allowfullscreen="true"></iframe>
+
+                                    </div>
+                                </div>
+                                
+                            </div>
+                        </div>
+                        
+                    </div>
+                   
+                     <div class="tab-pane fade" id="NewsDetailProducttrinhchieu">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <!--Ảnh trình chiếu 1-->
+                                <div class="form-group">
+                                    <label>Up load hình ảnh trình chiếu 1 <span class="TxtImage1"></span></label>
+                                    <div class="form-group">
+                                        <div class="col-md-12 pading-left-Select">
+                                            <div class="col-md-3">
+                                                <input class="form-group-sm easyui-validatebox tb" id="TxtImage1" data-options=" prompt:'hình ảnh',required:true" type="text" placeholder="">
+                                            </div>
+                                            <div class="col-md-2">
+                                                <span class="form-group">
+                                                    <button type="button" class="btn btn-white" id="SelectImage1">Chọn Ảnh!</button>
+                                                </span>
+                                            </div>
+                                            <div class="col-md-3">
+                                                <img width="20%" class="ShowImgZoom img-responsive" src="/images/no-image.jpg" id="imgShowScren1">
+                                            </div>
+                                            <div class="col-md-3">
+                                                <!--chú thích ở đây-->
+                                            </div>
+                                      </div>
+                                    </div>
+                                </div>
+                                <!--Ảnh trình chiếu 2-->
+                                <div class="form-group">
+                                    <label>Up load hình ảnh trình chiếu 2 <span class="TxtImage2"></span></label>
+                                    <div class="form-group">
+                                        <div class="col-md-12 pading-left-Select">
+                                            <div class="col-md-3">
+                                                <input class="form-group-sm easyui-validatebox tb" id="TxtImage2" data-options=" prompt:'hình ảnh',required:true" type="text" placeholder="">
+                                            </div>
+                                            <div class="col-md-2">
+                                                <span class="form-group">
+                                                    <button type="button" class="btn btn-white" id="SelectImage2">Chọn Ảnh!</button>
+                                                </span>
+                                            </div>
+                                            <div class="col-md-3">
+                                                <img width="20%" class="ShowImgZoom img-responsive" src="/images/no-image.jpg" id="imgShowScren2">
+                                            </div>
+                                            <div class="col-md-3">
+                                                <!--chú thích ở đây-->
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!--Ảnh trình chiếu 3-->
+                                <div class="form-group">
+                                    <label>Up load hình ảnh trình chiếu 3 <span class="TxtImage3"></span></label>
+                                    <div class="form-group">
+                                        <div class="col-md-12 pading-left-Select">
+                                            <div class="col-md-3">
+                                                <input class="form-group-sm easyui-validatebox tb" id="TxtImage3" data-options=" prompt:'hình ảnh',required:true" type="text" placeholder="">
+                                            </div>
+                                            <div class="col-md-2">
+                                                <span class="form-group">
+                                                    <button type="button" class="btn btn-white" id="SelectImage3">Chọn Ảnh!</button>
+                                                </span>
+                                            </div>
+                                            <div class="col-md-3">
+                                                <img width="20%" class="ShowImgZoom img-responsive" src="/images/no-image.jpg" id="imgShowScren3">
+                                            </div>
+                                            <div class="col-md-3">
+                                                <!--chú thích ở đây-->
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!--Ảnh trình chiếu 4-->
+                                <div class="form-group">
+                                    <label>Up load hình ảnh trình chiếu 4 <span class="TxtImage4"></span></label>
+                                    <div class="form-group">
+                                        <div class="col-md-12 pading-left-Select">
+                                            <div class="col-md-3">
+                                                <input class="form-group-sm easyui-validatebox tb" id="TxtImage4" data-options=" prompt:'hình ảnh',required:true" type="text" placeholder="">
+                                            </div>
+                                            <div class="col-md-2">
+                                                <span class="form-group">
+                                                    <button type="button" class="btn btn-white" id="SelectImage4">Chọn Ảnh!</button>
+                                                </span>
+                                            </div>
+                                            <div class="col-md-3">
+                                                <img width="20%" class="ShowImgZoom img-responsive" src="/images/no-image.jpg" id="imgShowScren4">
+                                            </div>
+                                            <div class="col-md-3">
+                                                <!--chú thích ở đây-->
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!--Ảnh trình chiếu 5-->
+                                <div class="form-group">
+                                    <label>Up load hình ảnh trình chiếu 5 <span class="TxtImage5"></span></label>
+                                    <div class="form-group">
+                                        <div class="col-md-12 pading-left-Select">
+                                            <div class="col-md-3">
+                                                <input class="form-group-sm easyui-validatebox tb" id="TxtImage5" data-options=" prompt:'hình ảnh',required:true" type="text" placeholder="">
+                                            </div>
+                                            <div class="col-md-2">
+                                                <span class="form-group">
+                                                    <button type="button" class="btn btn-white" id="SelectImage5">Chọn Ảnh!</button>
+                                                </span>
+                                            </div>
+                                            <div class="col-md-3">
+                                                <img width="20%" class="ShowImgZoom img-responsive" src="/images/no-image.jpg" id="imgShowScren5">
+                                            </div>
+                                            <div class="col-md-3">
+                                                <!--chú thích ở đây-->
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!--end anh trình chiếu-->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="clear-fix"></div>
+                <div class="padding-form">
+                    <div class="form-group">
+                        <button type="submit" id="Save" class="btn btn-default"><i class="fa fa-save"></i> Lưu Lại</button>
+                        <button type="submit" id="Cancel" class="btn btn-default"><i class="fa fa-times-circle"></i> Hủy bỏ</button>
+                    </div>
+                </div>
+            </div>
+            <!-- /.panel-body -->
+
+        </div>
+    </div>
+
+</div>
+
+<!--jquery action-->
+<script src="/Areas/Quanlywebsite/JavaScrip/Sanpham/product/Categoryproductdetail/Create.js"></script>
+<script src="/Areas/Quanlywebsite/JavaScrip/Sanpham/product/Categoryproductdetail/Update.js"></script>
+<script src="/Areas/Quanlywebsite/JavaScrip/Sanpham/product/Categoryproductdetail/read.js"></script>
+<script src="/Areas/Quanlywebsite/JavaScrip/Sanpham/product/Categoryproductdetail/Copy.js"></script>
+<script src="/Areas/Quanlywebsite/JavaScrip/Sanpham/product/Categoryproductdetail/Active.js"></script>
+<script src="/Areas/Quanlywebsite/JavaScrip/Sanpham/product/Categoryproductdetail/Delete.js"></script>
+<script src="/Areas/Quanlywebsite/JavaScrip/Sanpham/product/Categoryproductdetail/Cancel.js"></script>
+<script src="/Areas/Quanlywebsite/JavaScrip/Sanpham/product/Categoryproductdetail/Save.js"></script>
+<script src="/Areas/Quanlywebsite/JavaScrip/Sanpham/product/Categoryproductdetail/buttonload.js"></script>
+<script src="/Areas/Quanlywebsite/JavaScrip/Sanpham/product/Categoryproductdetail/Property_prices.js"></script>
+<script src="/Areas/Quanlywebsite/JavaScrip/Sanpham/product/Categoryproductdetail/Video.js"></script>
+<script src="/Areas/Quanlywebsite/JavaScrip/Sanpham/product/Categoryproductdetail/Focus_price.js"></script>
+
+<!--javascrip images ckfinder  -->
+<script language="javascript" type="text/javascript">
+    $(function () {
+        $("#SelectImage").click(function () {
+            var finder = new CKFinder();
+            finder.selectActionFunction = function (fileUrl) {
+                $("#TxtImage").val(fileUrl);
+            };
+            finder.popup();
+        }); //upload photo main
+
+        $("#SelectImage1").click(function () {
+            var finder = new CKFinder();
+            finder.selectActionFunction = function (fileUrl) {
+                $("#TxtImage1").val(fileUrl);
+            };
+            finder.popup();
+        }); //upload photo SlidesShow 1
+
+        $("#SelectImage2").click(function () { 
+            var finder = new CKFinder();
+            finder.selectActionFunction = function (fileUrl) {
+                $("#TxtImage2").val(fileUrl);
+            };
+            finder.popup();
+        }); //uploaf photo SlidesShow 2
+
+        $("#SelectImage3").click(function () {
+            var finder = new CKFinder();
+            finder.selectActionFunction = function (fileUrl) {
+                $("#TxtImage3").val(fileUrl);
+            };
+            finder.popup();
+        }); //uplaod photo SlidesShow 3
+
+        $("#SelectImage4").click(function () {
+            var finder = new CKFinder();
+            finder.selectActionFunction = function (fileUrl) {
+                $("#TxtImage4").val(fileUrl);
+            };
+            finder.popup();
+        }); //upload photo SlidesShow 4
+
+        $("#SelectImage5").click(function () {
+            var finder = new CKFinder();
+            finder.selectActionFunction = function (fileUrl) {
+                $("#TxtImage5").val(fileUrl);
+            };
+            finder.popup();
+        }); //upload photo SlidesShow 5
+    });
+</script>
+
+<!--javascrip textbox ckeditor  -->
+<script type="text/javascript">
+    var editor;
+    function createEditor(languageCode, id) {
+        var editor = CKEDITOR.replace(id, {
+            language: languageCode
+        });
+    }
+    $(function () {
+        createEditor('vi', 'TxtDetail'); 
+        createEditor('vi', 'TxtDetailEn');
+        createEditor('vi', 'TxtDacDiemNoiBat');
+        createEditor('vi', 'TxtDacDiemNoiBatEn');
+    });
+
+</script>
+
+<script type="text/javascript">
+    //chon ngay thang
+    $(function () {
+        $("#datepickerDateStart_Event").datepicker({
+            changeMonth: true,
+            changeYear: true,
+            minDate: -0, maxDate: "+12M +10D",
+            showOn: "button",
+            buttonImage: "/images/calendar.png",
+            buttonImageOnly: true,
+            buttonText: "Select date"
+        });
+
+        $("#datepickerDateEnd_Event").datepicker({
+            changeMonth: true,
+            changeYear: true,
+            minDate: -0, maxDate: "+12M +10D",
+            showOn: "button",
+            buttonImage: "/images/calendar.png",
+            buttonImageOnly: true,
+            buttonText: "Select date"
+        });
+    });
+
+    $(function () {
+        $("#datepickerDateStart_Event").datepicker("option", "dateFormat", "dd/mm/yy");
+        $("#datepickerDateEnd_Event").datepicker("option", "dateFormat", "dd/mm/yy");
+
+    });
+</script>

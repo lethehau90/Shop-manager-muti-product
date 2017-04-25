@@ -1,0 +1,1219 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="PNKTemplate_demoModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2005" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
+  <EntityType Name="Advertise">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" MaxLength="150" />
+    <Property Name="Image" Type="varchar" MaxLength="255" />
+    <Property Name="Width" Type="int" />
+    <Property Name="Height" Type="int" />
+    <Property Name="Link" Type="varchar" MaxLength="255" />
+    <Property Name="Target" Type="varchar" MaxLength="10" />
+    <Property Name="Content" Type="ntext" />
+    <Property Name="Position" Type="smallint" />
+    <Property Name="PageId" Type="int" />
+    <Property Name="Click" Type="int" />
+    <Property Name="Ord" Type="int" />
+    <Property Name="Active" Type="bit" Nullable="false" />
+    <Property Name="Lang" Type="varchar" MaxLength="5" />
+    <Property Name="NameEn" Type="nvarchar" MaxLength="150" />
+    <Property Name="ContentEn" Type="ntext" />
+    <Property Name="Ngaytao" Type="datetime" />
+    <Property Name="Ngayhethan" Type="datetime" />
+    <Property Name="LuotClick" Type="int" />
+  </EntityType>
+  <EntityType Name="Bill_customers">
+    <Key>
+      <PropertyRef Name="billid" />
+    </Key>
+    <Property Name="billid" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="userid" Type="int" />
+    <Property Name="totalmoney" Type="varchar" MaxLength="100" />
+    <Property Name="idate" Type="datetime" />
+    <Property Name="xdate" Type="datetime" />
+    <Property Name="request" Type="ntext" />
+    <Property Name="typepay" Type="nvarchar" MaxLength="100" />
+    <Property Name="state" Type="int" />
+    <Property Name="lang" Type="char" MaxLength="3" />
+    <Property Name="show" Type="int" />
+  </EntityType>
+  <EntityType Name="Billdetail">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="bilid" Type="int" />
+    <Property Name="proid" Type="int" />
+    <Property Name="sizeid" Type="int" />
+    <Property Name="colorid" Type="int" />
+    <Property Name="quantity" Type="int" />
+    <Property Name="bilprice" Type="varchar" MaxLength="100" />
+    <Property Name="bilpricevnd" Type="varchar" MaxLength="100" />
+    <Property Name="bilmoney" Type="varchar" MaxLength="100" />
+    <Property Name="billlocation" Type="int" />
+    <Property Name="Date" Type="datetime" />
+    <Property Name="status" Type="int" />
+  </EntityType>
+  <EntityType Name="CommentProduc">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ProId" Type="int" />
+    <Property Name="Name" Type="nvarchar" MaxLength="250" />
+    <Property Name="Email" Type="nvarchar" MaxLength="150" />
+    <Property Name="Point" Type="int" />
+    <Property Name="Content" Type="ntext" />
+    <Property Name="Date" Type="datetime" />
+    <Property Name="Active" Type="int" />
+    <Property Name="Level" Type="varchar" MaxLength="256" />
+  </EntityType>
+  <EntityType Name="Company">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Address" Type="nvarchar" MaxLength="50" />
+    <Property Name="PhoneNumber" Type="varchar" MaxLength="50" />
+    <Property Name="Fax" Type="varchar" MaxLength="50" />
+    <Property Name="ProvinceId" Type="int" />
+    <Property Name="NameEn" Type="nvarchar" MaxLength="50" />
+    <Property Name="AddressEn" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Config">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Mail_Smtp" Type="nvarchar" MaxLength="64" />
+    <Property Name="Mail_Port" Type="smallint" />
+    <Property Name="Mail_Info" Type="nvarchar" MaxLength="64" />
+    <Property Name="Mail_Noreply" Type="nvarchar" MaxLength="64" />
+    <Property Name="Mail_Password" Type="nvarchar" MaxLength="64" />
+    <Property Name="PlaceHead" Type="ntext" />
+    <Property Name="PlaceBody" Type="ntext" />
+    <Property Name="GoogleId" Type="nvarchar" MaxLength="1000" />
+    <Property Name="Contact" Type="ntext" />
+    <Property Name="DeliveryTerms" Type="ntext" />
+    <Property Name="PaymentTerms" Type="ntext" />
+    <Property Name="FreeShipping" Type="float" />
+    <Property Name="Copyright" Type="ntext" />
+    <Property Name="Title" Type="nvarchar" MaxLength="1000" />
+    <Property Name="Description" Type="nvarchar" MaxLength="1000" />
+    <Property Name="Keyword" Type="nvarchar" MaxLength="1000" />
+    <Property Name="Lang" Type="varchar" MaxLength="5" />
+    <Property Name="Helpsize" Type="ntext" />
+    <Property Name="Location" Type="int" />
+    <Property Name="ToolScrip" Type="ntext" />
+    <Property Name="Icon" Type="nvarchar" MaxLength="500" />
+    <Property Name="Map" Type="ntext" />
+    <Property Name="pageging1" Type="int" />
+    <Property Name="pageging2" Type="int" />
+    <Property Name="pageging3" Type="int" />
+    <Property Name="pageging4" Type="int" />
+    <Property Name="pageging5" Type="int" />
+  </EntityType>
+  <EntityType Name="Contact">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" MaxLength="256" />
+    <Property Name="Company" Type="nvarchar" MaxLength="512" />
+    <Property Name="Address" Type="nvarchar" MaxLength="512" />
+    <Property Name="Tel" Type="varchar" MaxLength="64" />
+    <Property Name="Mail" Type="varchar" MaxLength="64" />
+    <Property Name="Detail" Type="ntext" />
+    <Property Name="Date" Type="datetime" />
+    <Property Name="Active" Type="int" />
+    <Property Name="Lang" Type="varchar" MaxLength="5" />
+    <Property Name="NameEn" Type="nvarchar" MaxLength="256" />
+    <Property Name="CompanyEn" Type="nvarchar" MaxLength="512" />
+    <Property Name="AddressEn" Type="nvarchar" MaxLength="512" />
+    <Property Name="DetailEn" Type="ntext" />
+  </EntityType>
+  <EntityType Name="CTdonhang">
+    <Key>
+      <PropertyRef Name="IdCTHD" />
+    </Key>
+    <Property Name="IdCTHD" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="IDhd" Type="int" />
+    <Property Name="IDsanpham" Type="nchar" MaxLength="10" />
+    <Property Name="Tensanpham" Type="nvarchar" MaxLength="200" />
+    <Property Name="Soluong" Type="int" />
+    <Property Name="Giaban" Type="float" />
+    <Property Name="Size" Type="nvarchar" MaxLength="50" />
+    <Property Name="Mausac" Type="nvarchar" MaxLength="50" />
+    <Property Name="Dungluong" Type="nvarchar" MaxLength="500" />
+    <Property Name="Hinhanh" Type="nvarchar" MaxLength="500" />
+    <Property Name="danhmucsanpham" Type="nvarchar" MaxLength="500" />
+    <Property Name="chitietsanpham" Type="nvarchar" MaxLength="500" />
+    <Property Name="Giamthem" Type="float" />
+    <Property Name="phantramkm" Type="int" />
+    <Property Name="Baohanh" Type="int" />
+    <Property Name="Giacu" Type="float" />
+    <Property Name="tinhtrang" Type="nvarchar" MaxLength="500" />
+  </EntityType>
+  <EntityType Name="Custumers">
+    <Key>
+      <PropertyRef Name="iusid" />
+    </Key>
+    <Property Name="iusid" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="vusername" Type="nvarchar" MaxLength="100" />
+    <Property Name="vpassword" Type="nvarchar" MaxLength="200" />
+    <Property Name="vcusname" Type="nvarchar" MaxLength="200" />
+    <Property Name="dbirthday" Type="nvarchar" MaxLength="100" />
+    <Property Name="vprovince" Type="nvarchar" MaxLength="200" />
+    <Property Name="vaddress" Type="nvarchar" MaxLength="200" />
+    <Property Name="vphone" Type="varchar" MaxLength="100" />
+    <Property Name="vmobile" Type="varchar" MaxLength="100" />
+    <Property Name="vemail" Type="varchar" MaxLength="100" />
+    <Property Name="dcreatedate" Type="datetime" />
+    <Property Name="istatus" Type="smallint" />
+  </EntityType>
+  <EntityType Name="Chitiethinh">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="IDsanpham" Type="nvarchar" MaxLength="500" />
+    <Property Name="Images" Type="nvarchar" MaxLength="500" />
+    <Property Name="Thumimg" Type="nvarchar" MaxLength="500" />
+    <Property Name="Thumsimg" Type="nvarchar" MaxLength="500" />
+    <Property Name="ord" Type="int" />
+  </EntityType>
+  <EntityType Name="DientuCapLoaithuoctinh">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" MaxLength="500" />
+    <Property Name="Active" Type="bit" />
+    <Property Name="Ord" Type="int" />
+    <Property Name="Content" Type="nvarchar" MaxLength="1000" />
+  </EntityType>
+  <EntityType Name="DientuChitiethinh">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="IdTag" Type="nvarchar" MaxLength="500" />
+    <Property Name="IdProduct" Type="nvarchar" MaxLength="500" />
+    <Property Name="Images" Type="nvarchar" MaxLength="500" />
+    <Property Name="ThumImg" Type="nvarchar" MaxLength="500" />
+    <Property Name="Idmau" Type="nvarchar" MaxLength="500" />
+    <Property Name="Iddungluong" Type="nvarchar" MaxLength="500" />
+    <Property Name="IdSize" Type="nvarchar" MaxLength="500" />
+    <Property Name="Giaban" Type="float" />
+    <Property Name="Giacu" Type="float" />
+    <Property Name="Soluong" Type="int" />
+    <Property Name="Phantramkm" Type="int" />
+    <Property Name="Tinhtrang" Type="int" />
+    <Property Name="Active" Type="bit" />
+    <Property Name="Ord" Type="int" />
+    <Property Name="Images1" Type="nvarchar" MaxLength="500" />
+    <Property Name="Images2" Type="nvarchar" MaxLength="500" />
+    <Property Name="Images3" Type="nvarchar" MaxLength="500" />
+    <Property Name="Images4" Type="nvarchar" MaxLength="500" />
+  </EntityType>
+  <EntityType Name="DientuDongSp">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Idnsx" Type="int" />
+    <Property Name="Name" Type="nvarchar" MaxLength="500" />
+    <Property Name="Active" Type="bit" />
+    <Property Name="Ord" Type="int" />
+  </EntityType>
+  <EntityType Name="DientuDungluong">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" MaxLength="500" />
+    <Property Name="Active" Type="bit" />
+    <Property Name="Ord" Type="int" />
+  </EntityType>
+  <EntityType Name="DientuInfo">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Thuonghieu" Type="nvarchar" MaxLength="500" />
+    <Property Name="Dongmay" Type="nvarchar" MaxLength="500" />
+    <Property Name="Soseri" Type="nvarchar" MaxLength="50" />
+    <Property Name="Hovaten" Type="nvarchar" MaxLength="500" />
+    <Property Name="Sodienthoai" Type="nvarchar" MaxLength="500" />
+    <Property Name="Noidungsuachua" Type="ntext" />
+    <Property Name="Images1" Type="nvarchar" MaxLength="500" />
+    <Property Name="Images2" Type="nvarchar" MaxLength="500" />
+    <Property Name="Giaban" Type="money" />
+    <Property Name="Index" Type="int" />
+    <Property Name="Ngaygoi" Type="datetime" />
+    <Property Name="Active" Type="bit" />
+  </EntityType>
+  <EntityType Name="DientuLoaithuoctinh">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" MaxLength="500" />
+    <Property Name="Active" Type="bit" />
+    <Property Name="Ord" Type="int" />
+    <Property Name="Content" Type="nvarchar" MaxLength="1000" />
+  </EntityType>
+  <EntityType Name="DientuMathang">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Seri" Type="nchar" MaxLength="100" />
+    <Property Name="Tenhang" Type="nvarchar" MaxLength="100" />
+    <Property Name="Img" Type="nvarchar" MaxLength="500" />
+    <Property Name="ThumImg" Type="nvarchar" MaxLength="500" />
+    <Property Name="Thum_img_img" Type="nvarchar" MaxLength="500" />
+    <Property Name="Idnsx" Type="int" />
+    <Property Name="Giaban" Type="float" />
+    <Property Name="Giamua" Type="float" />
+    <Property Name="Soluong" Type="int" />
+    <Property Name="Tinhtrang" Type="nvarchar" MaxLength="50" />
+    <Property Name="Donvi" Type="nvarchar" MaxLength="50" />
+    <Property Name="Baohanh" Type="nvarchar" MaxLength="50" />
+    <Property Name="Ngaynhap" Type="datetime" />
+    <Property Name="Danhgia" Type="int" />
+    <Property Name="Luotxem" Type="int" />
+    <Property Name="Vat" Type="float" />
+    <Property Name="Lienhe" Type="nvarchar" MaxLength="50" />
+    <Property Name="Forder" Type="nvarchar" MaxLength="50" />
+    <Property Name="Baiviet" Type="nvarchar(max)" />
+    <Property Name="Thongso" Type="nvarchar(max)" />
+    <Property Name="Mota" Type="nvarchar(max)" />
+    <Property Name="Giagiam" Type="float" />
+    <Property Name="Phantramkm" Type="float" />
+    <Property Name="Title" Type="varchar" MaxLength="200" />
+    <Property Name="Keyword" Type="nvarchar" MaxLength="1000" />
+    <Property Name="Description" Type="nvarchar" MaxLength="1000" />
+    <Property Name="Khuvuc" Type="nvarchar" MaxLength="200" />
+    <Property Name="thuoctinh" Type="nvarchar(max)" />
+    <Property Name="khuyenmai" Type="nvarchar" MaxLength="1000" />
+    <Property Name="khuyenmai_html" Type="nvarchar(max)" />
+    <Property Name="Ord" Type="int" />
+    <Property Name="Active" Type="int" />
+    <Property Name="Priority" Type="int" />
+    <Property Name="Index" Type="int" />
+    <Property Name="Idmenu" Type="int" />
+    <Property Name="Idthuoctinh" Type="int" />
+    <Property Name="Diemdanhgia" Type="nchar" MaxLength="1000" />
+    <Property Name="Ngayxemganday" Type="datetime" />
+    <Property Name="Tag" Type="nvarchar" MaxLength="500" />
+    <Property Name="GroupNewsCatTag" Type="nvarchar" MaxLength="500" />
+    <Property Name="Cateprolevel1" Type="nvarchar" MaxLength="500" />
+    <Property Name="Cateprolevel2" Type="nvarchar" MaxLength="500" />
+    <Property Name="Cateprolevel3" Type="nvarchar" MaxLength="500" />
+    <Property Name="Soluongmua" Type="int" />
+  </EntityType>
+  <EntityType Name="DientuMenuSitemathang">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="MenuName" Type="nvarchar" MaxLength="500" />
+    <Property Name="Tag" Type="nvarchar" MaxLength="500" />
+    <Property Name="Level" Type="varchar" MaxLength="250" />
+    <Property Name="Logogroup" Type="nvarchar" MaxLength="500" />
+    <Property Name="Ord" Type="int" />
+    <Property Name="Active" Type="bit" />
+    <Property Name="Mota" Type="nvarchar" MaxLength="500" />
+    <Property Name="Url" Type="nvarchar" MaxLength="1000" />
+    <Property Name="idThuoctinh" Type="int" />
+    <Property Name="Priority" Type="int" />
+    <Property Name="Index" Type="int" />
+    <Property Name="Description" Type="nvarchar" MaxLength="500" />
+    <Property Name="Keyword" Type="nvarchar" MaxLength="500" />
+    <Property Name="Title" Type="nvarchar" MaxLength="500" />
+  </EntityType>
+  <EntityType Name="DientuNsx">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" MaxLength="100" />
+    <Property Name="Images" Type="nvarchar" MaxLength="500" />
+    <Property Name="Active" Type="bit" />
+    <Property Name="Ord" Type="int" />
+    <Property Name="Content" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="DientuTinhnang">
+    <Key>
+      <PropertyRef Name="Idthuoctinh" />
+    </Key>
+    <Property Name="Idthuoctinh" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Thuoctinh" Type="nvarchar" MaxLength="500" />
+    <Property Name="Idtinhang" Type="int" />
+    <Property Name="Active" Type="bit" />
+    <Property Name="Ord" Type="int" />
+    <Property Name="Title" Type="nvarchar" MaxLength="500" />
+    <Property Name="Content" Type="nvarchar" MaxLength="1500" />
+    <Property Name="Idthuoctinhselect" Type="int" />
+  </EntityType>
+  <EntityType Name="DientuThuoctinh">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="IdTag" Type="nvarchar" MaxLength="1000" Nullable="false" />
+    <Property Name="Text" Type="nvarchar" MaxLength="1000" />
+    <Property Name="Value" Type="nvarchar(max)" />
+    <Property Name="Idproduct" Type="int" />
+    <Property Name="TagProduct" Type="nvarchar" MaxLength="1000" />
+    <Property Name="Idthuoctinh" Type="int" />
+    <Property Name="Idcapthuoctinh" Type="int" />
+    <Property Name="Active" Type="bit" />
+    <Property Name="Ord" Type="int" />
+    <Property Name="Content" Type="nvarchar" MaxLength="1000" />
+  </EntityType>
+  <EntityType Name="Document">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Code" Type="varchar" MaxLength="256" />
+    <Property Name="Name" Type="nvarchar" MaxLength="256" />
+    <Property Name="Images" Type="nvarchar" MaxLength="500" />
+    <Property Name="CreateDate" Type="datetime" />
+    <Property Name="EffectiveDate" Type="datetime" />
+    <Property Name="Info" Type="ntext" />
+    <Property Name="File" Type="nvarchar" MaxLength="512" />
+    <Property Name="Ord" Type="int" />
+    <Property Name="Priority" Type="int" />
+    <Property Name="Active" Type="int" />
+    <Property Name="TypeId" Type="int" />
+    <Property Name="MemberId" Type="int" />
+    <Property Name="Lang" Type="varchar" MaxLength="5" />
+    <Property Name="NameEn" Type="nvarchar" MaxLength="256" />
+    <Property Name="infoEn" Type="ntext" />
+  </EntityType>
+  <EntityType Name="DocumentType">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" MaxLength="256" />
+    <Property Name="Ord" Type="int" />
+    <Property Name="Active" Type="int" />
+    <Property Name="Lang" Type="varchar" MaxLength="5" />
+    <Property Name="NameEn" Type="nvarchar" MaxLength="256" />
+  </EntityType>
+  <EntityType Name="Donhang">
+    <Key>
+      <PropertyRef Name="IDhd" />
+    </Key>
+    <Property Name="IDhd" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="IDuser" Type="int" />
+    <Property Name="SDT" Type="nvarchar" MaxLength="50" />
+    <Property Name="Hoten" Type="nvarchar" MaxLength="100" />
+    <Property Name="Mail" Type="nvarchar" MaxLength="100" />
+    <Property Name="Diachi" Type="nvarchar" MaxLength="500" />
+    <Property Name="Tinh" Type="nvarchar" MaxLength="50" />
+    <Property Name="Huyen" Type="nvarchar" MaxLength="50" />
+    <Property Name="Xungho" Type="nvarchar" MaxLength="50" />
+    <Property Name="Hinhthucthanhtoan" Type="nvarchar" MaxLength="100" />
+    <Property Name="Goidichvu" Type="nvarchar" MaxLength="100" />
+    <Property Name="Tongtienhang" Type="float" />
+    <Property Name="Thanhtoan" Type="float" />
+    <Property Name="ngaydathang" Type="datetime" />
+    <Property Name="KH" Type="nvarchar" MaxLength="100" />
+    <Property Name="Duyet" Type="nvarchar" MaxLength="50" />
+    <Property Name="Khuyenmai" Type="nvarchar(max)" />
+    <Property Name="Hinhthucgiaohang" Type="nvarchar" MaxLength="100" />
+    <Property Name="GhiChuKhac" Type="ntext" />
+    <Property Name="Tiengiamgia" Type="int" />
+  </EntityType>
+  <EntityType Name="EmailRegisters">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Email" Type="varchar" MaxLength="300" />
+    <Property Name="Createdate" Type="smalldatetime" />
+    <Property Name="Status" Type="int" />
+  </EntityType>
+  <EntityType Name="Even_Date">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" MaxLength="500" />
+    <Property Name="NameEn" Type="nvarchar" MaxLength="500" />
+    <Property Name="content" Type="ntext" />
+    <Property Name="contentEn" Type="ntext" />
+    <Property Name="Date_event_start" Type="datetime" />
+    <Property Name="Date_event_end" Type="datetime" />
+    <Property Name="Price_event" Type="int" />
+    <Property Name="Ord" Type="int" />
+    <Property Name="Active" Type="bit" />
+  </EntityType>
+  <EntityType Name="GroupLibrary">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" MaxLength="256" />
+    <Property Name="Tag" Type="nvarchar" MaxLength="256" />
+    <Property Name="Level" Type="varchar" MaxLength="256" />
+    <Property Name="Image" Type="nvarchar" MaxLength="256" />
+    <Property Name="Ord" Type="int" />
+    <Property Name="Active" Type="int" />
+    <Property Name="Lang" Type="varchar" MaxLength="5" />
+    <Property Name="NameEn" Type="nvarchar" MaxLength="256" />
+  </EntityType>
+  <EntityType Name="GroupMember">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" MaxLength="256" />
+    <Property Name="Active" Type="int" />
+    <Property Name="NameEn" Type="nvarchar" MaxLength="256" />
+  </EntityType>
+  <EntityType Name="GroupMenuSanPham">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" MaxLength="256" />
+    <Property Name="Tag" Type="nvarchar" MaxLength="256" />
+    <Property Name="Level" Type="varchar" MaxLength="256" />
+    <Property Name="Title" Type="nvarchar" MaxLength="256" />
+    <Property Name="Description" Type="nvarchar" MaxLength="256" />
+    <Property Name="Keyword" Type="nvarchar" MaxLength="512" />
+    <Property Name="Ord" Type="int" />
+    <Property Name="Priority" Type="int" />
+    <Property Name="Index" Type="int" />
+    <Property Name="Active" Type="int" />
+    <Property Name="Lang" Type="varchar" MaxLength="5" />
+    <Property Name="Logogroup" Type="nvarchar" MaxLength="500" />
+    <Property Name="NameEn" Type="nvarchar" MaxLength="256" />
+    <Property Name="TitleEn" Type="nvarchar" MaxLength="256" />
+    <Property Name="ImagesLogo" Type="nchar" MaxLength="100" />
+    <Property Name="content" Type="ntext" />
+    <Property Name="contentEn" Type="ntext" />
+  </EntityType>
+  <EntityType Name="GroupNewMenuSanPhamDetail">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" MaxLength="500" />
+    <Property Name="NameEn" Type="nvarchar" MaxLength="100" />
+    <Property Name="Tag" Type="nvarchar" MaxLength="500" />
+    <Property Name="IDthuonghieu" Type="nvarchar" MaxLength="500" />
+    <Property Name="NguonSanPham" Type="nvarchar" MaxLength="500" />
+    <Property Name="Mausac" Type="nvarchar" MaxLength="500" />
+    <Property Name="Kichthuoc" Type="nvarchar" MaxLength="500" />
+    <Property Name="SanphamCungloai" Type="nvarchar" MaxLength="1000" />
+    <Property Name="Donvi" Type="nvarchar" MaxLength="500" />
+    <Property Name="Luotdanhgia" Type="nvarchar" MaxLength="50" />
+    <Property Name="Video" Type="nvarchar" MaxLength="1000" />
+    <Property Name="Title" Type="nvarchar(max)" />
+    <Property Name="Description" Type="nvarchar(max)" />
+    <Property Name="Keyword" Type="nvarchar(max)" />
+    <Property Name="Priority" Type="int" />
+    <Property Name="Index" Type="int" />
+    <Property Name="Order" Type="int" />
+    <Property Name="Active" Type="int" />
+    <Property Name="GroupNewsCatTag" Type="nvarchar" MaxLength="500" />
+    <Property Name="Cateprolevel1" Type="nvarchar" MaxLength="500" />
+    <Property Name="Cateprolevel2" Type="nvarchar" MaxLength="500" />
+    <Property Name="Cateprolevel3" Type="nvarchar" MaxLength="500" />
+    <Property Name="Image" Type="varchar" MaxLength="500" />
+    <Property Name="Image1" Type="varchar" MaxLength="500" />
+    <Property Name="Image2" Type="varchar" MaxLength="500" />
+    <Property Name="Image3" Type="varchar" MaxLength="500" />
+    <Property Name="Image4" Type="varchar" MaxLength="500" />
+    <Property Name="Image5" Type="varchar" MaxLength="500" />
+    <Property Name="Content" Type="nvarchar(max)" />
+    <Property Name="ContentEn" Type="ntext" />
+    <Property Name="Detail" Type="ntext" />
+    <Property Name="DetailEn" Type="ntext" />
+    <Property Name="Khuyenmai" Type="nvarchar(max)" />
+    <Property Name="KhuyenmaiEn" Type="ntext" />
+    <Property Name="Baohanh" Type="nvarchar(max)" />
+    <Property Name="BaohanhEn" Type="ntext" />
+    <Property Name="DacDiemNoiBat" Type="ntext" />
+    <Property Name="DacDiemNoiBatEn" Type="ntext" />
+    <Property Name="Thongdiep" Type="nvarchar(max)" />
+    <Property Name="ThongdiepEn" Type="ntext" />
+    <Property Name="Seri" Type="nvarchar" MaxLength="50" />
+    <Property Name="Luotxem" Type="int" />
+    <Property Name="Soluongmua" Type="int" />
+    <Property Name="DateCreate" Type="datetime" />
+    <Property Name="DateView" Type="datetime" />
+    <Property Name="Stock" Type="int" />
+    <Property Name="Number_Stock" Type="int" />
+    <Property Name="Vat" Type="bit" />
+    <Property Name="Gianhaphang" Type="float" />
+    <Property Name="Giaban" Type="float" />
+    <Property Name="Phantramkhuyenmai" Type="int" />
+    <Property Name="Giabankhuyenmai" Type="float" />
+    <Property Name="DateStart_Event" Type="datetime" />
+    <Property Name="DateEnd_Event" Type="datetime" />
+    <Property Name="Giaban_Event" Type="float" />
+    <Property Name="Content_Event" Type="nvarchar" MaxLength="1000" />
+    <Property Name="Content_EventEn" Type="nvarchar" MaxLength="1000" />
+  </EntityType>
+  <EntityType Name="GroupNews">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" MaxLength="256" />
+    <Property Name="Tag" Type="nvarchar" MaxLength="256" />
+    <Property Name="Level" Type="varchar" MaxLength="256" />
+    <Property Name="Title" Type="nvarchar" MaxLength="256" />
+    <Property Name="Description" Type="nvarchar" MaxLength="256" />
+    <Property Name="Keyword" Type="nvarchar" MaxLength="512" />
+    <Property Name="Ord" Type="int" />
+    <Property Name="Priority" Type="int" />
+    <Property Name="Index" Type="int" />
+    <Property Name="Active" Type="int" />
+    <Property Name="Lang" Type="varchar" MaxLength="5" />
+    <Property Name="Logogroup" Type="nvarchar" MaxLength="500" />
+    <Property Name="NameEn" Type="nvarchar" MaxLength="256" />
+    <Property Name="TitleEn" Type="nvarchar" MaxLength="256" />
+    <Property Name="ImagesLogo" Type="nchar" MaxLength="100" />
+    <Property Name="content" Type="ntext" />
+    <Property Name="contentEn" Type="ntext" />
+  </EntityType>
+  <EntityType Name="GroupNewsNewsDetail">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="nvarchar(max)" />
+    <Property Name="Tag" Type="nvarchar(max)" />
+    <Property Name="Image" Type="varchar(max)" />
+    <Property Name="Content" Type="nvarchar(max)" />
+    <Property Name="Detail" Type="ntext" />
+    <Property Name="Date" Type="datetime" />
+    <Property Name="Title" Type="nvarchar(max)" />
+    <Property Name="Description" Type="nvarchar(max)" />
+    <Property Name="Keyword" Type="nvarchar(max)" />
+    <Property Name="Priority" Type="int" />
+    <Property Name="Index" Type="int" />
+    <Property Name="Active" Type="int" />
+    <Property Name="ord" Type="int" />
+    <Property Name="Nguon" Type="nvarchar" MaxLength="500" />
+    <Property Name="Lang" Type="varchar" MaxLength="5" />
+    <Property Name="Image1" Type="varchar(max)" />
+    <Property Name="Image2" Type="varchar(max)" />
+    <Property Name="Image3" Type="varchar(max)" />
+    <Property Name="Image4" Type="varchar(max)" />
+    <Property Name="Images5" Type="varchar(max)" />
+    <Property Name="GroupNewsCatTag" Type="nvarchar(max)" />
+    <Property Name="Cateprolevel1" Type="nvarchar" MaxLength="500" />
+    <Property Name="Cateprolevel2" Type="nvarchar" MaxLength="500" />
+    <Property Name="Cateprolevel3" Type="nvarchar" MaxLength="500" />
+    <Property Name="NameEn" Type="nvarchar" MaxLength="100" />
+    <Property Name="ContentEn" Type="ntext" />
+    <Property Name="DetailEn" Type="ntext" />
+    <Property Name="DateView" Type="datetime" />
+    <Property Name="Luotxem" Type="int" />
+  </EntityType>
+  <EntityType Name="GroupSupport">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" MaxLength="256" />
+    <Property Name="Ord" Type="int" />
+    <Property Name="Active" Type="int" />
+    <Property Name="Lang" Type="varchar" MaxLength="5" />
+    <Property Name="NameEn" Type="nvarchar" MaxLength="256" />
+  </EntityType>
+  <EntityType Name="Html">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="type" Type="int" />
+    <Property Name="Active" Type="int" />
+    <Property Name="Lang" Type="varchar" MaxLength="5" />
+    <Property Name="Ten" Type="nvarchar" MaxLength="100" />
+    <Property Name="Html_content" Type="ntext" />
+    <Property Name="TenEn" Type="nvarchar" MaxLength="100" />
+    <Property Name="Html_contentEn" Type="ntext" />
+    <Property Name="images" Type="varchar" MaxLength="500" />
+    <Property Name="Ord" Type="int" />
+  </EntityType>
+  <EntityType Name="information">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" MaxLength="150" />
+    <Property Name="Image" Type="varchar" MaxLength="255" />
+    <Property Name="Target" Type="varchar" MaxLength="10" />
+    <Property Name="Content" Type="ntext" />
+    <Property Name="Position" Type="smallint" />
+    <Property Name="Click" Type="int" />
+    <Property Name="Ord" Type="int" />
+    <Property Name="Active" Type="bit" Nullable="false" />
+    <Property Name="Lang" Type="varchar" MaxLength="5" />
+    <Property Name="Detail" Type="ntext" />
+    <Property Name="Title" Type="nvarchar" MaxLength="256" />
+    <Property Name="Description" Type="nvarchar" MaxLength="256" />
+    <Property Name="Keyword" Type="nvarchar" MaxLength="256" />
+    <Property Name="Image1" Type="nvarchar" MaxLength="256" />
+    <Property Name="Image2" Type="nvarchar" MaxLength="256" />
+    <Property Name="Image3" Type="nvarchar" MaxLength="256" />
+    <Property Name="Image4" Type="nvarchar" MaxLength="256" />
+    <Property Name="Image5" Type="nvarchar" MaxLength="256" />
+    <Property Name="Index" Type="int" />
+    <Property Name="Priority" Type="int" />
+    <Property Name="Tag" Type="nvarchar" MaxLength="150" />
+    <Property Name="NameEn" Type="nvarchar" MaxLength="100" />
+    <Property Name="ContentEn" Type="ntext" />
+    <Property Name="DetailEn" Type="ntext" />
+  </EntityType>
+  <EntityType Name="Kichthuoc">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Kichthuoc" Type="nvarchar" MaxLength="50" />
+    <Property Name="Vitri" Type="int" />
+    <Property Name="Active" Type="bit" />
+  </EntityType>
+  <EntityType Name="Khoanggia">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Khoangdau" Type="nvarchar" MaxLength="50" />
+    <Property Name="Khoangcuoi" Type="nvarchar" MaxLength="50" />
+    <Property Name="Vitri" Type="int" />
+    <Property Name="Active" Type="bit" />
+  </EntityType>
+  <EntityType Name="Language">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="varchar" MaxLength="5" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" MaxLength="50" />
+    <Property Name="Folder" Type="varchar" MaxLength="100" />
+    <Property Name="Default" Type="bit" Nullable="false" />
+    <Property Name="Image" Type="varchar" MaxLength="50" />
+    <Property Name="Active" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Library">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" MaxLength="256" />
+    <Property Name="Tag" Type="nvarchar" MaxLength="256" />
+    <Property Name="Image" Type="nvarchar" MaxLength="256" />
+    <Property Name="File" Type="nvarchar" MaxLength="512" />
+    <Property Name="Info" Type="ntext" />
+    <Property Name="Priority" Type="int" />
+    <Property Name="Active" Type="int" />
+    <Property Name="GroupLibraryId" Type="int" />
+    <Property Name="MemberId" Type="int" />
+    <Property Name="Lang" Type="varchar" MaxLength="5" />
+    <Property Name="LibraryCatTag" Type="nvarchar" MaxLength="256" />
+    <Property Name="NameEn" Type="nvarchar" MaxLength="256" />
+    <Property Name="infoEn" Type="ntext" />
+    <Property Name="Content" Type="ntext" />
+    <Property Name="ContetnEn" Type="ntext" />
+  </EntityType>
+  <EntityType Name="MacodeKhuyenMai">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Macode" Type="nvarchar" MaxLength="50" />
+    <Property Name="Valueprice" Type="int" />
+    <Property Name="Active" Type="bit" />
+  </EntityType>
+  <EntityType Name="Mausac">
+    <Key>
+      <PropertyRef Name="IDmau" />
+    </Key>
+    <Property Name="IDmau" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Tenmau" Type="nvarchar" MaxLength="100" />
+    <Property Name="Hinhanh" Type="nvarchar" MaxLength="500" />
+    <Property Name="Lang" Type="nchar" MaxLength="10" />
+    <Property Name="TenmauEn" Type="nvarchar" MaxLength="100" />
+    <Property Name="Ord" Type="int" />
+    <Property Name="Active" Type="bit" />
+  </EntityType>
+  <EntityType Name="Member">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" MaxLength="256" />
+    <Property Name="Email" Type="nvarchar" MaxLength="256" />
+    <Property Name="Username" Type="varchar" MaxLength="64" />
+    <Property Name="Password" Type="varchar" MaxLength="64" />
+    <Property Name="GroupMemberId" Type="int" />
+    <Property Name="Active" Type="int" />
+    <Property Name="NameEn" Type="nvarchar" MaxLength="256" />
+    <Property Name="Isplace" Type="nvarchar" MaxLength="500" />
+    <Property Name="IsplaceEn" Type="nvarchar" MaxLength="500" />
+    <Property Name="Note" Type="ntext" />
+    <Property Name="NoteEn" Type="ntext" />
+  </EntityType>
+  <EntityType Name="Nuocsanxuat">
+    <Key>
+      <PropertyRef Name="IDNuocsanxuat" />
+    </Key>
+    <Property Name="IDNuocsanxuat" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="TenNuocsanxuat" Type="nvarchar" MaxLength="100" />
+    <Property Name="Logo" Type="nvarchar" MaxLength="500" />
+    <Property Name="Active" Type="bit" />
+    <Property Name="Vitri" Type="int" />
+    <Property Name="TenNuocsanxuat_En" Type="nvarchar" MaxLength="100" />
+  </EntityType>
+  <EntityType Name="Province">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" MaxLength="200" />
+    <Property Name="NameEn" Type="nvarchar" MaxLength="200" />
+  </EntityType>
+  <EntityType Name="quantity_purchased">
+    <Key>
+      <PropertyRef Name="Id_quantity" />
+    </Key>
+    <Property Name="Id_quantity" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Sl_mua" Type="int" />
+    <Property Name="Phan_tram_tang" Type="int" />
+    <Property Name="Active" Type="bit" />
+  </EntityType>
+  <EntityType Name="service_charge">
+    <Key>
+      <PropertyRef Name="idservice" />
+    </Key>
+    <Property Name="idservice" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Ord" Type="int" />
+    <Property Name="Name" Type="nvarchar" MaxLength="500" />
+    <Property Name="Gia" Type="int" />
+    <Property Name="Active" Type="bit" />
+    <Property Name="NameEn" Type="nvarchar" MaxLength="500" />
+  </EntityType>
+  <EntityType Name="Shop">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" MaxLength="200" />
+    <Property Name="CompanyId" Type="int" />
+    <Property Name="Address" Type="nvarchar" MaxLength="500" />
+    <Property Name="PhoneNumber" Type="varchar" MaxLength="50" />
+    <Property Name="Active" Type="bit" />
+  </EntityType>
+  <EntityType Name="SlideShow">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" MaxLength="150" />
+    <Property Name="Image" Type="varchar" MaxLength="255" />
+    <Property Name="Width" Type="int" />
+    <Property Name="Height" Type="int" />
+    <Property Name="Link" Type="varchar" MaxLength="255" />
+    <Property Name="Target" Type="varchar" MaxLength="10" />
+    <Property Name="Content" Type="ntext" />
+    <Property Name="Position" Type="smallint" />
+    <Property Name="Click" Type="int" />
+    <Property Name="Ord" Type="int" />
+    <Property Name="Active" Type="bit" Nullable="false" />
+    <Property Name="Lang" Type="varchar" MaxLength="5" />
+    <Property Name="Detail" Type="ntext" />
+    <Property Name="Title" Type="nvarchar" MaxLength="256" />
+    <Property Name="Description" Type="nvarchar" MaxLength="256" />
+    <Property Name="Keyword" Type="nvarchar" MaxLength="256" />
+    <Property Name="Image1" Type="nvarchar" MaxLength="256" />
+    <Property Name="Image2" Type="nvarchar" MaxLength="256" />
+    <Property Name="Image3" Type="nvarchar" MaxLength="256" />
+    <Property Name="Image4" Type="nvarchar" MaxLength="256" />
+    <Property Name="Image5" Type="nvarchar" MaxLength="256" />
+    <Property Name="Index" Type="int" />
+    <Property Name="Priority" Type="int" />
+    <Property Name="Tag" Type="nvarchar" MaxLength="150" />
+    <Property Name="NameEn" Type="nvarchar" MaxLength="200" />
+    <Property Name="ContentEn" Type="ntext" />
+    <Property Name="DetailEn" Type="ntext" />
+  </EntityType>
+  <EntityType Name="Support">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" MaxLength="256" />
+    <Property Name="Tel" Type="nvarchar" MaxLength="256" />
+    <Property Name="Type" Type="int" />
+    <Property Name="Nick" Type="varchar" MaxLength="128" />
+    <Property Name="Ord" Type="int" />
+    <Property Name="Active" Type="int" />
+    <Property Name="GroupSupportId" Type="int" />
+    <Property Name="Lang" Type="varchar" MaxLength="5" />
+    <Property Name="Location" Type="int" />
+  </EntityType>
+  <EntityType Name="Tax_ruler">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" MaxLength="100" />
+    <Property Name="Province" Type="nvarchar" MaxLength="500" />
+    <Property Name="Tax_pri" Type="int" />
+    <Property Name="Description" Type="ntext" />
+    <Property Name="File_tax" Type="nvarchar" MaxLength="500" />
+    <Property Name="Ord" Type="int" />
+    <Property Name="NameEn" Type="nvarchar" MaxLength="100" />
+    <Property Name="DescriptionEn" Type="ntext" />
+    <Property Name="Active" Type="bit" />
+  </EntityType>
+  <EntityType Name="TB_ThongKe">
+    <Key>
+      <PropertyRef Name="MaTB" />
+    </Key>
+    <Property Name="MaTB" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ThoiGian" Type="datetime" Nullable="false" />
+    <Property Name="SoTruyCap" Type="bigint" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Tintuc">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" MaxLength="500" />
+    <Property Name="Tag" Type="nvarchar" MaxLength="500" />
+    <Property Name="Ngaydang" Type="datetime" />
+    <Property Name="Tomtat" Type="nvarchar(max)" />
+    <Property Name="Noidung" Type="nvarchar(max)" />
+    <Property Name="Tacgia" Type="nvarchar" MaxLength="10" />
+    <Property Name="Luotxem" Type="int" />
+    <Property Name="Hinhanh" Type="nvarchar(max)" />
+    <Property Name="Title" Type="nvarchar(max)" />
+    <Property Name="Description" Type="nvarchar(max)" />
+    <Property Name="Keyword" Type="nvarchar(max)" />
+    <Property Name="Active" Type="bit" />
+    <Property Name="Ord" Type="int" />
+    <Property Name="Type" Type="int" />
+    <Property Name="Ngayxemganday" Type="datetime" />
+    <Property Name="lienkiettinh" Type="nvarchar" MaxLength="200" />
+    <Property Name="NameEn" Type="nvarchar" MaxLength="100" />
+    <Property Name="ContentEn" Type="ntext" />
+    <Property Name="DetailEn" Type="ntext" />
+    <Property Name="Nguon" Type="nvarchar" MaxLength="500" />
+  </EntityType>
+  <EntityType Name="Thanhvien">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Taikhoan" Type="nvarchar" MaxLength="200" />
+    <Property Name="Matkhau" Type="nvarchar" MaxLength="200" />
+    <Property Name="Hoten" Type="nvarchar" MaxLength="200" />
+    <Property Name="Ngaysinh" Type="datetime" />
+    <Property Name="Gioitinh" Type="nvarchar" MaxLength="200" />
+    <Property Name="Diachi" Type="nvarchar" MaxLength="200" />
+    <Property Name="SDT" Type="nvarchar" MaxLength="200" />
+    <Property Name="Email" Type="nvarchar" MaxLength="200" />
+    <Property Name="Actice" Type="bit" />
+    <Property Name="thutu" Type="int" />
+    <Property Name="CreateDate" Type="datetime" />
+  </EntityType>
+  <EntityType Name="Thuonghieu">
+    <Key>
+      <PropertyRef Name="IDthuonghieu" />
+    </Key>
+    <Property Name="IDthuonghieu" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Tenthuonghieu" Type="nvarchar" MaxLength="100" />
+    <Property Name="Logo" Type="nvarchar" MaxLength="500" />
+    <Property Name="Url" Type="nvarchar" MaxLength="500" />
+    <Property Name="Active" Type="bit" />
+    <Property Name="Vitri" Type="int" />
+    <Property Name="Lienkettinh" Type="nvarchar" MaxLength="500" />
+    <Property Name="mota" Type="nvarchar(max)" />
+    <Property Name="Lang" Type="nchar" MaxLength="10" />
+    <Property Name="Tenthuonghieu_En" Type="nvarchar" MaxLength="100" />
+    <Property Name="mota_En" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="Url_thanhtoan">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="Address" Type="nvarchar" MaxLength="500" />
+    <Property Name="PhoneNumber" Type="varchar" MaxLength="50" />
+    <Property Name="Fax" Type="varchar" MaxLength="50" />
+    <Property Name="vitri" Type="int" />
+  </EntityType>
+  <EntityType Name="User">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" MaxLength="256" />
+    <Property Name="Username" Type="varchar" MaxLength="64" />
+    <Property Name="Password" Type="varchar" MaxLength="64" />
+    <Property Name="Level" Type="varchar" MaxLength="50" />
+    <Property Name="Admin" Type="int" />
+    <Property Name="Ord" Type="int" />
+    <Property Name="Active" Type="int" />
+    <Property Name="Role" Type="nvarchar" MaxLength="200" />
+  </EntityType>
+  <Association Name="FK_Company_Province">
+    <End Role="Province" Type="Self.Province" Multiplicity="0..1" />
+    <End Role="Company" Type="Self.Company" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Province">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Company">
+        <PropertyRef Name="ProvinceId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Shop_Company">
+    <End Role="Company" Type="Self.Company" Multiplicity="0..1" />
+    <End Role="Shop" Type="Self.Shop" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Company">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="Shop">
+        <PropertyRef Name="CompanyId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbBill_customers_tbCUSTOMERS">
+    <End Role="Custumers" Type="Self.Custumers" Multiplicity="0..1" />
+    <End Role="Bill_customers" Type="Self.Bill_customers" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Custumers">
+        <PropertyRef Name="iusid" />
+      </Principal>
+      <Dependent Role="Bill_customers">
+        <PropertyRef Name="userid" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbBilldetail_tbBill_customers">
+    <End Role="Bill_customers" Type="Self.Bill_customers" Multiplicity="0..1" />
+    <End Role="Billdetail" Type="Self.Billdetail" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Bill_customers">
+        <PropertyRef Name="billid" />
+      </Principal>
+      <Dependent Role="Billdetail">
+        <PropertyRef Name="bilid" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FRK_Document_MemberId">
+    <End Role="Member" Type="Self.Member" Multiplicity="0..1" />
+    <End Role="Document" Type="Self.Document" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Member">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Document">
+        <PropertyRef Name="MemberId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FRK_Document_TypeId">
+    <End Role="DocumentType" Type="Self.DocumentType" Multiplicity="0..1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="Document" Type="Self.Document" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="DocumentType">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Document">
+        <PropertyRef Name="TypeId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FRK_Library_GroupLibraryId">
+    <End Role="GroupLibrary" Type="Self.GroupLibrary" Multiplicity="0..1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="Library" Type="Self.Library" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="GroupLibrary">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Library">
+        <PropertyRef Name="GroupLibraryId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FRK_Library_MemberId">
+    <End Role="Member" Type="Self.Member" Multiplicity="0..1" />
+    <End Role="Library" Type="Self.Library" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Member">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Library">
+        <PropertyRef Name="MemberId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FRK_Member_GroupMemberId">
+    <End Role="GroupMember" Type="Self.GroupMember" Multiplicity="0..1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="Member" Type="Self.Member" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="GroupMember">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Member">
+        <PropertyRef Name="GroupMemberId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FRK_Support_GroupSupportId">
+    <End Role="GroupSupport" Type="Self.GroupSupport" Multiplicity="0..1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="Support" Type="Self.Support" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="GroupSupport">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Support">
+        <PropertyRef Name="GroupSupportId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Function Name="Asp_Excell_GetBy_100DHMoiNhat" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="Asp_Excell_GetBy_10DHMoiNhat" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="Asp_Excell_GetBy_50DHMoiNhat" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="Asp_Excell_GetBy_5DHMoiNhat" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="Asp_Excell_GetBy_Chuaduyet" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="Asp_Excell_GetBy_duyet" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="Asp_Excell_GetBy_Today" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="Asp_Excell_GetByAll" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="Donhang_Max" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="Get_DientuCauhinh" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="Get_DientuThuoctinh" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="Getmau" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="IdProduct" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="Sanpham_Max" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="spThongKe_Edit" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <EntityContainer Name="PNKTemplate_demoModelStoreContainer">
+    <EntitySet Name="Advertise" EntityType="Self.Advertise" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Bill_customers" EntityType="Self.Bill_customers" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Billdetail" EntityType="Self.Billdetail" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="CommentProduc" EntityType="Self.CommentProduc" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Company" EntityType="Self.Company" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Config" EntityType="Self.Config" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Contact" EntityType="Self.Contact" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="CTdonhang" EntityType="Self.CTdonhang" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Custumers" EntityType="Self.Custumers" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Chitiethinh" EntityType="Self.Chitiethinh" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="DientuCapLoaithuoctinh" EntityType="Self.DientuCapLoaithuoctinh" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="DientuChitiethinh" EntityType="Self.DientuChitiethinh" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="DientuDongSp" EntityType="Self.DientuDongSp" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="DientuDungluong" EntityType="Self.DientuDungluong" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="DientuInfo" EntityType="Self.DientuInfo" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="DientuLoaithuoctinh" EntityType="Self.DientuLoaithuoctinh" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="DientuMathang" EntityType="Self.DientuMathang" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="DientuMenuSitemathang" EntityType="Self.DientuMenuSitemathang" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="DientuNsx" EntityType="Self.DientuNsx" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="DientuTinhnang" EntityType="Self.DientuTinhnang" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="DientuThuoctinh" EntityType="Self.DientuThuoctinh" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Document" EntityType="Self.Document" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="DocumentType" EntityType="Self.DocumentType" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Donhang" EntityType="Self.Donhang" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="EmailRegisters" EntityType="Self.EmailRegisters" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Even_Date" EntityType="Self.Even_Date" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="GroupLibrary" EntityType="Self.GroupLibrary" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="GroupMember" EntityType="Self.GroupMember" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="GroupMenuSanPham" EntityType="Self.GroupMenuSanPham" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="GroupNewMenuSanPhamDetail" EntityType="Self.GroupNewMenuSanPhamDetail" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="GroupNews" EntityType="Self.GroupNews" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="GroupNewsNewsDetail" EntityType="Self.GroupNewsNewsDetail" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="GroupSupport" EntityType="Self.GroupSupport" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Html" EntityType="Self.Html" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="information" EntityType="Self.information" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Kichthuoc" EntityType="Self.Kichthuoc" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Khoanggia" EntityType="Self.Khoanggia" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Language" EntityType="Self.Language" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Library" EntityType="Self.Library" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="MacodeKhuyenMai" EntityType="Self.MacodeKhuyenMai" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Mausac" EntityType="Self.Mausac" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Member" EntityType="Self.Member" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Nuocsanxuat" EntityType="Self.Nuocsanxuat" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Province" EntityType="Self.Province" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="quantity_purchased" EntityType="Self.quantity_purchased" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="service_charge" EntityType="Self.service_charge" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Shop" EntityType="Self.Shop" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="SlideShow" EntityType="Self.SlideShow" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Support" EntityType="Self.Support" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Tax_ruler" EntityType="Self.Tax_ruler" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TB_ThongKe" EntityType="Self.TB_ThongKe" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Tintuc" EntityType="Self.Tintuc" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Thanhvien" EntityType="Self.Thanhvien" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Thuonghieu" EntityType="Self.Thuonghieu" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Url_thanhtoan" EntityType="Self.Url_thanhtoan" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="User" EntityType="Self.User" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK_Company_Province" Association="Self.FK_Company_Province">
+      <End Role="Province" EntitySet="Province" />
+      <End Role="Company" EntitySet="Company" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Shop_Company" Association="Self.FK_Shop_Company">
+      <End Role="Company" EntitySet="Company" />
+      <End Role="Shop" EntitySet="Shop" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbBill_customers_tbCUSTOMERS" Association="Self.FK_tbBill_customers_tbCUSTOMERS">
+      <End Role="Custumers" EntitySet="Custumers" />
+      <End Role="Bill_customers" EntitySet="Bill_customers" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbBilldetail_tbBill_customers" Association="Self.FK_tbBilldetail_tbBill_customers">
+      <End Role="Bill_customers" EntitySet="Bill_customers" />
+      <End Role="Billdetail" EntitySet="Billdetail" />
+    </AssociationSet>
+    <AssociationSet Name="FRK_Document_MemberId" Association="Self.FRK_Document_MemberId">
+      <End Role="Member" EntitySet="Member" />
+      <End Role="Document" EntitySet="Document" />
+    </AssociationSet>
+    <AssociationSet Name="FRK_Document_TypeId" Association="Self.FRK_Document_TypeId">
+      <End Role="DocumentType" EntitySet="DocumentType" />
+      <End Role="Document" EntitySet="Document" />
+    </AssociationSet>
+    <AssociationSet Name="FRK_Library_GroupLibraryId" Association="Self.FRK_Library_GroupLibraryId">
+      <End Role="GroupLibrary" EntitySet="GroupLibrary" />
+      <End Role="Library" EntitySet="Library" />
+    </AssociationSet>
+    <AssociationSet Name="FRK_Library_MemberId" Association="Self.FRK_Library_MemberId">
+      <End Role="Member" EntitySet="Member" />
+      <End Role="Library" EntitySet="Library" />
+    </AssociationSet>
+    <AssociationSet Name="FRK_Member_GroupMemberId" Association="Self.FRK_Member_GroupMemberId">
+      <End Role="GroupMember" EntitySet="GroupMember" />
+      <End Role="Member" EntitySet="Member" />
+    </AssociationSet>
+    <AssociationSet Name="FRK_Support_GroupSupportId" Association="Self.FRK_Support_GroupSupportId">
+      <End Role="GroupSupport" EntitySet="GroupSupport" />
+      <End Role="Support" EntitySet="Support" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

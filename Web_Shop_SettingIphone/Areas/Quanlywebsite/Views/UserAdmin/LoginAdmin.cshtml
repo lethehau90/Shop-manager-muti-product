@@ -1,0 +1,203 @@
+﻿
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Login</title>
+    <link rel="shortcut icon" href="/Images/IconSytem.ico" type="image/x-icon" />
+    <!--style edit-->
+    <link href="~/Areas/Quanlywebsite/Style/Css.css" rel="stylesheet" />
+    <!-- jQuery -->
+    <script src="/Areas/Quanlywebsite/vendor/jquery/jquery.min.js"></script>
+    <!-- Bootstrap Core CSS -->
+    <link href="/Areas/Quanlywebsite/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <!-- MetisMenu CSS -->
+    <link href="/Areas/Quanlywebsite/vendor/metisMenu/metisMenu.min.css" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link href="/Areas/Quanlywebsite/dist/css/sb-admin-2.css" rel="stylesheet">
+    <!-- Custom Fonts -->
+    <link href="/Areas/Quanlywebsite/vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <!--jeasyui-->
+    <link href="/Areas/Quanlywebsite/vendor/jeasyui/easyui.css" rel="stylesheet" />
+    <link href="/Areas/Quanlywebsite/vendor/jeasyui/icon.css" rel="stylesheet" />
+    <link href="/Areas/Quanlywebsite/vendor/jeasyui/CssEdit.css" rel="stylesheet" />
+</head>
+
+<body>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4 col-md-offset-4">
+                <div class="login-panel panel panel-default">
+                    <div class="panel-heading">
+                        <h3 class="panel-title">
+                       <i class="fa fa-users"></i> Vui lòng đăng nhập hệ thống
+                        </h3>
+                    </div>
+                    <div class="panel-body">
+                        <form role="form">
+                            <fieldset>
+                                <div class="form-group">
+                                    <input class="form-control"  placeholder="Tên đăng nhập" name="username" type="text">
+                                </div>
+                                <div class="form-group">
+                                    <input class="form-control" placeholder="Password" name="password" type="password" value="">
+                                </div>
+                                <div class="checkbox">
+                                    <label>
+                                        <input id="checkbox" name="remember" checked type="checkbox" >Remember Me
+                                    </label>
+                                </div>
+                                <!-- Change this to a button or input when using this as a form -->
+                                <a href="#" class="btn btn-lg btn-success btn-block" id="btlogin">Đăng nhập</a>
+                            </fieldset>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- modal loading -->
+    <div class="modal"></div>
+    <!-- Bootstrap Core JavaScript -->
+    <script src="/Areas/Quanlywebsite/vendor/bootstrap/js/bootstrap.min.js"></script>
+
+    <!-- Metis Menu Plugin JavaScript -->
+    <script src="/Areas/Quanlywebsite/vendor/metisMenu/metisMenu.min.js"></script>
+
+    <!-- Custom Theme JavaScript -->
+    <script src="/Areas/Quanlywebsite/dist/js/sb-admin-2.js"></script>
+    <!--alter toast-->
+    <link href="/Areas/Quanlywebsite/vendor/AlertToast/jquery.toast.css" rel="stylesheet" />
+    <script src="/Areas/Quanlywebsite/vendor/AlertToast/jquery.toast.js"></script>
+    <!--jeasyui-->
+    <script src="/Areas/Quanlywebsite/vendor/jeasyui/jquery.easyui.min.js"></script>
+    <!-libary--->
+    <script src="/Areas/Quanlywebsite/JavaScrip/libary.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+
+            $('#checkbox').val("0");
+
+            $('#checkbox').click(function () {
+
+                var checkbox = $('#checkbox').val();
+                if (checkbox == "0")
+                {
+                    $('#checkbox').prop('checked', true); //checkbox
+                    $('#checkbox').val("1");
+                }
+                else
+                {
+                    $('#checkbox').prop('checked', false); // will check the checkbox with id check1
+                    $('#checkbox').val("0");
+                }
+
+               
+              //  return false;
+
+            });
+           
+
+            var flag = false;
+            $("#btlogin").click(function () {
+                var username = $("input[name='username']").val();
+                var Password = $("input[name='password']").val();
+                
+              
+                if (Password == "") {
+                    $.toast({
+                        heading: 'Thông báo',
+                        text: 'Vui lòng nhập mật khẩu',
+                        icon: 'info',
+                        position: 'top-center',
+                        stack: false
+                    });
+                    flag = false;
+                }
+                if (username == "") {
+                    $.toast({
+                        heading: 'Thông báo',
+                        text: 'Vui lòng nhập tên đăng nhập',
+                        icon: 'info',
+                        position: 'top-center',
+                        stack: false
+                    });
+                    flag = false;
+                }
+                else
+                {
+                    GetLogin();
+                }
+                return flag;
+            });
+        });
+
+        //#region Login
+
+        function GetLogin() {
+
+            var userName = $("input[name='username']").val();
+            var pw = $("input[name='password']").val();
+            var checkbox = $('#checkbox').val();
+
+            if (userName != "" && pw != "") {
+                //Loading
+                $("body").addClass("loading");
+                setTimeout(function () {
+                    var data = new Object();
+                    data.userName = userName;
+                    data.pw = pw;
+                    data.checkbox = checkbox;
+
+                    $.ajax({
+                        url: "/Quanlywebsite/UserAdmin/GetLogin",
+                        type: "POST",
+                        dataType: "json",
+                        data: data,
+                        cache: false,
+                        success: function (data) {
+                            if (data != "") {
+                                if (data == "-1") {
+                                    alert_Error_Login();
+
+                                    $("input[name='password']").val("");
+                                }
+                                else {
+                                    location.href = data;
+                                }
+                            }
+                        },
+                        error: function (x, e) {
+                            alert_Error_Login();
+                        }
+                    });
+
+                    $("body").removeClass("loading");
+                }, 2000);
+
+            }
+        }
+
+        //#endregion
+
+        //#region Service
+
+        function FiltercboServiceType() {
+            return { serviceTypeID: $("#cboServiceType").val() };
+        }
+
+        //#endregion
+
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,31 @@
+﻿@model IList<Web_Shop_SettingIphone.Models.Entity.DientuMathang>
+@if (Model.Count > 0)
+{
+    <div class="detail-muon-mua">
+        <h3 class="detail-title">Có thể bạn muốn mua</h3>
+        @foreach (var item in Model)
+        {
+            double Giaban = Convert.ToDouble((Html.Action("_resurtPricebanmain", "ScreenProduct", new { tag = item.Tag }).ToHtmlString()));
+
+            <div class="list-product-widget">
+                <div class="verdes">
+                    <div class="verdes-element img">
+                        <div class="img-container">
+                            <figure data-feedback="fb:likes, fb:comments">
+                                <img src="@Html.Action("_resurtImagesmain", "ScreenProduct", new { tag = item.Tag })" class="img-responsive" alt="@item.Tenhang">
+                            </figure>
+                        </div>
+                    </div>
+                    <div class="verdes-element">
+                        <a href="/san-pham/@item.Cateprolevel3/@item.Tag" title="@item.Tenhang">
+                            <div class="name">@item.Tenhang</div>
+                            <div class="price">@string.Format("{0:0,0}", Giaban) (Vnđ) </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        }
+
+
+    </div>
+}

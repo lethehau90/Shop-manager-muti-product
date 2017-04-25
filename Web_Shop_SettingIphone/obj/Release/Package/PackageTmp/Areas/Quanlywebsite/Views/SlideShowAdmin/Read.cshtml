@@ -1,0 +1,36 @@
+﻿@{
+    ViewBag.Title = "Trình chiếu SlideShow";
+    Layout = "~/Areas/Quanlywebsite/Views/Shared/_LayoutAdmin_List.cshtml";
+}
+
+<div class="row">
+    <div class="col-lg-12">
+        <h1 class="page-header">Trình chiếu SlideShow</h1>
+    </div>
+    <!-- /.col-lg-12 -->
+</div>
+<div class="row">
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <div class="row">
+                <div class="col-lg-6 col-md-6 col-sm-6">
+                    <span class="listgroup">
+                        <i class="fa fa-user"> </i> danh sách trình chiếu ảnh SlideShow
+                    </span>
+                </div>
+                <div class="col-lg-6 col-md-6 col-sm-6 text-right" id="divright">
+                    <input id="box1" type="checkbox" onclick="toggle(this)" />
+                    <label for="box1">Tất cả/bỏ chọn</label>
+                    <button type="button" id="Deleteall" class="btn btn-primary"><i class="fa fa-trash-o"></i> Xóa đã chọn</button>
+                    <button type="button" id="Insert" class="btn btn-primary"><i class="fa  fa-plus-square"></i> Thêm dữ liệu</button>
+                </div>
+            </div>
+        </div>
+        <!-- /.panel-heading -->
+        @{ Html.RenderPartial("_AjaxRead"); }
+
+        <!-- /.panel-body -->
+    </div>
+    <!-- /.col-lg-12 -->
+</div>
+

@@ -1,0 +1,28 @@
+﻿/* Croll to top */
+.toTop {
+    width: 46px; /* Chiều rộng của nút */
+    height: 46px;
+    display: none;
+    position: fixed;
+    background: url(/images/toTop.png) 0 0 no-repeat; /* đặt ảnh nền cho nút (là 1 cái hình mũi tên lên chẳng hạn) */
+    cursor: pointer;
+    top: 91%;
+    right: 10px;
+    opacity: 0.5; /* độ mờ của nút khi chưa di chuột vào */
+    -ms-filter: "alpha(opacity=50)";
+    filter: alpha(opacity=50);
+    -moz-opacity: 0.5;
+    -khtml-opacity: 0.5;
+    z-index: 999;
+}
+
+    .toTop:hover, .toTop:focus {
+        transition: 0.2s; /* Tạo độ trễ bằng css3 */
+        -moz-transition: 0.2s;
+        -webkit-transition: 0.2s;
+        opacity: 1; /* Hiển thị hoàn toàn khi di chuột lên */
+        -ms-filter: "alpha(opacity=100)";
+        filter: alpha(opacity=100);
+        -moz-opacity: 1;
+        -khtml-opacity: 1;
+    }

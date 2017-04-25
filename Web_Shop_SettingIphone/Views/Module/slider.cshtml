@@ -1,0 +1,28 @@
+﻿@model IList<Web_Shop_SettingIphone.Models.Entity.SlideShow>
+@if (Model.Count > 0)
+{
+    <section class="slider">
+        <!-- start slider_content -->
+        <article class="slider_content">
+            <form role="search" method="POST" class="woocommerce-product-search" action="/tim-kiem">
+                @Html.TextBox("key", ViewBag.CurrentFilter as string, new { id = "searchword", name = "search_block_form", value = "Search", @class = "input-text", @placeholder = "nhập thông tin tìm kiếm" })
+                @*<input id="txtsearchproduct" type="search" value="" name="timkiem" placeholder="nhập thông tin tìm kiếm">*@
+                <button id="searchproduct" type="submit"><img src="/images/Product/magnifying.png"></button>
+            </form>
+
+            <div class="clear10"></div>
+            @{Html.RenderAction("SliderText", "Module");}
+        </article>
+        <!-- end slider_content -->
+        <!-- start slider-img -->
+        <div class="slider-img">
+            <figure>
+                @foreach (var item in Model)
+                {
+                    <img src="@item.Image" alt="@item.Name">
+                }
+            </figure>
+        </div>
+        <!-- end slider-img -->
+    </section>
+}

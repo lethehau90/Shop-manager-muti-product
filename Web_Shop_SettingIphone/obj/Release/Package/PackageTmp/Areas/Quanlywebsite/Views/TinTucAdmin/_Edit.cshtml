@@ -1,0 +1,211 @@
+﻿<div class="panel-heading" id="update_paner">
+    <div class="portlet box green">
+        <div class="portlet-title">
+            <div class="caption">
+                <header>
+                    <i class="fa fa-user"></i>  Cập nhật danh mục <span class="Editcatelog"></span>
+                </header>
+            </div>
+            <div class="tools">
+                <a href="javascript:;" class="collapse"> </a> <!--collapse-->
+
+            </div>
+        </div>
+        <div class="portlet-body flip-scroll">
+            <!-- /.panel-heading -->
+            <div class="panel-body">
+                <!-- Nav tabs -->
+                <ul class="nav nav-tabs">
+                    <li class="active">
+                        <a href="#Tintuctieude" data-toggle="tab">Tiêu đề Tin</a>
+                    </li>
+
+                    <li>
+                        <a href="#Tintucnoidung" data-toggle="tab">Nội dung Bài đăng</a>
+                    </li>
+
+                    <li>
+                        <a href="#Tintucthietlap" data-toggle="tab">Thiết lập</a>
+                    </li>
+
+                    <li>
+                        <a href="#TintucSeo" data-toggle="tab">Seo</a>
+                    </li>
+
+                    <li>
+                        <a href="#Tintuchinhanh" data-toggle="tab">Hình ảnh</a>
+                    </li>
+                </ul>
+                <!-- Tab panes -->
+                <div class="tab-content">
+                    <div class="tab-pane fade in active" id="Tintuctieude">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="form-group hidden">
+                                    <label>Id</label>
+                                    <input class="form-group easyui-validatebox tb" id="TxtId" data-options="required:true" type="text" placeholder="">
+                                </div>
+                                <div class="form-group">
+                                    <label>Ngôn ngữ Tiếng việt</label>
+                                    <input class="form-group easyui-validatebox tb" id="TxtName" data-options="required:true" type="text" placeholder="">
+                                </div>
+                                <div class="form-group hidden">
+                                    <label>Ngôn ngữ Tiếng Anh</label>
+                                    <input class="form-group easyui-validatebox tb" id="TxtNameEn" data-options="required:true" type="text" placeholder="">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="tab-pane fade" id="Tintucnoidung">
+                        <div class="row">
+                            <div class="col-lg-12 col-md-12 col-sm-12">
+                                <div class="form-group">
+                                    <label class="TxtTomtat">Nội dung mô tả tiếng việt</label>
+                                    <textarea class="form-control" id="TxtTomtat" rows="3"></textarea>
+                                </div>
+                                <div class="form-group">
+                                    <label class="TxtNoidung">Nội dung chi tiết tiếng việt</label>
+                                    <textarea class="form-control" id="TxtNoidung" rows="3"></textarea>
+                                </div>
+
+                                <div class="form-group hidden">
+                                    <label class="">Nội dung mô tả tiếng anh</label>
+                                    <textarea class="form-control" id="TxtContentEn" rows="3"></textarea>
+                                </div>
+                                <div class="form-group hidden">
+                                    <label>Nội dung chi tiết tiếng anh</label>
+                                    <textarea class="form-control" id="TxtDetailEn" rows="3"></textarea>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div class="tab-pane fade" id="Tintucthietlap">
+                        <div class="row">
+                            <div class="col-md-3">
+                                <div class="form-group">
+                                    <label>Chọn kiểu loại</label>
+                                    <select class="form-control" name="Type" id="SelectType">
+                                        <option value="1" selected="selected">Tin tức</option>
+                                        <option value="2">Hỗ trợ</option>
+                                    </select>
+                                </div>
+
+                                <div class="form-group">
+                                    <label class="TxtOrd">Sắp xếp</label> <br />
+                                    <input class="form-group" type="number" id="TxtOrd" value="1" min="1">
+                                </div>
+
+                                <div class="form-group hidden">
+                                    <label>Nguồn bài viết</label>
+                                    <input class="form-group easyui-validatebox tb" id="TxtNguon" data-options="required:true" type="text" placeholder="">
+                                </div>
+
+                                <div class="form-group">
+                                    <label class="checkbox-inline">Kích hoạt </label>
+                                    <input id="CKActive" class="checkbox-inline" type="checkbox" checked="checked" value="1">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="tab-pane fade" id="TintucSeo">
+                        <div class="row">
+                            <div class="col-lg-12 col-md-12 col-sm-12">
+                                <div class="form-group">
+                                    <label>Mô tả từ khóa</label>
+                                    <textarea class="form-control easyui-validatebox tb" id="TxtDescription" data-options="required:true" rows="3"></textarea>
+                                </div>
+                                <div class="form-group">
+                                    <label>Từ khóa nội dung</label>
+                                    <textarea class="form-control easyui-validatebox tb" id="TxtKeyword" data-options="prompt:'Nhập từ khóa người dùng',required:true" rows="3"></textarea>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div class="tab-pane fade" id="Tintuchinhanh">
+
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="form-group">
+                                    <label>Up load hình ảnh <span class="Txtimages"></span></label>
+                                    <div class="form-group">
+                                        <div class="col-md-12 pading-left-Select">
+                                            <div class="col-md-3">
+                                                <input class="form-group-sm easyui-validatebox tb" id="TxtImage" data-options=" prompt:'hình ảnh',required:true" type="text" placeholder="">
+                                            </div>
+                                            <div class="col-md-2">
+                                                <span class="form-group">
+                                                    <button type="button" class="btn btn-white" id="SelectImage">Chọn Ảnh!</button>
+                                                </span>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <img class="ShowImgZoom img-responsive" src="/images/no-image.jpg" id="imgShowScren">
+                                </div>
+                            </div>
+                        </div>
+                        
+                    </div>
+
+                </div>
+                <div class="clear-fix"></div>
+                <div class="padding-form">
+                    <div class="form-group">
+                        <button type="submit" id="Save" class="btn btn-default"><i class="fa fa-save"></i> Lưu Lại</button>
+                        <button type="submit" id="Cancel" class="btn btn-default"><i class="fa fa-times-circle"></i> Hủy bỏ</button>
+                    </div>
+                </div>
+            </div>
+            <!-- /.panel-body -->
+
+        </div>
+    </div>
+
+</div>
+
+<!--jquery action-->
+<script src="/Areas/Quanlywebsite/JavaScrip/TinTuc/Create.js"></script>
+<script src="/Areas/Quanlywebsite/JavaScrip/TinTuc/Update.js"></script>
+<script src="/Areas/Quanlywebsite/JavaScrip/TinTuc/read.js"></script>
+<script src="/Areas/Quanlywebsite/JavaScrip/TinTuc/Copy.js"></script>
+<script src="/Areas/Quanlywebsite/JavaScrip/TinTuc/Active.js"></script>
+<script src="/Areas/Quanlywebsite/JavaScrip/TinTuc/Delete.js"></script>
+<script src="/Areas/Quanlywebsite/JavaScrip/TinTuc/Cancel.js"></script>
+<script src="/Areas/Quanlywebsite/JavaScrip/TinTuc/Save.js"></script>
+<script src="/Areas/Quanlywebsite/JavaScrip/TinTuc/buttonload.js"></script>
+
+<!--javascrip images ckfinder  -->
+<script language="javascript" type="text/javascript">
+    $(function () {
+        $("#SelectImage").click(function () {
+            var finder = new CKFinder();
+            finder.selectActionFunction = function (fileUrl) {
+                $("#TxtImage").val(fileUrl);
+            };
+            finder.popup();
+        });
+    });
+</script>
+
+<!--javascrip textbox ckeditor  -->
+<script type="text/javascript">
+    var editor;
+    function createEditor(languageCode, id) {
+        var editor = CKEDITOR.replace(id, {
+            language: languageCode
+        });
+    }
+    $(function () {
+        createEditor('vi', 'TxtNoidung'); 
+        createEditor('vi', 'TxtDetailEn');
+    });
+
+</script>

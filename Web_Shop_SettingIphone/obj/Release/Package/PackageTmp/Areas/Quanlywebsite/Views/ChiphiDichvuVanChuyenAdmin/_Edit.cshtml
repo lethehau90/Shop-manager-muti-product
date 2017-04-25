@@ -1,0 +1,85 @@
+﻿<div class="panel-heading" id="update_paner">
+    <div class="portlet box green">
+        <div class="portlet-title">
+            <div class="caption">
+                <header>
+                    <i class="fa fa-user"></i> Cập nhật Chi Phí Dịch Vụ Vận Chuyển <span class="Editcatelog"></span>
+                </header>
+            </div>
+            <div class="tools">
+                <a href="javascript:;" class="collapse"> </a> <!--collapse-->
+            </div>
+        </div>
+        <div class="portlet-body flip-scroll">
+            <!-- /.panel-heading -->
+            <div class="panel-body">
+                <!-- Nav tabs -->
+                <ul class="nav nav-tabs">
+                    <li class="active">
+                        <a href="#AdName" data-toggle="tab">Thông tin</a>
+                    </li>
+                </ul>
+                <!-- Tab panes -->
+                <div class="tab-content">
+
+                    <div class="tab-pane fade in active" id="AdName">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="form-group hidden">
+                                    <label>ID</label>
+                                    <input class="form-group" id="TxtId" placeholder="">
+                                </div>
+                                <div class="form-group">
+                                    <label>Tên Chi Phí Dịch Vụ Vận Chuyển (Tiếng việt)</label>
+                                    <input class="form-group easyui-validatebox tb" id="TxtName" data-options="prompt:'Nhập tên Chi Phí Dịch Vụ Vận Chuyển tiếng việt',required:true" type="text" placeholder="">
+                                </div>
+                                <div class="form-group">
+                                    <label>Tên Chi Phí Dịch Vụ Vận Chuyển (Tiếng Anh)</label>
+                                    <input class="form-group easyui-validatebox tb" id="TxtNameEn" data-options="prompt:'Nhập tên Chi Phí Dịch Vụ Vận Chuyển tiếng anh',required:true" type="text" placeholder="">
+                                </div>
+                                <div role="form">
+                                    <label class="Txtgia">Chi phí dịch vụ</label> <br />
+                                    <div class="form-group input-group col-lg-4">
+                                        <span class="input-group-addon">VNĐ</span>
+                                        <input type="text" class="form-group  easyui-validatebox tb" id="TxtGia" onkeypress="return isNumberKey(event);">
+                                        <span class="input-group-addon">.00</span>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label class="TxtOrd">Sắp xếp</label> <br />
+                                    <input class="form-group" type="number" id="TxtOrd" value="1" min="1">
+                                </div>
+                                <div class="form-group">
+                                    <label class="checkbox-inline">Kích hoạt </label>
+                                    <input id="CKActive" class="checkbox-inline" type="checkbox" checked="checked" value="1">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                 </div>
+                    <div class="clear-fix"></div>
+                    <div class="padding-form">
+                            <div class="form-group">
+                                <button type="submit" id="Save" class="btn btn-default"><i class="fa fa-save"></i> Lưu Lại</button>
+                                <button type="submit" id="Cancel" class="btn btn-default"><i class="fa fa-times-circle"></i> Hủy bỏ</button>
+                            </div>
+                   </div>
+            </div>
+            <!-- /.panel-body -->
+
+        </div>
+    </div>
+
+</div>
+
+<!--jquery action-->
+<script src="/Areas/Quanlywebsite/JavaScrip/Sanpham/Dactinh/ChiphiDichvuVanChuyen/Create.js"></script>
+<script src="/Areas/Quanlywebsite/JavaScrip/Sanpham/Dactinh/ChiphiDichvuVanChuyen/Update.js"></script>
+<script src="/Areas/Quanlywebsite/JavaScrip/Sanpham/Dactinh/ChiphiDichvuVanChuyen/read.js"></script>
+<script src="/Areas/Quanlywebsite/JavaScrip/Sanpham/Dactinh/ChiphiDichvuVanChuyen/Active.js"></script>
+<script src="/Areas/Quanlywebsite/JavaScrip/Sanpham/Dactinh/ChiphiDichvuVanChuyen/Delete.js"></script>
+<script src="/Areas/Quanlywebsite/JavaScrip/Sanpham/Dactinh/ChiphiDichvuVanChuyen/Cancel.js"></script>
+<script src="/Areas/Quanlywebsite/JavaScrip/Sanpham/Dactinh/ChiphiDichvuVanChuyen/Save.js"></script>
+<!--javascrip images ckfinder  -->
+
+

@@ -1,0 +1,140 @@
+﻿@{
+    ViewBag.Title = "Chỉnh Sửa Quản lý Sản Phẩm Cho Danh Mục";
+    Layout = "~/Areas/Quanlywebsite/Views/Shared/_LayoutAdmin_List.cshtml";
+}
+@model Web_Shop_SettingIphone.Models.Data.Donhang_Model
+<section class="panel">
+    <header class="panel-heading">
+        Projects Details
+        <span class="pull-right">
+            <button type="button" id="loading-btn" class="btn btn-warning btn-xs"><i class="fa fa-refresh"></i> Refresh</button>
+        </span>
+    </header>
+
+</section>
+
+<div class="row">
+    <div class="col-lg-12">
+        <div class="alert alert-success fade in">
+            <button data-dismiss="alert" class="close close-sm" type="button">
+                <i class="fa fa-times"></i>
+            </button>
+            <div style="height: auto; color: Red; font-weight: bold">
+                @Html.ValidationSummary()
+
+                @*  @ViewBag.view*@
+            </div>
+        </div>
+    </div>
+
+    <div class="col-md-12">
+        <section class="panel">
+            <header class="panel-heading">
+                <span style="color: red">   Lưa ý Phần Báo Lỗi Màu Đỏ Phải Được Nhập</span>
+            </header>
+            <div class="panel-body">
+                <div class="form">
+                    @using (Html.BeginForm("Edit_donhang", "Donhangadmin", FormMethod.Post, new { @class = "cmxform form-horizontal tasi-form", @novalidate = "novalidate", @id = "ss-form", /* @onsubmit="submitted=true;", @target="hidden_iframe"*/}))
+                    {
+                        <div style="display :none ">@Html.TextBoxFor(model => model.IDhd, new { @class = " form-control" })</div>
+                        <div class="form-group ">
+                            <label class="control-label col-lg-2" for="firstname">Name</label>
+                            <div class="col-lg-4"> @Html.TextBoxFor(model => model.Hoten, new { @class = " form-control" }) </div>
+                            <label class="control-label col-lg-2" for="firstname">Xưng hô</label>
+                            <div class="col-lg-2"> @Html.TextBoxFor(model => model.Xungho, new { @class = " form-control" }) </div>
+                        </div>
+                        <div class="form-group ">
+                            <label class="control-label col-lg-2" for="firstname">Địa Chỉ Khách: </label>
+                            <div class="col-lg-10"> @Html.TextBoxFor(model => model.Diachi, new { @class = " form-control" }) </div> @*
+                                <label class="control-label col-lg-1" for="firstname">Huyện</label>
+                                <div class="col-lg-3"> @Html.TextBoxFor(model => model.Huyen , new {@class = " form-control"}) </div>
+                                <label class="control-label col-lg-1" for="firstname">Tỉnh</label>
+                                <div class="col-lg-3"> @Html.TextBoxFor(model => model.Tinh , new {@class = " form-control"}) </div>*@
+                        </div>
+                        <div class="form-group ">
+                            <label class="control-label col-lg-2" for="firstname">Mail</label>
+                            <div class="col-lg-4"> @Html.TextBoxFor(model => model.Mail, new { @class = " form-control" }) </div>
+                            <label class="control-label col-lg-2" for="firstname">Số điện thoại</label>
+                            <div class="col-lg-4"> @Html.TextBoxFor(model => model.SDT, new { @class = " form-control" }) </div>
+                        </div>
+                        <div class="form-group ">
+                            <label class="control-label col-lg-2" for="firstname">Ghi Chú</label>
+                            <div class="col-lg-4"> @Html.TextAreaFor(model => model.GhiChuKhac, new { @class = " form-control", @id = "TextAreaHtml" }) </div>
+                            @*<label class="control-label col-lg-2" for="firstname">Phí Giao Hàng: </label>*@
+                            @*<div class="col-lg-4"> @Html.TextBoxFor(model => model.Hinhthucgiaohang, new { @class = " form-control", }) </div>*@
+                        </div>
+                        
+                        <div class="form-group ">
+                            <label class="control-label col-lg-2" for="firstname">Tổng Tiền: </label>
+                            <div class="col-lg-4"> @* @Html.TextBoxFor(model => model.Tongtienhang, new {@class = " form-control",})*@ <span class="form-control">@string.Format("{0:0,000}", Model.Tongtienhang) VNĐ</span> </div>
+                        </div>
+
+                        <div class="form-group ">
+                            <label class="control-label col-lg-2 left" for="firstname">Đổi Thành Chữ: </label>
+                            <div class="col-lg-10"> @{ double bien = Convert.ToDouble(Model.Tongtienhang); string tien_vnd = Web_Shop_SettingIphone.Models.Command.VNCurrency.ToString(bien); } <span class="form-control">@tien_vnd</span> </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label col-lg-2">Ngày Liên Hệ</label>
+                            <div class="col-md-3 col-xs-11"> @Html.TextBoxFor(model => model.ngaydathang, new { @class = "form-control" }) </div>
+                        </div>
+                        <div class="form-group ">
+                            <label class="control-label col-lg-2" for="firstname">Đã Xem</label>
+                            <div class="col-lg-2">
+                                @Html.DropDownListFor(model => model.Duyet, new SelectListItem[] { new SelectListItem() { Selected = true, Text = "đã duyệt", Value = "1" }, new SelectListItem() { Text = "Chưa duyệt", Value = "0" }, }, new { @class = "form-control" })
+                                <label for="lastname" class="error"> @Html.ValidationMessageFor(model => model.Duyet)</label> @*
+                                    <input type="text" name="firstname" id="firstname" class=" form-control">*@
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="col-lg-offset-2 col-lg-10">
+                                <button type="submit" id="ss-submit" class="btn btn-danger">Lưu</button>
+                                <span class="btn btn-danger"><a href="@ViewBag.link">Trở về</a></span>
+                            </div>
+                        </div> }
+                </div>
+            </div>
+        </section>
+
+
+        @{Html.RenderAction("giohang_id", "Donhangadmin", new { id = Model.IDhd });}
+
+
+        <div class="panel-title" style="text-align: right; padding: 40px">
+
+            Tổng Tiền Hàng:    @String.Format("{0:0,00.0}", Session["tongtien"]) VNĐ
+
+        </div>
+
+    </div>
+</div>
+
+<script type="text/javascript">
+    //chon ngay thang
+    $(function () {
+        $("#ngaydathang").datepicker({
+            changeMonth: true,
+            changeYear: true,
+            minDate: -0, maxDate: "+12M +10D",
+            //   showOn: "button",
+            // buttonImage: "/images/calendar.png",
+            buttonImageOnly: true,
+            //  buttonText: "Select date"
+        });
+
+    });
+
+    $(function () {
+
+       // $("#ngaydathang").datepicker("option", "dateFormat", "dd/mm/yy");
+
+    });
+</script>
+<style type="text/css">
+    .btn-danger a {
+        color: white;
+    }
+
+        .btn-danger a:hover {
+            color: white;
+        }
+</style>

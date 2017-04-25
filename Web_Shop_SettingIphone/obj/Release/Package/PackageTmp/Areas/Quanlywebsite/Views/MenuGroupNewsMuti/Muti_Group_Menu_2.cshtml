@@ -1,0 +1,22 @@
+﻿@model IList<Web_Shop_SettingIphone.Models.Entity.GroupNew>
+@if(Model.Count>0)
+{
+    <ul class="nav nav-third-level" style="padding-left: 20px;">
+        @foreach(var item in Model)
+        {
+            int Countgroup = Convert.ToInt32((Html.Action("Count_category", "CategoryNewsAdmin", new { Id = item.Id }).ToHtmlString()));
+            <li>
+                @if (Countgroup > 0)
+                {
+                    <a href="@Url.Action("Read", "CategoryNewsDetailsAdmin", new { tag = item.Tag })"><span class="fa arrow"></span><i class="fa fa-check-square"></i> @item.Name</a>
+                }
+                else
+                {
+                    <a href="@Url.Action("Read", "CategoryNewsDetailsAdmin", new { tag = item.Tag })"><i class="fa fa-check-square"></i> @item.Name</a>
+                }
+                @{Html.RenderAction("Muti_Group_Menu_3", "MenuGroupNewsMuti", new { Id = item.Id });}
+            </li>
+          
+        }
+    </ul>
+}

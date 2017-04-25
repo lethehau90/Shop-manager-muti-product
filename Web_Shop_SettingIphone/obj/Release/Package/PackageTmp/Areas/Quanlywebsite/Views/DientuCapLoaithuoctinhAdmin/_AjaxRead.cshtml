@@ -1,0 +1,47 @@
+﻿@model IList<Web_Shop_SettingIphone.Models.Entity.DientuCapLoaithuoctinh>
+
+<div class="panel-body">
+    <table width="100%" class="table table-striped table-bordered table-hover" id="dataTables-example">
+        <thead>
+           <tr>
+                <th></th>
+                <th>Tên nhóm loại</th>
+                <th>Thứ tự</th>
+                <th>Kích hoạt</th>
+                <th>Chức năng</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr class="odd gradeX">
+                    <td  style="text-align:center; width: 5%"><input type="checkbox" name="checkRow" value="bar1" class="dell" index="@item.Id"></td>
+                    <td>@item.Name</td>
+                    <td>@item.Ord</td>
+                    <td>
+                        <span class="label label-primary">
+                            <a  class="label label-primary btn-active" id="btn-active"
+                               data-id="@item.Id">
+                                @Html.Raw(item.Active == true ? "<strong>Có</strong>" : "<strong>Không</strong>")
+                            </a>
+                        </span>
+                    </td>
+                    <td class="function">
+                        <a class="btn btn-info btn-xs Edit"  id="Edit" data-id="@item.Id"><i class="fa fa-pencil"></i> Edit </a>
+                        <a class="btn btn-danger btn-xs Delete" data-id="@item.Id"  id="Delete"><i class="fa fa-trash-o"></i> Delete </a>
+                    </td>
+                </tr>
+            }
+
+        </tbody>
+    </table>
+    <!-- /.table-responsive -->
+
+</div>
+
+@{ Html.RenderPartial("_Edit", Model); }
+
+<!--tham khảo https://datatables.net/ -->
+
+
+

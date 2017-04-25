@@ -1,0 +1,112 @@
+﻿<div class="panel-heading" id="update_paner">
+    <div class="portlet box green">
+        <div class="portlet-title">
+            <div class="caption">
+                <header>
+                    <i class="fa fa-user"></i> Cập nhật màu sắc <span class="Editcatelog"></span>
+                </header>
+            </div>
+            <div class="tools">
+                <a href="javascript:;" class="collapse"> </a> <!--collapse-->
+
+            </div>
+        </div>
+        <div class="portlet-body flip-scroll">
+            <!-- /.panel-heading -->
+            <div class="panel-body">
+                <!-- Nav tabs -->
+                <ul class="nav nav-tabs">
+                    <li class="active">
+                        <a href="#Adtenmau" data-toggle="tab">Thông tin</a>
+                    </li>
+                </ul>
+                <!-- Tab panes -->
+                <div class="tab-content">
+
+                    <div class="tab-pane fade in active" id="Adtenmau">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="form-group hidden">
+                                    <label>ID</label>
+                                    <input class="form-group" id="TxtId" placeholder="">
+                                </div>
+                                <div class="form-group">
+                                    <label>Tên màu sắc (Tiếng việt)</label>
+                                    <input class="form-group easyui-validatebox tb" id="TxtTenmau" data-options="prompt:'Nhập tên màu sắc tiếng việt',required:true" type="text" placeholder="">
+                                </div>
+                                <div class="form-group">
+                                    <label>Tên màu sắc (Tiếng Anh)</label>
+                                    <input class="form-group easyui-validatebox tb" id="TxtTenmauEn" data-options="prompt:'Nhập tên màu sắc tiếng anh',required:true" type="text" placeholder="">
+                                </div>
+                                <div class="form-group">
+                                    <label class="TxtOrd">Sắp xếp</label> <br />
+                                    <input class="form-group" type="number" id="TxtOrd" value="1" min="1">
+                                </div>
+                                <div class="form-group">
+                                    <label class="checkbox-inline">Kích hoạt </label>
+                                    <input id="CKActive" class="checkbox-inline" type="checkbox" checked="checked" value="1">
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <div class="form-group">
+                                            <label>Up load hình ảnh <span class="TxtImage"></span></label>
+                                            <div class="form-group">
+                                                <div class="col-md-12 pading-left-Select">
+                                                    <div class="col-md-3">
+                                                        <input class="form-group-sm easyui-validatebox tb" id="TxtImage" data-options=" prompt:'hình ảnh',required:true" type="text" placeholder="">
+                                                    </div>
+                                                    <div class="col-md-2">
+                                                        <span class="form-group">
+                                                            <button type="button" class="btn btn-white" id="SelectImage">Chọn Ảnh!</button>
+                                                        </span>
+                                                    </div>
+
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <img class="ShowImgZoom  img-responsive" src="/images/no-image.jpg" id="imgShowScren">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                 </div>
+                    <div class="clear-fix"></div>
+                    <div class="padding-form">
+                            <div class="form-group">
+                                <button type="submit" id="Save" class="btn btn-default"><i class="fa fa-save"></i> Lưu Lại</button>
+                                <button type="submit" id="Cancel" class="btn btn-default"><i class="fa fa-times-circle"></i> Hủy bỏ</button>
+                            </div>
+                   </div>
+            </div>
+            <!-- /.panel-body -->
+
+        </div>
+    </div>
+
+</div>
+
+<!--jquery action-->
+<script src="/Areas/Quanlywebsite/JavaScrip/Sanpham/Dactinh/Mausac/Create.js"></script>
+<script src="/Areas/Quanlywebsite/JavaScrip/Sanpham/Dactinh/Mausac/Update.js"></script>
+<script src="/Areas/Quanlywebsite/JavaScrip/Sanpham/Dactinh/Mausac/read.js"></script>
+<script src="/Areas/Quanlywebsite/JavaScrip/Sanpham/Dactinh/Mausac/Active.js"></script>
+<script src="/Areas/Quanlywebsite/JavaScrip/Sanpham/Dactinh/Mausac/Delete.js"></script>
+<script src="/Areas/Quanlywebsite/JavaScrip/Sanpham/Dactinh/Mausac/Cancel.js"></script>
+<script src="/Areas/Quanlywebsite/JavaScrip/Sanpham/Dactinh/Mausac/Save.js"></script>
+<!--javascrip images ckfinder  -->
+<script language="javascript" type="text/javascript">
+    $(function () {
+        $("#SelectImage").click(function () {
+            var finder = new CKFinder();
+            finder.selectActionFunction = function (fileUrl) {
+                $("#TxtImage").val(fileUrl);
+            };
+            finder.popup();
+        });
+    });
+</script>
+
+

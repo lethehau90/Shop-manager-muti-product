@@ -1,0 +1,278 @@
+﻿  <!-- scripts -->
+<script src="~/Areas/Quanlywebsite/vendor/Chart/modernizr-2.6.2.js"></script>
+@*<script src="~/Areas/Quanlywebsite/vendor/Chart/jquery-3.1.0.min.js"></script>*@
+<script src="~/Areas/Quanlywebsite/vendor/Chart/canvasjs.min.js"></script>
+@{
+    String TuanTruoc = System.Web.HttpContext.Current.Application["TuanTruoc"].ToString().Replace(".", "");
+    if (TuanTruoc == "") { TuanTruoc = "0"; }
+    decimal TT = Convert.ToInt64(TuanTruoc);
+    String TuanNay = System.Web.HttpContext.Current.Application["TuanNay"].ToString().Replace(".", "");
+    decimal TN = Convert.ToInt64(TuanNay);
+    decimal phantramtuan;
+    if (TT == 0)
+    {
+        phantramtuan = 100;
+    }
+    else
+    {
+        phantramtuan = (TN / TT) * 100;
+    }
+    String ThangTruoc = System.Web.HttpContext.Current.Application["ThangTruoc"].ToString().Replace(".", "");
+    if (ThangTruoc == "") { ThangTruoc = "0"; }
+    decimal THT = Convert.ToInt64(ThangTruoc);
+    String ThangNay = System.Web.HttpContext.Current.Application["ThangNay"].ToString().Replace(".", "");
+    decimal THN = Convert.ToInt64(ThangNay);
+    decimal phantramthang;
+    if (THT == 0)
+    {
+        phantramthang = 100;
+    }
+    else
+    {
+        phantramthang = Convert.ToDecimal(THN / THT) * 100;
+    }
+    String NamTruoc = System.Web.HttpContext.Current.Application["NamTruoc"].ToString().Replace(".", "");
+    if (NamTruoc == "") { NamTruoc = "0"; }
+    decimal NT = Convert.ToInt64(NamTruoc);
+    String NamNay = System.Web.HttpContext.Current.Application["NamNay"].ToString().Replace(".", "");
+    decimal NN = Convert.ToInt64(NamNay);
+    decimal phantramnam;
+    if (NT == 0)
+    {
+        phantramnam = 100;
+    }
+    else
+    {
+        phantramnam = (NN / NT) * 100;
+    }
+}
+
+<div class="row">
+    <div class="col-lg-3 col-md-6">
+        <div class="panel panel-primary">
+            <div class="panel-heading">
+                <div class="row">
+                    <div class="col-xs-3">
+                        <i class="fa fa-user fa-4x"></i>
+                    </div>
+                    <div class="col-xs-9 text-right">
+                        <div class="huge">@System.Web.HttpContext.Current.Application["visitors_online"].ToString()</div>
+                        <div>Khách truy cập !</div>
+                    </div>
+                </div>
+            </div>
+            <div class="panel-footer">
+                <span class="pull-left">Đang online</span>
+                <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
+                <div class="clearfix"></div>
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-3 col-md-6">
+        <div class="panel panel-green">
+            <div class="panel-heading">
+                <div class="row">
+                    <div class="col-xs-3">
+                        <i class="fa fa-calendar fa-4x"></i>
+                    </div>
+                    <div class="col-xs-9 text-right">
+                        <div class="huge">@System.Web.HttpContext.Current.Application["TuanNay"].ToString()</div>
+                        <div>Truy cập Tuần !</div>
+                    </div>
+                </div>
+            </div>
+            <div class="panel-footer">
+                <span class="pull-left">
+                    <span class="fa fa-check-circle-o" id="fontstatictics">
+                        @string.Format("{0:0}", phantramtuan)% So với tuần trước
+                    </span>
+                </span>
+                <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
+                <div class="clearfix"></div>
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-3 col-md-6">
+        <div class="panel panel-yellow">
+            <div class="panel-heading">
+                <div class="row">
+                    <div class="col-xs-3">
+                        <i class="fa fa-calendar fa-4x"></i>
+                    </div>
+                    <div class="col-xs-9 text-right">
+                        <div class="huge">@System.Web.HttpContext.Current.Application["ThangNay"].ToString()</div>
+                        <div>Truy cập tháng !</div>
+                    </div>
+                </div>
+            </div>
+            <div class="panel-footer">
+                <span class="pull-left">
+                    <span class="fa fa-check-circle-o" id="fontstatictics">
+                        @string.Format("{0:0}", phantramthang)% So với tháng trước
+                    </span>
+                </span>
+                <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
+                <div class="clearfix"></div>
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-3 col-md-6">
+        <div class="panel panel-danger">
+            <div class="panel-heading">
+                <div class="row">
+                    <div class="col-xs-3">
+                        <i class="fa fa-calendar fa-4x"></i>
+                    </div>
+                    <div class="col-xs-9 text-right">
+                        <div class="huge">@System.Web.HttpContext.Current.Application["NamNay"].ToString()</div>
+                        <div>Truy cập năm !</div>
+                    </div>
+                </div>
+            </div>
+            <div class="panel-footer">
+                <span class="pull-left">
+                    <span class="fa fa-check-circle-o" id="fontstatictics">
+                        @string.Format("{0:0}", phantramnam)% So với năm trước
+                    </span>
+                </span>
+                <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
+                <div class="clearfix"></div>
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-3 col-md-6">
+        <div class="panel panel-red">
+            <div class="panel-heading">
+                <div class="row">
+                    <div class="col-xs-3">
+                        <i class="fa fa-user-md fa-4x"></i>
+                    </div>
+                    <div class="col-xs-9 text-right">
+                        <div class="huge">@System.Web.HttpContext.Current.Application["TatCa"].ToString()</div>
+                        <div>Tổng truy cập !</div>
+                    </div>
+                </div>
+            </div>
+            <div class="panel-footer">
+                <span class="pull-left">
+                    <span class="fa fa-check-circle-o" id="fontstatictics">
+                        Tổng số online khách hàng
+                    </span>
+                </span>
+                <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
+                <div class="clearfix"></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="row state-overview">
+    <div class="col-lg-12 col-md-12">
+        <div class="col-lg-6 col-md-6 col-sm-6">
+            <div id="chartContainer"></div>
+            <script type="text/javascript">
+
+                var html = "";
+
+
+                var d = new Date();
+                var month = d.getMonth();
+                var months = new Array("01", "02", "03", "04", "05", "06", "07", "08", "09", "10", "11", "12");
+                $(function () {
+                    $.ajax({
+
+                        url: "/HomeAdmin/ChartMonth",
+                        Type: "GET",
+                        dataType: "json",
+                        success: function (data) {
+                            var chart = new CanvasJS.Chart("chartContainer", {
+                                theme: "theme1",
+                                zoomEnabled: true,
+                                animationEnabled: true,
+                                title: {
+                                    text: "Biểu đồ Thống kê truy cập từng ngày trong tháng " + months[month]
+                                },
+                                data: [
+                                {
+                                    // Change type to "bar", "splineArea", "area", "spline", "pie",etc.
+                                    type: "area",  //area, line
+                                    dataPoints: data
+                                }
+                                ]
+                            });
+
+                            chart.render();
+                        }
+                    });
+                });
+
+            </script>
+        </div>
+        <div class="col-lg-6 col-md-6 col-sm-6">
+            <div id="chartContaineryear"></div>
+
+            <script type="text/javascript">
+
+                var html = "";
+
+
+                $(function () {
+
+                    $.ajax({
+
+                        url: "/HomeAdmin/ChartYear",
+                        Type: "GET",
+                        dataType: "json",
+                        success: function (data) {
+                            var chart = new CanvasJS.Chart("chartContaineryear", {
+                                theme: "theme1",
+                                zoomEnabled: true,
+                                animationEnabled: true,
+                                title: {
+                                    text: "Biểu đồ Thống kê truy cập từng tháng trong năm " + d.getFullYear()
+                                },
+                                data: [
+                                {
+                                    // Change type to "bar", "splineArea", "area", "spline", "pie",etc.
+                                    type: "area",  //area, line
+                                    dataPoints: data
+                                }
+                                ]
+                            });
+
+                            chart.render();
+                        }
+                    });
+
+
+
+
+
+                });
+
+
+            </script>
+        </div>
+
+    </div>
+
+    
+    
+
+
+
+</div>
+
+
+
+<style type="text/css">
+    @@media (min-width: 1200px) {
+        .col-lg-3 {
+            width: 20% !important;
+        }
+    }
+
+    #fontstatictics {
+        font-size: 10px !important;
+    }
+</style>

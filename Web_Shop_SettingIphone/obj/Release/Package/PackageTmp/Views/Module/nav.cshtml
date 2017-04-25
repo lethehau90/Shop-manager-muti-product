@@ -1,0 +1,71 @@
+﻿@model IList<Web_Shop_SettingIphone.Models.Entity.DientuMenuSitemathang>
+
+
+<section class="nav col-sm-12 col-xs-12 nav-components">
+    <div class="container">
+
+        <nav class="navbar navbar-default">
+            <div class="logo-fixed hidden">
+                <a href="/">
+                    <img src="/Uploads/images/Images/logo.gif" alt="">
+                </a>
+            </div>
+            <div id="navbar" class="navbar-collapse collapse">
+                <ul class="nav navbar-nav">
+                    @if (ViewBag.menu == "")
+                    {
+                        <li class="active"><a href="/">Trang chủ</a></li>
+                    }
+                    else
+                    {
+                        <li class=""><a href="/">Trang chủ</a></li>
+                    }
+                    <!--dịch vụ-->
+                    @{Html.RenderAction("Menudichvu", "Module");}
+
+                    @if (ViewBag.menu == "san-pham")
+                    {
+                        <li class="dropdown active">
+                            <a href="/san-pham" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Điện thoại <span class="caret"></span></a>
+                            <ul class="dropdown-menu">
+                                @foreach (var item in Model)
+                                {
+                                    <li><a href="/san-pham/@item.Tag">@item.MenuName</a></li>
+                                }
+                            </ul>
+                        </li>
+                    }
+                    else
+                    {
+                        <li class="dropdown">
+                            <a href="/san-pham" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Điện thoại <span class="caret"></span></a>
+                            <ul class="dropdown-menu">
+                                @foreach (var item in Model)
+                                {
+                                    <li><a href="/san-pham/@item.Tag">@item.MenuName</a></li>
+                                }
+                            </ul>
+                        </li>
+                    }
+                    @if (ViewBag.menu == "tin-tuc")
+                    {
+                        <li class="active"><a href="/tin-tuc">Tin tức</a></li>
+
+                    }
+                    else
+                    {
+                        <li><a href="/tin-tuc">Tin tức</a></li>
+
+                    }
+                </ul>
+
+            </div>
+            <!--/.nav-collapse -->
+
+        </nav>
+
+
+    </div>
+</section>
+
+<!-- end nav -->

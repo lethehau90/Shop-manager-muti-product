@@ -1,0 +1,168 @@
+﻿<div class="panel-heading" id="update_paner">
+    <div class="portlet box green">
+        <div class="portlet-title">
+            <div class="caption">
+                <header>
+                    <i class="fa fa-user"></i> Cập nhật danh mục <span class="Editcatelog"></span>
+                </header>
+            </div>
+            <div class="tools">
+                <a href="javascript:;" class="collapse"> </a> <!--collapse-->
+
+            </div>
+        </div>
+        <div class="portlet-body flip-scroll">
+            <!-- /.panel-heading -->
+            <div class="panel-body">
+                <!-- Nav tabs -->
+                <ul class="nav nav-tabs">
+                    <li class="active">
+                        <a href="#Adtendanhmuc" data-toggle="tab">Tên Danh mục</a>
+                    </li>
+                    <li>
+                        <a href="#Adthietlap" data-toggle="tab">Thiết lập</a>
+                    </li>
+                    <li>
+                        <a href="#Admota" data-toggle="tab">Mô tả</a>
+                    </li>
+                    <li>
+                        <a href="#Adhinhanh" data-toggle="tab">Logo</a>
+                    </li>
+                </ul>
+                <!-- Tab panes -->
+                <div class="tab-content">
+
+                    <div class="tab-pane fade in active" id="Adtendanhmuc">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="form-group hidden">
+                                    <label>ID</label>
+                                    <input class="form-group" id="TxtId" placeholder="">
+                                </div>
+                                <div class="form-group">
+                                    <label>Tên danh mục (Tiếng việt)</label>
+                                    <input class="form-group easyui-validatebox tb" id="TxtTenthuonghieu" data-options="prompt:'Nhập tên danh mục tiếng việt',required:true" type="text" placeholder="">
+                                </div>
+                                <div class="form-group">
+                                    <label>Tên danh mục (Tiếng Anh)</label>
+                                    <input class="form-group easyui-validatebox tb" id="TxtTenthuonghieu_En" data-options="prompt:'Nhập tên danh mục tiếng anh',required:true" type="text" placeholder="">
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="tab-pane fade" id="Adthietlap">
+                        <div class="row">
+                            <div class="col-md-12">
+                                
+                                <div class="form-group">
+                                    <label>Link liên kết (vd: http://webdemo.com)</label>
+                                    <input class="form-group easyui-validatebox tb" id="TxtUrl" data-options="prompt:'Nhập tên link liên kết',required:true" type="text" placeholder="">
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label class="TxtVitri">Sắp xếp</label> <br />
+                                    <input class="form-group" type="number" id="TxtVitri" value="1" min="1">
+                                </div>
+
+                                <div class="form-group">
+                                    <label class="checkbox-inline">Kích hoạt </label>
+                                    <input id="CKActive" class="checkbox-inline" type="checkbox" checked="checked" value="1">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="tab-pane fade" id="Admota">
+                        <div class="form-group">
+                            <label>Nội dung tiếng việt <span class="Txtmota"></span></label>
+                            <textarea class="form-control" id="Txtmota" rows="3"></textarea>
+                        </div>
+                        <div class="form-group">
+                            <label>Nội dung tiếng Anh<span class="Txtmota_En"></span></label>
+                            <textarea class="form-control" id="Txtmota_En" rows="3"></textarea>
+                        </div>
+                    </div>
+
+                    <div class="tab-pane fade" id="Adhinhanh">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="form-group">
+                                    <label>Up load hình ảnh <span class="TxtImage"></span></label>
+                                    <div class="form-group">
+                                        <div class="col-md-12 pading-left-Select">
+                                            <div class="col-md-3">
+                                                <input class="form-group-sm easyui-validatebox tb" id="TxtImage" data-options=" prompt:'hình ảnh',required:true" type="text" placeholder="">
+                                            </div>
+                                            <div class="col-md-2">
+                                                <span class="form-group">
+                                                    <button type="button" class="btn btn-white" id="SelectImage">Chọn Ảnh!</button>
+                                                </span>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <img class="ShowImgZoom  img-responsive" src="/images/no-image.jpg"  id="imgShowScren">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                 </div>
+
+                    <div class="clear-fix"></div>
+                    <div class="padding-form">
+                            <div class="form-group">
+                                <button type="submit" id="Save" class="btn btn-default"><i class="fa fa-save"></i> Lưu Lại</button>
+                                <button type="submit" id="Cancel" class="btn btn-default"><i class="fa fa-times-circle"></i> Hủy bỏ</button>
+                            </div>
+                        </div>
+            </div>
+            <!-- /.panel-body -->
+
+        </div>
+    </div>
+
+</div>
+
+<!--jquery action-->
+<script src="/Areas/Quanlywebsite/JavaScrip/Sanpham/Dactinh/Thuonghieu/Create.js"></script>
+<script src="/Areas/Quanlywebsite/JavaScrip/Sanpham/Dactinh/Thuonghieu/Update.js"></script>
+<script src="/Areas/Quanlywebsite/JavaScrip/Sanpham/Dactinh/Thuonghieu/read.js"></script>
+<script src="/Areas/Quanlywebsite/JavaScrip/Sanpham/Dactinh/Thuonghieu/Active.js"></script>
+<script src="/Areas/Quanlywebsite/JavaScrip/Sanpham/Dactinh/Thuonghieu/Delete.js"></script>
+<script src="/Areas/Quanlywebsite/JavaScrip/Sanpham/Dactinh/Thuonghieu/Cancel.js"></script>
+<script src="/Areas/Quanlywebsite/JavaScrip/Sanpham/Dactinh/Thuonghieu/Save.js"></script>
+
+<!--javascrip images ckfinder  -->
+<script language="javascript" type="text/javascript">
+    $(function () {
+        $("#SelectImage").click(function () {
+            var finder = new CKFinder();
+            finder.selectActionFunction = function (fileUrl) {
+                $("#TxtImage").val(fileUrl);
+            };
+            finder.popup();
+        });
+    });
+</script>
+
+<!--javascrip textbox ckeditor  -->
+
+<script type="text/javascript">
+    var editor;
+    function createEditor(languageCode, id) {
+        var editor = CKEDITOR.replace(id, {
+            language: languageCode
+        });
+    }
+    $(function () {
+        createEditor('vi', 'Txtmota');
+        createEditor('vi', 'Txtmota_En');
+    });
+
+</script>
+

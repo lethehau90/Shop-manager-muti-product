@@ -1,0 +1,110 @@
+﻿<ul class="nav navbar-top-links navbar-right">
+    <!--Mail hop thu-->
+    @*@{Html.RenderAction("Thanhvien_noactive", "HomeAdmin");}
+    @{Html.RenderAction("Mail_noactive", "HomeAdmin");}
+    @{Html.RenderAction("Comment_noactive", "HomeAdmin");}*@
+    @{Html.RenderAction("Suachua_noactive", "HomeAdmin");}
+    @{Html.RenderAction("Dinhgia_noactive", "HomeAdmin");}
+    @{Html.RenderAction("Donhang_noactive", "HomeAdmin");}
+    <!-- /.dropdown -->
+    <li class="dropdown hidden">
+        <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+            <i class="fa fa-tasks fa-fw"></i> <i class="fa fa-caret-down"></i>
+        </a>
+        <ul class="dropdown-menu dropdown-tasks">
+            <li>
+                <a href="#">
+                    <div>
+                        <p>
+                            <strong>Task 1</strong>
+                            <span class="pull-right text-muted">40% Complete</span>
+                        </p>
+                        <div class="progress progress-striped active">
+                            <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width: 40%">
+                                <span class="sr-only">40% Complete (success)</span>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+            </li>
+            <li class="divider"></li>
+        </ul>
+        <!-- /.dropdown-tasks -->
+    </li>
+    <!-- /.dropdown -->
+    <li class="dropdown hidden">
+        <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+            <i class="fa fa-bell fa-fw"></i> <i class="fa fa-caret-down"></i>
+        </a>
+        <ul class="dropdown-menu dropdown-alerts">
+            <li>
+                <a href="#">
+                    <div>
+                        <i class="fa fa-comment fa-fw"></i> New Comment
+                        <span class="pull-right text-muted small">4 minutes ago</span>
+                    </div>
+                </a>
+            </li>
+            <li class="divider"></li>
+            <li class="divider"></li>
+            <li>
+                <a class="text-center" href="#">
+                    <strong>See All Alerts</strong>
+                    <i class="fa fa-angle-right"></i>
+                </a>
+            </li>
+        </ul>
+        <!-- /.dropdown-alerts -->
+    </li>
+    <!-- /.dropdown -->
+    <li class="dropdown">
+        <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+            <i class="fa fa-user fa-fw"></i> <i class="fa fa-caret-down"></i>
+        </a>
+        <ul class="dropdown-menu dropdown-user">
+            <li>
+                <a href="#"><i class="fa fa-user fa-fw"></i>
+                    @if (@Convert.ToString(Session["Username_Web_config"]) == "")
+                    {
+                        <script type="text/javascript">
+
+                            function exec_refresh() {
+                                window.status = "Dang chuyen toi ..." + myvar;
+                                myvar = myvar + " .";
+                                var timerID = setTimeout("exec_refresh();", 600);
+                                if (timeout > 0) {
+                                    timeout -= 1;
+                                }
+                                else {
+                                    clearTimeout(timerID);
+                                    window.status = "";
+                                    window.location = "/Quanlywebsite/UserAdmin/LoginAdmin";//chuyển tới trang chủ
+                                }
+                            }
+
+                            var myvar = "";
+                            var timeout = 00;
+                            exec_refresh();
+
+                        </script>
+
+                    }
+                    else
+                    {
+                        @Convert.ToString(Session["Username_Web_config"])
+                    }
+                
+                </a>
+            </li>
+            <li>
+                <a href="/Quanlywebsite/ConfigAdmin/Read"><i class="fa fa-gear fa-fw"></i> Settings</a>
+            </li>
+            <li class="divider"></li>
+            <li>
+                <a href="@Url.Action("Logout", "UserAdmin")"><i class="fa fa-sign-out fa-fw"></i> Logout</a>
+            </li>
+        </ul>
+        <!-- /.dropdown-user -->
+    </li>
+    <!-- /.dropdown -->
+</ul>

@@ -1,0 +1,34 @@
+﻿@model IList<Web_Shop_SettingIphone.Models.Entity.Tintuc>
+@if (Model.Count > 0)
+{
+    <div class="row news-lienquan">
+        <div class="col-sm-12">
+            <div class="title">
+                <h3 class="">Các tin liên quan</h3>
+            </div>
+        </div>
+        @foreach (var item in Model)
+        {
+            <div class="col-sm-4" itemscope="" itemtype="#">
+                <meta itemscope="" itemprop="mainEntityOfPage" itemtype="#" itemid="#">
+
+                <div class="news-lienquan-item">
+                    <a href="/tin-tuc/@item.Tag" class="absolute-all"></a>
+                    <div class="embed-responsive embed-responsive-16by9" itemprop="image" itemscope="" itemtype="#">
+                        <figure data-feedback="fb:likes, fb:comments">
+                            @if(item.Hinhanh != "")
+                            {
+                                <img src="@item.Hinhanh" class="img-responsive" alt="@item.Name">
+                            }
+                            else
+                            { 
+                                <img src="/images/no-image.jpg" class="img-responsive" alt="@item.Name">
+                            }
+                        </figure>
+                    </div>
+                    <h4 itemprop="headline">@item.Name</h4>
+                </div>
+            </div>
+        }
+    </div>
+}

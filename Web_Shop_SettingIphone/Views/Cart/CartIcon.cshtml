@@ -1,0 +1,27 @@
+﻿@using Web_Shop_SettingIphone.Models.Cart
+
+<div class="navbar">
+
+    <div class="navbar-header pull-left">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+           <i class="fa fa-bars fa-lg" aria-hidden="true" title="Toggle navigation"></i>
+        </button>
+    </div>
+    @{Html.RenderAction("Topinfo","Cart");}
+    <div class="top-links pull-right">
+
+        <div class="btn-cart" id="cart-block">
+            <a rel="nofollow" title="My cart" href="/gio-hang"><i class="fa fa-shopping-cart"></i></a>
+            <span class="notify notify-right" id="nav-cart-num">
+                @Session["tsltsl"]
+            </span>
+        </div>
+
+        @*<div class="ic-dangnhap pull-left">
+            <img src="/images/Product/ic-dangnhap.gif" alt=""><a href="">Đăng nhập</a>
+        </div>
+        <div class="ic-thanhvien pull-left">
+            <img src="/images/Product/ic-thanhvien.gif" alt=""><a href="">Đăng ký thành viên</a>
+        </div>*@
+    </div>
+</div>

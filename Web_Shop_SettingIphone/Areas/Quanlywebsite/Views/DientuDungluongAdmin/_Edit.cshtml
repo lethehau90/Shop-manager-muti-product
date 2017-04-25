@@ -1,0 +1,102 @@
+﻿<div class="panel-heading" id="update_paner">
+    <div class="portlet box green">
+        <div class="portlet-title">
+            <div class="caption">
+                <header>
+                    <i class="fa fa-user"></i> Cập nhật danh mục <span class="Editcatelog"></span>
+                </header>
+            </div>
+            <div class="tools">
+                <a href="javascript:;" class="collapse"> </a> <!--collapse-->
+
+            </div>
+        </div>
+        <div class="portlet-body flip-scroll">
+            <!-- /.panel-heading -->
+            <div class="panel-body">
+                <!-- Nav tabs -->
+                <ul class="nav nav-tabs">
+                    <li class="active">
+                        <a href="#Adtendanhmuc" data-toggle="tab">Tên Danh mục</a>
+                    </li>
+                </ul>
+                <!-- Tab panes -->
+                <div class="tab-content">
+
+                    <div class="tab-pane fade in active" id="Adtendanhmuc">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="form-group hidden">
+                                    <label>ID</label>
+                                    <input class="form-group" id="TxtId" placeholder="">
+                                </div>
+                                <div class="form-group">
+                                    <label>Tên dung lượng </label>
+                                    <input class="form-group easyui-validatebox tb" id="TxtName" data-options="prompt:'Nhập tên danh mục tiếng việt',required:true" type="text" placeholder="">
+                                </div>
+                                <div class="form-group">
+                                    <label class="TxtOrd">Sắp xếp</label> <br />
+                                    <input class="form-group" type="number" id="TxtOrd" value="1" min="1">
+                                </div>
+
+                                <div class="form-group">
+                                    <label class="checkbox-inline">Kích hoạt </label>
+                                    <input id="CKActive" class="checkbox-inline" type="checkbox" checked="checked" value="1">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                 </div>
+
+                    <div class="clear-fix"></div>
+                    <div class="padding-form">
+                            <div class="form-group">
+                                <button type="submit" id="Save" class="btn btn-default"><i class="fa fa-save"></i> Lưu Lại</button>
+                                <button type="submit" id="Cancel" class="btn btn-default"><i class="fa fa-times-circle"></i> Hủy bỏ</button>
+                            </div>
+                        </div>
+            </div>
+            <!-- /.panel-body -->
+
+        </div>
+    </div>
+
+</div>
+<!--jquery action-->
+<script src="/Areas/Quanlywebsite/JavaScrip/Dientu/Dactinh/Dungluong/Create.js"></script>
+<script src="/Areas/Quanlywebsite/JavaScrip/Dientu/Dactinh/Dungluong/Update.js"></script>
+<script src="/Areas/Quanlywebsite/JavaScrip/Dientu/Dactinh/Dungluong/read.js"></script>
+<script src="/Areas/Quanlywebsite/JavaScrip/Dientu/Dactinh/Dungluong/Active.js"></script>
+<script src="/Areas/Quanlywebsite/JavaScrip/Dientu/Dactinh/Dungluong/Delete.js"></script>
+<script src="/Areas/Quanlywebsite/JavaScrip/Dientu/Dactinh/Dungluong/Cancel.js"></script>
+<script src="/Areas/Quanlywebsite/JavaScrip/Dientu/Dactinh/Dungluong/Save.js"></script>
+
+<!--javascrip images ckfinder  -->
+<script language="javascript" type="text/javascript">
+    $(function () {
+        $("#SelectImage").click(function () {
+            var finder = new CKFinder();
+            finder.selectActionFunction = function (fileUrl) {
+                $("#TxtImages").val(fileUrl);
+            };
+            finder.popup();
+        });
+    });
+</script>
+
+<!--javascrip textbox ckeditor  -->
+
+<script type="text/javascript">
+    var editor;
+    function createEditor(languageCode, id) {
+        var editor = CKEDITOR.replace(id, {
+            language: languageCode
+        });
+    }
+    $(function () {
+        createEditor('vi', 'TxtContent');
+        createEditor('vi', 'TxtContent_En');
+    });
+
+</script>
+

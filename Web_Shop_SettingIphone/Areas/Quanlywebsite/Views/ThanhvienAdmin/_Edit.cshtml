@@ -1,0 +1,135 @@
+﻿<div class="panel-heading" id="update_paner">
+    <div class="portlet box green">
+        <div class="portlet-title">
+            <div class="caption">
+                <header>
+                    <i class="fa fa-User"></i> Cập nhật khách thành viên <span class="Editcatelog"></span>
+                </header>
+            </div>
+            <div class="tools">
+                <a href="javascript:;" class="collapse"> </a> <!--collapse-->
+
+            </div>
+        </div>
+        <div class="portlet-body flip-scroll">
+            <!-- /.panel-heading -->
+            <div class="panel-body">
+                <!-- Nav tabs -->
+                <ul class="nav nav-tabs">
+                    <li class="active">
+                        <a href="#HtmlName" data-toggle="tab">Thông tin thành viên</a>
+                    </li>
+
+                </ul>
+                <!-- Tab panes -->
+                <div class="tab-content">
+                    <div class="tab-pane fade in active" id="HtmlName">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="form-group hidden">
+                                    <label>ID</label>
+                                    <input class="form-group" id="TxtId" placeholder="">
+                                </div>
+                               <div class="row">
+                                   <div class="form-group col-md-6">
+                                       <label>Tài khoản</label>
+                                       <input class="form-group easyui-validatebox tb" id="TxtTaikhoan" data-options="prompt:'Nhập tên hộp thư khách ',required:true" type="text" placeholder="">
+                                   </div>
+                                   <div class="form-group col-md-6">
+                                       <label>Mật khẩu</label>
+                                       <input class="form-group easyui-validatebox tb" id="TxtMatkhau" data-options="prompt:'Nhập tên hộp thư khách ',required:true" type="text" placeholder="">
+                                   </div>
+                               </div>
+                                <div class="form-group">
+                                    <label>Họ tên</label>
+                                    <input class="form-group easyui-validatebox tb" id="TxtHoten" data-options="prompt:'Nhập Công ty',required:true" type="text" placeholder="">
+                                </div>
+                                <div class="row">
+                                    <div class="col-lg-2 col-md-6 col-sm-10 form-group">
+                                        <label>Giới tính</label>
+                                        <select class="form-control" name="Gioitinh" id="SelectGioitinh">
+                                            <option value="Nam" selected="selected">Nam</option>
+                                            <option value="Nữ">Nữ</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                
+                                <div class="form-group hidden">
+                                    <label>Địa chỉ</label>
+                                    <input class="form-group easyui-validatebox tb" id="TxtAddress" data-options="prompt:'Nhập Địa chỉ ',required:true" type="text" placeholder="">
+                                </div>
+                                <div class="row">
+                                    <div class="form-group col-md-6">
+                                        <label>Email</label>
+                                        <input class="form-group easyui-validatebox tb" id="TxtEmail" data-options="prompt:'Nhập Email ',required:true" type="text" placeholder="">
+                                    </div>
+                                    <div class="form-group col-md-6">
+                                        <label>Số điện thoại</label>
+                                        <input class="form-group easyui-validatebox tb" id="TxtSDT" data-options="prompt:'Nhập Số điện thoại ',required:true" type="text" placeholder="">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label>Ngày Sinh</label> <br />
+                                    <input class="form-group" type="text" id="datepickerNgaysinh">
+                                </div>
+                                <div class="form-group">
+                                    <label class="checkbox-inline">Kích hoạt </label>
+                                    <input id="CKActive" class="checkbox-inline" type="checkbox" checked="checked" value="1">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="clear-fix"></div>
+                <div class="padding-form">
+                    <div class="form-group">
+                        <button type="submit" id="Save" class="btn btn-default"><i class="fa fa-times-circle"></i> Lưu Lại</button>
+                        <button type="submit" id="Cancel" class="btn btn-default"><i class="fa fa-save"></i> Hủy bỏ</button>
+                    </div>
+                </div>
+            </div>
+            <!-- /.panel-body -->
+
+        </div>
+    </div>
+
+</div>
+
+
+
+
+<!--jquery action-->
+<script src="/Areas/Quanlywebsite/JavaScrip/ThongTin/Thanhvien/Create.js"></script>
+<script src="/Areas/Quanlywebsite/JavaScrip/ThongTin/Thanhvien/Update.js"></script>
+<script src="/Areas/Quanlywebsite/JavaScrip/ThongTin/Thanhvien/read.js"></script>
+<script src="/Areas/Quanlywebsite/JavaScrip/ThongTin/Thanhvien/Active.js"></script>
+<script src="/Areas/Quanlywebsite/JavaScrip/ThongTin/Thanhvien/Delete.js"></script>
+<script src="/Areas/Quanlywebsite/JavaScrip/ThongTin/Thanhvien/Cancel.js"></script>
+<script src="/Areas/Quanlywebsite/JavaScrip/ThongTin/Thanhvien/Save.js"></script>
+
+
+
+<!--javascrip images ckfinder  -->
+<!--javascrip textbox ckeditor  -->
+<script type="text/javascript">
+    //chon ngay thang
+    $(function () {
+        $("#datepickerNgaysinh").datepicker({
+            changeMonth: true,
+            changeYear: true,
+            minDate: -0, maxDate: "+12M +10D",
+            showOn: "button",
+            buttonImage: "/images/calendar.png",
+            buttonImageOnly: true,
+            buttonText: "Select date"
+        });
+
+    });
+
+    $(function () {
+        $("#datepickerNgaysinh").datepicker("option", "dateFormat", "dd/mm/yy");
+
+    });
+</script>

@@ -1,0 +1,11 @@
+﻿@model IList<Web_Shop_SettingIphone.Models.Entity.DientuMenuSitemathang>
+@foreach (var item in Model)
+{
+    <option value="@item.Id">
+        |------ @item.MenuName
+    </option>
+
+    Html.RenderAction("MenuLeverMuti_DT_lever3", "MenuLeverMuti", new { id = item.Id, select = ViewBag.select });
+
+
+}

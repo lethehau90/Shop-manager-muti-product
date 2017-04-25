@@ -1,0 +1,502 @@
+﻿<div class="panel-heading" id="update_paner">
+    <div class="portlet box green">
+        <div class="portlet-title">
+            <div class="caption">
+                <header>
+                    <i class="fa fa-user"></i>  Cập nhật bài đăng <span class="Editcatelog"></span>
+                </header>
+            </div>
+            <div class="tools">
+                <a href="javascript:;" class="collapse"> </a> <!--collapse-->
+
+            </div>
+        </div>
+        <div class="portlet-body flip-scroll">
+            <!-- /.panel-heading -->
+            <div class="panel-body">
+                <!-- Nav tabs -->
+                <ul class="nav nav-tabs">
+                    <li class="active">
+                        <a href="#DientuMathangthongtin" data-toggle="tab">Thông tin sản phẩm</a>
+                    </li>
+
+                    <li class="cauhinhtab">
+                        <a href="#DientuMathanghinhanh" data-toggle="tab">Cấu hình</a>
+                    </li>
+
+                    <li class="thuoctinhtab">
+                        <a href="#DientuMathangthuoctinh" data-toggle="tab">Thuộc tính</a>
+                    </li>
+
+                    <li>
+                        <a href="#DientuMathangkhuyenmai" data-toggle="tab">Khuyến mãi</a>
+                    </li>
+
+                    <li>
+                        <a href="#DientuMathangSeo" data-toggle="tab">Seo</a>
+                    </li>
+
+                </ul>
+                <!-- Tab panes -->
+                <div class="tab-content">
+                    <div class="tab-pane fade in active" id="DientuMathangthongtin">
+                        <div class="row">
+                            <div class="col-lg-6">
+                                <div class="form-group hidden">
+                                    <label>Id</label>
+                                    <input class="form-group easyui-validatebox tb" id="TxtId" data-options="required:true" type="text" placeholder="">
+                                </div>
+                                <div class="form-group">
+                                    <label>Tên hàng hóa</label>
+                                    <input class="form-group easyui-validatebox tb" id="TxtTenhang" data-options="required:true" type="text" placeholder="">
+                                </div>
+                            </div>
+                            <div class="col-lg-6">
+                                <div class="form-group">
+                                    <br /><br />
+                                    <label>(Nhập tên cho sản phẩm (VD: Máy Latop Vaio Core I3))</label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-6">
+                                <div class="form-group">
+                                    <label>Seri</label>
+                                    <input class="form-group easyui-validatebox tb" id="TxtSeri" data-options="required:true" type="text" placeholder="">
+                                </div>
+                            </div>
+                            <div class="col-lg-6">
+                                <div class="form-group">
+                                    <br /><br />
+                                    <label>(Nhập số Seri của sản phẩm nếu có Seri)</label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-2">
+                                <div class="form-group">
+                                    <label class="TxtOrd">Sắp xếp</label> <br />
+                                    <input class="form-group" type="number" id="TxtOrd" value="1" min="1">
+                                </div>
+                            </div>
+                            <div class="col-lg-10">
+                                <div class="form-group">
+                                    <br /><br />
+                                    <label> (Vị trí hiển thị)</label>
+                                </div>
+                            </div>
+                        </div>
+                        @{Html.RenderAction("MenuDientuHsx", "DientuMathangAdmin");}
+                        @*@{Html.RenderAction("MenuDientuLoaithuoctinh", "DientuMathangAdmin");}*@
+                        @{Html.RenderAction("MenuLeverMuti_DT_lever1", "MenuLeverMuti");}
+                        <div class="row">
+                            <div class="col-md-3">
+                                <div class="form-group">
+                                    <label>Kiểu loại tin</label>
+                                    <select class="form-control" name="Type" id="SelectPriority">
+                                        <option value="1" selected="selected">bình thường</option>
+                                        <option value="2">nổi bật</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="col-md-3 hidden">
+                                <div class="form-group">
+                                    <label>Tình trạng</label>
+                                    <select class="form-control" name="Type" id="Selecttinhtrang">
+                                        <option value="1">Còn hàng</option>
+                                        <option value="2">Hết hàng</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-3 hidden">
+                                <div class="form-group">
+                                    <label>Giá bán</label>
+                                    <input class="form-group easyui-validatebox tb" id="TxtGiaban" data-options="required:true" type="text" placeholder="" onkeypress="return isNumberKey(event, this);">
+                                </div>
+                            </div>
+                            <div class="col-lg-2">
+                                <div class="form-group">
+                                    <label>Bảo hành</label>
+                                    <input class="form-group easyui-validatebox tb" id="TxtBaohanh" data-options="required:true" type="text" placeholder="" onkeypress="return isNumberKey(event, this);">
+                                </div>
+                            </div>
+                            <div class="col-lg-4">
+                                <div class="form-group">
+                                    <br /><br />
+                                    <label>(Thời gian bảo hành/tháng)</label>
+                                </div>
+                            </div>
+                            <div class="col-lg-2">
+
+                                <div class="form-group">
+                                    <br /><br />
+                                    <label class="checkbox-inline">Kích hoạt </label>
+                                    <input id="CKActive" class="checkbox-inline" type="checkbox" checked="checked" value="1">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <div class="form-group">
+                                    <label class="TxtMota">Mô tả chi tiết</label>
+                                    <textarea class="form-control" id="TxtMota" rows="3"></textarea>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <div class="form-group">
+                                    <label class="TxtBaiviet">Nội dung chi tiết</label>
+                                    <textarea class="form-control" id="TxtBaiviet" rows="3"></textarea>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Cấu hình hình ảnh-->
+                    <div class="tab-pane fade" id="DientuMathanghinhanh">
+                        <div class="row">
+                            <div class="col-md-12 col-md-12 col-sm-12">
+                                <div class="col-md-6 col-md-6 col-sm-6">
+                                    <div class="form-group">
+                                        <img class="ShowImgZoom img-responsive" src="/Images/no-image.jpg" id="imgShowScren">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row" style="padding:10px">
+                            Cho phép bạn thiết lập cấu hình và hình ảnh cho sản phẩm,<br />
+                            bạn cần phải phải điền thông tin chính xác cho sản phẩm giúp người dùng tìm kiếm
+                            dễ dàng hơn
+                        </div>
+                        <div class="row">
+                            <div class="col-md-4">
+                                <input class="hidden" id="IdTagCH" />
+                                <div class="form-group">
+                                    <label class="checkbox-inline">Up hình ảnh chính <span class="TxtImageCH"></span></label>
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <input class="form-group-sm easyui-validatebox tb" id="TxtImageCH" data-options=" prompt:'hình ảnh',required:true" type="text" placeholder="">
+                                        </div>
+                                        <div class="col-md-2">
+                                            <span class="form-group">
+                                                <button type="button" class="btn btn-white" id="SelectImageCH">Chọn Ảnh!</button>
+                                            </span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-3">
+                                <div class="form-group">
+                                    <label class="checkbox-inline TxtGiacuCH">Giá Cũ </label>
+                                    <div class="input-group">
+                                        <input class="form-group easyui-validatebox tb" id="TxtGiacuCH" onkeypress="return isNumberKey(event, this);" data-options="required:true" type="text" placeholder="">
+                                        <span class="input-group-addon">Vnđ</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-3">
+                                <div class="form-group">
+                                    <label class="checkbox-inline TxtGiabanCH">Giá bán </label>
+                                    <div class="input-group">
+                                        <input class="form-group easyui-validatebox tb" id="TxtGiabanCH" onkeypress="return isNumberKey(event, this);" data-options="required:true" type="text" placeholder="">
+                                        <span class="input-group-addon">Vnđ</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-2">
+                                <div class="form-group">
+                                    <label>% khuyến mãi</label> <br />
+                                    <input class="form-group easyui-validatebox tb" id="TxtPhantramkmCH" onkeypress="return isNumberKey(event, this);" data-options="required:true" type="text" placeholder="">
+                                </div>
+                            </div>
+
+                        </div>
+                        <!--start thêm hinh-->
+                        <div class="row hidden">
+                            <!---hình 1-->
+                            <div class="col-md-3">
+                                <div class="form-group">
+                                    <label class="checkbox-inline">hình 1 <span class="TxtImage1CH"></span></label>
+                                    <div class="row">
+                                        <div class="col-md-8">
+                                            <input class="form-group-sm easyui-validatebox tb" id="TxtImage1CH" data-options=" prompt:'hình ảnh',required:true" type="text" placeholder="">
+                                        </div>
+                                        <div class="col-md-2">
+                                            <span class="form-group">
+                                                <button type="button" class="btn btn-white" id="SelectImage1CH">Chọn!</button>
+                                            </span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!--end hình 1-->
+                            <!---hình 2-->
+                            <div class="col-md-3">
+                                <div class="form-group">
+                                    <label class="checkbox-inline">hình 2 <span class="TxtImage2CH"></span></label>
+                                    <div class="row">
+                                        <div class="col-md-8">
+                                            <input class="form-group-sm easyui-validatebox tb" id="TxtImage2CH" data-options=" prompt:'hình ảnh',required:true" type="text" placeholder="">
+                                        </div>
+                                        <div class="col-md-2">
+                                            <span class="form-group">
+                                                <button type="button" class="btn btn-white" id="SelectImage2CH">Chọn!</button>
+                                            </span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!--end hình 2-->
+                            <!---hình 3-->
+                            <div class="col-md-3">
+                                <div class="form-group">
+                                    <label class="checkbox-inline">hình 3 <span class="TxtImage3CH"></span></label>
+                                    <div class="row">
+                                        <div class="col-md-8">
+                                            <input class="form-group-sm easyui-validatebox tb" id="TxtImage3CH" data-options=" prompt:'hình ảnh',required:true" type="text" placeholder="">
+                                        </div>
+                                        <div class="col-md-2">
+                                            <span class="form-group">
+                                                <button type="button" class="btn btn-white" id="SelectImage3CH">Chọn!</button>
+                                            </span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!--end hình 3-->
+                            <!---hình 4-->
+                            <div class="col-md-3">
+                                <div class="form-group">
+                                    <label class="checkbox-inline">hình 4 <span class="TxtImage4CH"></span></label>
+                                    <div class="row">
+                                        <div class="col-md-8">
+                                            <input class="form-group-sm easyui-validatebox tb" id="TxtImage4CH" data-options=" prompt:'hình ảnh',required:true" type="text" placeholder="">
+                                        </div>
+                                        <div class="col-md-2">
+                                            <span class="form-group">
+                                                <button type="button" class="btn btn-white" id="SelectImage4CH">Chọn!</button>
+                                            </span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!--end hình 4-->
+                        </div>
+                <!--end thêm hinh-->
+                <div class="row" style="padding-top:10px">
+                    <div class="col-lg-2">
+                        <div class="form-group">
+                            <label class="TxtSoluongCH">Số lượng</label> <br />
+                            <input class="form-group" style="width:85%" type="number" id="TxtSoluongCH" value="1" min="1">
+                        </div>
+                    </div>
+                    <div class="col-lg-2">
+                        <div class="form-group">
+                            <label class="SelectTinhtrangCH">Tình trạng</label> <br />
+                            <select class="form-group easyui-validatebox tb validatebox-text" name="Type" id="SelectTinhtrangCH">
+                                <option value="0">Hết hàng</option>
+                                <option value="1" selected="selected">Còn hàng</option>
+                            </select>
+                        </div>
+                    </div>
+                    @{Html.RenderAction("MenuDientuMausac", "DientuMathangAdmin");}
+                    @{Html.RenderAction("MenuDientuDungluong", "DientuMathangAdmin");}
+                    <div class="col-lg-1">
+                        <div class="form-group">
+                            <label>Ord</label> <br />
+                            <input class="form-group" style="width:85%" type="number" id="TxtOrdCH" value="1" min="1">
+                        </div>
+                    </div>
+                    <div class="col-lg-1">
+                        <div class="form-group">
+                            <label class="CKActiveCH">Active</label> <br />
+                            <input id="CKActiveCH" class="checkbox-inline" type="checkbox" checked="checked" value="1">
+                        </div>
+                    </div>
+                    <div class="col-md-2">
+                        <div class="form-group">
+                            <label class="checkbox-inline">Chức năng </label>
+                            <button type="submit" id="saveCH" class="btn btn-arrow easyui-validatebox tb"><i class="fa fa-save"></i> Lưu cấu hình</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="row" style="padding:10px">
+                    <div class="form-group">
+                        <div class="col-md-12" id="Idcauhinhthietlap"></div>
+                    </div>
+                </div>
+                <div class="row" style="padding-top:10px">
+                    <div class="label-warning">Phần lưu toàn bộ thông tin sản phẩm (ngoài trừ Cấu hình và thuộc tính)</div>
+                </div>
+            </div>
+            <!--Cấu hình thuộc tính-->
+            <div class="tab-pane fade" id="DientuMathangthuoctinh">
+                <div class="row" style="padding:10px">
+                    Cho phép bạn thiết lập cấu hình thuộc tính thông số cho sản phẩm,<br />
+                    bạn cần phải phải điền thông tin chính xác cho sản phẩm giúp người dùng tìm kiếm
+                    dễ dàng hơn
+                </div>
+                <div class="row">
+                    <div class="col-md-2">
+                        <div class="form-group">
+                            <label class="checkbox-inline">Tên </label>
+                            <input class="hidden" id="IdTagTT" />
+                            <input class="form-group easyui-validatebox tb" id="TxtNameTT" data-options="required:true" type="text" placeholder="">
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="form-group">
+                            <label class="checkbox-inline">Giá trị </label>
+                            <input class="form-group easyui-validatebox tb" id="TxtValueTT" data-options="required:true" type="text" placeholder="">
+                        </div>
+                    </div>
+                    <div class="col-lg-2">
+                        <div class="form-group">
+                            <label class="TxtOrdTT">Sắp xếp</label> <br />
+                            <input class="form-group" style="width:85%" type="number" id="TxtOrdTT" value="1" min="1">
+                        </div>
+                    </div>
+                    <div class="col-lg-2">
+                        <div class="form-group">
+                            <label class="CKActiveTT">Kích hoạt</label> <br />
+                            <input id="CKActiveTT" class="checkbox-inline" type="checkbox" checked="checked" value="1">
+                        </div>
+                    </div>
+                    @*@{Html.RenderAction("MenuDientuLoaithuoctinh", "DientuMathangAdmin");}
+                        @{Html.RenderAction("MenuDientuCapLoaithuoctinh", "DientuMathangAdmin");}*@
+                    <div class="col-md-2">
+                        <div class="form-group">
+                            <label class="checkbox-inline">Chức năng </label>
+                            <button type="submit" id="saveTT" class="btn btn-arrow easyui-validatebox tb"><i class="fa fa-save"></i> Lưu thuộc tính</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="row" style="padding:10px">
+                    <div class="form-group">
+                        <div class="col-md-12" id="Idthuoctinhthietlap"></div>
+                    </div>
+                </div>
+                <div class="row" style="padding-top:10px">
+                    <div class="label-warning">Phần lưu toàn bộ thông tin sản phẩm (ngoài trừ Cấu hình và thuộc tính)</div>
+                </div>
+            </div>
+            <div class="tab-pane fade" id="DientuMathangkhuyenmai">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="form-group">
+                            <label class="Txtkhuyenmai_html">Nội dung khuyến mãi</label>
+                            <textarea class="form-control" id="Txtkhuyenmai_html" rows="3"></textarea>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="tab-pane fade" id="DientuMathangSeo">
+                <div class="row">
+                    <div class="col-lg-12 col-md-12 col-sm-12">
+                        <div class="form-group">
+                            <label>Mô tả từ khóa</label>
+                            <textarea class="form-control easyui-validatebox tb" id="TxtDescription" data-options="required:true" rows="3"></textarea>
+                        </div>
+                        <div class="form-group">
+                            <label>Từ khóa nội dung</label>
+                            <textarea class="form-control easyui-validatebox tb" id="TxtKeyword" data-options="prompt:'Nhập từ khóa người dùng',required:true" rows="3"></textarea>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        <div class="clear-fix"></div>
+
+        <div class="padding-form">
+            <div class="form-group">
+                <button type="submit" id="Save" class="btn btn-default"><i class="fa fa-save"></i> Lưu Lại</button>
+                <button type="submit" id="Cancel" class="btn btn-default"><i class="fa fa-times-circle"></i> Hủy bỏ</button>
+            </div>
+        </div>
+    </div>
+    <!-- /.panel-body -->
+
+</div>
+    </div>
+
+</div>
+
+<!--jquery action-->
+<script src="/Areas/Quanlywebsite/JavaScrip/Dientu/product/Categoryproductdetail/Create.js"></script>
+<script src="/Areas/Quanlywebsite/JavaScrip/Dientu/product/Categoryproductdetail/Update.js"></script>
+<script src="/Areas/Quanlywebsite/JavaScrip/Dientu/product/Categoryproductdetail/read.js"></script>
+<script src="/Areas/Quanlywebsite/JavaScrip/Dientu/product/Categoryproductdetail/Copy.js"></script>
+<script src="/Areas/Quanlywebsite/JavaScrip/Dientu/product/Categoryproductdetail/Active.js"></script>
+<script src="/Areas/Quanlywebsite/JavaScrip/Dientu/product/Categoryproductdetail/Delete.js"></script>
+<script src="/Areas/Quanlywebsite/JavaScrip/Dientu/product/Categoryproductdetail/Cancel.js"></script>
+<script src="/Areas/Quanlywebsite/JavaScrip/Dientu/product/Categoryproductdetail/Save.js"></script>
+<script src="/Areas/Quanlywebsite/JavaScrip/Dientu/product/Categoryproductdetail/buttonload.js"></script>
+
+<!--Jquery xử lý-->
+<script src="/Areas/Quanlywebsite/JavaScrip/Dientu/product/Categoryproductdetail/thuoctinh.js"></script>
+<script src="/Areas/Quanlywebsite/JavaScrip/Dientu/product/Categoryproductdetail/cauhinh.js"></script>
+<!--javascrip images ckfinder  -->
+<script language="javascript" type="text/javascript">
+    $(function () {
+        $("#SelectImageCH").click(function () {
+            var finder = new CKFinder();
+            finder.selectActionFunction = function (fileUrl) {
+                $("#TxtImageCH").val(fileUrl);
+            };
+            finder.popup();
+        });
+
+        //list images
+        $("#SelectImage1CH").click(function () {
+            var finder = new CKFinder();
+            finder.selectActionFunction = function (fileUrl) {
+                $("#TxtImage1CH").val(fileUrl);
+            };
+            finder.popup();
+        });
+        $("#SelectImage2CH").click(function () {
+            var finder = new CKFinder();
+            finder.selectActionFunction = function (fileUrl) {
+                $("#TxtImage2CH").val(fileUrl);
+            };
+            finder.popup();
+        });
+        $("#SelectImage3CH").click(function () {
+            var finder = new CKFinder();
+            finder.selectActionFunction = function (fileUrl) {
+                $("#TxtImage3CH").val(fileUrl);
+            };
+            finder.popup();
+        });
+        $("#SelectImage4CH").click(function () {
+            var finder = new CKFinder();
+            finder.selectActionFunction = function (fileUrl) {
+                $("#TxtImage4CH").val(fileUrl);
+            };
+            finder.popup();
+        });
+    });
+</script>
+
+<!--javascrip textbox ckeditor  -->
+<script type="text/javascript">
+    var editor;
+    function createEditor(languageCode, id) {
+        var editor = CKEDITOR.replace(id, {
+            language: languageCode
+        });
+    }
+    $(function () {
+        createEditor('vi', 'TxtBaiviet');
+        createEditor('vi', 'TxtMota');
+        createEditor('vi', 'Txtkhuyenmai_html');
+    });
+
+    $("#Inputfileimage").blur(function () {
+        alert($("#Inputfileimage").val());
+    });
+
+</script>

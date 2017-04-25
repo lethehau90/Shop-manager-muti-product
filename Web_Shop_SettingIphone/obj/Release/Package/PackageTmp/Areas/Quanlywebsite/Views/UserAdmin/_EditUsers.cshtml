@@ -1,0 +1,86 @@
+﻿<div class="panel-heading" id="update_paner">
+    <div class="portlet box green">
+        <div class="portlet-title">
+            <div class="caption">
+                <header>
+                    <i class="fa fa-user"></i> Cập nhật danh sách người dùng
+                </header>
+            </div>
+            <div class="tools">
+                <a href="javascript:;" class="collapse"> </a> <!--collapse-->
+
+            </div>
+        </div>
+        <div class="portlet-body flip-scroll">
+            <div class="panel-body">
+                <div class="row">
+                    <div class="col-md-12">
+                        <form role="form">
+                            <div class="form-group hidden">
+                                <label>ID</label>
+                                <input class="form-group" id="TxtId" placeholder="">
+                            </div>
+                            <div class="form-group">
+                                <label>Nhập tên người dùng</label>
+                                <input class="form-group easyui-validatebox tb" id="TxtName" data-options="prompt:'Nhập tên người dùng',required:true,validType:'length[3,10]'" type="text" placeholder="">
+                            </div>
+                            <div class="form-group">
+                                <label>Tên đăng nhập</label>
+                                <input class="form-control easyui-validatebox tb" id="TxtUsername" data-options="prompt:'Nhập tên đăng nhập',required:true,validType:'length[3,10]'" type="text" placeholder="">
+                            </div>
+                            <div class="form-group">
+                                <label>Mật khẩu</label>
+                                <input class="form-control easyui-validatebox tb" id="TxtPassword" data-options="prompt:'Nhập tên mật khẩu',required:true,validType:'length[3,10]'" type="password" placeholder="">
+                            </div>
+
+                            <div class="form-group">
+                                <label>Xác Nhân Mật khẩu</label>
+                                <input class="form-control easyui-validatebox tb" id="TxtConfirmPassword" data-options="prompt:'Nhập xác nhận mật khẩu',required:true,validType:'length[3,10]'" type="password" placeholder="">
+                            </div>
+
+                            <div class="form-group ">
+                                <label>Quyền sử dùng</label>
+                                <select class="form-control" name="Role" id="SelectRole">
+                                    <option value="Admin">Admin</option>
+                                    <option value="Personnel" selected="selected">Nhân viên</option>
+                                </select>
+                            </div>
+                            <div class="clear-fix"></div>
+                            
+                            <div class="form-group">
+                                <label class="TxtOrd">Sắp xếp</label> <br />
+                                <input class="form-group" type="number" id="TxtOrd" value="1" min="1">
+                            </div>
+
+                            <div class="form-group">
+                                <label class="checkbox-inline">Kích hoạt </label>
+                                <input id="CKActive" class="checkbox-inline" type="checkbox" checked="checked" value="1">
+                            </div>
+                            <div class="form-group">
+                                <button type="submit" id="Save" class="btn btn-default"><i class="fa fa-save"></i> Lưu Lại</button>
+                                <button type="submit" id="Cancel" class="btn btn-default"><i class="fa fa-times-circle"></i> Hủy bỏ</button>
+                            </div>
+                        </form>
+
+
+                    </div>
+                    <!-- /.col-lg-6 (nested) -->
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+
+
+
+<!--jquery action-->
+<script src="/Areas/Quanlywebsite/JavaScrip/ThongTin/User/Create.js"></script>
+<script src="/Areas/Quanlywebsite/JavaScrip/ThongTin/User/Update.js"></script>
+<script src="/Areas/Quanlywebsite/JavaScrip/ThongTin/User/read.js"></script>
+<script src="/Areas/Quanlywebsite/JavaScrip/ThongTin/User/Active.js"></script>
+<script src="/Areas/Quanlywebsite/JavaScrip/ThongTin/User/Delete.js"></script>
+<script src="/Areas/Quanlywebsite/JavaScrip/ThongTin/User/Cancel.js"></script>
+<script src="/Areas/Quanlywebsite/JavaScrip/ThongTin/User/Save.js"></script>

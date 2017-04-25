@@ -1,0 +1,378 @@
+﻿<div class="panel-heading" id="update_paner">
+    <div class="portlet box green">
+        <div class="portlet-title">
+            <div class="caption">
+                <header>
+                    <i class="fa fa-user"></i>  Cập nhật bài đăng <span class="Editcatelog"></span>
+                </header>
+            </div>
+            <div class="tools">
+                <a href="javascript:;" class="collapse"> </a> <!--collapse-->
+
+            </div>
+        </div>
+        <div class="portlet-body flip-scroll">
+            <!-- /.panel-heading -->
+            <div class="panel-body">
+                <!-- Nav tabs -->
+                <ul class="nav nav-tabs">
+                    <li class="active">
+                        <a href="#NewsDetailtieude" data-toggle="tab">Tiêu đề Tin</a>
+                    </li>
+
+                    <li>
+                        <a href="#NewsDetailDetail" data-toggle="tab">Nội dung Bài đăng</a>
+                    </li>
+
+                    <li>
+                        <a href="#NewsDetailthietlap" data-toggle="tab">Thiết lập</a>
+                    </li>
+
+                    <li>
+                        <a href="#NewsDetailSeo" data-toggle="tab">Seo</a>
+                    </li>
+
+                    <li>
+                        <a href="#NewsDetailhinhanh" data-toggle="tab">Hình ảnh Chính</a>
+                    </li>
+                    <li class="hidden">
+                        <a href="#NewsDetailtrinhchieu" data-toggle="tab">Ảnh trình chiếu</a>
+                    </li>
+                </ul>
+                <!-- Tab panes -->
+                <div class="tab-content">
+                    <div class="tab-pane fade in active" id="NewsDetailtieude">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="form-group hidden">
+                                    <label>Id</label>
+                                    <input class="form-group easyui-validatebox tb" id="TxtId" data-options="required:true" type="text" placeholder="">
+                                </div>
+                                <div class="form-group">
+                                    <label>Tiêu đề bài </label>
+                                    <input class="form-group easyui-validatebox tb" id="TxtName" data-options="required:true" type="text" placeholder="">
+                                </div>
+                                <div class="form-group hidden">
+                                    <label>Tiêu đề bài Tiếng Anh</label>
+                                    <input class="form-group easyui-validatebox tb" id="TxtNameEn" data-options="required:true" type="text" placeholder="">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="tab-pane fade" id="NewsDetailDetail">
+                        <div class="row">
+                            <div class="col-lg-12 col-md-12 col-sm-12">
+                                <div class="form-group">
+                                    <label class="TxtContent">Nội dung mô tả </label>
+                                    <textarea class="form-control" id="TxtContent" rows="3"></textarea>
+                                </div>
+                                <div class="form-group">
+                                    <label class="TxtDetail">Nội dung chi tiết </label>
+                                    <textarea class="form-control" id="TxtDetail" rows="3"></textarea>
+                                </div>
+
+                                <div class="form-group hidden">
+                                    <label class="">Nội dung mô tả tiếng anh</label>
+                                    <textarea class="form-control" id="TxtContentEn" rows="3"></textarea>
+                                </div>
+                                <div class="form-group hidden">
+                                    <label>Nội dung chi tiết tiếng anh</label>
+                                    <textarea class="form-control" id="TxtDetailEn" rows="3"></textarea>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div class="tab-pane fade" id="NewsDetailthietlap">
+                        <div class="row">
+                            
+                          <div class="form-group">
+                              @{Html.RenderAction("MenuLeverMuti_lever1", "MenuLeverMuti");}
+                          </div>
+                            <div class="clear-fix"></div>
+                            <div class="col-md-3">
+                                <div class="form-group">
+                                    <label>Chọn kiểu loại</label>
+                                    <select class="form-control" name="Type" id="SelectPriority">
+                                        <option value="1" selected="selected">bình thường</option>
+                                        <option value="2">nổi bật</option>
+                                    </select>
+                                </div>
+
+                                <div class="form-group">
+                                    <label class="Txtord">Sắp xếp</label> <br />
+                                    <input class="form-group" type="number" id="Txtord" value="1" min="1">
+                                </div>
+
+                                <div class="form-group">
+                                    <label>Nguồn bài viết</label>
+                                    <input class="form-group easyui-validatebox tb" id="TxtNguon" data-options="required:true" type="text" placeholder="">
+                                </div>
+
+                                <div class="form-group">
+                                    <label class="checkbox-inline">Kích hoạt </label>
+                                    <input id="CKActive" class="checkbox-inline" type="checkbox" checked="checked" value="1">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="tab-pane fade" id="NewsDetailSeo">
+                        <div class="row">
+                            <div class="col-lg-12 col-md-12 col-sm-12">
+                                <div class="form-group">
+                                    <label>Mô tả từ khóa</label>
+                                    <textarea class="form-control easyui-validatebox tb" id="TxtDescription" data-options="required:true" rows="3"></textarea>
+                                </div>
+                                <div class="form-group">
+                                    <label>Từ khóa nội dung</label>
+                                    <textarea class="form-control easyui-validatebox tb" id="TxtKeyword" data-options="prompt:'Nhập từ khóa người dùng',required:true" rows="3"></textarea>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div class="tab-pane fade" id="NewsDetailhinhanh">
+
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="form-group">
+                                    <label>Up load hình ảnh <span class="TxtImage"></span></label>
+                                    <div class="form-group">
+                                        <div class="col-md-12 pading-left-Select">
+                                            <div class="col-md-3">
+                                                <input class="form-group-sm easyui-validatebox tb" id="TxtImage" data-options=" prompt:'hình ảnh',required:true" type="text" placeholder="">
+                                            </div>
+                                            <div class="col-md-2">
+                                                <span class="form-group">
+                                                    <button type="button" class="btn btn-white" id="SelectImage">Chọn Ảnh!</button>
+                                                </span>
+                                            </div>
+                                            <div class="col-md-3">
+                                                <!--chú thích ở đây-->
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <img class="ShowImgZoom img-responsive" src="/Images/no-image.jpg" id="imgShowScren">
+                                </div>
+                            </div>
+                        </div>
+                        
+                    </div>
+                   
+                     <div class="tab-pane fade" id="NewsDetailtrinhchieu">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <!--Ảnh trình chiếu 1-->
+                                <div class="form-group">
+                                    <label>Up load hình ảnh trình chiếu 1 <span class="TxtImage1"></span></label>
+                                    <div class="form-group">
+                                        <div class="col-md-12 pading-left-Select">
+                                            <div class="col-md-3">
+                                                <input class="form-group-sm easyui-validatebox tb" id="TxtImage1" data-options=" prompt:'hình ảnh',required:true" type="text" placeholder="">
+                                            </div>
+                                            <div class="col-md-2">
+                                                <span class="form-group">
+                                                    <button type="button" class="btn btn-white" id="SelectImage1">Chọn Ảnh!</button>
+                                                </span>
+                                            </div>
+                                            <div class="col-md-3">
+                                                <img width="20%" class="ShowImgZoom img-responsive" src="/images/no-image.jpg" id="imgShowScren1">
+                                            </div>
+                                            <div class="col-md-3">
+                                                <!--chú thích ở đây-->
+                                            </div>
+                                      </div>
+                                    </div>
+                                </div>
+                                <!--Ảnh trình chiếu 2-->
+                                <div class="form-group">
+                                    <label>Up load hình ảnh trình chiếu 2 <span class="TxtImage2"></span></label>
+                                    <div class="form-group">
+                                        <div class="col-md-12 pading-left-Select">
+                                            <div class="col-md-3">
+                                                <input class="form-group-sm easyui-validatebox tb" id="TxtImage2" data-options=" prompt:'hình ảnh',required:true" type="text" placeholder="">
+                                            </div>
+                                            <div class="col-md-2">
+                                                <span class="form-group">
+                                                    <button type="button" class="btn btn-white" id="SelectImage2">Chọn Ảnh!</button>
+                                                </span>
+                                            </div>
+                                            <div class="col-md-3">
+                                                <img width="20%" class="ShowImgZoom img-responsive" src="/images/no-image.jpg" id="imgShowScren2">
+                                            </div>
+                                            <div class="col-md-3">
+                                                <!--chú thích ở đây-->
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!--Ảnh trình chiếu 3-->
+                                <div class="form-group">
+                                    <label>Up load hình ảnh trình chiếu 3 <span class="TxtImage3"></span></label>
+                                    <div class="form-group">
+                                        <div class="col-md-12 pading-left-Select">
+                                            <div class="col-md-3">
+                                                <input class="form-group-sm easyui-validatebox tb" id="TxtImage3" data-options=" prompt:'hình ảnh',required:true" type="text" placeholder="">
+                                            </div>
+                                            <div class="col-md-2">
+                                                <span class="form-group">
+                                                    <button type="button" class="btn btn-white" id="SelectImage3">Chọn Ảnh!</button>
+                                                </span>
+                                            </div>
+                                            <div class="col-md-3">
+                                                <img width="20%" class="ShowImgZoom img-responsive" src="/images/no-image.jpg" id="imgShowScren3">
+                                            </div>
+                                            <div class="col-md-3">
+                                                <!--chú thích ở đây-->
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!--Ảnh trình chiếu 4-->
+                                <div class="form-group">
+                                    <label>Up load hình ảnh trình chiếu 4 <span class="TxtImage4"></span></label>
+                                    <div class="form-group">
+                                        <div class="col-md-12 pading-left-Select">
+                                            <div class="col-md-3">
+                                                <input class="form-group-sm easyui-validatebox tb" id="TxtImage4" data-options=" prompt:'hình ảnh',required:true" type="text" placeholder="">
+                                            </div>
+                                            <div class="col-md-2">
+                                                <span class="form-group">
+                                                    <button type="button" class="btn btn-white" id="SelectImage4">Chọn Ảnh!</button>
+                                                </span>
+                                            </div>
+                                            <div class="col-md-3">
+                                                <img width="20%" class="ShowImgZoom img-responsive" src="/images/no-image.jpg" id="imgShowScren4">
+                                            </div>
+                                            <div class="col-md-3">
+                                                <!--chú thích ở đây-->
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!--Ảnh trình chiếu 5-->
+                                <div class="form-group">
+                                    <label>Up load hình ảnh trình chiếu 5 <span class="TxtImage5"></span></label>
+                                    <div class="form-group">
+                                        <div class="col-md-12 pading-left-Select">
+                                            <div class="col-md-3">
+                                                <input class="form-group-sm easyui-validatebox tb" id="TxtImage5" data-options=" prompt:'hình ảnh',required:true" type="text" placeholder="">
+                                            </div>
+                                            <div class="col-md-2">
+                                                <span class="form-group">
+                                                    <button type="button" class="btn btn-white" id="SelectImage5">Chọn Ảnh!</button>
+                                                </span>
+                                            </div>
+                                            <div class="col-md-3">
+                                                <img width="20%" class="ShowImgZoom img-responsive" src="/images/no-image.jpg" id="imgShowScren5">
+                                            </div>
+                                            <div class="col-md-3">
+                                                <!--chú thích ở đây-->
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!--end anh trình chiếu-->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="clear-fix"></div>
+                <div class="padding-form">
+                    <div class="form-group">
+                        <button type="submit" id="Save" class="btn btn-default"><i class="fa fa-save"></i> Lưu Lại</button>
+                        <button type="submit" id="Cancel" class="btn btn-default"><i class="fa fa-times-circle"></i> Hủy bỏ</button>
+                    </div>
+                </div>
+            </div>
+            <!-- /.panel-body -->
+
+        </div>
+    </div>
+
+</div>
+
+<!--jquery action-->
+<script src="/Areas/Quanlywebsite/JavaScrip/CategoryNewsDetail/Create.js"></script>
+<script src="/Areas/Quanlywebsite/JavaScrip/CategoryNewsDetail/Update.js"></script>
+<script src="/Areas/Quanlywebsite/JavaScrip/CategoryNewsDetail/read.js"></script>
+<script src="/Areas/Quanlywebsite/JavaScrip/CategoryNewsDetail/Copy.js"></script>
+<script src="/Areas/Quanlywebsite/JavaScrip/CategoryNewsDetail/Active.js"></script>
+<script src="/Areas/Quanlywebsite/JavaScrip/CategoryNewsDetail/Delete.js"></script>
+<script src="/Areas/Quanlywebsite/JavaScrip/CategoryNewsDetail/Cancel.js"></script>
+<script src="/Areas/Quanlywebsite/JavaScrip/CategoryNewsDetail/Save.js"></script>
+<script src="/Areas/Quanlywebsite/JavaScrip/CategoryNewsDetail/buttonload.js"></script>
+
+<!--javascrip images ckfinder  -->
+<script language="javascript" type="text/javascript">
+    $(function () {
+        $("#SelectImage").click(function () {
+            var finder = new CKFinder();
+            finder.selectActionFunction = function (fileUrl) {
+                $("#TxtImage").val(fileUrl);
+            };
+            finder.popup();
+        }); //upload photo main
+
+        $("#SelectImage1").click(function () {
+            var finder = new CKFinder();
+            finder.selectActionFunction = function (fileUrl) {
+                $("#TxtImage1").val(fileUrl);
+            };
+            finder.popup();
+        }); //upload photo SlidesShow 1
+
+        $("#SelectImage2").click(function () { 
+            var finder = new CKFinder();
+            finder.selectActionFunction = function (fileUrl) {
+                $("#TxtImage2").val(fileUrl);
+            };
+            finder.popup();
+        }); //uploaf photo SlidesShow 2
+
+        $("#SelectImage3").click(function () {
+            var finder = new CKFinder();
+            finder.selectActionFunction = function (fileUrl) {
+                $("#TxtImage3").val(fileUrl);
+            };
+            finder.popup();
+        }); //uplaod photo SlidesShow 3
+
+        $("#SelectImage4").click(function () {
+            var finder = new CKFinder();
+            finder.selectActionFunction = function (fileUrl) {
+                $("#TxtImage4").val(fileUrl);
+            };
+            finder.popup();
+        }); //upload photo SlidesShow 4
+
+        $("#SelectImage5").click(function () {
+            var finder = new CKFinder();
+            finder.selectActionFunction = function (fileUrl) {
+                $("#TxtImage5").val(fileUrl);
+            };
+            finder.popup();
+        }); //upload photo SlidesShow 5
+    });
+</script>
+
+<!--javascrip textbox ckeditor  -->
+<script type="text/javascript">
+    var editor;
+    function createEditor(languageCode, id) {
+        var editor = CKEDITOR.replace(id, {
+            language: languageCode
+        });
+    }
+    $(function () {
+        createEditor('vi', 'TxtDetail'); 
+        createEditor('vi', 'TxtDetailEn');
+    });
+
+</script>

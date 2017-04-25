@@ -1,0 +1,217 @@
+﻿<div class="panel-heading" id="update_paner">
+    <div class="portlet box green">
+        <div class="portlet-title">
+            <div class="caption">
+                <header>
+                    <i class="fa fa-user"></i>  Cập nhật danh mục <span class="Editcatelog"></span>
+                </header>
+            </div>
+            <div class="tools">
+                <a href="javascript:;" class="collapse"> </a> <!--collapse-->
+
+            </div>
+        </div>
+        <div class="portlet-body flip-scroll">
+            <!-- /.panel-heading -->
+            <div class="panel-body">`
+                <!-- Nav tabs -->
+                <ul class="nav nav-tabs">
+                    <li class="active">
+                        <a href="#CategoryNewstieude" data-toggle="tab">Tiêu đề danh mục</a>
+                    </li>
+
+                    <li>
+                        <a href="#CategoryNewsmota" data-toggle="tab">Mô tả</a>
+                    </li>
+
+                    <li>
+                        <a href="#CategoryNewsthietlap" data-toggle="tab">Thiết lập</a>
+                    </li>
+
+                    <li>
+                        <a href="#CategoryNewsSeo" data-toggle="tab">Seo</a>
+                    </li>
+
+                    <li class="">
+                        <a href="#CategoryNewshinhanh" data-toggle="tab">Hình ảnh</a>
+                    </li>
+                </ul>
+                <!-- Tab panes -->
+                <div class="tab-content">
+                    <div class="tab-pane fade in active" id="CategoryNewstieude">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="form-group hidden">
+                                    <label>Id</label>
+                                    <input class="form-group easyui-validatebox tb" id="TxtId" data-options="required:true" type="text" placeholder="">
+                                </div>
+                                <div class="form-group">
+                                    <label>Ngôn ngữ Tiếng việt</label>
+                                    <input class="form-group easyui-validatebox tb" id="TxtName" data-options="required:true" type="text" placeholder="">
+                                </div>
+                                <div class="form-group">
+                                    <label>Ngôn ngữ Tiếng Anh</label>
+                                    <input class="form-group easyui-validatebox tb" id="TxtNameEn" data-options="required:true" type="text" placeholder="">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="tab-pane fade" id="CategoryNewsmota">
+                        <div class="row">
+                            <div class="col-lg-12 col-md-12 col-sm-12">
+                                <div class="form-group">
+                                    <label class="Txtcontent">Nội dung mô tả tiếng việt</label>
+                                    <textarea class="form-control" id="Txtcontent" rows="3"></textarea>
+                                </div>
+                                
+
+                                <div class="form-group">
+                                    <label class="TxtcontentEn">Nội dung mô tả tiếng anh</label>
+                                    <textarea class="form-control" id="TxtcontentEn" rows="3"></textarea>
+                                </div>
+                                
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div class="tab-pane fade" id="CategoryNewsthietlap">
+                        <div class="row">
+                            <div class="col-md-3">
+                                <div class="form-group">
+                                    <label class="Selectlevel">Chọn danh mục</label>
+                                    @Html.DropDownList("Selectlevel", (List<SelectListItem>)ViewBag.Selectlist_lever, "---danh mục gốc---", new { @class = "form-control", @onchange = "ddlchaChange(this.value)" })
+                                    <br />
+                                    @Html.DropDownList("Selectlevelmuti", Enumerable.Empty<SelectListItem>(), "---- Chọn Cấp con", new { @class = "form-control" })
+                                </div>
+
+                                <div class="form-group">
+                                    <label class="TxtOrd">Sắp xếp</label> <br />
+                                    <input class="form-group" type="number" id="TxtOrd" value="1" min="1">
+                                </div>
+
+                                <div class="form-group">
+                                    <label class="checkbox-inline">Trang home </label>
+                                    <input id="CKPriority" class="checkbox-inline" type="checkbox"  value="0">
+                                </div>
+
+                                <div class="form-group">
+                                    <label class="checkbox-inline">Kích hoạt </label>
+                                    <input id="CKActive" class="checkbox-inline" type="checkbox" checked="checked" value="1">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="tab-pane fade" id="CategoryNewsSeo">
+                        <div class="row">
+                            <div class="col-lg-12 col-md-12 col-sm-12">
+                                <div class="form-group">
+                                    <label>Mô tả từ khóa</label>
+                                    <textarea class="form-control easyui-validatebox tb" id="TxtDescription" data-options="required:true" rows="3"></textarea>
+                                </div>
+                                <div class="form-group">
+                                    <label>Từ khóa nội dung</label>
+                                    <textarea class="form-control easyui-validatebox tb" id="TxtKeyword" data-options="prompt:'Nhập từ khóa người dùng',required:true" rows="3"></textarea>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div class="tab-pane fade" id="CategoryNewshinhanh">
+
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="form-group">
+                                    <label>Up load hình ảnh <span class="TxtLogogroups"></span></label>
+                                    <div class="form-group">
+                                        <div class="col-md-12 pading-left-Select">
+                                            <div class="col-md-3">
+                                                <input class="form-group-sm easyui-validatebox tb" id="TxtLogogroup" data-options=" prompt:'hình ảnh',required:true" type="text" placeholder="">
+                                            </div>
+                                            <div class="col-md-2">
+                                                <span class="form-group">
+                                                    <button type="button" class="btn btn-white" id="SelectLogogroup">Chọn Ảnh!</button>
+                                                </span>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <img class="ShowImgZoom img-responsive" src="/Images/no-image.jpg" id="imgShowScren">
+                                </div>
+                            </div>
+                        </div>
+                        
+                    </div>
+
+                </div>
+                <div class="clear-fix"></div>
+                <div class="padding-form">
+                    <div class="form-group">
+                        <button type="submit" id="Save" class="btn btn-default"><i class="fa fa-save"></i> Lưu Lại</button>
+                        <button type="submit" id="Cancel" class="btn btn-default"><i class="fa fa-times-circle"></i> Hủy bỏ</button>
+                    </div>
+                </div>
+            </div>
+            <!-- /.panel-body -->
+
+        </div>
+    </div>
+
+</div>
+
+<!--jquery action-->
+<script src="/Areas/Quanlywebsite/JavaScrip/Sanpham/product/Categoryproduct/Create.js"></script>
+<script src="/Areas/Quanlywebsite/JavaScrip/Sanpham/product/Categoryproduct/Update.js"></script>
+<script src="/Areas/Quanlywebsite/JavaScrip/Sanpham/product/Categoryproduct/read.js"></script>
+<script src="/Areas/Quanlywebsite/JavaScrip/Sanpham/product/Categoryproduct/Active.js"></script>
+<script src="/Areas/Quanlywebsite/JavaScrip/Sanpham/product/Categoryproduct/Priority.js"></script>
+<script src="/Areas/Quanlywebsite/JavaScrip/Sanpham/product/Categoryproduct/Delete.js"></script>
+<script src="/Areas/Quanlywebsite/JavaScrip/Sanpham/product/Categoryproduct/Cancel.js"></script>
+<script src="/Areas/Quanlywebsite/JavaScrip/Sanpham/product/Categoryproduct/Save.js"></script>
+
+<script src="/Areas/Quanlywebsite/JavaScrip/Sanpham/product/Categoryproduct/SelectOption.js"></script>
+
+<script src="/Areas/Quanlywebsite/JavaScrip/Sanpham/product/Categoryproduct/read_lever2.js"></script>
+<script src="/Areas/Quanlywebsite/JavaScrip/Sanpham/product/Categoryproduct/Cancel_lever2.js"></script>
+<script src="/Areas/Quanlywebsite/JavaScrip/Sanpham/product/Categoryproduct/Update_lever2.js"></script>
+<!--javascrip Logogroups ckfinder  -->
+<script language="javascript" type="text/javascript">
+    $(function () {
+        $("#SelectLogogroup").click(function () {
+            var finder = new CKFinder();
+            finder.selectActionFunction = function (fileUrl) {
+                $("#TxtLogogroup").val(fileUrl);
+            };
+            finder.popup();
+        });
+
+        $("#SelectlevelLogogroup").click(function () {
+            var finder = new CKFinder();
+            finder.selectActionFunction = function (fileUrl) {
+                $("#TxtlevelLogogroup").val(fileUrl);
+            };
+            finder.popup();
+        });
+
+        $("#SelectlevelLogogroup").click(function () {
+            var finder = new CKFinder();
+            finder.selectActionFunction = function (fileUrl) {
+                $("#TxtlevelLogogroup").val(fileUrl);
+            };
+            finder.popup();
+        });
+        $("#SelectLogoaddgroup").click(function () {
+            var finder = new CKFinder();
+            finder.selectActionFunction = function (fileUrl) {
+                $("#TxtaddLogogroup").val(fileUrl);
+            };
+            finder.popup();
+        });
+    });
+</script>
+

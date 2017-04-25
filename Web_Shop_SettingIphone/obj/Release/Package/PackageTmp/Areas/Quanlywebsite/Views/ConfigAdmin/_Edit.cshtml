@@ -1,0 +1,219 @@
+﻿<div class="panel-heading" id="update_paner">
+    <div class="portlet box green">
+        <div class="portlet-title">
+            <div class="caption">
+                <header>
+                    <i class="fa fa-user"></i> Quản lý Chức năng trên các thanh tab
+                </header>
+            </div>
+            <div class="tools">
+                <a href="javascript:;" class="collapse"> </a> <!--collapse-->
+
+            </div>
+        </div>
+        <div class="portlet-body flip-scroll">
+            <!-- /.panel-heading -->
+            <div class="panel-body">
+                <!-- Nav tabs -->
+                <ul class="nav nav-tabs">
+                    <li class="active">
+                        <a href="#ConfigSeo" data-toggle="tab">Cấu hình seo</a>
+                    </li>
+                    <li class="hidden">
+                        <a href="#ConfigChung" data-toggle="tab">Điều khoản</a>
+                    </li>
+                    <li>
+                        <a href="#ConfigLibary" data-toggle="tab">Tool Thư viện</a>
+                    </li>
+                    <li class="hidden">
+                        <a href="#ConfigMail" data-toggle="tab">Cấu hình Mail</a>
+                    </li>
+                    <li>
+                        <a href="#Confiphantrang" data-toggle="tab">Phân trang</a>
+                    </li>
+                </ul>
+                <!-- Tab panes -->
+                <div class="tab-content">
+                    <div class="tab-pane fade in active" id="ConfigSeo">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="form-group">
+                                    <label>Tiêu đề Website</label>
+                                    <input class="form-group easyui-validatebox tb" id="TxtTitle" data-options="prompt:'Nhập tên người dùng',required:true" type="text" placeholder="">
+                                </div>
+                                <div class="form-group">
+                                    <label>Mô tả Website</label>
+                                    <textarea class="form-control easyui-validatebox tb" id="TxtDescription" data-options="prompt:'Nhập mô tả người dùng',required:true" rows="3"></textarea>
+                                </div>
+                                <div class="form-group">
+                                    <label>Từ khóa Website</label>
+                                    <textarea class="form-control easyui-validatebox tb" id="TxtKeyword" data-options="prompt:'Nhập từ khóa người dùng',required:true" rows="3"></textarea>
+                                </div>
+                                <div class="form-group">
+                                    <label>Bản quyền</label>
+                                    <textarea class="form-control" id="TxtCopyright" rows="3"></textarea>
+                                </div>
+                                <div class="form-group">
+                                    <label>Icon Images Website </label>
+                                    <div class="form-group">
+                                        <div class="col-md-12 pading-left-Select">
+                                            <div class="col-md-3">
+                                                <input class="form-group-sm easyui-validatebox tb" id="TxtIcon" data-options=" prompt:'nhập tên người dùng',required:true" type="text" placeholder="">
+
+                                            </div>
+                                            <div class="col-md-2">
+                                                <span class="form-group">
+                                                    <button type="button" class="btn btn-white" id="SelectIcon">Chọn Ảnh!</button>
+                                                </span>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <img class="ShowImgZoom img-responsive" src="/images/no-image.jpg" id="imgShowScren">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="tab-pane fade" id="ConfigChung">
+                        <div class="row">
+                            <div class="col-lg-12 col-md-12 col-sm-12">
+                                <div class="form-group">
+                                    <label>Điều khoản thanh toán</label>
+                                    <textarea class="form-control" id="TxtPaymentTerms" rows="3"></textarea>
+                                </div>
+                                <div class="form-group">
+                                    <label>Chính sách giao hàng</label>
+                                    <textarea class="form-control" id="TxtDeliveryTerms" rows="3"></textarea>
+                                </div>
+                                <div class="form-group">
+                                    <label>Trợ giúp</label>
+                                    <textarea class="form-control" id="TxtHelpsize" rows="3"></textarea>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div class="tab-pane fade" id="ConfigLibary">
+                        <div class="form-group">
+                            <label>Thư viện javascript</label>
+                            <textarea class="form-control" id="TxtToolScrip" rows="3"></textarea>
+                            <label>Bản đồ</label>
+                            <textarea class="form-control" id="TxtMap" rows="3"></textarea>
+                        </div>
+                    </div>
+
+                    <div class="tab-pane fade" id="ConfigMail">
+                        <div class="form-group">
+                            <label>Mail Smtp</label>
+                            <input class="form-group easyui-validatebox tb" id="TxtMail_Smtp" data-options="prompt:'Nhập Smtp người dùng',required:true" type="text" placeholder="">
+                        </div>
+                        <div class="form-group">
+                            <label>Mail Port</label>
+                            <input class="form-group easyui-validatebox tb" id="TxtMail_Port" data-options="prompt:'Nhập Port người dùng',required:true" type="text" placeholder="">
+                        </div>
+                        <div class="form-group">
+                            <label>Mail Info</label>
+                            <input class="form-group easyui-validatebox tb" id="TxtMail_Info" data-options="prompt:'Nhập Info người dùng',required:true" type="text" placeholder="">
+                        </div>
+                        <div class="form-group">
+                            <label>Mail Noreply</label>
+                            <input class="form-group easyui-validatebox tb" id="TxtMail_Noreply" data-options="prompt:'Nhập Noreply người dùng',required:true" type="text" placeholder="">
+                        </div>
+                        <div class="form-group">
+                            <label>Mail Password</label>
+                            <input class="form-group easyui-validatebox tb" id="TxtMail_Password" data-options="prompt:'Nhập Password người dùng',required:true" type="text" placeholder="">
+                        </div>
+                        <div class="form-group">
+                            <label>Tiêu đề Mail Website</label>
+                            <input class="form-group easyui-validatebox tb" id="TxtPlaceHead" data-options="prompt:'Nhập tên người dùng',required:true" type="text" placeholder="">
+                        </div>
+                        <div class="form-group">
+                            <label>Nội dung mặc định Mail Website</label>
+                            <textarea class="form-control" id="TxtPlaceBody" rows="3"></textarea>
+                        </div>đâu
+                    </div>
+
+                    <div id="Confiphantrang" class="tab-pane fade">
+                        <div class="form-group">
+                            <label>Phân trang Sản phẩm</label>
+                            <input class="form-control" id="pageging1" onkeypress="return isNumberKey(event, this);" />
+                        </div>
+                        <div class="form-group">
+                            <label>Phân trang tin tức</label>
+                            <input class="form-control" id="pageging2" onkeypress="return isNumberKey(event, this);" />
+                        </div>
+                        <div class="form-group">
+                            <label>Phân trang dịch vụ</label>
+                            <input class="form-control" id="pageging3" onkeypress="return isNumberKey(event, this);" />
+                        </div>
+                        <div class="form-group">
+                            <label>Phân trang hỗ trợ</label>
+                            <input class="form-control" id="pageging4" onkeypress="return isNumberKey(event, this);" />
+                        </div>
+                        <div class="form-group">
+                            <label>Phân trang Tìm kiếm</label>
+                            <input class="form-control" id="pageging5" onkeypress="return isNumberKey(event, this);" />
+                        </div>
+                    </div>
+                </div>
+                <div class="clear-fix"></div>
+                <div class="padding-form">
+                    <div class="form-group">
+                        <button type="submit" id="Save" class="btn btn-default"><i class="fa fa-save"></i> Lưu Lại</button>
+                        <button type="submit" id="Cancel" class="btn btn-default"><i class="fa fa-times-circle"></i> Hủy bỏ</button>
+                    </div>
+                </div>
+            </div>
+            <!-- /.panel-body -->
+        </div>
+    </div>
+
+</div>
+
+
+
+<!--jquery action-->
+@*<script src="/Areas/Quanlywebsite/JavaScrip/Config/Create.js"></script>*@
+<script src="/Areas/Quanlywebsite/JavaScrip/Config/Update.js"></script>
+<script src="/Areas/Quanlywebsite/JavaScrip/Config/read.js"></script>
+@*<script src="/Areas/Quanlywebsite/JavaScrip/Config/Active.js"></script>
+    <script src="/Areas/Quanlywebsite/JavaScrip/Config/Delete.js"></script>
+    <script src="/Areas/Quanlywebsite/JavaScrip/Config/Cancel.js"></script>*@
+<script src="/Areas/Quanlywebsite/JavaScrip/Config/Save.js"></script>
+
+<!--javascrip images ckfinder  -->
+<script language="javascript" type="text/javascript">
+    $(function () {
+        $("#SelectIcon").click(function () {
+            var finder = new CKFinder();
+            finder.selectActionFunction = function (fileUrl) {
+                $("#TxtIcon").val(fileUrl);
+            };
+            finder.popup();
+        });
+    });
+</script>
+
+<!--javascrip textbox ckeditor  -->
+<script type="text/javascript">
+    var editor;
+    function createEditor(languageCode, id) {
+        var editor = CKEDITOR.replace(id, {
+            language: languageCode
+        });
+    }
+    $(function () {
+        createEditor('vi', 'TxtCopyright');  //ban quyen
+        createEditor('vi', 'TxtPaymentTerms'); //Điều khoản thanh toán
+        createEditor('vi', 'TxtDeliveryTerms');//Điều khoản giao hàng
+        createEditor('vi', 'TxtHelpsize'); //tro giup
+        createEditor('vi', 'TxtToolScrip'); //thu vienTxtPlaceBody
+        createEditor('vi', 'TxtPlaceBody'); //nội dung mac dinh mail
+        createEditor('vi', 'TxtMap'); //nội dung mac dinh map
+    });
+
+</script>

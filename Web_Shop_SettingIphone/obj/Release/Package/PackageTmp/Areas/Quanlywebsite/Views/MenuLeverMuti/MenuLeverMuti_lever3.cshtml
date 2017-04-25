@@ -1,0 +1,8 @@
+﻿@model IList<Web_Shop_SettingIphone.Models.Entity.GroupNew>
+@foreach (var item in Model)
+{
+   <option value="@item.Id">
+   |------------ @item.Name
+    </option>
+}
+

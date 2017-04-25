@@ -1,0 +1,11 @@
+﻿@model IList<Web_Shop_SettingIphone.Models.Entity.DientuMenuSitemathang>
+<div class="col-md-3 sanpham-footer">
+    <h6><img src="/images/Product/logo-nho-footer.jpg" alt=""> Sản phẩm</h6>
+    @if(Model.Count>0)
+    {
+        foreach(var item in Model)
+        {
+            <p><a href="/san-pham/@item.Tag">@item.MenuName</a></p>
+        }
+    }
+</div>

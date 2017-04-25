@@ -1,0 +1,63 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    @{Html.RenderAction("_Icon_web", "Home");}
+    @{Html.RenderAction("_Tool_Scrip", "Home");}
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/reset.min.css" media="screen" />
+
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+
+    <!--CongTT:font--->
+    <link rel="stylesheet" href="/css/font-awesome.min.css">
+
+    <link href="https://fonts.googleapis.com/css?family=Baumans|Open+Sans" rel="stylesheet" type="text/css" />
+    <script type="/js/vendor/prefixfree.min.js">
+    </script>
+    <script src="/Scripts/jquery-1.8.2.min.js"></script>
+    <script src="/js/jquery.ui.widget.js"></script>
+    <script src="/js/jquery.fileupload.js"></script>
+</head>
+<body>
+    <!-- start navbar -->
+    <!--Icon cart session-->
+    @{Html.RenderAction("CartIcon", "Cart");}
+    <!-- end navbar -->
+
+    <!-- start header -->
+    <div class="header container">
+        <div class="header">
+            <!-- start logo -->
+            @{Html.RenderAction("logo", "Module");}
+            <!-- end logo -->
+        </div>
+    </div>
+    <!-- end header -->
+    <div class="clear20"></div>
+    @RenderBody()
+    <!-- start bando -->
+    @{Html.RenderAction("Map", "Module");}
+    <!-- end bando -->
+    <!-- start footer -->
+    @{Html.RenderAction("Footer", "Module");}
+    <!-- end footer -->
+    
+    @*<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>*@
+    @*<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>*@
+    <script src="/js/bootstrap.min.js"></script>
+    <script src="/js/command.js"></script>
+    <link href="/js/AlertToast/jquery.toast.css" rel="stylesheet" />
+    <script src="/js/AlertToast/jquery.toast.js"></script>
+    <link href="/css/detail.css" rel="stylesheet" />
+    <link href="/css/genaral-css-pc.css" rel="stylesheet" />
+    <link href="/css/lib-css-pc.css" rel="stylesheet" />
+    <link href="/font-awesome/css/font-awesome.css" rel="stylesheet" />
+    @*/* Croll to top */*@
+    @*<a class='toTop' href='#toTop' title='Lên trên'></a>
+    <link href="/css/Crolltotop.css" rel="stylesheet" />
+    <script src="/js/Crolltotop.js"></script>*@
+</body>
+</html>

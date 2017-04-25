@@ -1,0 +1,281 @@
+﻿@{
+    ViewBag.Title = "Giỏ hàng";
+    //Layout = "~/Views/Shared/_LayoutPhonedetail.cshtml";
+    Layout = null;
+}
+
+<link href="/css/cart/screen.css" rel="stylesheet" />
+<link href="/font-awesome/css/font-awesome.css" rel="stylesheet" />
+<link href='/css/thanhtoan/check_out.css' rel='stylesheet' type='text/css' media='all' />
+<link href='/css/thanhtoan/check_out(1).css' rel='stylesheet' type='text/css' media='all' />
+<script src="/Scripts/jquery-1.8.2.min.js"></script>
+@*<link href="//cdn.jsdelivr.net/jquery.loading/1.2.0/jquery.loading.min.css" rel="stylesheet">
+    <script src="//cdn.jsdelivr.net/jquery.loading/1.2.0/jquery.loading.min.js"></script>*@
+<link href="/css/loading/jquery.loading.min.css" rel="stylesheet" />
+<script src="/css/loading/jquery.loading.min.js"></script>
+<style type="text/css">
+
+</style>
+
+<div class="clear40"></div>
+<div id="main-css">
+    <div class="container">
+        <div class="row">
+            <div class="container">
+                <div class="order-bill">
+                    <div class="bgbar"></div>
+                    <div class="inner">
+                        <div class="container">
+                            <div class="ajax_list_product">
+
+
+                                <div class="table-cart">
+                                    <table cellpadding="0" cellspacing="0">
+                                        <thead>
+                                            <tr>
+                                                <th><p class="title"><span>THÔNG TIN GIỎ HÀNG</span></p></th>
+                                                <th>ĐƠN GIÁ</th>
+                                                <th>SỐ LƯỢNG</th>
+                                                <th>THÀNH TIỀN</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+
+                                            @foreach (var item in Web_Shop_SettingIphone.Models.Cart.MySession.GioHang)
+                                            {
+                                                <tr>
+                                                    <td class="td_product_info">
+                                                        <div class="thumb">
+                                                            <a href="#" title="@item.TenSanPham">
+                                                                <img src="@Html.DisplayFor(m => item.Hinhanh)" alt="@item.TenSanPham" />
+                                                            </a>
+                                                            <a class="delete" href="../Cart/DeleteCart/@Html.DisplayFor(m => item.IDsanpham)" onclick="return DeleteConfirmation();" title="">Xóa</a>
+                                                        </div>
+                                                        <div class="caption">
+                                                            <p class="name"><a href="/san-pham/@item.danhmucsanpham/@item.IDsanpham" title="">@item.TenSanPham</a></p>
+                                                            <div class="prdoption">
+                                                                <div class="item col-md-8">
+                                                                    <div class="col-md-8">
+                                                                        <label>Màu:</label>
+                                                                    </div>
+                                                                    <div class="col-md-4">
+                                                                        <b>   @Html.Action("_resurtTenmau", "ScreenProduct", new { Idmau = item.Mausac })</b>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="prdoption">
+                                                                <div class="item col-md-8">
+                                                                    <div class="col-md-8">
+                                                                        <label>Dung lượng:</label>
+                                                                    </div>
+                                                                    <div class="col-md-4">
+                                                                        <b>  @Html.DisplayFor(m => item.Dungluong)</b>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            @if (item.phantramkm != 0)
+                                                            {
+                                                                <div class="prdoption">
+                                                                    <div class="item col-md-8">
+                                                                        <div class="col-md-8">
+                                                                            <label>Khuyến mãi:</label>
+                                                                        </div>
+                                                                        <div class="col-md-4">
+                                                                            <b>  @Html.DisplayFor(m => item.phantramkm)%</b>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            }
+
+                                                        </div>
+                                                        <div class="mcaption">
+                                                            <div class="prdoption">
+                                                                <div class="item">
+                                                                    <label>Màu: </label>
+                                                                    <b>   @Html.Action("_resurtTenmau", "ScreenProduct", new { Idmau = item.Mausac })</b>
+                                                                </div>
+                                                                <div class="item">
+                                                                    <label>Dung lượng: </label>
+                                                                    <b>  @item.Dungluong</b>
+                                                                </div>
+                                                                @if (item.phantramkm != 0)
+                                                                {
+                                                                    <div class="item">
+                                                                        <label>Khuyến mãi</label>
+                                                                        <b>  @Html.DisplayFor(m => item.phantramkm)%</b>
+                                                                    </div>
+                                                                }
+
+                                                            </div>
+                                                            <div class="calc">
+                                                                <label>SL:</label>
+
+
+                                                                <select name="qty_0" id="@item.IDsanpham" class="updatecartmobile">
+
+                                                                    @for (int i = 1; i <= 15; i++)
+                                                                    {
+                                                                        if (item.SoLuong == i)
+                                                                        {
+                                                                            <option value="@i" selected="selected">@i</option>
+                                                                        }
+                                                                        else
+                                                                        {
+                                                                            <option value="@i">@i</option>
+
+                                                                        }
+
+                                                                    }
+
+                                                                </select>
+                                                                x<span class="price">@string.Format("{0:0,00}", item.Giaban) (vnđ)</span> &nbsp;= &nbsp;<span class="sum">@string.Format("{0:0,00}", Web_Shop_SettingIphone.Models.Cart.MySession.TongTien)đ</span>
+                                                            </div>
+                                                        </div>
+                                                    </td>
+                                                    <td>
+                                                        <div class="price product_price">@string.Format("{0:0,00.}", item.Giaban) (vnđ)</div>
+                                                    </td>
+                                                    <td>
+                                                        <input class="form-control text-center updatecart" data-id="@item.IDsanpham" value="@Html.DisplayFor(m => item.SoLuong)" type="number">
+                                                    </td>
+                                                    <td class="td_total_price"> <div class="sum"><span class="product_price">@string.Format("{0:0,00}", item.TongTien) (vnđ)</span></div></td>
+                                                </tr>
+                                            }
+                                        </tbody>
+                                    </table>
+                                    <div class="bottom">
+                                        <a class="button-2" href="/" title=""><i class="fa fa-angle-left"></i> Tiếp tục mua hàng</a>
+                                        @*<div class="support"><strong>Hỗ trợ mua hàng</strong>@{Html.RenderAction("Hotromuahang", "Sanpham");}</div>*@
+                                    </div>
+                                </div>
+
+                                <div class="container clearfix">
+                                    <div class="col-4 step1">
+                                        <h2>Thông tin giao hàng</h2>
+                                        <div class="line"></div>
+
+
+
+                                        <form action="#" accept-charset="UTF-8" class="new_order" id="forminfo" method="post">
+                                            <div class="form-info">
+
+                                                <label class="color-blue">Mua không cần tài khoản</label>
+
+                                                <div class="form-group">
+
+                                                </div>
+
+                                                <div class="form-group">
+                                                    @*<input placeholder="Xưng hô" class="formcontrol" id="billing_address_full_name" name="billing_address[full_name]" size="30"  type="text" required  />*@
+                                                    <div class="col-md-3">Xưng hô</div>
+                                                    <div class="col-md-9">
+                                                        <select name="selectXungho" class="formcontrol" id="selectXungho">
+                                                            <option value="Anh">Anh</option>
+                                                            <option value="Chị">Chị</option>
+                                                        </select>
+                                                    </div>
+                                                </div>
+                                                <div class="form-group">
+                                                    <input placeholder="Họ và tên" class="formcontrol" id="txtHoten" name="" size="30" type="text" required />
+                                                    <p>Họ và tên</p>
+                                                </div>
+                                                <div class="form-group">
+                                                    <input placeholder="Số điện thoại" onkeypress="return isNumberKey(event, this);" maxlength="11" id="txtSDT" class="formcontrol" name="billing_address[phone]" size="30" title="Nhập số điện thoại" pattern="^\d{8,11}" type="tel" value="" required />
+                                                    <p>Số điện thoại</p>
+                                                </div>
+                                                <div class="form-group">
+                                                    <input placeholder="Email" id="txtMail" class="formcontrol" size="30" type="email" value="" required />
+                                                    <p>Email</p>
+                                                </div>
+                                                <div class="form-group">
+                                                    <textarea id="txtDiachi" placeholder="Địa chỉ của bạn" name="billing_address[note]" rows="3" class="formcontrol ordernote" required></textarea>
+                                                    <p>Địa chỉ</p>
+                                                </div>
+                                                <div class="form-group">
+                                                    <textarea id="txtGhiChuKhacc" placeholder="Ghi chú đơn hàng" name="billing_address[note]" rows="3" class="formcontrol ordernote"></textarea>
+                                                    <p>Ghi chú đơn hàng</p>
+                                                </div>
+                                                <div class="error summary">
+                                                    (<span class="color-red ">*</span>)Vui lòng nhập đủ thông tin
+                                                </div>
+                                            </div>
+                                            @*<div class="listerror">
+
+                                                </div>*@
+                                        </form>
+                                    </div>
+
+
+                                    <div class="col-4 ">
+
+                                        <h2>Thanh toán</h2>
+
+                                    </div>
+
+                                    <div class="col-4">
+                                        <div class="box-cart">
+                                            <h2>Đơn hàng</h2>
+                                            @*   (<span>@Session["tsltsl"]</span> sản phẩm) *@
+                                            <div class="cart-items">
+
+                                                @foreach (var item in Web_Shop_SettingIphone.Models.Cart.MySession.GioHang)
+                                                {
+                                                    <div class="list_item cart-item">
+                                                        <span><b>Số lượng</b>: @item.SoLuong <b>x</b></span>
+                                                        <span> <a href="#">@item.TenSanPham</a> <b>--></b></span>
+                                                        <span class="price-item">@string.Format("{0:0,00}", item.Giaban) đ</span>
+                                                        <span class="price"><b>Thành tiền:</b> @string.Format("{0:0,00}", item.TongTien) đ</span>
+                                                        <p class="variant-title">Màu:@Html.Action("_resurtTenmau", "ScreenProduct", new { Idmau = item.Mausac }) </p>
+                                                        <p class="variant-title">Dung lượng: @item.Dungluong </p>
+                                                        @if (item.phantramkm != 0)
+                                                        {
+                                                            <p class="variant-title">Khuyến mãi: @item.phantramkm% </p>
+                                                        }
+                                                    </div>
+
+
+                                                }
+
+                                            </div>
+                                            @* <div class="total-price">
+                                                    Tạm tính   <label>  @string.Format("{0:0,00}",MySession.TongTien)₫</label>
+                                                </div>*@
+                                            @{
+
+                                                double bien = Convert.ToDouble(Web_Shop_SettingIphone.Models.Cart.MySession.TongTien);
+
+                                                string tien_vnd = Web_Shop_SettingIphone.Models.Command.VNCurrency.ToString(bien);
+
+
+                                            }
+                                            <div class="total-checkout">
+                                                Tạm Tính đơn hàng <span>  @string.Format("{0:0,00}", Web_Shop_SettingIphone.Models.Cart.MySession.TongTien)₫</span>
+                                            </div>
+
+                                            <div class="shiping-price" style="margin-top : 10px; text-align : right; color :red">
+                                                <b>@tien_vnd</b>
+                                            </div>
+
+
+
+                                        </div>
+                                        <div class="form-group form-footer">
+                                            <a id="btdathang" href="#" style="padding-top:10px" class="btn btn-default">Đặt hàng </a>
+                                        </div>
+
+                                    </div>
+
+
+                                </div>
+
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="/css/cart/cart.js"></script>
+    <link href="/js/AlertToast/jquery.toast.css" rel="stylesheet" />
+    <script src="/js/AlertToast/jquery.toast.js"></script>

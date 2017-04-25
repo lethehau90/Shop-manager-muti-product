@@ -1,0 +1,378 @@
+﻿@*<div id=""> <!--sidebar-wrapper-->
+        <div class="" role="navigation"> <!--navbar-default sidebar-->
+            <div class="sidebar-nav navbar-collapse"><!--sidebar-nav-->
+
+            </div>
+
+        </div>
+    </div>*@
+<ul class="nav" id="side-menu">
+    <form role="search" method="POST" action="/tim-kiem">
+        <li class="sidebar-search">
+            <div class="input-group custom-search-form" style="margin:15px">
+
+                @*<input type="text" class="form-control" id="SearchMain" placeholder="Search...">*@
+                @Html.TextBox("key", ViewBag.CurrentFilter as string, new { id = "SearchMain", name = "search_block_form", value = "Search", @class = "form-control", @placeholder = "Search..." })
+                <span class="input-group-btn">
+                    <button class="btn btn-default" id="BtSearchMain" type="submit">
+                        <i class="fa fa-search"></i>
+                    </button>
+                </span>
+
+            </div>
+        </li>
+    </form>
+    <!------------------------2 cấp menu------------------------------------------>
+    <!--thông tin người sử dụng-->
+    <li>
+        <a><i class="fa fa-flag"></i> Thông Tin<span class="fa arrow"></span></a>
+        <ul class="nav nav-second-level">
+            <li>
+                <a href="@Url.Action("Read", "UserAdmin")"><i class="fa fa-caret-right"></i> Người dùng đăng nhập</a>
+            </li>
+            <!--Sửa chửa định giá-->
+            <li>
+                <a><i class="fa  fa-plus-circle"></i> Mail Sửa chữa<span class="fa arrow"></span></a>
+                <ul class="nav nav-third-level">
+                    <li>
+                        <a href="@Url.Action("Read_active_type1", "DientuInfoAdmin")"><i class="fa fa-caret-right"></i> Đã xem (@Html.Action("_count_contace_active_type1", "DientuInfoAdmin"))</a>
+                    </li>
+                    <li>
+                        <a href="@Url.Action("Read_noactive_type1", "DientuInfoAdmin")"><i class="fa fa-caret-right"></i> Chưa xem (@Html.Action("_count_contace_noactive_type1", "DientuInfoAdmin"))</a>
+                    </li>
+                </ul>
+            </li>
+            <li>
+                <a><i class="fa  fa-plus-circle"></i> Mail định giá<span class="fa arrow"></span></a>
+                <ul class="nav nav-third-level">
+                    <li>
+                        <a href="@Url.Action("Read_active_type2", "DientuInfoAdmin")"><i class="fa fa-caret-right"></i> Đã xem (@Html.Action("_count_contace_active_type2", "DientuInfoAdmin"))</a>
+                    </li>
+                    <li>
+                        <a href="@Url.Action("Read_noactive_type2", "DientuInfoAdmin")"><i class="fa fa-caret-right"></i> Chưa xem (@Html.Action("_count_contace_noactive_type2", "DientuInfoAdmin"))</a>
+                    </li>
+
+                </ul>
+            </li>
+
+            <!--Hộp thư thông tin-->
+            <li class="hidden">
+                <a><i class="fa  fa-plus-circle"></i> Mail hộp thư khách<span class="fa arrow"></span></a>
+                <ul class="nav nav-third-level">
+                    <li>
+                        <a href="@Url.Action("Read_active", "ContactAdmin")"><i class="fa fa-caret-right"></i> Đã xem (@Html.Action("_count_contace_active", "ContactAdmin"))</a>
+                    </li>
+                    <li>
+                        <a href="@Url.Action("Read_noactive", "ContactAdmin")"><i class="fa fa-caret-right"></i> Chưa xem (@Html.Action("_count_contace_noactive", "ContactAdmin"))</a>
+                    </li>
+
+                </ul>
+            </li>
+            <li class="hidden">
+                <a><i class="fa  fa-plus-circle"></i> Thành viên ĐK<span class="fa arrow"></span></a>
+                <ul class="nav nav-third-level">
+                    <li>
+                        <a href="@Url.Action("Read_active", "ThanhvienAdmin")"><i class="fa fa-caret-right"></i> Đã kích hoạt (@Html.Action("_count_contace_active", "ThanhvienAdmin"))</a>
+                    </li>
+                    <li>
+                        <a href="@Url.Action("Read_noactive", "ThanhvienAdmin")"><i class="fa fa-caret-right"></i> Chưa Kích hoạt (@Html.Action("_count_contace_noactive", "ThanhvienAdmin"))</a>
+                    </li>
+
+                </ul>
+            </li>
+        </ul>
+        <!-- /.nav-second-level -->
+    </li>
+
+    <!--Cài đặt người sử dụng-->
+    <li>
+        <a><i class="fa  fa-windows"></i> Danh Mục<span class="fa arrow"></span></a>
+        <ul class="nav nav-second-level">
+            <li><a href="@Url.Action("Read", "CodeHtmlAdmin")"><i class="fa fa-caret-right"></i> Mã code HTML</a></li>
+            <li><a href="@Url.Action("Read", "ImagesAdvertiseAdmin")"><i class="fa fa-caret-right"></i> Hình Ảnh</a></li>
+            <li class="hidden"><a href="@Url.Action("Read", "NewInformationAdmin")"><i class="fa fa-caret-right"></i> Tin Trang chủ</a></li>
+            <li class="hidden"><a href="@Url.Action("Readus", "NewInformationAdmin")"><i class="fa fa-caret-right"></i> Về Chúng Tôi</a></li>
+            <li class="hidden"><a href="@Url.Action("Read_info", "NewInformationAdmin")"><i class="fa fa-caret-right"></i> Giới thiệu</a></li>
+            <li class=""><a href="@Url.Action("Read", "TinTucAdmin")"><i class="fa fa-caret-right"></i> Tin Tức-Hỗ trợ</a></li>
+            <li><a href="@Url.Action("Read", "SlideShowAdmin")"><i class="fa fa-caret-right"></i> Trình chiếu SlideShow</a></li>
+        </ul>
+        <!-- /.nav-second-level -->
+    </li>
+
+    <!--Cài đặt tin tức-->
+    <li>
+        <a><i class="fa fa-rss-square"></i> Quản lý Dịch vụ<span class="fa arrow"></span></a>
+        <ul class="nav nav-second-level">
+            <li class="">
+                <a href="@Url.Action("Read", "CategoryNewsAdmin")"><i class="fa fa-caret-right"></i> Danh Mục</a>
+            </li>
+            <li>
+                <a href="@Url.Action("Read", "CategoryNewsDetailsAdmin")"><i class="fa fa-caret-right"></i> Bài Đăng</a>
+            </li>
+            <li class="hidden">
+                <a><span class="fa arrow"></span><i class="fa  fa-plus-circle"></i> Bài Đăng Theo Nhóm</a>
+                @{Html.RenderAction("Muti_Group_Menu_1", "MenuGroupNewsMuti");}
+            </li>
+
+        </ul>
+        <!-- /.nav-second-level -->
+    </li>
+
+    <!--cài đặt sản phẩm thời trang-->
+    <li class="hidden">
+        <a><i class="fa fa-shopping-cart"></i> Quản lý sản phẩm<span class="fa arrow"></span></a>
+        <ul class="nav nav-second-level">
+            <!--sản phẩm-->
+            <li>
+                <a><i class="fa  fa-plus-circle"></i> Sản Phẩm<span class="fa arrow"></span></a>
+                <ul class="nav nav-third-level">
+                    <li>
+                        <a href="@Url.Action("Read", "CategotyproductAdmin")"><i class="fa fa-caret-right"></i> Danh Mục</a>
+                    </li>
+                    <li>
+                        <a href="@Url.Action("Read", "CategotyproductdetailAdmin")"><i class="fa fa-caret-right"></i> Danh Sách Bài Đăng</a>
+                    </li>
+                    <li>
+                        <a><span class="fa arrow"></span><i class="fa  fa-plus-circle"></i> Bài Đăng Theo Nhóm</a>
+                        @{Html.RenderAction("Muti_Group_Menu_1", "MenuGroupproductMuti");}
+                    </li>
+                </ul>
+            </li>
+            <!--cấu hình đặc tính-->
+            <li>
+                <a><i class="fa  fa-plus-circle"></i> Cấu hình đặc tính<span class="fa arrow"></span></a>
+                <ul class="nav nav-third-level">
+                    <li>
+                        <a href="@Url.Action("Read", "MausacAdmin")"><i class="fa fa-caret-right"></i> Màu sắc</a>
+                    </li>
+                    <li>
+                        <a href="@Url.Action("Read", "Kichco_SizeAdmin")"><i class="fa fa-caret-right"></i> Kích cỡ - Size</a>
+                    </li>
+                    <li>
+                        <a href="@Url.Action("Read", "khoanggiaAdmin")"><i class="fa fa-caret-right"></i> Khoảng giá</a>
+                    </li>
+                    <li>
+                        <a href="@Url.Action("Read", "ThuonghieuAdmin")"><i class="fa fa-caret-right"></i> Thương hiệu</a>
+                    </li>
+                    <li>
+                        <a href="@Url.Action("Read", "NuocsanxuatAdmin")"><i class="fa fa-caret-right"></i> Nguồn sản phẩm</a>
+                    </li>
+                    <li>
+                        <a href="@Url.Action("Read", "ChiphiDichvuVanChuyenAdmin")"><i class="fa fa-caret-right"></i> Dịch vụ vận chuyển</a>
+                    </li>
+                    <!--
+                        <li>
+                        <a href="@Url.Action("Read", "Tax_rulerAdmin")">Thuế VAT (tính %)</a>
+                    </li>
+                    -->
+                </ul>
+            </li>
+            <!--khuyến mãi-->
+            <li>
+                <a><i class="fa  fa-plus-circle"></i> Khuyến mãi<span class="fa arrow"></span></a>
+                <ul class="nav nav-third-level">
+                    <li>
+                        <a href="@Url.Action("Read", "MacodeKhuyenMaiAdmin")"><i class="fa fa-caret-right"></i> Mã giảm giá</a>
+                    </li>
+                    <li>
+                        <a href="@Url.Action("Read", "KM_SoluongmuahangAdmin")"><i class="fa fa-caret-right"></i> Số lượng mua hàng</a>
+                    </li>
+                    <li>
+                        <a href="@Url.Action("Read", "KM_SukienDateAdmin")"><i class="fa fa-caret-right"></i> Sự kiện trong ngày</a>
+                    </li>
+                </ul>
+            </li>
+            <!--Comment product-->
+            <li>
+                <a href="@Url.Action("Read", "CommentProductAdmin")"><i class="fa fa-caret-right"></i> Comment Product</a>
+            </li>
+
+
+        </ul>
+        <!-- /.nav-second-level -->
+    </li>
+    <!-- Cài đặt sản phẩm điện tử -->
+    <li class="">
+        <a><i class="fa fa-shopping-cart"></i> Quản lý Sản phẩm<span class="fa arrow"></span></a>
+        <ul class="nav nav-second-level">
+            <!--sản phẩm-->
+            <li>
+                <a><i class="fa  fa-plus-circle"></i> Sản Phẩm<span class="fa arrow"></span></a>
+                <ul class="nav nav-third-level">
+                    <li>
+                        <a href="@Url.Action("Read", "DientuMenuSitemathangAdmin")"><i class="fa fa-caret-right"></i> Danh Mục</a>
+                    </li>
+                    <li>
+                        <a href="@Url.Action("Read", "DientuMathangAdmin")"><i class="fa fa-caret-right"></i> Bài Đăng</a>
+                    </li>
+                    <li class="hidden">
+                        <a><span class="fa arrow"></span><i class="fa  fa-plus-circle"></i> Bài Đăng Theo Nhóm</a>
+                        @{Html.RenderAction("Muti_Group_Menu_1", "MenuGroupDTproductMuti");}
+                    </li>
+                </ul>
+            </li>
+            <!--cấu hình đặc tính-->
+            <li>
+                <a><i class="fa  fa-plus-circle"></i> Phân loại<span class="fa arrow"></span></a>
+                <ul class="nav nav-third-level">
+                    <li>
+                        <a href="@Url.Action("Read", "DientuNsxThuonghieuAdmin")"><i class="fa fa-caret-right"></i> Thương hiệu (NSX)</a>
+                    </li>
+                    <li>
+                        <a href="@Url.Action("Read", "DientuDongSpAdmin")"><i class="fa fa-caret-right"></i> Dòng sản phẩm</a>
+                    </li>
+                    <li class="hidden">
+                        <a href="@Url.Action("Read", "DientuTinhnangAdmin")"><i class="fa fa-caret-right"></i> Nhóm thuộc tính</a>
+                    </li>
+                    <li>
+                        <a href="@Url.Action("Read", "MausacAdmin")"><i class="fa fa-caret-right"></i> Màu sắc</a>
+                    </li>
+                    <li>
+                        <a href="@Url.Action("Read", "DientuDungluongAdmin")"><i class="fa fa-caret-right"></i> Dung lượng</a>
+                    </li>
+                </ul>
+            </li>
+            <!--Thuộc tính-->
+            <li class="hidden">
+                <a><i class="fa  fa-plus-circle"></i> Thuộc tính<span class="fa arrow"></span></a>
+                <ul class="nav nav-third-level">
+                    <li>
+                        <a href="@Url.Action("Read", "DientuLoaithuoctinhAdmin")"><i class="fa fa-caret-right"></i> Phân loại thuộc tính</a>
+                    </li>
+                    <li>
+                        <a href="@Url.Action("Read", "DientuCapLoaithuoctinhAdmin")"><i class="fa fa-caret-right"></i> Nhóm-Loại thuộc tính</a>
+                    </li>
+                </ul>
+            </li>
+            <!--khuyến mãi-->
+            <li class="hidden">
+                <a><i class="fa  fa-plus-circle"></i> Khuyến mãi<span class="fa arrow"></span></a>
+                <ul class="nav nav-third-level">
+                    <li>
+                        <a href="@Url.Action("Read", "MacodeKhuyenMaiAdmin")"><i class="fa fa-caret-right"></i> Mã giảm giá</a>
+                    </li>
+                    <li>
+                        <a href="@Url.Action("Read", "KM_SoluongmuahangAdmin")"><i class="fa fa-caret-right"></i> Số lượng mua hàng</a>
+                    </li>
+                    <li>
+                        <a href="@Url.Action("Read", "KM_SukienDateAdmin")"><i class="fa fa-caret-right"></i> Sự kiện trong ngày</a>
+                    </li>
+                </ul>
+            </li>
+            <!--Comment product-->
+            <li class="hidden">
+                <a href="@Url.Action("Read", "CommentProductAdmin")"><i class="fa fa-caret-right"></i> Comment Product</a>
+            </li>
+        </ul>
+        <!-- /.nav-second-level -->
+    </li>
+    <!------------------------1 cấp menu------------------------------------------>
+    <!--Thống Kê-->
+    <li>
+        <a><i class="fa fa-bar-chart-o"></i> Thống Kê<span class="fa arrow"></span></a>
+        <ul class="nav nav-second-level">
+            <li>
+                <a><i class="fa  fa-plus-circle"></i> Hóa đơn bán hàng<span class="fa arrow"></span></a>
+                <ul class="nav nav-third-level">
+                    <li>
+                        <a href="@Url.Action("List_donhang","Donhangadmin")">
+                            <i class="fa fa-caret-right"></i>
+                            <span>Tất cả Đơn Hàng</span>
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="@Url.Action("List_donhang_DaDuyet","Donhangadmin")">
+                            <i class="fa fa-caret-right"></i>
+                            <span>Đơn hàng Đã duyệt</span>
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="@Url.Action("List_donhang_ChuaDuyet","Donhangadmin")">
+                            <i class="fa fa-caret-right"></i>
+                            <span>Đơn hàng Chưa duyệt</span>
+                        </a>
+                    </li>
+
+                    <li class="hidden">
+                        <a href="@Url.Action("List_donhang_Top5","Donhangadmin")">
+                            <i class="fa fa-caret-right"></i>
+                            <span>5 đơn hàng mới nhất</span>
+                        </a>
+                    </li>
+
+                    <li class="hidden">
+                        <a href="@Url.Action("List_donhang_Top10","Donhangadmin")">
+                            <i class="fa fa-caret-right"></i>
+                            <span>10 đơn hàng mới nhất</span>
+                        </a>
+                    </li>
+
+                    <li class="hidden">
+                        <a href="@Url.Action("List_donhang_Top50","Donhangadmin")">
+                            <i class="fa fa-caret-right"></i>
+                            <span>50 đơn hàng mới nhất</span>
+                        </a>
+                    </li>
+                    <li class="hidden">
+                        <a href="@Url.Action("List_donhang_Top100","Donhangadmin")">
+                            <i class="fa fa-caret-right"></i>
+                            <span>100 đơn hàng mới nhất</span>
+                        </a>
+                    </li>
+
+                </ul>
+            </li>
+
+        </ul>
+        <!-- /.nav-second-level -->
+    </li>
+
+    <!--cài đặt cấu hình-->
+    <li>
+        <a><i class="fa fa-cogs"></i> Hệ thống<span class="fa arrow"></span></a>
+        <ul class="nav nav-second-level">
+            <li>
+                <a href="@Url.Action("Read", "ConfigAdmin")"><i class="fa fa-caret-right"></i> Cấu Hình</a>
+            </li>
+
+        </ul>
+        <!-- /.nav-second-level -->
+    </li>
+
+    <!------------------------3 cấp menu------------------------------------------>
+    <li class="hidden">
+        <a><i class="fa fa-sitemap fa-fw"></i> Multi-Level Dropdown<span class="fa arrow"></span></a>
+        <ul class="nav nav-second-level">
+            <li>
+                <a>Second Level Item</a>
+            </li>
+            <li>
+                <a>Second Level Item</a>
+            </li>
+            <li>
+                <a>Third Level <span class="fa arrow"></span></a>
+                <ul class="nav nav-third-level">
+                    <li>
+                        <a>Third Level Item</a>
+                    </li>
+                    <li>
+                        <a>Third Level Item</a>
+                    </li>
+                    <li>
+                        <a>Third Level Item</a>
+                    </li>
+                    <li>
+                        <a>Third Level Item</a>
+                    </li>
+                </ul>
+                <!-- /.nav-third-level -->
+            </li>
+        </ul>
+        <!-- /.nav-second-level -->
+    </li>
+
+</ul>
+
+

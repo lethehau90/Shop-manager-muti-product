@@ -1,0 +1,13 @@
+﻿.spinner-arrow-down{
+    background: url(images/spinner_arrows.png) no-repeat -14px center !important;
+}    
+
+.spinner-arrow-up{
+    background: url(images/spinner_arrows.png) no-repeat 2px center !important;
+
+}
+
+.textbox{
+
+    border: 1px solid #ccc !important;
+}

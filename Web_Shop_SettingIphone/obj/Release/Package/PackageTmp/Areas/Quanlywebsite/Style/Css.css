@@ -1,0 +1,241 @@
+﻿/* Start by setting display:none to make this hidden.
+   Then we position it in relation to the viewport window
+   with position:fixed. Width, height, top and left speak
+   for themselves. Background we set to 80% white with
+   our animation centered, and no-repeating */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background: rgba(238, 238, 238, 0.48) url('/Images/ajax-loader.gif') 50% 25% no-repeat !important;
+}
+
+
+/* When the body has the loading class, we turn
+   the scrollbar off with overflow:hidden */
+body.loading {
+    overflow: hidden;
+}
+
+    /* Anytime the body has the loading class, our
+   modal element will be visible */
+    body.loading .modal {
+        display: block;
+    }
+
+    .function{
+        width:150px;
+    }
+
+    .listgroup{
+
+        line-height: 35px;
+        font-family: Tahoma;
+        font-size: inherit;
+        font-weight: 900 !important;
+    }
+
+    body{
+        font-size: 14px !important; 
+        font-family: Tahoma !important;
+
+    }
+   h1.page-header{
+       font-size: 25px !important;
+       font-family: inherit;
+       font-weight: 700;
+       margin-top:0px !important;
+       border-bottom: 3px solid #eee;
+
+   }
+   .input-group{
+           position: relative !important;
+    display: table !important;
+    border-collapse: separate !important;
+   }
+   .form-group{
+       margin-bottom:5px !important;
+   }
+    .spinner{
+
+        border-color: #f5f5f5 !important; 
+    }
+    
+    .form-group label {
+        font-size: 15px !important;
+        font-family: inherit !important;
+       
+    }
+
+    #ui-dialog {
+        margin : 0 auto;
+       display: table-cell;
+    text-align: center;
+    vertical-align: middle;
+    }
+    #ui-dialog *{
+         vertical-align: middle;
+}
+     #ui-dialog  span {
+         display: inline-block;
+    height: 100%;
+     }
+
+     
+    .ui-dialog{
+
+         top: 30% !important;
+         left:40% !important;
+     }
+    .checkbox-inline, .radio-inline{
+        padding-left: 0px !important;
+    }
+
+    select#SelectRole{
+        width:17% !important;
+    }
+    .tb {
+        width: 100% !important;
+        margin: 0 !important;
+        padding: 5px 4px !important;
+        border: 1px solid #ccc !important;
+        box-sizing: border-box !important;
+    }
+
+    /*css form submit save*/
+
+    .padding-form{
+        padding-top:20px !important;
+    }
+
+    /*css select images*/ 
+    .col-md-12 .pading-left-Select{
+
+        padding-left:0px !important;
+         margin-left:0px !important;
+         text-align: left !important;
+    }
+    .col-md-12 .pading-left-Select .col-md-3{
+         padding-left:0px !important;
+         margin-left:0px !important;
+         text-align: left !important;
+    }
+     .col-md-12 .pading-left-Select .col-md-2{
+         padding-left:0px !important;
+         margin-left:0px !important;
+         text-align: left !important;
+    }
+
+     #imgShowScren
+     {
+         padding-top: 10px;
+         padding-left:10px;
+         width: 25%;
+     }
+
+     /*css cho checkbox*/
+     #divright label {
+        font-size: 20px;
+        padding-right:20px;
+    }
+   #divright input[type=checkbox] {
+        display: none;
+    }
+        /* to hide the checkbox itself */
+       #divright input[type=checkbox] + label:before {
+            font-family: FontAwesome;
+            display: inline-block;
+        }
+
+       #divright input[type=checkbox] + label:before {
+            content: "\f096";
+        }
+        /* unchecked icon */
+      #divright  input[type=checkbox] + label:before {
+            letter-spacing: 10px;
+        }
+        /* space between checkbox and label */
+
+       #divright input[type=checkbox]:checked + label:before {
+            content: "\f046";
+        }
+        /* checked icon */
+       #divright input[type=checkbox]:checked + label:before {
+            letter-spacing: 5px;
+        }
+    /* allow space for check mark */
+
+    .Editcatelog
+    {
+        font-weight: 600;
+     color:#ffffff;
+        font-family:inherit;
+       
+    }
+    .error{
+        color: red;
+    }
+
+    .navbar-static-top{
+        z-index: inherit !important;
+    }
+
+    /*hien thi images luoi*/
+     .imglogo
+    {
+        max-width: 30px !important;
+        margin: 0px !important;
+        padding:0px !important;
+    }
+
+     /*css cala*/
+
+         .ui-datepicker-trigger{
+             height: 25px;
+            margin: 0px !important;
+            padding: 0px !important;
+         }
+
+       /*css dialog show*/
+
+       .messager-button{
+           width:100% !important;
+       }
+
+    .messager-body{
+         width:100% !important;
+    }
+    .table.table-bordered tbody th, table.table-bordered tbody td{
+        line-height: 2 !important;
+    }
+
+
+    a:active, a:focus, a:hover{
+        color:red !important;
+        text-decoration:none !important;
+    }
+
+      #alertinfo {
+        padding: 7px !important;
+    }
+
+      /*Thuộc tính*/
+      .thuonghieu,.mausac,.kichco,.nguonsanxuat{
+          font-weight:600;
+      }
+
+      #side-menu li{
+          padding-left: 5px;
+      }
+      #wrapper{
+          padding-top:50px;
+      }
+   
+       #sidebar-wrapper .nav>li>a {
+              text-decoration: none;
+               color: #c7c4c4;
+      }

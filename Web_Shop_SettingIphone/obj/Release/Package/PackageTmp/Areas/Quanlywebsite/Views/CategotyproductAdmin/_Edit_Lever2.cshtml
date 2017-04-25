@@ -1,0 +1,171 @@
+﻿<div class="panel-heading" id="update_panerlever">
+    <div class="portlet box green">
+        <div class="portlet-title">
+            <div class="caption">
+                <header>
+                    <i class="fa fa-user"></i>  Cập nhật danh mục <span class="Editcatelog"></span>
+                </header>
+            </div>
+            <div class="tools">
+                <a href="javascript:;" class="collapse"> </a> <!--collapse-->
+
+            </div>
+        </div>
+        <div class="portlet-body flip-scroll">
+            <!-- /.panel-heading -->
+            <div class="panel-body">`
+                <!-- Nav tabs -->
+                <ul class="nav nav-tabs">
+                    <li class="active">
+                        <a href="#CategoryleverNewstieude" data-toggle="tab">Tiêu đề danh mục</a>
+                    </li>
+
+                    <li>
+                        <a href="#CategoryleverNewsmota" data-toggle="tab">Mô tả</a>
+                    </li>
+
+                    <li>
+                        <a href="#CategoryleverNewsthietlap" data-toggle="tab">Thiết lập</a>
+                    </li>
+
+                    <li>
+                        <a href="#CategoryleverNewsSeo" data-toggle="tab">Seo</a>
+                    </li>
+
+                    <li class="">
+                        <a href="#CategoryleverNewshinhanh" data-toggle="tab">Hình ảnh</a>
+                    </li>
+                </ul>
+                <!-- Tab panes -->
+                <div class="tab-content">
+                    <div class="tab-pane fade in active" id="CategoryleverNewstieude">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="form-group hidden">
+                                    <label>Id</label>
+                                    <input class="form-group easyui-validatebox tb" id="TxtlevelId" data-options="required:true" type="text" placeholder="">
+                                </div>
+                                <div class="form-group">
+                                    <label>Ngôn ngữ Tiếng việt</label>
+                                    <input class="form-group easyui-validatebox tb" id="TxtlevelName" data-options="required:true" type="text" placeholder="">
+                                </div>
+                                <div class="form-group">
+                                    <label>Ngôn ngữ Tiếng Anh</label>
+                                    <input class="form-group easyui-validatebox tb" id="TxtlevelNameEn" data-options="required:true" type="text" placeholder="">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="tab-pane fade" id="CategoryleverNewsmota">
+                        <div class="row">
+                            <div class="col-lg-12 col-md-12 col-sm-12">
+                                <div class="form-group">
+                                    <label class="Txtlevelcontent">Nội dung mô tả tiếng việt</label>
+                                    <textarea class="form-control" id="Txtlevelcontent" rows="3"></textarea>
+                                </div>
+                                
+
+                                <div class="form-group">
+                                    <label class="TxtlevelcontentEn">Nội dung mô tả tiếng anh</label>
+                                    <textarea class="form-control" id="TxtlevelcontentEn" rows="3"></textarea>
+                                </div>
+                                
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div class="tab-pane fade" id="CategoryleverNewsthietlap">
+                        <div class="row">
+                            <div class="col-md-3">
+                                <div class="form-group">
+                                    <label class="Selectlevel">Danh mục chọn</label>
+                                    @Html.DropDownList("Selectlevel1muti_", Enumerable.Empty<SelectListItem>(), "---- Chọn Cấp con", new { @class = "form-control" })<br />
+                                    
+                                    @Html.DropDownList("Selectlevel2muti_", Enumerable.Empty<SelectListItem>(), "---- Chọn Cấp con", new { @class = "form-control" })   
+                                                       
+                                 </div>
+                                <div class="form-group">
+                                    <label class="TxtlevelOrd">Sắp xếp</label> <br />
+                                    <input class="form-group" type="number" id="TxtlevelOrd" value="1" min="1">
+                                </div>
+
+                                <div class="form-group">
+                                    <label class="cheCKTxtlevelbox-inline">Trang home </label>
+                                    <input id="CKTxtlevelPriority" class="cheCKTxtlevelbox-inline" type="checkbox" checked="checked" value="1">
+                                </div>
+
+                                <div class="form-group">
+                                    <label class="cheCKTxtlevelbox-inline">Kích hoạt </label>
+                                    <input id="CKTxtlevelActive" class="cheCKTxtlevelbox-inline" type="checkbox" checked="checked" value="1">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="tab-pane fade" id="CategoryleverNewsSeo">
+                        <div class="row">
+                            <div class="col-lg-12 col-md-12 col-sm-12">
+                                <div class="form-group">
+                                    <label>Mô tả từ khóa</label>
+                                    <textarea class="form-control easyui-validatebox tb" id="TxtlevelDescription" data-options="required:true" rows="3"></textarea>
+                                </div>
+                                <div class="form-group">
+                                    <label>Từ khóa nội dung</label>
+                                    <textarea class="form-control easyui-validatebox tb" id="TxtlevelKeyword" data-options="prompt:'Nhập từ khóa người dùng',required:true" rows="3"></textarea>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div class="tab-pane fade" id="CategoryleverNewshinhanh">
+
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="form-group">
+                                    <label>Up load hình ảnh <span class="TxtlevelLogogroup"></span></label>
+                                    <div class="form-group">
+                                        <div class="col-md-12 pading-left-Select">
+                                            <div class="col-md-3">
+                                                <input class="form-group-sm easyui-validatebox tb" id="TxtlevelLogogroup" data-options=" prompt:'hình ảnh',required:true" type="text" placeholder="">
+                                            </div>
+                                            <div class="col-md-2">
+                                                <span class="form-group">
+                                                    <button type="button" class="btn btn-white" id="SelectlevelLogogroup">Chọn Ảnh!</button>
+                                                </span>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <img class="ShowImgZoom img-responsive" src="/Images/no-image.jpg" id="imgShowScrenlevel">
+                                </div>
+                            </div>
+                        </div>
+                        
+                    </div>
+
+                </div>
+                <div class="clear-fix"></div>
+                <div class="padding-form">
+                    <div class="form-group">
+                        <button type="submit" id="Save_lever" class="btn btn-default"><i class="fa fa-save"></i> Lưu Lại</button>
+                        <button type="submit" id="Cancel_lever" class="btn btn-default"><i class="fa fa-times-circle"></i> Hủy bỏ</button>
+                    </div>
+                </div>
+            </div>
+            <!-- /.panel-body -->
+
+        </div>
+    </div>
+
+</div>
+
+<!--jquery action-->
+
+<!--javascrip Logogroups CKTxtlevelfinder  -->
+
+

@@ -1,0 +1,8 @@
+﻿@model IList<Web_Shop_SettingIphone.Models.Entity.DientuDungluong>
+<select id="selectDungluong" name="selectDungluong" class="form-control">
+    @*<option value="" selected>Chọn</option>*@
+    @foreach (var item in Model)
+    {
+        <option value="@item.Id">@item.Name</option>
+    }
+</select>

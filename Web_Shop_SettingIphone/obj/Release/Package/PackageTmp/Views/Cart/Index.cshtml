@@ -1,0 +1,91 @@
+﻿@{
+    ViewBag.Title = "Giỏ hàng";
+    Layout = "~/Views/Shared/_LayoutPhonedetail.cshtml";
+}
+<link href="/css/cart.css" rel="stylesheet" />
+<div class="clear40"></div>
+<div id="main-content">
+    <div class="container">
+        <div class="row">
+            @*<h2 class="text-center">Thông tin giỏ hàng của bạn</h2>*@
+            <div class="container">
+                <table id="cart" class="table table-hover table-condensed">
+                    <thead>
+                        <tr>
+                            <th style="width:50%">Tên sản phẩm</th>
+                            <th style="width:10%">Giá</th>
+                            <th style="width:8%">Số lượng</th>
+                            <th style="width:22%" class="text-center">Thành tiền</th>
+                            <th style="width:10%"> </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var item in Web_Shop_SettingIphone.Models.Cart.MySession.GioHang)
+                        {
+                            <tr>
+                                <td data-th="Product">
+                                    <div class="row">
+                                        <div class="col-sm-2 hidden-xs">
+                                            <img src="@Html.DisplayFor(m => item.Hinhanh)" alt="Sản phẩm 1" class="img-responsive" width="100">
+                                        </div>
+                                        <div class="col-sm-10">
+                                            <h4 class="nomargin">
+                                                <a >
+                                                    @Html.DisplayFor(m => item.TenSanPham)
+                                                </a>
+                                            </h4>
+                                            <p>
+                                                Màu :@Html.Action("_resurtTenmau", "ScreenProduct", new { Idmau = item.Mausac })
+                                                <br />
+                                                Khuyến mãi: @Html.DisplayFor(m => item.phantramkm)%
+                                            </p>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td data-th="Price">@string.Format("{0:0,000}", item.Giaban) đ</td>
+                                <td data-th="Quantity">
+                                    <input class="form-control text-center updatecart" data-id="@item.IDsanpham" value="@Html.DisplayFor(m => item.SoLuong)" type="number">
+                                </td>
+                                <td data-th="Subtotal" class="text-center">@string.Format("{0:0,00}", item.TongTien) đ</td>
+                                <td class="actions" data-th="">
+                                    @*<button class="btn btn-info btn-sm">
+                                        <i class="fa fa-save"></i>
+                                    </button>*@
+                                    <a href="../Cart/DeleteCart/@Html.DisplayFor(m => item.IDsanpham)" onclick="return DeleteConfirmation();" class="btn btn-danger btn-sm">
+                                        <i class="fa fa-trash-o"></i>
+                                    </a>
+                                </td>
+                            </tr>
+                        }
+
+                    </tbody>
+                    <tfoot>
+                        <tr class="visible-xs">
+                            <td class="text-center">
+                                @{
+                                    double bien = Convert.ToDouble(Web_Shop_SettingIphone.Models.Cart.MySession.TongTien);
+                                    string tien_vnd = Web_Shop_SettingIphone.Models.Command.VNCurrency.ToString(bien);
+                                }
+                                <strong>Tổng 200.000 đ</strong>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <a href="/" class="btn btn-warning"><i class="fa fa-angle-left"></i> Tiếp tục mua hàng</a>
+                            </td>
+                            <td colspan="2" class="hidden-xs"> </td>
+                            <td class="hidden-xs text-center">
+                                <strong>Tạm tính: @string.Format("{0:0,00.0}", Web_Shop_SettingIphone.Models.Cart.MySession.TongTien) đ</strong>
+                                <br />
+                                @tien_vnd
+                            </td>
+                            <td>
+                                <a href="/thanh-toan" class="btn btn-success btn-block">Thanh toán <i class="fa fa-angle-right"></i></a>
+                            </td>
+                        </tr>
+                    </tfoot>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>

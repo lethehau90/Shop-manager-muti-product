@@ -1,0 +1,1286 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2008/09/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="PNKTemplate_demoModelStoreContainer" CdmEntityContainer="Web_Shop_SettingIphoneEntities">
+    <EntitySetMapping Name="Advertises">
+      <EntityTypeMapping TypeName="PNKTemplate_demoModel.Advertise">
+        <MappingFragment StoreEntitySet="Advertise">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Image" ColumnName="Image" />
+          <ScalarProperty Name="Width" ColumnName="Width" />
+          <ScalarProperty Name="Height" ColumnName="Height" />
+          <ScalarProperty Name="Link" ColumnName="Link" />
+          <ScalarProperty Name="Target" ColumnName="Target" />
+          <ScalarProperty Name="Content" ColumnName="Content" />
+          <ScalarProperty Name="Position" ColumnName="Position" />
+          <ScalarProperty Name="PageId" ColumnName="PageId" />
+          <ScalarProperty Name="Click" ColumnName="Click" />
+          <ScalarProperty Name="Ord" ColumnName="Ord" />
+          <ScalarProperty Name="Active" ColumnName="Active" />
+          <ScalarProperty Name="Lang" ColumnName="Lang" />
+          <ScalarProperty Name="NameEn" ColumnName="NameEn" />
+          <ScalarProperty Name="ContentEn" ColumnName="ContentEn" />
+          <ScalarProperty Name="Ngaytao" ColumnName="Ngaytao" />
+          <ScalarProperty Name="Ngayhethan" ColumnName="Ngayhethan" />
+          <ScalarProperty Name="LuotClick" ColumnName="LuotClick" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Bill_customers">
+      <EntityTypeMapping TypeName="PNKTemplate_demoModel.Bill_customers">
+        <MappingFragment StoreEntitySet="Bill_customers">
+          <ScalarProperty Name="billid" ColumnName="billid" />
+          <ScalarProperty Name="userid" ColumnName="userid" />
+          <ScalarProperty Name="totalmoney" ColumnName="totalmoney" />
+          <ScalarProperty Name="idate" ColumnName="idate" />
+          <ScalarProperty Name="xdate" ColumnName="xdate" />
+          <ScalarProperty Name="request" ColumnName="request" />
+          <ScalarProperty Name="typepay" ColumnName="typepay" />
+          <ScalarProperty Name="state" ColumnName="state" />
+          <ScalarProperty Name="lang" ColumnName="lang" />
+          <ScalarProperty Name="show" ColumnName="show" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Billdetails">
+      <EntityTypeMapping TypeName="PNKTemplate_demoModel.Billdetail">
+        <MappingFragment StoreEntitySet="Billdetail">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="bilid" ColumnName="bilid" />
+          <ScalarProperty Name="proid" ColumnName="proid" />
+          <ScalarProperty Name="sizeid" ColumnName="sizeid" />
+          <ScalarProperty Name="colorid" ColumnName="colorid" />
+          <ScalarProperty Name="quantity" ColumnName="quantity" />
+          <ScalarProperty Name="bilprice" ColumnName="bilprice" />
+          <ScalarProperty Name="bilpricevnd" ColumnName="bilpricevnd" />
+          <ScalarProperty Name="bilmoney" ColumnName="bilmoney" />
+          <ScalarProperty Name="billlocation" ColumnName="billlocation" />
+          <ScalarProperty Name="Date" ColumnName="Date" />
+          <ScalarProperty Name="status" ColumnName="status" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CommentProducs">
+      <EntityTypeMapping TypeName="PNKTemplate_demoModel.CommentProduc">
+        <MappingFragment StoreEntitySet="CommentProduc">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="ProId" ColumnName="ProId" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="Point" ColumnName="Point" />
+          <ScalarProperty Name="Content" ColumnName="Content" />
+          <ScalarProperty Name="Date" ColumnName="Date" />
+          <ScalarProperty Name="Active" ColumnName="Active" />
+          <ScalarProperty Name="Level" ColumnName="Level" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Companies">
+      <EntityTypeMapping TypeName="PNKTemplate_demoModel.Company">
+        <MappingFragment StoreEntitySet="Company">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Address" ColumnName="Address" />
+          <ScalarProperty Name="PhoneNumber" ColumnName="PhoneNumber" />
+          <ScalarProperty Name="Fax" ColumnName="Fax" />
+          <ScalarProperty Name="ProvinceId" ColumnName="ProvinceId" />
+          <ScalarProperty Name="NameEn" ColumnName="NameEn" />
+          <ScalarProperty Name="AddressEn" ColumnName="AddressEn" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Configs">
+      <EntityTypeMapping TypeName="PNKTemplate_demoModel.Config">
+        <MappingFragment StoreEntitySet="Config">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Mail_Smtp" ColumnName="Mail_Smtp" />
+          <ScalarProperty Name="Mail_Port" ColumnName="Mail_Port" />
+          <ScalarProperty Name="Mail_Info" ColumnName="Mail_Info" />
+          <ScalarProperty Name="Mail_Noreply" ColumnName="Mail_Noreply" />
+          <ScalarProperty Name="Mail_Password" ColumnName="Mail_Password" />
+          <ScalarProperty Name="PlaceHead" ColumnName="PlaceHead" />
+          <ScalarProperty Name="PlaceBody" ColumnName="PlaceBody" />
+          <ScalarProperty Name="GoogleId" ColumnName="GoogleId" />
+          <ScalarProperty Name="Contact" ColumnName="Contact" />
+          <ScalarProperty Name="DeliveryTerms" ColumnName="DeliveryTerms" />
+          <ScalarProperty Name="PaymentTerms" ColumnName="PaymentTerms" />
+          <ScalarProperty Name="FreeShipping" ColumnName="FreeShipping" />
+          <ScalarProperty Name="Copyright" ColumnName="Copyright" />
+          <ScalarProperty Name="Title" ColumnName="Title" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="Keyword" ColumnName="Keyword" />
+          <ScalarProperty Name="Lang" ColumnName="Lang" />
+          <ScalarProperty Name="Helpsize" ColumnName="Helpsize" />
+          <ScalarProperty Name="Location" ColumnName="Location" />
+          <ScalarProperty Name="ToolScrip" ColumnName="ToolScrip" />
+          <ScalarProperty Name="Icon" ColumnName="Icon" />
+          <ScalarProperty Name="Map" ColumnName="Map" />
+          <ScalarProperty Name="pageging1" ColumnName="pageging1" />
+          <ScalarProperty Name="pageging2" ColumnName="pageging2" />
+          <ScalarProperty Name="pageging3" ColumnName="pageging3" />
+          <ScalarProperty Name="pageging4" ColumnName="pageging4" />
+          <ScalarProperty Name="pageging5" ColumnName="pageging5" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Contacts">
+      <EntityTypeMapping TypeName="PNKTemplate_demoModel.Contact">
+        <MappingFragment StoreEntitySet="Contact">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Company" ColumnName="Company" />
+          <ScalarProperty Name="Address" ColumnName="Address" />
+          <ScalarProperty Name="Tel" ColumnName="Tel" />
+          <ScalarProperty Name="Mail" ColumnName="Mail" />
+          <ScalarProperty Name="Detail" ColumnName="Detail" />
+          <ScalarProperty Name="Date" ColumnName="Date" />
+          <ScalarProperty Name="Active" ColumnName="Active" />
+          <ScalarProperty Name="Lang" ColumnName="Lang" />
+          <ScalarProperty Name="NameEn" ColumnName="NameEn" />
+          <ScalarProperty Name="CompanyEn" ColumnName="CompanyEn" />
+          <ScalarProperty Name="AddressEn" ColumnName="AddressEn" />
+          <ScalarProperty Name="DetailEn" ColumnName="DetailEn" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CTdonhangs">
+      <EntityTypeMapping TypeName="PNKTemplate_demoModel.CTdonhang">
+        <MappingFragment StoreEntitySet="CTdonhang">
+          <ScalarProperty Name="IdCTHD" ColumnName="IdCTHD" />
+          <ScalarProperty Name="IDhd" ColumnName="IDhd" />
+          <ScalarProperty Name="IDsanpham" ColumnName="IDsanpham" />
+          <ScalarProperty Name="Tensanpham" ColumnName="Tensanpham" />
+          <ScalarProperty Name="Soluong" ColumnName="Soluong" />
+          <ScalarProperty Name="Giaban" ColumnName="Giaban" />
+          <ScalarProperty Name="Size" ColumnName="Size" />
+          <ScalarProperty Name="Mausac" ColumnName="Mausac" />
+          <ScalarProperty Name="Dungluong" ColumnName="Dungluong" />
+          <ScalarProperty Name="Hinhanh" ColumnName="Hinhanh" />
+          <ScalarProperty Name="danhmucsanpham" ColumnName="danhmucsanpham" />
+          <ScalarProperty Name="chitietsanpham" ColumnName="chitietsanpham" />
+          <ScalarProperty Name="Giamthem" ColumnName="Giamthem" />
+          <ScalarProperty Name="phantramkm" ColumnName="phantramkm" />
+          <ScalarProperty Name="Baohanh" ColumnName="Baohanh" />
+          <ScalarProperty Name="Giacu" ColumnName="Giacu" />
+          <ScalarProperty Name="tinhtrang" ColumnName="tinhtrang" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Custumers">
+      <EntityTypeMapping TypeName="PNKTemplate_demoModel.Custumer">
+        <MappingFragment StoreEntitySet="Custumers">
+          <ScalarProperty Name="iusid" ColumnName="iusid" />
+          <ScalarProperty Name="vusername" ColumnName="vusername" />
+          <ScalarProperty Name="vpassword" ColumnName="vpassword" />
+          <ScalarProperty Name="vcusname" ColumnName="vcusname" />
+          <ScalarProperty Name="dbirthday" ColumnName="dbirthday" />
+          <ScalarProperty Name="vprovince" ColumnName="vprovince" />
+          <ScalarProperty Name="vaddress" ColumnName="vaddress" />
+          <ScalarProperty Name="vphone" ColumnName="vphone" />
+          <ScalarProperty Name="vmobile" ColumnName="vmobile" />
+          <ScalarProperty Name="vemail" ColumnName="vemail" />
+          <ScalarProperty Name="dcreatedate" ColumnName="dcreatedate" />
+          <ScalarProperty Name="istatus" ColumnName="istatus" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Chitiethinhs">
+      <EntityTypeMapping TypeName="PNKTemplate_demoModel.Chitiethinh">
+        <MappingFragment StoreEntitySet="Chitiethinh">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="IDsanpham" ColumnName="IDsanpham" />
+          <ScalarProperty Name="Images" ColumnName="Images" />
+          <ScalarProperty Name="Thumimg" ColumnName="Thumimg" />
+          <ScalarProperty Name="Thumsimg" ColumnName="Thumsimg" />
+          <ScalarProperty Name="ord" ColumnName="ord" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DientuCapLoaithuoctinhs">
+      <EntityTypeMapping TypeName="PNKTemplate_demoModel.DientuCapLoaithuoctinh">
+        <MappingFragment StoreEntitySet="DientuCapLoaithuoctinh">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Active" ColumnName="Active" />
+          <ScalarProperty Name="Ord" ColumnName="Ord" />
+          <ScalarProperty Name="Content" ColumnName="Content" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DientuChitiethinhs">
+      <EntityTypeMapping TypeName="PNKTemplate_demoModel.DientuChitiethinh">
+        <MappingFragment StoreEntitySet="DientuChitiethinh">
+          <ScalarProperty Name="Images4" ColumnName="Images4" />
+          <ScalarProperty Name="Images3" ColumnName="Images3" />
+          <ScalarProperty Name="Images2" ColumnName="Images2" />
+          <ScalarProperty Name="Images1" ColumnName="Images1" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="IdTag" ColumnName="IdTag" />
+          <ScalarProperty Name="IdProduct" ColumnName="IdProduct" />
+          <ScalarProperty Name="Images" ColumnName="Images" />
+          <ScalarProperty Name="ThumImg" ColumnName="ThumImg" />
+          <ScalarProperty Name="Idmau" ColumnName="Idmau" />
+          <ScalarProperty Name="Iddungluong" ColumnName="Iddungluong" />
+          <ScalarProperty Name="IdSize" ColumnName="IdSize" />
+          <ScalarProperty Name="Giaban" ColumnName="Giaban" />
+          <ScalarProperty Name="Giacu" ColumnName="Giacu" />
+          <ScalarProperty Name="Soluong" ColumnName="Soluong" />
+          <ScalarProperty Name="Phantramkm" ColumnName="Phantramkm" />
+          <ScalarProperty Name="Tinhtrang" ColumnName="Tinhtrang" />
+          <ScalarProperty Name="Active" ColumnName="Active" />
+          <ScalarProperty Name="Ord" ColumnName="Ord" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DientuDongSps">
+      <EntityTypeMapping TypeName="PNKTemplate_demoModel.DientuDongSp">
+        <MappingFragment StoreEntitySet="DientuDongSp">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Idnsx" ColumnName="Idnsx" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Active" ColumnName="Active" />
+          <ScalarProperty Name="Ord" ColumnName="Ord" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DientuDungluongs">
+      <EntityTypeMapping TypeName="PNKTemplate_demoModel.DientuDungluong">
+        <MappingFragment StoreEntitySet="DientuDungluong">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Active" ColumnName="Active" />
+          <ScalarProperty Name="Ord" ColumnName="Ord" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DientuInfoes">
+      <EntityTypeMapping TypeName="PNKTemplate_demoModel.DientuInfo">
+        <MappingFragment StoreEntitySet="DientuInfo">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Thuonghieu" ColumnName="Thuonghieu" />
+          <ScalarProperty Name="Dongmay" ColumnName="Dongmay" />
+          <ScalarProperty Name="Soseri" ColumnName="Soseri" />
+          <ScalarProperty Name="Hovaten" ColumnName="Hovaten" />
+          <ScalarProperty Name="Sodienthoai" ColumnName="Sodienthoai" />
+          <ScalarProperty Name="Noidungsuachua" ColumnName="Noidungsuachua" />
+          <ScalarProperty Name="Images1" ColumnName="Images1" />
+          <ScalarProperty Name="Images2" ColumnName="Images2" />
+          <ScalarProperty Name="Giaban" ColumnName="Giaban" />
+          <ScalarProperty Name="Index" ColumnName="Index" />
+          <ScalarProperty Name="Ngaygoi" ColumnName="Ngaygoi" />
+          <ScalarProperty Name="Active" ColumnName="Active" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DientuLoaithuoctinhs">
+      <EntityTypeMapping TypeName="PNKTemplate_demoModel.DientuLoaithuoctinh">
+        <MappingFragment StoreEntitySet="DientuLoaithuoctinh">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Active" ColumnName="Active" />
+          <ScalarProperty Name="Ord" ColumnName="Ord" />
+          <ScalarProperty Name="Content" ColumnName="Content" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DientuMathangs">
+      <EntityTypeMapping TypeName="PNKTemplate_demoModel.DientuMathang">
+        <MappingFragment StoreEntitySet="DientuMathang">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Seri" ColumnName="Seri" />
+          <ScalarProperty Name="Tenhang" ColumnName="Tenhang" />
+          <ScalarProperty Name="Img" ColumnName="Img" />
+          <ScalarProperty Name="ThumImg" ColumnName="ThumImg" />
+          <ScalarProperty Name="Thum_img_img" ColumnName="Thum_img_img" />
+          <ScalarProperty Name="Idnsx" ColumnName="Idnsx" />
+          <ScalarProperty Name="Giaban" ColumnName="Giaban" />
+          <ScalarProperty Name="Giamua" ColumnName="Giamua" />
+          <ScalarProperty Name="Soluong" ColumnName="Soluong" />
+          <ScalarProperty Name="Tinhtrang" ColumnName="Tinhtrang" />
+          <ScalarProperty Name="Donvi" ColumnName="Donvi" />
+          <ScalarProperty Name="Baohanh" ColumnName="Baohanh" />
+          <ScalarProperty Name="Ngaynhap" ColumnName="Ngaynhap" />
+          <ScalarProperty Name="Danhgia" ColumnName="Danhgia" />
+          <ScalarProperty Name="Luotxem" ColumnName="Luotxem" />
+          <ScalarProperty Name="Vat" ColumnName="Vat" />
+          <ScalarProperty Name="Lienhe" ColumnName="Lienhe" />
+          <ScalarProperty Name="Forder" ColumnName="Forder" />
+          <ScalarProperty Name="Baiviet" ColumnName="Baiviet" />
+          <ScalarProperty Name="Thongso" ColumnName="Thongso" />
+          <ScalarProperty Name="Mota" ColumnName="Mota" />
+          <ScalarProperty Name="Giagiam" ColumnName="Giagiam" />
+          <ScalarProperty Name="Phantramkm" ColumnName="Phantramkm" />
+          <ScalarProperty Name="Title" ColumnName="Title" />
+          <ScalarProperty Name="Keyword" ColumnName="Keyword" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="Khuvuc" ColumnName="Khuvuc" />
+          <ScalarProperty Name="thuoctinh" ColumnName="thuoctinh" />
+          <ScalarProperty Name="khuyenmai" ColumnName="khuyenmai" />
+          <ScalarProperty Name="khuyenmai_html" ColumnName="khuyenmai_html" />
+          <ScalarProperty Name="Ord" ColumnName="Ord" />
+          <ScalarProperty Name="Active" ColumnName="Active" />
+          <ScalarProperty Name="Priority" ColumnName="Priority" />
+          <ScalarProperty Name="Index" ColumnName="Index" />
+          <ScalarProperty Name="Idmenu" ColumnName="Idmenu" />
+          <ScalarProperty Name="Idthuoctinh" ColumnName="Idthuoctinh" />
+          <ScalarProperty Name="Diemdanhgia" ColumnName="Diemdanhgia" />
+          <ScalarProperty Name="Ngayxemganday" ColumnName="Ngayxemganday" />
+          <ScalarProperty Name="Tag" ColumnName="Tag" />
+          <ScalarProperty Name="GroupNewsCatTag" ColumnName="GroupNewsCatTag" />
+          <ScalarProperty Name="Cateprolevel1" ColumnName="Cateprolevel1" />
+          <ScalarProperty Name="Cateprolevel2" ColumnName="Cateprolevel2" />
+          <ScalarProperty Name="Cateprolevel3" ColumnName="Cateprolevel3" />
+          <ScalarProperty Name="Soluongmua" ColumnName="Soluongmua" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DientuMenuSitemathangs">
+      <EntityTypeMapping TypeName="PNKTemplate_demoModel.DientuMenuSitemathang">
+        <MappingFragment StoreEntitySet="DientuMenuSitemathang">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="MenuName" ColumnName="MenuName" />
+          <ScalarProperty Name="Tag" ColumnName="Tag" />
+          <ScalarProperty Name="Level" ColumnName="Level" />
+          <ScalarProperty Name="Logogroup" ColumnName="Logogroup" />
+          <ScalarProperty Name="Ord" ColumnName="Ord" />
+          <ScalarProperty Name="Active" ColumnName="Active" />
+          <ScalarProperty Name="Mota" ColumnName="Mota" />
+          <ScalarProperty Name="Url" ColumnName="Url" />
+          <ScalarProperty Name="idThuoctinh" ColumnName="idThuoctinh" />
+          <ScalarProperty Name="Priority" ColumnName="Priority" />
+          <ScalarProperty Name="Index" ColumnName="Index" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="Keyword" ColumnName="Keyword" />
+          <ScalarProperty Name="Title" ColumnName="Title" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DientuNsxes">
+      <EntityTypeMapping TypeName="PNKTemplate_demoModel.DientuNsx">
+        <MappingFragment StoreEntitySet="DientuNsx">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Images" ColumnName="Images" />
+          <ScalarProperty Name="Active" ColumnName="Active" />
+          <ScalarProperty Name="Ord" ColumnName="Ord" />
+          <ScalarProperty Name="Content" ColumnName="Content" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DientuTinhnangs">
+      <EntityTypeMapping TypeName="PNKTemplate_demoModel.DientuTinhnang">
+        <MappingFragment StoreEntitySet="DientuTinhnang">
+          <ScalarProperty Name="Idthuoctinh" ColumnName="Idthuoctinh" />
+          <ScalarProperty Name="Thuoctinh" ColumnName="Thuoctinh" />
+          <ScalarProperty Name="Idtinhang" ColumnName="Idtinhang" />
+          <ScalarProperty Name="Active" ColumnName="Active" />
+          <ScalarProperty Name="Ord" ColumnName="Ord" />
+          <ScalarProperty Name="Title" ColumnName="Title" />
+          <ScalarProperty Name="Content" ColumnName="Content" />
+          <ScalarProperty Name="Idthuoctinhselect" ColumnName="Idthuoctinhselect" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DientuThuoctinhs">
+      <EntityTypeMapping TypeName="PNKTemplate_demoModel.DientuThuoctinh">
+        <MappingFragment StoreEntitySet="DientuThuoctinh">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="IdTag" ColumnName="IdTag" />
+          <ScalarProperty Name="Text" ColumnName="Text" />
+          <ScalarProperty Name="Value" ColumnName="Value" />
+          <ScalarProperty Name="Idproduct" ColumnName="Idproduct" />
+          <ScalarProperty Name="TagProduct" ColumnName="TagProduct" />
+          <ScalarProperty Name="Idthuoctinh" ColumnName="Idthuoctinh" />
+          <ScalarProperty Name="Idcapthuoctinh" ColumnName="Idcapthuoctinh" />
+          <ScalarProperty Name="Active" ColumnName="Active" />
+          <ScalarProperty Name="Ord" ColumnName="Ord" />
+          <ScalarProperty Name="Content" ColumnName="Content" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Documents">
+      <EntityTypeMapping TypeName="PNKTemplate_demoModel.Document">
+        <MappingFragment StoreEntitySet="Document">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Code" ColumnName="Code" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Images" ColumnName="Images" />
+          <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+          <ScalarProperty Name="EffectiveDate" ColumnName="EffectiveDate" />
+          <ScalarProperty Name="Info" ColumnName="Info" />
+          <ScalarProperty Name="File" ColumnName="File" />
+          <ScalarProperty Name="Ord" ColumnName="Ord" />
+          <ScalarProperty Name="Priority" ColumnName="Priority" />
+          <ScalarProperty Name="Active" ColumnName="Active" />
+          <ScalarProperty Name="TypeId" ColumnName="TypeId" />
+          <ScalarProperty Name="MemberId" ColumnName="MemberId" />
+          <ScalarProperty Name="Lang" ColumnName="Lang" />
+          <ScalarProperty Name="NameEn" ColumnName="NameEn" />
+          <ScalarProperty Name="infoEn" ColumnName="infoEn" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DocumentTypes">
+      <EntityTypeMapping TypeName="PNKTemplate_demoModel.DocumentType">
+        <MappingFragment StoreEntitySet="DocumentType">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Ord" ColumnName="Ord" />
+          <ScalarProperty Name="Active" ColumnName="Active" />
+          <ScalarProperty Name="Lang" ColumnName="Lang" />
+          <ScalarProperty Name="NameEn" ColumnName="NameEn" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Donhangs">
+      <EntityTypeMapping TypeName="PNKTemplate_demoModel.Donhang">
+        <MappingFragment StoreEntitySet="Donhang">
+          <ScalarProperty Name="IDhd" ColumnName="IDhd" />
+          <ScalarProperty Name="IDuser" ColumnName="IDuser" />
+          <ScalarProperty Name="SDT" ColumnName="SDT" />
+          <ScalarProperty Name="Hoten" ColumnName="Hoten" />
+          <ScalarProperty Name="Mail" ColumnName="Mail" />
+          <ScalarProperty Name="Diachi" ColumnName="Diachi" />
+          <ScalarProperty Name="Tinh" ColumnName="Tinh" />
+          <ScalarProperty Name="Huyen" ColumnName="Huyen" />
+          <ScalarProperty Name="Xungho" ColumnName="Xungho" />
+          <ScalarProperty Name="Hinhthucthanhtoan" ColumnName="Hinhthucthanhtoan" />
+          <ScalarProperty Name="Goidichvu" ColumnName="Goidichvu" />
+          <ScalarProperty Name="Tongtienhang" ColumnName="Tongtienhang" />
+          <ScalarProperty Name="Thanhtoan" ColumnName="Thanhtoan" />
+          <ScalarProperty Name="ngaydathang" ColumnName="ngaydathang" />
+          <ScalarProperty Name="KH" ColumnName="KH" />
+          <ScalarProperty Name="Duyet" ColumnName="Duyet" />
+          <ScalarProperty Name="Khuyenmai" ColumnName="Khuyenmai" />
+          <ScalarProperty Name="Hinhthucgiaohang" ColumnName="Hinhthucgiaohang" />
+          <ScalarProperty Name="GhiChuKhac" ColumnName="GhiChuKhac" />
+          <ScalarProperty Name="Tiengiamgia" ColumnName="Tiengiamgia" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="EmailRegisters">
+      <EntityTypeMapping TypeName="PNKTemplate_demoModel.EmailRegister">
+        <MappingFragment StoreEntitySet="EmailRegisters">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="Createdate" ColumnName="Createdate" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Even_Date">
+      <EntityTypeMapping TypeName="PNKTemplate_demoModel.Even_Date">
+        <MappingFragment StoreEntitySet="Even_Date">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="NameEn" ColumnName="NameEn" />
+          <ScalarProperty Name="content" ColumnName="content" />
+          <ScalarProperty Name="contentEn" ColumnName="contentEn" />
+          <ScalarProperty Name="Date_event_start" ColumnName="Date_event_start" />
+          <ScalarProperty Name="Date_event_end" ColumnName="Date_event_end" />
+          <ScalarProperty Name="Price_event" ColumnName="Price_event" />
+          <ScalarProperty Name="Ord" ColumnName="Ord" />
+          <ScalarProperty Name="Active" ColumnName="Active" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="GroupLibraries">
+      <EntityTypeMapping TypeName="PNKTemplate_demoModel.GroupLibrary">
+        <MappingFragment StoreEntitySet="GroupLibrary">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Tag" ColumnName="Tag" />
+          <ScalarProperty Name="Level" ColumnName="Level" />
+          <ScalarProperty Name="Image" ColumnName="Image" />
+          <ScalarProperty Name="Ord" ColumnName="Ord" />
+          <ScalarProperty Name="Active" ColumnName="Active" />
+          <ScalarProperty Name="Lang" ColumnName="Lang" />
+          <ScalarProperty Name="NameEn" ColumnName="NameEn" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="GroupMembers">
+      <EntityTypeMapping TypeName="PNKTemplate_demoModel.GroupMember">
+        <MappingFragment StoreEntitySet="GroupMember">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Active" ColumnName="Active" />
+          <ScalarProperty Name="NameEn" ColumnName="NameEn" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="GroupMenuSanPhams">
+      <EntityTypeMapping TypeName="PNKTemplate_demoModel.GroupMenuSanPham">
+        <MappingFragment StoreEntitySet="GroupMenuSanPham">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Tag" ColumnName="Tag" />
+          <ScalarProperty Name="Level" ColumnName="Level" />
+          <ScalarProperty Name="Title" ColumnName="Title" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="Keyword" ColumnName="Keyword" />
+          <ScalarProperty Name="Ord" ColumnName="Ord" />
+          <ScalarProperty Name="Priority" ColumnName="Priority" />
+          <ScalarProperty Name="Index" ColumnName="Index" />
+          <ScalarProperty Name="Active" ColumnName="Active" />
+          <ScalarProperty Name="Lang" ColumnName="Lang" />
+          <ScalarProperty Name="Logogroup" ColumnName="Logogroup" />
+          <ScalarProperty Name="NameEn" ColumnName="NameEn" />
+          <ScalarProperty Name="TitleEn" ColumnName="TitleEn" />
+          <ScalarProperty Name="ImagesLogo" ColumnName="ImagesLogo" />
+          <ScalarProperty Name="content" ColumnName="content" />
+          <ScalarProperty Name="contentEn" ColumnName="contentEn" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="GroupNewMenuSanPhamDetails">
+      <EntityTypeMapping TypeName="PNKTemplate_demoModel.GroupNewMenuSanPhamDetail">
+        <MappingFragment StoreEntitySet="GroupNewMenuSanPhamDetail">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="NameEn" ColumnName="NameEn" />
+          <ScalarProperty Name="Tag" ColumnName="Tag" />
+          <ScalarProperty Name="IDthuonghieu" ColumnName="IDthuonghieu" />
+          <ScalarProperty Name="NguonSanPham" ColumnName="NguonSanPham" />
+          <ScalarProperty Name="Mausac" ColumnName="Mausac" />
+          <ScalarProperty Name="Kichthuoc" ColumnName="Kichthuoc" />
+          <ScalarProperty Name="SanphamCungloai" ColumnName="SanphamCungloai" />
+          <ScalarProperty Name="Donvi" ColumnName="Donvi" />
+          <ScalarProperty Name="Luotdanhgia" ColumnName="Luotdanhgia" />
+          <ScalarProperty Name="Video" ColumnName="Video" />
+          <ScalarProperty Name="Title" ColumnName="Title" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="Keyword" ColumnName="Keyword" />
+          <ScalarProperty Name="Priority" ColumnName="Priority" />
+          <ScalarProperty Name="Index" ColumnName="Index" />
+          <ScalarProperty Name="Order" ColumnName="Order" />
+          <ScalarProperty Name="Active" ColumnName="Active" />
+          <ScalarProperty Name="GroupNewsCatTag" ColumnName="GroupNewsCatTag" />
+          <ScalarProperty Name="Cateprolevel1" ColumnName="Cateprolevel1" />
+          <ScalarProperty Name="Cateprolevel2" ColumnName="Cateprolevel2" />
+          <ScalarProperty Name="Cateprolevel3" ColumnName="Cateprolevel3" />
+          <ScalarProperty Name="Image" ColumnName="Image" />
+          <ScalarProperty Name="Image1" ColumnName="Image1" />
+          <ScalarProperty Name="Image2" ColumnName="Image2" />
+          <ScalarProperty Name="Image3" ColumnName="Image3" />
+          <ScalarProperty Name="Image4" ColumnName="Image4" />
+          <ScalarProperty Name="Image5" ColumnName="Image5" />
+          <ScalarProperty Name="Content" ColumnName="Content" />
+          <ScalarProperty Name="ContentEn" ColumnName="ContentEn" />
+          <ScalarProperty Name="Detail" ColumnName="Detail" />
+          <ScalarProperty Name="DetailEn" ColumnName="DetailEn" />
+          <ScalarProperty Name="Khuyenmai" ColumnName="Khuyenmai" />
+          <ScalarProperty Name="KhuyenmaiEn" ColumnName="KhuyenmaiEn" />
+          <ScalarProperty Name="Baohanh" ColumnName="Baohanh" />
+          <ScalarProperty Name="BaohanhEn" ColumnName="BaohanhEn" />
+          <ScalarProperty Name="DacDiemNoiBat" ColumnName="DacDiemNoiBat" />
+          <ScalarProperty Name="DacDiemNoiBatEn" ColumnName="DacDiemNoiBatEn" />
+          <ScalarProperty Name="Thongdiep" ColumnName="Thongdiep" />
+          <ScalarProperty Name="ThongdiepEn" ColumnName="ThongdiepEn" />
+          <ScalarProperty Name="Seri" ColumnName="Seri" />
+          <ScalarProperty Name="Luotxem" ColumnName="Luotxem" />
+          <ScalarProperty Name="Soluongmua" ColumnName="Soluongmua" />
+          <ScalarProperty Name="DateCreate" ColumnName="DateCreate" />
+          <ScalarProperty Name="DateView" ColumnName="DateView" />
+          <ScalarProperty Name="Stock" ColumnName="Stock" />
+          <ScalarProperty Name="Number_Stock" ColumnName="Number_Stock" />
+          <ScalarProperty Name="Vat" ColumnName="Vat" />
+          <ScalarProperty Name="Gianhaphang" ColumnName="Gianhaphang" />
+          <ScalarProperty Name="Giaban" ColumnName="Giaban" />
+          <ScalarProperty Name="Phantramkhuyenmai" ColumnName="Phantramkhuyenmai" />
+          <ScalarProperty Name="Giabankhuyenmai" ColumnName="Giabankhuyenmai" />
+          <ScalarProperty Name="DateStart_Event" ColumnName="DateStart_Event" />
+          <ScalarProperty Name="DateEnd_Event" ColumnName="DateEnd_Event" />
+          <ScalarProperty Name="Giaban_Event" ColumnName="Giaban_Event" />
+          <ScalarProperty Name="Content_Event" ColumnName="Content_Event" />
+          <ScalarProperty Name="Content_EventEn" ColumnName="Content_EventEn" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="GroupNews">
+      <EntityTypeMapping TypeName="PNKTemplate_demoModel.GroupNew">
+        <MappingFragment StoreEntitySet="GroupNews">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Tag" ColumnName="Tag" />
+          <ScalarProperty Name="Level" ColumnName="Level" />
+          <ScalarProperty Name="Title" ColumnName="Title" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="Keyword" ColumnName="Keyword" />
+          <ScalarProperty Name="Ord" ColumnName="Ord" />
+          <ScalarProperty Name="Priority" ColumnName="Priority" />
+          <ScalarProperty Name="Index" ColumnName="Index" />
+          <ScalarProperty Name="Active" ColumnName="Active" />
+          <ScalarProperty Name="Lang" ColumnName="Lang" />
+          <ScalarProperty Name="Logogroup" ColumnName="Logogroup" />
+          <ScalarProperty Name="NameEn" ColumnName="NameEn" />
+          <ScalarProperty Name="TitleEn" ColumnName="TitleEn" />
+          <ScalarProperty Name="ImagesLogo" ColumnName="ImagesLogo" />
+          <ScalarProperty Name="content" ColumnName="content" />
+          <ScalarProperty Name="contentEn" ColumnName="contentEn" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="GroupNewsNewsDetails">
+      <EntityTypeMapping TypeName="PNKTemplate_demoModel.GroupNewsNewsDetail">
+        <MappingFragment StoreEntitySet="GroupNewsNewsDetail">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Tag" ColumnName="Tag" />
+          <ScalarProperty Name="Image" ColumnName="Image" />
+          <ScalarProperty Name="Content" ColumnName="Content" />
+          <ScalarProperty Name="Detail" ColumnName="Detail" />
+          <ScalarProperty Name="Date" ColumnName="Date" />
+          <ScalarProperty Name="Title" ColumnName="Title" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="Keyword" ColumnName="Keyword" />
+          <ScalarProperty Name="Priority" ColumnName="Priority" />
+          <ScalarProperty Name="Index" ColumnName="Index" />
+          <ScalarProperty Name="Active" ColumnName="Active" />
+          <ScalarProperty Name="ord" ColumnName="ord" />
+          <ScalarProperty Name="Nguon" ColumnName="Nguon" />
+          <ScalarProperty Name="Lang" ColumnName="Lang" />
+          <ScalarProperty Name="Image1" ColumnName="Image1" />
+          <ScalarProperty Name="Image2" ColumnName="Image2" />
+          <ScalarProperty Name="Image3" ColumnName="Image3" />
+          <ScalarProperty Name="Image4" ColumnName="Image4" />
+          <ScalarProperty Name="Images5" ColumnName="Images5" />
+          <ScalarProperty Name="GroupNewsCatTag" ColumnName="GroupNewsCatTag" />
+          <ScalarProperty Name="Cateprolevel1" ColumnName="Cateprolevel1" />
+          <ScalarProperty Name="Cateprolevel2" ColumnName="Cateprolevel2" />
+          <ScalarProperty Name="Cateprolevel3" ColumnName="Cateprolevel3" />
+          <ScalarProperty Name="NameEn" ColumnName="NameEn" />
+          <ScalarProperty Name="ContentEn" ColumnName="ContentEn" />
+          <ScalarProperty Name="DetailEn" ColumnName="DetailEn" />
+          <ScalarProperty Name="DateView" ColumnName="DateView" />
+          <ScalarProperty Name="Luotxem" ColumnName="Luotxem" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="GroupSupports">
+      <EntityTypeMapping TypeName="PNKTemplate_demoModel.GroupSupport">
+        <MappingFragment StoreEntitySet="GroupSupport">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Ord" ColumnName="Ord" />
+          <ScalarProperty Name="Active" ColumnName="Active" />
+          <ScalarProperty Name="Lang" ColumnName="Lang" />
+          <ScalarProperty Name="NameEn" ColumnName="NameEn" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Htmls">
+      <EntityTypeMapping TypeName="PNKTemplate_demoModel.Html">
+        <MappingFragment StoreEntitySet="Html">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="type" ColumnName="type" />
+          <ScalarProperty Name="Active" ColumnName="Active" />
+          <ScalarProperty Name="Lang" ColumnName="Lang" />
+          <ScalarProperty Name="Ten" ColumnName="Ten" />
+          <ScalarProperty Name="Html_content" ColumnName="Html_content" />
+          <ScalarProperty Name="TenEn" ColumnName="TenEn" />
+          <ScalarProperty Name="Html_contentEn" ColumnName="Html_contentEn" />
+          <ScalarProperty Name="images" ColumnName="images" />
+          <ScalarProperty Name="Ord" ColumnName="Ord" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="information">
+      <EntityTypeMapping TypeName="PNKTemplate_demoModel.information">
+        <MappingFragment StoreEntitySet="information">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Image" ColumnName="Image" />
+          <ScalarProperty Name="Target" ColumnName="Target" />
+          <ScalarProperty Name="Content" ColumnName="Content" />
+          <ScalarProperty Name="Position" ColumnName="Position" />
+          <ScalarProperty Name="Click" ColumnName="Click" />
+          <ScalarProperty Name="Ord" ColumnName="Ord" />
+          <ScalarProperty Name="Active" ColumnName="Active" />
+          <ScalarProperty Name="Lang" ColumnName="Lang" />
+          <ScalarProperty Name="Detail" ColumnName="Detail" />
+          <ScalarProperty Name="Title" ColumnName="Title" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="Keyword" ColumnName="Keyword" />
+          <ScalarProperty Name="Image1" ColumnName="Image1" />
+          <ScalarProperty Name="Image2" ColumnName="Image2" />
+          <ScalarProperty Name="Image3" ColumnName="Image3" />
+          <ScalarProperty Name="Image4" ColumnName="Image4" />
+          <ScalarProperty Name="Image5" ColumnName="Image5" />
+          <ScalarProperty Name="Index" ColumnName="Index" />
+          <ScalarProperty Name="Priority" ColumnName="Priority" />
+          <ScalarProperty Name="Tag" ColumnName="Tag" />
+          <ScalarProperty Name="NameEn" ColumnName="NameEn" />
+          <ScalarProperty Name="ContentEn" ColumnName="ContentEn" />
+          <ScalarProperty Name="DetailEn" ColumnName="DetailEn" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Kichthuocs">
+      <EntityTypeMapping TypeName="PNKTemplate_demoModel.Kichthuoc">
+        <MappingFragment StoreEntitySet="Kichthuoc">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Kichthuoc1" ColumnName="Kichthuoc" />
+          <ScalarProperty Name="Vitri" ColumnName="Vitri" />
+          <ScalarProperty Name="Active" ColumnName="Active" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Khoanggias">
+      <EntityTypeMapping TypeName="PNKTemplate_demoModel.Khoanggia">
+        <MappingFragment StoreEntitySet="Khoanggia">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Khoangdau" ColumnName="Khoangdau" />
+          <ScalarProperty Name="Khoangcuoi" ColumnName="Khoangcuoi" />
+          <ScalarProperty Name="Vitri" ColumnName="Vitri" />
+          <ScalarProperty Name="Active" ColumnName="Active" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Languages">
+      <EntityTypeMapping TypeName="PNKTemplate_demoModel.Language">
+        <MappingFragment StoreEntitySet="Language">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Folder" ColumnName="Folder" />
+          <ScalarProperty Name="Default" ColumnName="Default" />
+          <ScalarProperty Name="Image" ColumnName="Image" />
+          <ScalarProperty Name="Active" ColumnName="Active" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Libraries">
+      <EntityTypeMapping TypeName="PNKTemplate_demoModel.Library">
+        <MappingFragment StoreEntitySet="Library">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Tag" ColumnName="Tag" />
+          <ScalarProperty Name="Image" ColumnName="Image" />
+          <ScalarProperty Name="File" ColumnName="File" />
+          <ScalarProperty Name="Info" ColumnName="Info" />
+          <ScalarProperty Name="Priority" ColumnName="Priority" />
+          <ScalarProperty Name="Active" ColumnName="Active" />
+          <ScalarProperty Name="GroupLibraryId" ColumnName="GroupLibraryId" />
+          <ScalarProperty Name="MemberId" ColumnName="MemberId" />
+          <ScalarProperty Name="Lang" ColumnName="Lang" />
+          <ScalarProperty Name="LibraryCatTag" ColumnName="LibraryCatTag" />
+          <ScalarProperty Name="NameEn" ColumnName="NameEn" />
+          <ScalarProperty Name="infoEn" ColumnName="infoEn" />
+          <ScalarProperty Name="Content" ColumnName="Content" />
+          <ScalarProperty Name="ContetnEn" ColumnName="ContetnEn" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="MacodeKhuyenMais">
+      <EntityTypeMapping TypeName="PNKTemplate_demoModel.MacodeKhuyenMai">
+        <MappingFragment StoreEntitySet="MacodeKhuyenMai">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Macode" ColumnName="Macode" />
+          <ScalarProperty Name="Valueprice" ColumnName="Valueprice" />
+          <ScalarProperty Name="Active" ColumnName="Active" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Mausacs">
+      <EntityTypeMapping TypeName="PNKTemplate_demoModel.Mausac">
+        <MappingFragment StoreEntitySet="Mausac">
+          <ScalarProperty Name="IDmau" ColumnName="IDmau" />
+          <ScalarProperty Name="Tenmau" ColumnName="Tenmau" />
+          <ScalarProperty Name="Hinhanh" ColumnName="Hinhanh" />
+          <ScalarProperty Name="Lang" ColumnName="Lang" />
+          <ScalarProperty Name="TenmauEn" ColumnName="TenmauEn" />
+          <ScalarProperty Name="Ord" ColumnName="Ord" />
+          <ScalarProperty Name="Active" ColumnName="Active" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Members">
+      <EntityTypeMapping TypeName="PNKTemplate_demoModel.Member">
+        <MappingFragment StoreEntitySet="Member">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="Username" ColumnName="Username" />
+          <ScalarProperty Name="Password" ColumnName="Password" />
+          <ScalarProperty Name="GroupMemberId" ColumnName="GroupMemberId" />
+          <ScalarProperty Name="Active" ColumnName="Active" />
+          <ScalarProperty Name="NameEn" ColumnName="NameEn" />
+          <ScalarProperty Name="Isplace" ColumnName="Isplace" />
+          <ScalarProperty Name="IsplaceEn" ColumnName="IsplaceEn" />
+          <ScalarProperty Name="Note" ColumnName="Note" />
+          <ScalarProperty Name="NoteEn" ColumnName="NoteEn" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Nuocsanxuats">
+      <EntityTypeMapping TypeName="PNKTemplate_demoModel.Nuocsanxuat">
+        <MappingFragment StoreEntitySet="Nuocsanxuat">
+          <ScalarProperty Name="IDNuocsanxuat" ColumnName="IDNuocsanxuat" />
+          <ScalarProperty Name="TenNuocsanxuat" ColumnName="TenNuocsanxuat" />
+          <ScalarProperty Name="Logo" ColumnName="Logo" />
+          <ScalarProperty Name="Active" ColumnName="Active" />
+          <ScalarProperty Name="Vitri" ColumnName="Vitri" />
+          <ScalarProperty Name="TenNuocsanxuat_En" ColumnName="TenNuocsanxuat_En" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Provinces">
+      <EntityTypeMapping TypeName="PNKTemplate_demoModel.Province">
+        <MappingFragment StoreEntitySet="Province">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="NameEn" ColumnName="NameEn" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="quantity_purchased">
+      <EntityTypeMapping TypeName="PNKTemplate_demoModel.quantity_purchased">
+        <MappingFragment StoreEntitySet="quantity_purchased">
+          <ScalarProperty Name="Id_quantity" ColumnName="Id_quantity" />
+          <ScalarProperty Name="Sl_mua" ColumnName="Sl_mua" />
+          <ScalarProperty Name="Phan_tram_tang" ColumnName="Phan_tram_tang" />
+          <ScalarProperty Name="Active" ColumnName="Active" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="service_charge">
+      <EntityTypeMapping TypeName="PNKTemplate_demoModel.service_charge">
+        <MappingFragment StoreEntitySet="service_charge">
+          <ScalarProperty Name="idservice" ColumnName="idservice" />
+          <ScalarProperty Name="Ord" ColumnName="Ord" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Gia" ColumnName="Gia" />
+          <ScalarProperty Name="Active" ColumnName="Active" />
+          <ScalarProperty Name="NameEn" ColumnName="NameEn" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Shops">
+      <EntityTypeMapping TypeName="PNKTemplate_demoModel.Shop">
+        <MappingFragment StoreEntitySet="Shop">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="CompanyId" ColumnName="CompanyId" />
+          <ScalarProperty Name="Address" ColumnName="Address" />
+          <ScalarProperty Name="PhoneNumber" ColumnName="PhoneNumber" />
+          <ScalarProperty Name="Active" ColumnName="Active" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SlideShows">
+      <EntityTypeMapping TypeName="PNKTemplate_demoModel.SlideShow">
+        <MappingFragment StoreEntitySet="SlideShow">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Image" ColumnName="Image" />
+          <ScalarProperty Name="Width" ColumnName="Width" />
+          <ScalarProperty Name="Height" ColumnName="Height" />
+          <ScalarProperty Name="Link" ColumnName="Link" />
+          <ScalarProperty Name="Target" ColumnName="Target" />
+          <ScalarProperty Name="Content" ColumnName="Content" />
+          <ScalarProperty Name="Position" ColumnName="Position" />
+          <ScalarProperty Name="Click" ColumnName="Click" />
+          <ScalarProperty Name="Ord" ColumnName="Ord" />
+          <ScalarProperty Name="Active" ColumnName="Active" />
+          <ScalarProperty Name="Lang" ColumnName="Lang" />
+          <ScalarProperty Name="Detail" ColumnName="Detail" />
+          <ScalarProperty Name="Title" ColumnName="Title" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="Keyword" ColumnName="Keyword" />
+          <ScalarProperty Name="Image1" ColumnName="Image1" />
+          <ScalarProperty Name="Image2" ColumnName="Image2" />
+          <ScalarProperty Name="Image3" ColumnName="Image3" />
+          <ScalarProperty Name="Image4" ColumnName="Image4" />
+          <ScalarProperty Name="Image5" ColumnName="Image5" />
+          <ScalarProperty Name="Index" ColumnName="Index" />
+          <ScalarProperty Name="Priority" ColumnName="Priority" />
+          <ScalarProperty Name="Tag" ColumnName="Tag" />
+          <ScalarProperty Name="NameEn" ColumnName="NameEn" />
+          <ScalarProperty Name="ContentEn" ColumnName="ContentEn" />
+          <ScalarProperty Name="DetailEn" ColumnName="DetailEn" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Supports">
+      <EntityTypeMapping TypeName="PNKTemplate_demoModel.Support">
+        <MappingFragment StoreEntitySet="Support">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Tel" ColumnName="Tel" />
+          <ScalarProperty Name="Type" ColumnName="Type" />
+          <ScalarProperty Name="Nick" ColumnName="Nick" />
+          <ScalarProperty Name="Ord" ColumnName="Ord" />
+          <ScalarProperty Name="Active" ColumnName="Active" />
+          <ScalarProperty Name="GroupSupportId" ColumnName="GroupSupportId" />
+          <ScalarProperty Name="Lang" ColumnName="Lang" />
+          <ScalarProperty Name="Location" ColumnName="Location" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Tax_ruler">
+      <EntityTypeMapping TypeName="PNKTemplate_demoModel.Tax_ruler">
+        <MappingFragment StoreEntitySet="Tax_ruler">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Province" ColumnName="Province" />
+          <ScalarProperty Name="Tax_pri" ColumnName="Tax_pri" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="File_tax" ColumnName="File_tax" />
+          <ScalarProperty Name="Ord" ColumnName="Ord" />
+          <ScalarProperty Name="NameEn" ColumnName="NameEn" />
+          <ScalarProperty Name="DescriptionEn" ColumnName="DescriptionEn" />
+          <ScalarProperty Name="Active" ColumnName="Active" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TB_ThongKe">
+      <EntityTypeMapping TypeName="PNKTemplate_demoModel.TB_ThongKe">
+        <MappingFragment StoreEntitySet="TB_ThongKe">
+          <ScalarProperty Name="MaTB" ColumnName="MaTB" />
+          <ScalarProperty Name="ThoiGian" ColumnName="ThoiGian" />
+          <ScalarProperty Name="SoTruyCap" ColumnName="SoTruyCap" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Tintucs">
+      <EntityTypeMapping TypeName="PNKTemplate_demoModel.Tintuc">
+        <MappingFragment StoreEntitySet="Tintuc">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Tag" ColumnName="Tag" />
+          <ScalarProperty Name="Ngaydang" ColumnName="Ngaydang" />
+          <ScalarProperty Name="Tomtat" ColumnName="Tomtat" />
+          <ScalarProperty Name="Noidung" ColumnName="Noidung" />
+          <ScalarProperty Name="Tacgia" ColumnName="Tacgia" />
+          <ScalarProperty Name="Luotxem" ColumnName="Luotxem" />
+          <ScalarProperty Name="Hinhanh" ColumnName="Hinhanh" />
+          <ScalarProperty Name="Title" ColumnName="Title" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="Keyword" ColumnName="Keyword" />
+          <ScalarProperty Name="Active" ColumnName="Active" />
+          <ScalarProperty Name="Ord" ColumnName="Ord" />
+          <ScalarProperty Name="Type" ColumnName="Type" />
+          <ScalarProperty Name="Ngayxemganday" ColumnName="Ngayxemganday" />
+          <ScalarProperty Name="lienkiettinh" ColumnName="lienkiettinh" />
+          <ScalarProperty Name="NameEn" ColumnName="NameEn" />
+          <ScalarProperty Name="ContentEn" ColumnName="ContentEn" />
+          <ScalarProperty Name="DetailEn" ColumnName="DetailEn" />
+          <ScalarProperty Name="Nguon" ColumnName="Nguon" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Thanhviens">
+      <EntityTypeMapping TypeName="PNKTemplate_demoModel.Thanhvien">
+        <MappingFragment StoreEntitySet="Thanhvien">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="Taikhoan" ColumnName="Taikhoan" />
+          <ScalarProperty Name="Matkhau" ColumnName="Matkhau" />
+          <ScalarProperty Name="Hoten" ColumnName="Hoten" />
+          <ScalarProperty Name="Ngaysinh" ColumnName="Ngaysinh" />
+          <ScalarProperty Name="Gioitinh" ColumnName="Gioitinh" />
+          <ScalarProperty Name="Diachi" ColumnName="Diachi" />
+          <ScalarProperty Name="SDT" ColumnName="SDT" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="Actice" ColumnName="Actice" />
+          <ScalarProperty Name="thutu" ColumnName="thutu" />
+          <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Thuonghieux">
+      <EntityTypeMapping TypeName="PNKTemplate_demoModel.Thuonghieu">
+        <MappingFragment StoreEntitySet="Thuonghieu">
+          <ScalarProperty Name="IDthuonghieu" ColumnName="IDthuonghieu" />
+          <ScalarProperty Name="Tenthuonghieu" ColumnName="Tenthuonghieu" />
+          <ScalarProperty Name="Logo" ColumnName="Logo" />
+          <ScalarProperty Name="Url" ColumnName="Url" />
+          <ScalarProperty Name="Active" ColumnName="Active" />
+          <ScalarProperty Name="Vitri" ColumnName="Vitri" />
+          <ScalarProperty Name="Lienkettinh" ColumnName="Lienkettinh" />
+          <ScalarProperty Name="mota" ColumnName="mota" />
+          <ScalarProperty Name="Lang" ColumnName="Lang" />
+          <ScalarProperty Name="Tenthuonghieu_En" ColumnName="Tenthuonghieu_En" />
+          <ScalarProperty Name="mota_En" ColumnName="mota_En" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Url_thanhtoan">
+      <EntityTypeMapping TypeName="PNKTemplate_demoModel.Url_thanhtoan">
+        <MappingFragment StoreEntitySet="Url_thanhtoan">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Address" ColumnName="Address" />
+          <ScalarProperty Name="PhoneNumber" ColumnName="PhoneNumber" />
+          <ScalarProperty Name="Fax" ColumnName="Fax" />
+          <ScalarProperty Name="vitri" ColumnName="vitri" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Users">
+      <EntityTypeMapping TypeName="PNKTemplate_demoModel.User">
+        <MappingFragment StoreEntitySet="User">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Username" ColumnName="Username" />
+          <ScalarProperty Name="Password" ColumnName="Password" />
+          <ScalarProperty Name="Level" ColumnName="Level" />
+          <ScalarProperty Name="Admin" ColumnName="Admin" />
+          <ScalarProperty Name="Ord" ColumnName="Ord" />
+          <ScalarProperty Name="Active" ColumnName="Active" />
+          <ScalarProperty Name="Role" ColumnName="Role" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="Asp_Excell_GetBy_100DHMoiNhat" FunctionName="PNKTemplate_demoModel.Store.Asp_Excell_GetBy_100DHMoiNhat">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="PNKTemplate_demoModel.Asp_Excell_GetBy_100DHMoiNhat_Result">
+          <ScalarProperty Name="ID_Đơn_Hàng" ColumnName="ID Đơn Hàng" />
+          <ScalarProperty Name="Xưng_Hô" ColumnName="Xưng Hô" />
+          <ScalarProperty Name="Họ_Tên" ColumnName="Họ Tên" />
+          <ScalarProperty Name="Ngày_đặt_hàng" ColumnName="Ngày đặt hàng" />
+          <ScalarProperty Name="Số_Điện_Thoại" ColumnName="Số Điện Thoại" />
+          <ScalarProperty Name="EMail" ColumnName="EMail" />
+          <ScalarProperty Name="Địa_Chỉ" ColumnName="Địa Chỉ" />
+          <ScalarProperty Name="Ghi_Chú_Khác" ColumnName="Ghi Chú Khác" />
+          <ScalarProperty Name="Tên_Sản_Phẩm" ColumnName="Tên Sản Phẩm" />
+          <ScalarProperty Name="Số_Lượng" ColumnName="Số Lượng" />
+          <ScalarProperty Name="Giá_Bán" ColumnName="Giá Bán" />
+          <ScalarProperty Name="Phí_Dịch_Vụ" ColumnName="Phí Dịch Vụ" />
+          <ScalarProperty Name="Tiền_Giảm_Nhập_Mã_Giảm" ColumnName="Tiền Giảm Nhập Mã Giảm" />
+          <ScalarProperty Name="Size" ColumnName="Size" />
+          <ScalarProperty Name="Màu_Sắc" ColumnName="Màu Sắc" />
+          <ScalarProperty Name="Giảm_Thêm" ColumnName="Giảm Thêm" />
+          <ScalarProperty Name="Thành_Tiền_Chưa_Phí_DV" ColumnName="Thành Tiền Chưa Phí DV" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="Asp_Excell_GetBy_10DHMoiNhat" FunctionName="PNKTemplate_demoModel.Store.Asp_Excell_GetBy_10DHMoiNhat">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="PNKTemplate_demoModel.Asp_Excell_GetBy_10DHMoiNhat_Result">
+          <ScalarProperty Name="ID_Đơn_Hàng" ColumnName="ID Đơn Hàng" />
+          <ScalarProperty Name="Xưng_Hô" ColumnName="Xưng Hô" />
+          <ScalarProperty Name="Họ_Tên" ColumnName="Họ Tên" />
+          <ScalarProperty Name="Ngày_đặt_hàng" ColumnName="Ngày đặt hàng" />
+          <ScalarProperty Name="Số_Điện_Thoại" ColumnName="Số Điện Thoại" />
+          <ScalarProperty Name="EMail" ColumnName="EMail" />
+          <ScalarProperty Name="Địa_Chỉ" ColumnName="Địa Chỉ" />
+          <ScalarProperty Name="Ghi_Chú_Khác" ColumnName="Ghi Chú Khác" />
+          <ScalarProperty Name="Tên_Sản_Phẩm" ColumnName="Tên Sản Phẩm" />
+          <ScalarProperty Name="Số_Lượng" ColumnName="Số Lượng" />
+          <ScalarProperty Name="Giá_Bán" ColumnName="Giá Bán" />
+          <ScalarProperty Name="Phí_Dịch_Vụ" ColumnName="Phí Dịch Vụ" />
+          <ScalarProperty Name="Tiền_Giảm_Nhập_Mã_Giảm" ColumnName="Tiền Giảm Nhập Mã Giảm" />
+          <ScalarProperty Name="Size" ColumnName="Size" />
+          <ScalarProperty Name="Màu_Sắc" ColumnName="Màu Sắc" />
+          <ScalarProperty Name="Giảm_Thêm" ColumnName="Giảm Thêm" />
+          <ScalarProperty Name="Thành_Tiền_Chưa_Phí_DV" ColumnName="Thành Tiền Chưa Phí DV" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="Asp_Excell_GetBy_50DHMoiNhat" FunctionName="PNKTemplate_demoModel.Store.Asp_Excell_GetBy_50DHMoiNhat">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="PNKTemplate_demoModel.Asp_Excell_GetBy_50DHMoiNhat_Result">
+          <ScalarProperty Name="ID_Đơn_Hàng" ColumnName="ID Đơn Hàng" />
+          <ScalarProperty Name="Xưng_Hô" ColumnName="Xưng Hô" />
+          <ScalarProperty Name="Họ_Tên" ColumnName="Họ Tên" />
+          <ScalarProperty Name="Ngày_đặt_hàng" ColumnName="Ngày đặt hàng" />
+          <ScalarProperty Name="Số_Điện_Thoại" ColumnName="Số Điện Thoại" />
+          <ScalarProperty Name="EMail" ColumnName="EMail" />
+          <ScalarProperty Name="Địa_Chỉ" ColumnName="Địa Chỉ" />
+          <ScalarProperty Name="Ghi_Chú_Khác" ColumnName="Ghi Chú Khác" />
+          <ScalarProperty Name="Tên_Sản_Phẩm" ColumnName="Tên Sản Phẩm" />
+          <ScalarProperty Name="Số_Lượng" ColumnName="Số Lượng" />
+          <ScalarProperty Name="Giá_Bán" ColumnName="Giá Bán" />
+          <ScalarProperty Name="Phí_Dịch_Vụ" ColumnName="Phí Dịch Vụ" />
+          <ScalarProperty Name="Tiền_Giảm_Nhập_Mã_Giảm" ColumnName="Tiền Giảm Nhập Mã Giảm" />
+          <ScalarProperty Name="Size" ColumnName="Size" />
+          <ScalarProperty Name="Màu_Sắc" ColumnName="Màu Sắc" />
+          <ScalarProperty Name="Giảm_Thêm" ColumnName="Giảm Thêm" />
+          <ScalarProperty Name="Thành_Tiền_Chưa_Phí_DV" ColumnName="Thành Tiền Chưa Phí DV" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="Asp_Excell_GetBy_5DHMoiNhat" FunctionName="PNKTemplate_demoModel.Store.Asp_Excell_GetBy_5DHMoiNhat">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="PNKTemplate_demoModel.Asp_Excell_GetBy_5DHMoiNhat_Result">
+          <ScalarProperty Name="ID_Đơn_Hàng" ColumnName="ID Đơn Hàng" />
+          <ScalarProperty Name="Xưng_Hô" ColumnName="Xưng Hô" />
+          <ScalarProperty Name="Họ_Tên" ColumnName="Họ Tên" />
+          <ScalarProperty Name="Ngày_đặt_hàng" ColumnName="Ngày đặt hàng" />
+          <ScalarProperty Name="Số_Điện_Thoại" ColumnName="Số Điện Thoại" />
+          <ScalarProperty Name="EMail" ColumnName="EMail" />
+          <ScalarProperty Name="Địa_Chỉ" ColumnName="Địa Chỉ" />
+          <ScalarProperty Name="Ghi_Chú_Khác" ColumnName="Ghi Chú Khác" />
+          <ScalarProperty Name="Tên_Sản_Phẩm" ColumnName="Tên Sản Phẩm" />
+          <ScalarProperty Name="Số_Lượng" ColumnName="Số Lượng" />
+          <ScalarProperty Name="Giá_Bán" ColumnName="Giá Bán" />
+          <ScalarProperty Name="Phí_Dịch_Vụ" ColumnName="Phí Dịch Vụ" />
+          <ScalarProperty Name="Tiền_Giảm_Nhập_Mã_Giảm" ColumnName="Tiền Giảm Nhập Mã Giảm" />
+          <ScalarProperty Name="Size" ColumnName="Size" />
+          <ScalarProperty Name="Màu_Sắc" ColumnName="Màu Sắc" />
+          <ScalarProperty Name="Giảm_Thêm" ColumnName="Giảm Thêm" />
+          <ScalarProperty Name="Thành_Tiền_Chưa_Phí_DV" ColumnName="Thành Tiền Chưa Phí DV" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="Asp_Excell_GetBy_Chuaduyet" FunctionName="PNKTemplate_demoModel.Store.Asp_Excell_GetBy_Chuaduyet">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="PNKTemplate_demoModel.Asp_Excell_GetBy_Chuaduyet_Result">
+          <ScalarProperty Name="ID_Đơn_Hàng" ColumnName="ID Đơn Hàng" />
+          <ScalarProperty Name="Xưng_Hô" ColumnName="Xưng Hô" />
+          <ScalarProperty Name="Họ_Tên" ColumnName="Họ Tên" />
+          <ScalarProperty Name="Ngày_đặt_hàng" ColumnName="Ngày đặt hàng" />
+          <ScalarProperty Name="Số_Điện_Thoại" ColumnName="Số Điện Thoại" />
+          <ScalarProperty Name="EMail" ColumnName="EMail" />
+          <ScalarProperty Name="Địa_Chỉ" ColumnName="Địa Chỉ" />
+          <ScalarProperty Name="Ghi_Chú_Khác" ColumnName="Ghi Chú Khác" />
+          <ScalarProperty Name="Tên_Sản_Phẩm" ColumnName="Tên Sản Phẩm" />
+          <ScalarProperty Name="Số_Lượng" ColumnName="Số Lượng" />
+          <ScalarProperty Name="Giá_Bán" ColumnName="Giá Bán" />
+          <ScalarProperty Name="Phí_Dịch_Vụ" ColumnName="Phí Dịch Vụ" />
+          <ScalarProperty Name="Tiền_Giảm_Nhập_Mã_Giảm" ColumnName="Tiền Giảm Nhập Mã Giảm" />
+          <ScalarProperty Name="Size" ColumnName="Size" />
+          <ScalarProperty Name="Màu_Sắc" ColumnName="Màu Sắc" />
+          <ScalarProperty Name="Giảm_Thêm" ColumnName="Giảm Thêm" />
+          <ScalarProperty Name="Thành_Tiền_Chưa_Phí_DV" ColumnName="Thành Tiền Chưa Phí DV" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="Asp_Excell_GetBy_duyet" FunctionName="PNKTemplate_demoModel.Store.Asp_Excell_GetBy_duyet">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="PNKTemplate_demoModel.Asp_Excell_GetBy_duyet_Result">
+          <ScalarProperty Name="ID_Đơn_Hàng" ColumnName="ID Đơn Hàng" />
+          <ScalarProperty Name="Xưng_Hô" ColumnName="Xưng Hô" />
+          <ScalarProperty Name="Họ_Tên" ColumnName="Họ Tên" />
+          <ScalarProperty Name="Ngày_đặt_hàng" ColumnName="Ngày đặt hàng" />
+          <ScalarProperty Name="Số_Điện_Thoại" ColumnName="Số Điện Thoại" />
+          <ScalarProperty Name="EMail" ColumnName="EMail" />
+          <ScalarProperty Name="Địa_Chỉ" ColumnName="Địa Chỉ" />
+          <ScalarProperty Name="Ghi_Chú_Khác" ColumnName="Ghi Chú Khác" />
+          <ScalarProperty Name="Tên_Sản_Phẩm" ColumnName="Tên Sản Phẩm" />
+          <ScalarProperty Name="Số_Lượng" ColumnName="Số Lượng" />
+          <ScalarProperty Name="Giá_Bán" ColumnName="Giá Bán" />
+          <ScalarProperty Name="Phí_Dịch_Vụ" ColumnName="Phí Dịch Vụ" />
+          <ScalarProperty Name="Tiền_Giảm_Nhập_Mã_Giảm" ColumnName="Tiền Giảm Nhập Mã Giảm" />
+          <ScalarProperty Name="Size" ColumnName="Size" />
+          <ScalarProperty Name="Màu_Sắc" ColumnName="Màu Sắc" />
+          <ScalarProperty Name="Giảm_Thêm" ColumnName="Giảm Thêm" />
+          <ScalarProperty Name="Thành_Tiền_Chưa_Phí_DV" ColumnName="Thành Tiền Chưa Phí DV" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="Asp_Excell_GetBy_Today" FunctionName="PNKTemplate_demoModel.Store.Asp_Excell_GetBy_Today">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="PNKTemplate_demoModel.Asp_Excell_GetBy_Today_Result">
+          <ScalarProperty Name="ID_Đơn_Hàng" ColumnName="ID Đơn Hàng" />
+          <ScalarProperty Name="Xưng_Hô" ColumnName="Xưng Hô" />
+          <ScalarProperty Name="Họ_Tên" ColumnName="Họ Tên" />
+          <ScalarProperty Name="Ngày_đặt_hàng" ColumnName="Ngày đặt hàng" />
+          <ScalarProperty Name="Số_Điện_Thoại" ColumnName="Số Điện Thoại" />
+          <ScalarProperty Name="EMail" ColumnName="EMail" />
+          <ScalarProperty Name="Địa_Chỉ" ColumnName="Địa Chỉ" />
+          <ScalarProperty Name="Ghi_Chú_Khác" ColumnName="Ghi Chú Khác" />
+          <ScalarProperty Name="Tên_Sản_Phẩm" ColumnName="Tên Sản Phẩm" />
+          <ScalarProperty Name="Số_Lượng" ColumnName="Số Lượng" />
+          <ScalarProperty Name="Giá_Bán" ColumnName="Giá Bán" />
+          <ScalarProperty Name="Phí_Dịch_Vụ" ColumnName="Phí Dịch Vụ" />
+          <ScalarProperty Name="Tiền_Giảm_Nhập_Mã_Giảm" ColumnName="Tiền Giảm Nhập Mã Giảm" />
+          <ScalarProperty Name="Size" ColumnName="Size" />
+          <ScalarProperty Name="Màu_Sắc" ColumnName="Màu Sắc" />
+          <ScalarProperty Name="Giảm_Thêm" ColumnName="Giảm Thêm" />
+          <ScalarProperty Name="Thành_Tiền_Chưa_Phí_DV" ColumnName="Thành Tiền Chưa Phí DV" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="Asp_Excell_GetByAll" FunctionName="PNKTemplate_demoModel.Store.Asp_Excell_GetByAll">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="PNKTemplate_demoModel.Asp_Excell_GetByAll_Result">
+          <ScalarProperty Name="ID_Đơn_Hàng" ColumnName="ID Đơn Hàng" />
+          <ScalarProperty Name="Xưng_Hô" ColumnName="Xưng Hô" />
+          <ScalarProperty Name="Họ_Tên" ColumnName="Họ Tên" />
+          <ScalarProperty Name="Ngày_đặt_hàng" ColumnName="Ngày đặt hàng" />
+          <ScalarProperty Name="Số_Điện_Thoại" ColumnName="Số Điện Thoại" />
+          <ScalarProperty Name="EMail" ColumnName="EMail" />
+          <ScalarProperty Name="Địa_Chỉ" ColumnName="Địa Chỉ" />
+          <ScalarProperty Name="Ghi_Chú_Khác" ColumnName="Ghi Chú Khác" />
+          <ScalarProperty Name="Tên_Sản_Phẩm" ColumnName="Tên Sản Phẩm" />
+          <ScalarProperty Name="Số_Lượng" ColumnName="Số Lượng" />
+          <ScalarProperty Name="Giá_Bán" ColumnName="Giá Bán" />
+          <ScalarProperty Name="Phí_Dịch_Vụ" ColumnName="Phí Dịch Vụ" />
+          <ScalarProperty Name="Tiền_Giảm_Nhập_Mã_Giảm" ColumnName="Tiền Giảm Nhập Mã Giảm" />
+          <ScalarProperty Name="Size" ColumnName="Size" />
+          <ScalarProperty Name="Màu_Sắc" ColumnName="Màu Sắc" />
+          <ScalarProperty Name="Giảm_Thêm" ColumnName="Giảm Thêm" />
+          <ScalarProperty Name="Thành_Tiền_Chưa_Phí_DV" ColumnName="Thành Tiền Chưa Phí DV" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="Donhang_Max" FunctionName="PNKTemplate_demoModel.Store.Donhang_Max" />
+    <FunctionImportMapping FunctionImportName="Get_DientuCauhinh" FunctionName="PNKTemplate_demoModel.Store.Get_DientuCauhinh">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="PNKTemplate_demoModel.Get_DientuCauhinh_Result">
+          <ScalarProperty Name="Tenmau" ColumnName="Tenmau" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="IdProduct" ColumnName="IdProduct" />
+          <ScalarProperty Name="Images" ColumnName="Images" />
+          <ScalarProperty Name="ThumImg" ColumnName="ThumImg" />
+          <ScalarProperty Name="Idmau" ColumnName="Idmau" />
+          <ScalarProperty Name="IdSize" ColumnName="IdSize" />
+          <ScalarProperty Name="Giaban" ColumnName="Giaban" />
+          <ScalarProperty Name="Giacu" ColumnName="Giacu" />
+          <ScalarProperty Name="Soluong" ColumnName="Soluong" />
+          <ScalarProperty Name="Phantramkm" ColumnName="Phantramkm" />
+          <ScalarProperty Name="Tinhtrang" ColumnName="Tinhtrang" />
+          <ScalarProperty Name="Active" ColumnName="Active" />
+          <ScalarProperty Name="Ord" ColumnName="Ord" />
+          <ScalarProperty Name="IdTag" ColumnName="IdTag" />
+          <ScalarProperty Name="Iddungluong" ColumnName="Iddungluong" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="Get_DientuThuoctinh" FunctionName="PNKTemplate_demoModel.Store.Get_DientuThuoctinh">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="PNKTemplate_demoModel.Get_DientuThuoctinh_Result">
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Expr1" ColumnName="Expr1" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="IdTag" ColumnName="IdTag" />
+          <ScalarProperty Name="Text" ColumnName="Text" />
+          <ScalarProperty Name="Value" ColumnName="Value" />
+          <ScalarProperty Name="Idproduct" ColumnName="Idproduct" />
+          <ScalarProperty Name="TagProduct" ColumnName="TagProduct" />
+          <ScalarProperty Name="Idthuoctinh" ColumnName="Idthuoctinh" />
+          <ScalarProperty Name="Idcapthuoctinh" ColumnName="Idcapthuoctinh" />
+          <ScalarProperty Name="Active" ColumnName="Active" />
+          <ScalarProperty Name="Ord" ColumnName="Ord" />
+          <ScalarProperty Name="Content" ColumnName="Content" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="Getmau" FunctionName="PNKTemplate_demoModel.Store.Getmau">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="PNKTemplate_demoModel.Getmau_Result">
+          <ScalarProperty Name="Tenmau" ColumnName="Tenmau" />
+          <ScalarProperty Name="IDmau" ColumnName="IDmau" />
+          <ScalarProperty Name="Hinhanh" ColumnName="Hinhanh" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="Sanpham_Max" FunctionName="PNKTemplate_demoModel.Store.Sanpham_Max" />
+    <FunctionImportMapping FunctionImportName="spThongKe_Edit" FunctionName="PNKTemplate_demoModel.Store.spThongKe_Edit">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="PNKTemplate_demoModel.spThongKe_Edit_Result">
+          <ScalarProperty Name="HomNay" ColumnName="HomNay" />
+          <ScalarProperty Name="HomQua" ColumnName="HomQua" />
+          <ScalarProperty Name="TuanNay" ColumnName="TuanNay" />
+          <ScalarProperty Name="TuanTruoc" ColumnName="TuanTruoc" />
+          <ScalarProperty Name="ThangNay" ColumnName="ThangNay" />
+          <ScalarProperty Name="ThangTruoc" ColumnName="ThangTruoc" />
+          <ScalarProperty Name="NamNay" ColumnName="NamNay" />
+          <ScalarProperty Name="NamTruoc" ColumnName="NamTruoc" />
+          <ScalarProperty Name="TatCa" ColumnName="TatCa" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+  </EntityContainerMapping>
+</Mapping>

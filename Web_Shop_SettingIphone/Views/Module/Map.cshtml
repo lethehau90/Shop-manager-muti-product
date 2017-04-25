@@ -1,0 +1,9 @@
+﻿@model IList<Web_Shop_SettingIphone.Models.Entity.Config>
+@if ((Model[0].Map != ""))
+{
+    <div class="bando">
+        <span>
+            @Html.Raw(Model[0].Map)
+        </span>
+    </div>
+}

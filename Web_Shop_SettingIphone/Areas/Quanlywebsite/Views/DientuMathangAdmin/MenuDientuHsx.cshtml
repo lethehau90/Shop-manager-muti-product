@@ -1,0 +1,22 @@
+﻿@model IList<Web_Shop_SettingIphone.Models.Entity.DientuNsx>
+<div class="row">
+    <div class="form-group">
+        <label class="control-label col-lg-12">Hãng sản xuất</label>
+        <div class="col-md-3">
+            <select id="Selecthsx" name="Selecthsx" class="form-control chosen">
+                <option value="">Chọn danh mục</option>
+                @foreach (var item in Model)
+                {
+                    <option value="@item.Id">
+                        @item.Name
+                    </option>
+                }
+            </select>
+        </div>
+        <div class="col-md-9">
+            <br />
+            (Thông tin về hãng sản xuất)
+        </div>
+    </div>
+
+</div>

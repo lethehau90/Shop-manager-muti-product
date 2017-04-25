@@ -1,0 +1,47 @@
+﻿@{
+    ViewBag.Title = "Hỗ trợ";
+    Layout = "~/Views/Shared/_LayoutPhone.cshtml";
+}
+@using PagedList;
+@using PagedList.Mvc;
+@model IPagedList<Web_Shop_SettingIphone.Models.Entity.Tintuc>
+<title>Hỗ trợ</title>
+@{Html.RenderAction("Setting_Config_catelog", "Home"); }
+<div class="container">
+    <div class="clear70"></div>
+    <h2 style="text-align: center;" class="tieudedichvu">@ViewBag.categoryht</h2>
+    <div class="clear20"></div>
+    <p style="text-align: center;" class="textdichvu">@Html.Raw(ViewBag.categoryhtcontent)</p>
+    <div class="clear50"></div>
+    <div class="main-dichvu row">
+        @if (Model.Count > 0)
+        {
+            foreach (var item in Model)
+            {
+                <div class="spDanhMuc col-md-3 col-sm-3">
+                    @if (item.Hinhanh != "")
+                    {
+                        <a href="/ho-tro/@item.Tag"><img class="phoneimg" src="@item.Hinhanh" alt="@item.Hinhanh"></a>
+                    }
+                    else
+                    {
+                        <a href="/ho-tro/@item.Tag"><img class="phoneimg" src="/Hinhanhs/no-Hinhanh.jpg" alt="@item.Name"></a>
+                    }
+                    <p><a href="/ho-tro/@item.Tag">@item.Name</a></p>
+                </div>
+            }
+            <div class="col-md-12 pagination-top pw-default">
+                <div style="text-align: center;">
+                    @Html.PagedListPager(Model, trang => Url.Action("PhonesupportIndex", "Phone", new { trang }), new PagedListRenderOptions() { Display = PagedListDisplayMode.IfNeeded, DisplayPageCountAndCurrentLocation = false, DisplayItemSliceAndTotal = false })
+                </div>
+            </div>
+        }
+        else
+        {
+            <div class="col-md-12 col-sm-12 col-xs-12">
+                <p style="text-align:center">Chưa cập nhật tin hỗ trợ bạn quay lại sau</p>
+            </div>
+        }
+    </div>
+
+</div>

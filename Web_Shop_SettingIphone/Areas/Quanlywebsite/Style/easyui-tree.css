@@ -1,0 +1,31 @@
+﻿.tree-node{
+        height:40px !important;
+}
+.tree-title{
+
+    font-size : 15px !important;
+    width: 100% !important;
+}
+
+.tree-expanded, .tree-collapsed, .tree-folder, .tree-file, .tree-checkbox, .tree-indent{
+
+    width : 15px !important;
+}
+
+
+ .padd{
+        padding-left:10px;
+    }
+
+ .tree-node-selected{
+     background-color: #fff !important;
+ }
+     /*#lable-line-title .line {
+        line-height: 1;
+        font-size: 18px;
+        font-weight: 400;
+    }
+    #lable-line .line{
+      
+        line-height:1;
+    }*/

@@ -1,0 +1,66 @@
+﻿@*<li data-options="state:'closed'">*@ <!--,lines:true-->
+@model IList<Web_Shop_SettingIphone.Models.Entity.DientuTinhnang>
+<div class="panel-body">
+    <div id="menu_wrapper">
+
+        <ul>
+            @foreach (var item in Model)
+            {
+                <li>
+                    <a>
+                        <b>@item.Thuoctinh</b>  @*<span class="error">(@Html.Action("__count_category", new { @Id = item.Idthuoctinh }))</span>*@
+                    </a>
+                    <div>
+                        <table border="0">
+                            <tr>
+                                <td>Số thứ tự</td>
+                                <td>
+                                    @item.Ord
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Trạng thái</td>
+                                <td>
+                                    <a class="label label-primary btn-active" id="btn-active"
+                                       data-id="@item.Idthuoctinh">
+                                        @Html.Raw(item.Active == true ? "<strong>Có</strong>" : "<strong>Không</strong>")
+                                    </a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Chức năng</td>
+                                <td>
+                                    @{
+
+                int Countgroup = Convert.ToInt32((Html.Action("Count_category", new { Id = item.Idthuoctinh }).ToHtmlString()));
+
+                                    }
+                                    <a class="btn btn-info btn-xs Edit" id="Edit" data-id="@item.Idthuoctinh"><i class="fa fa-pencil"></i> Edit </a>
+                                    @if (Countgroup > 0)
+                                    { }
+                                    else
+                                    {
+                                        <a class="btn btn-danger btn-xs Delete" data-id="@item.Idthuoctinh" id="Delete"><i class="fa fa-trash-o"></i> Delete </a>
+                                    }
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                    @{Html.RenderAction("Read_Lever2", "DientuTinhnangAdmin", new { Id = @item.Idthuoctinh }); }
+                </li>
+
+            }
+
+        </ul>
+    </div>
+
+</div>
+@{ Html.RenderPartial("_Add"); }
+@{ Html.RenderPartial("_Edit_Lever2"); }
+@{ Html.RenderPartial("_Edit"); }
+
+
+
+
+
+

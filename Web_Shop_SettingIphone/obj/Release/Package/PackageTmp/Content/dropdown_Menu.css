@@ -1,0 +1,32 @@
+﻿ .heading .nav .dropdown_chucnang {
+     margin-left: 5px;
+      /*display: none;*/
+      vertical-align: top; }
+      .heading .nav .dropdown_chucnang .btn-default {
+        background: #00a19c;
+        color: #fff;
+        border: none;
+        -ms-border-radius: 3px;
+        border-radius: 3px;
+        font-size: 13px;
+        height: 30px; }
+        .heading .nav .dropdown_chucnang .btn-default .icon {
+          background: url(/static/v2/images/icon-sprite.png) -240px 0 no-repeat;
+
+          display: inline-block;
+          width: 15px;
+          height: 12px;
+          margin-right: 5px;
+          margin-top: 3px;
+          float: left; }
+      .heading .nav .dropdown_chucnang ul {
+          min-width: 25%;
+        box-shadow: none;
+        left: -1px; }
+        .heading .nav .dropdown_chucnang ul li a {
+          display: block;
+          background: none;
+          -ms-border-radius: 0;
+          border-radius: 0; }
+          .heading .nav .dropdown_chucnang ul li a:hover {
+            color: #ed145b; }

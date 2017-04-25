@@ -1,0 +1,418 @@
+﻿@{
+    Layout = "~/Views/Shared/_LayoutPhonedetail.cshtml";
+}
+@model IList<Web_Shop_SettingIphone.Models.Entity.DientuMathang>
+<title>@ViewBag.title</title>
+<meta name="description" content="@ViewBag.Description" />
+<meta name="keywords" content="@ViewBag.Keyword" />
+<div id="main-content">
+    <section class=" product-detail">
+        <div class="container">
+            <div class="row detail-product" itemscope="" itemtype="http://schema.org/Product">
+                <div class="col-sm-4 text-center">
+                    <style>
+                        .detail-img img {
+                            width: 100%;
+                        }
+                    </style>
+                    <div class="detail-img">
+                        <figure data-feedback="fb:likes, fb:comments">
+                            <div id="hinhanh" class="onepageNav">
+                                <div class="detail-media">
+                                    <!-- Tab panes -->
+                                    <div class="tab-content">
+                                        <div role="tabpanel" class="tab-pane fade in active" id="media-hinhanh">
+                                            <div id="media-img-sync1" class="owl-carousel owl-theme" style="opacity: 1; display: block;">
+                                                <div class="owl-wrapper-outer">
+                                                    <div class="owl-wrapper" style="width: 10640px; left: 0px; display: block;">
+                                                        <!--hinh anh-->
+                                                        <div class="owl-item" style="width: 665px;">
+                                                            <div class="item">
+                                                                <figure data-feedback="fb:likes, fb:comments">
+                                                                    <img id="_resurtImagesmain" src="@Html.Action("_resurtImagesmain", "ScreenProduct", new { tag = Model[0].Tag })" class="img-responsive center-block" alt="@Html.Action("_resurtIdmaumain", "ScreenProduct", new { tag = Model[0].Tag })">
+                                                                </figure>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </figure>
+
+                        @*<ul class="detail-img-status">
+                                <li class="con-hang">
+                                    Tiết kiệm: ctkhuyenmai
+                                </li>
+                                <li class="detail-status-tragop-0"></li>
+                            </ul>*@
+                    </div>
+                </div>
+                <div class="col-sm-8">
+                    <div class="row">
+                        <div class="col-md-6 col-lg-6">
+                            <div class="detail-header">
+                                <h1 class="name" itemprop="name">
+                                    <span id="cttensanpham">@Model[0].Tenhang</span>
+                                </h1>
+                                <span id="ctmsp" class="hidden">@Model[0].Id</span>
+                                <span class="hidden" id="ctidtagchitiethinh">@Html.Action("_resurtIdTagmain", "ScreenProduct", new { tag = Model[0].Tag })</span>
+                                <span class="hidden" id="ctIddungluong">@Html.Action("_resurtIdDungluong", "ScreenProduct", new { tag = Model[0].Tag })</span>
+                                <span class="hidden" id="ctIdmausac">@Html.Action("_resurtIdmaumain", "ScreenProduct", new { tag = Model[0].Tag })</span>
+
+                                <!--mau sac-->
+                                <div class="verdes detail-desc-color" id="ctmausac">
+                                    @{Html.RenderAction("Mausac", "ScreenProduct", new { tag = Model[0].Tag });}
+                                    <div class="verdes-element">
+                                        <span class="con-hang">@{Html.RenderAction("_resurtconhannghethang", "ScreenProduct", new { tag = Model[0].Tag });}</span>
+                                    </div>
+                                    @{
+                                        string tinhtrang = Html.Action("_resurtconhannghethang", "ScreenProduct", new { tag = Model[0].Tag }).ToHtmlString();
+                                    }
+                                    @if (tinhtrang == "còn hàng")
+                                    {
+                                        <div class="verdes-element">
+                                            <span class="het-hang">
+                                                <span id="ctslhang">@{Html.RenderAction("_resurtsoluongtrongkho", "ScreenProduct", new { tag = Model[0].Tag });}</span> chiếc
+                                            </span>
+                                        </div>
+                                    }
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                    <!--Dung lượng và màu sắc-->
+                    <div class="row">
+                        <div class="form-group">
+                            <div class="col-md-3">
+                                <label class="form-control">Dung lượng sản phẩm:</label>
+                            </div>
+                            <div class="col-md-2">
+                                @{Html.RenderAction("Dungluong", "ScreenProduct", new { tag = Model[0].Tag });}
+                            </div>
+                            @{
+                                string Idmau = Html.Action("_resurtIdmaumain", "ScreenProduct", new { tag = Model[0].Tag }).ToHtmlString();
+                            }
+                            <div class="col-md-2">
+                                <label class="form-control">Màu:
+                                    <span id="cttenmau">@Html.Action("_resurtTenmau", "ScreenProduct", new { Idmau = Idmau })</span> 
+                                </label>
+                            </div>
+                           
+                            
+                        </div>
+                    </div>
+                    <div class="clear-fix"></div>
+                    <div class="row">
+                        <div class="col-xs-12 detail-desc">
+                            <div class="txt-vmoney">
+                                Sản phẩm được bảo hành :  <b><span id="ctbaohanh">@Model[0].Baohanh</span></b> /tháng
+
+                                <span class="parentctkhuyenmai">
+                                    @if (Html.Action("_resurtphantramkmcumain", "ScreenProduct", new { tag = Model[0].Tag }).ToHtmlString() != "0")
+                                    {
+                                        <b>
+                                            Tiết kiệm <span class="ctkhuyenmai">
+                                                @{Html.RenderAction("_resurtphantramkmcumain", "ScreenProduct", new { tag = Model[0].Tag });}
+                                            </span>%
+                                        </b>
+                                    }
+
+                                </span>
+                            </div>
+                            <div class="clearfix">
+                                <div class="left">
+                                    <div class="clearfix">
+                                        <div class="left" itemprop="offers" itemscope="" itemtype="http://schema.org/Offer">
+                                            <meta itemprop="priceCurrency" content="VND">
+                                            @{
+                                                double giacu = Convert.ToDouble((Html.Action("_resurtPricecumain", "ScreenProduct", new { tag = Model[0].Tag }).ToHtmlString()));
+                                                double Giaban = Convert.ToDouble((Html.Action("_resurtPricebanmain", "ScreenProduct", new { tag = Model[0].Tag }).ToHtmlString()));
+                                            }
+                                            <div class="row">
+                                                @if (giacu != Giaban)
+                                                {
+                                                    <div id="ctshowgiancu" class="col-md-6">
+                                                        <div class="detail-price" itemprop="price">
+                                                            <span id="ctpricecu">@giacu.ToString("#,000") </span>(Vnđ)
+                                                        </div>
+                                                    </div>
+                                                }
+                                                else
+                                                {
+                                                    <div id="ctshowgiancu" class="col-md-6 hidden">
+                                                        <div class="detail-price" itemprop="price">
+                                                            <span id="ctpricecu">@giacu.ToString("#,000") </span>(Vnđ)
+                                                        </div>
+                                                    </div>
+                                                }
+                                                <div id="ctshowban" class="col-md-6">
+                                                    <div class="detail-price" itemprop="price">
+                                                        <span id="ctpriceban">@Giaban.ToString("#,000") </span>(Vnđ)
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- chua co thong tin-->
+                                    <ul class="detail-old-product clearlist" id="link_xh_mdt"></ul>
+                                </div>
+                            </div>
+
+                            <div class="detail-sales">
+                                <div class="title">KHUYẾN MÃI</div>
+                                <div class="content scroll ps-container" itemprop="description" data-ps-id="50735623-37c6-91b7-cfeb-19881e556a0d">
+                                    <p>
+                                        @Html.Raw(Model[0].khuyenmai_html)
+                                    </p>
+                                    <div class="ps-scrollbar-x-rail" style="left: 0px; bottom: 3px;">
+                                        <div class="ps-scrollbar-x" style="left: 0px; width: 0px;"></div>
+                                    </div>
+                                    <div class="ps-scrollbar-y-rail" style="top: 0px; right: 3px;">
+                                        <div class="ps-scrollbar-y" style="top: 0px; height: 0px;"></div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="clearfix">
+                                <ul class="detail-buttons-uudai clearlist" id="detail-buttons-uudai">
+
+                                    <li class="toichon">
+
+                                        <a title="Mua Online" id="btnOnlineBuyNow" class=" various fancybox.ajax" href="#">
+                                            <span>Đặt hàng</span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a title="Hỗ trợ" target="_blank" href="/ho-tro">
+                                            <span>Hỗ trợ</span>
+                                            Tư vấn mua hàng
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <!--end col-xs-12-->
+                    </div>
+                    <!--end row-->
+                </div>
+                <!--end col-sm-8-->
+            </div>
+            <!--end row-->
+            <div>
+            </div>
+        </div>
+        <!--end container-->
+    </section>
+    <!--end product-detail-->
+    <br>
+
+    <div id="detail-menu-sticky-wrapper" class="sticky-wrapper" style="height: 52px;">
+        <div id="detail-menu" class="hidden-xs" style="width: 1908px;">
+            <div class="container">
+
+                <ul class="list-inline pull-left">
+
+                    <li class=""></li>
+                    <li class="active">
+                        <a href="/#thongsokythuat" title="Thông số"><i class="fa fa-list-alt"></i>Thông số</a>
+                    </li>
+                    <li class="">
+                        <a href="/#baiviet" title="Đánh giá"><i class="fa fa-comments-o"></i>Đánh giá</a>
+                    </li>
+
+                </ul>
+                <div class="detail-menu-muangay button-action">
+                    <a title="Mua Online" id="btnOnlineBuyNowfooter" href="#">
+                        Đặt hàng
+                    </a>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <br>
+
+    <br>
+
+    <div class="container">
+
+        <div class="row no-gutter">
+            <div class="col-sm-7">
+
+                <div id="thongsokythuat" class="onepageNav">
+
+                    <div class=" thongso-kythuat">
+                        <h3 class="detail-title">Thông số kỹ thuật @Model[0].Tenhang</h3>
+
+
+                        <!--Cấu hình sản phẩm-->
+                        @{Html.RenderAction("Thuoctinh", "ScreenProduct", new { tag = Model[0].Tag });}
+
+                    </div>
+                </div>
+                <!--bài viết-->
+                <div id="baiviet" class="onepageNav">
+
+                    <div class="detail-review-chitiet">
+                        <h3 class="detail-title">Đánh giá chi tiết</h3>
+                        <div class="row">
+                            <!--
+                            <div class="col-md-6">
+                                <img src="/Content/images/detail/samsung-galaxy-grand-prime-g530-4.jpg" class="img-responsive" alt="">
+                            </div>
+                            <div class="col-md-6">
+                                <div class="text-justify paragraph">
+                                    <p class="">Thêm một smartphone chuyên chụp ảnh tự sướng lên kệ, chiếc Samsung Galaxy Grand Prime G530 sẽ khiến phân khúc thị trường này thêm sôi Động, hấp dẫn và có thêm sự lựa chọn phong phú cho người dùng. Sản phẩm cạnh tranh trực tiếp với Sony Xperia C3, hứa hẹn mang Đến cho bạn những tấm ảnh selfie chất lượng vượt trội, cùng với cấu hình mạnh mẽ, chạy Android 4.4 KitKat hoạt Động mượt mà và thiết kế sành Điệu, sang trọng.</p>
+                                </div>
+                            </div>
+                            -->
+                            <style>
+                                .short-description p img {
+                                    float: left;
+                                    width: 50%;
+                                    max-width: 100%;
+                                    height: auto;
+                                    padding-right: 15px;
+                                    margin-right: 0;
+                                }
+
+                                .short-description p span {
+                                    float: left;
+                                    width: 50%;
+                                    padding-right: 15px;
+                                }
+
+                                .detail-topic img {
+                                    max-width: 100%;
+                                    height: auto;
+                                }
+                            </style>
+                            <div class="short-description">
+                                @Html.Raw(Model[0].Mota)
+                            </div>
+
+                        </div>
+                        <div class="xem-chi-tiet text-center animate">
+                            <button title="Xem chi tiết cấu hình" class="btn-cart" role="button" data-toggle="collapse" href="#chitietbaiviet" aria-expanded="false" aria-controls="collapseExample">
+                                <i class="fa fa-exchange"></i><i class="fa fa-exchange"></i><span>Xem chi tiết</span>
+                            </button>
+                        </div>
+                    </div>
+
+
+                    <div class="detail-topic paragraph collapse" id="chitietbaiviet">
+
+                        @Html.Raw(Model[0].Baiviet)
+
+                        <div class="xem-chi-tiet text-center animate">
+                            <button title="Xem chi tiết cấu hình" class="btn-cart" role="button" data-toggle="collapse" href="#chitietbaiviet" aria-expanded="false" aria-controls="collapseExample">
+                                <i class="fa fa-exchange"></i><i class="fa fa-exchange"></i><span>Thu gọn bài viết</span>
+                            </button>
+                        </div>
+                    </div>
+
+
+                </div>
+
+            </div>
+
+            <div class="col-sm-4 col-sm-push-1">
+
+                <div class="clearfix">
+                    <style>
+                        .share-social {
+                        }
+
+                        [id^=___plusone] {
+                            width: 72px !important;
+                        }
+
+                        .social-inline {
+                            margin-left: 101px;
+                        }
+
+                            .social-inline > div {
+                                display: inline-block;
+                            }
+                    </style>
+
+                </div>
+
+                <!--Sản phẩm cùng loại-->
+                @{Html.RenderAction("SameKindPhoneProducte", "Phone", new { Category_tag = Model[0].Cateprolevel3, tag = Model[0].Tag });}
+                <!--tin tức-->
+                @*<div class="detail-review-chitiet">
+                        <h3 class="detail-title">Tin tức</h3>
+                        <div class="list-news-widget">
+
+                            <div class="verdes">
+                                <div class="verdes-element img">
+                                    <div class="img-container">
+                                        <figure data-feedback="fb:likes, fb:comments">
+                                            <img src="https://cdn1.vienthonga.vn/image/2016/12/6/90_20161206-151912.jpg" class="img-responsive" alt="Sở hữu Mobiistar Prime X1 là có ngay những tính năng siêu hot này">
+                                        </figure>
+                                    </div>
+                                </div>
+                                <div class="verdes-element">
+                                    <a href="https://vienthonga.vn/so-huu-mobiistar-prime-x1-la-co-ngay-nhung-tinh-nang-sieu-hot.html" title="Sở hữu Mobiistar Prime X1 là có ngay những tính năng siêu hot này">
+                                        <div class="name">Sở hữu Mobiistar Prime X1 là có ngay những tính năng siêu hot này</div>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="verdes">
+                                <div class="verdes-element img">
+                                    <div class="img-container">
+                                        <figure data-feedback="fb:likes, fb:comments">
+                                            <img src="https://cdn1.vienthonga.vn/image/2016/12/6/90_vta08662.JPG" class="img-responsive" alt="Top 4 smartphone tầm trung giá tốt trong tháng 12">
+                                        </figure>
+                                    </div>
+                                </div>
+                                <div class="verdes-element">
+                                    <a href="https://vienthonga.vn/top-4-smartphone-tam-trung-gia-tot-trong-thang-12.html" title="Top 4 smartphone tầm trung giá tốt trong tháng 12">
+                                        <div class="name">Top 4 smartphone tầm trung giá tốt trong tháng 12</div>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="verdes">
+                                <div class="verdes-element img">
+                                    <div class="img-container">
+                                        <figure data-feedback="fb:likes, fb:comments">
+                                            <img src="https://cdn1.vienthonga.vn/image/2016/12/6/90_dsc01366.JPG" class="img-responsive" alt="Trên tay Mobiistar Prime X1: điện thoại Việt giá tốt">
+                                        </figure>
+                                    </div>
+                                </div>
+                                <div class="verdes-element">
+                                    <a href="https://vienthonga.vn/tren-tay-mobiistar-prime-x1-dien-thoai-viet-gia-tot.html" title="Trên tay Mobiistar Prime X1: điện thoại Việt giá tốt">
+                                        <div class="name">Trên tay Mobiistar Prime X1: điện thoại Việt giá tốt</div>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="verdes">
+                                <div class="verdes-element img">
+                                    <div class="img-container">
+                                        <figure data-feedback="fb:likes, fb:comments">
+                                            <img src="https://cdn1.vienthonga.vn/image/2016/12/6/90_dsc-3579.jpg" class="img-responsive" alt="Đập hộp Mobiistar Prime X1: Đen, đẹp, giá tốt">
+                                        </figure>
+                                    </div>
+                                </div>
+                                <div class="verdes-element">
+                                    <a href="https://vienthonga.vn/dap-hop-mobiistar-prime-x1-den-dep-gia-tot.html" title="Đập hộp Mobiistar Prime X1: Đen, đẹp, giá tốt">
+                                        <div class="name">Đập hộp Mobiistar Prime X1: Đen, đẹp, giá tốt</div>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="pull-right">
+                                <a href="https://vienthonga.vn/tin-tuc" title="Xem tất cả">Xem tất cả »</a>
+                            </div>
+                        </div>
+                    </div>*@
+
+            </div>
+        </div>
+    </div>
+</div>

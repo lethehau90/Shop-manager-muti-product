@@ -1,0 +1,302 @@
+.title-2{
+	
+	margin:20px;	
+	p{
+		font-size: 26px;
+		color:#000;
+		text-transform: uppercase;
+
+
+	}
+}
+// noidung
+.noidung{
+	width:100%;
+	.noidung1{
+
+		.nd-dt1{
+			padding-left:100px;
+			img{
+				width: 80%;
+			}
+
+		}
+		.khung-dienthoai{
+			.nd-dt2{
+				margin-bottom: 80px;
+				border:#ccc solid 1px;
+				img{
+					width: 100%;
+					
+				}
+
+			}
+			.nd-dt3{
+				margin-bottom: 80px;
+				border:#ccc solid 1px;
+				img{
+					width: 100%;
+					
+				}
+				
+			}
+			.nd-dt4{
+				margin-bottom: 80px;
+				border:#ccc solid 1px;
+				img{
+					width: 100%;
+					
+				}
+				
+			}
+		}
+
+	}
+	.noidung2{
+		font-family: "Helvetica Neue,Helvetica,Arial,sans-serif";
+		.chitiet-sp{
+			.header-detail{
+
+			}
+			.title{
+
+			}
+			.wrap-raty{
+
+			}
+			.khung-gia{
+				.gia{
+					p{
+					font-size: 34px;
+					color:#000;
+					}	
+
+				}
+				.mausac{
+					font-size: 18px
+
+				}
+				.khung-mausac{
+					.hong{
+						width: 30px;
+						height: 30px;
+						background-color: pink;
+						float: left;
+						border: 1px solid #ccc;
+						margin:10px;
+					}
+					.trang{
+						width: 30px;
+						height: 30px;
+						background-color:#999;
+						float: left;
+						border: 1px solid #ccc;
+						margin:10px;
+					}
+					.vang{
+						width: 30px;
+						height: 30px;
+						background-color: yellow;
+						float: left;
+						border: 1px solid #ccc;
+						margin:10px;
+
+					}
+
+
+				}
+				.sosanh-sanpham{
+
+				}
+				.mota{
+					strong{
+						font-size: 18px
+
+					}
+				}
+
+			}
+			
+
+		}
+		
+	}
+}
+// slider-text
+.slider-text{
+	position: relative;
+	width:100%;
+	article{
+		position: absolute;
+	 	top: 10%;
+	 	left: 0;	
+	 	z-index: 99;
+	 	width: 100%;
+	}
+	.slider-khung{
+		overflow: hidden;
+		width: 100%;
+		figure{
+			position: relative;
+		 	width: 200%;
+		 	margin: 0;
+		    left: 0;
+		    text-align: left;
+		    font-size: 0;
+		    animation: 12s slidy infinite;
+		    .slider-01{
+		    	width: 50%;
+		    	float:left;
+		    	.text{
+		    		width: 60%;
+		    		margin: 0;
+		    		float: left;
+
+		    	}
+		    	img{
+		    		width: 40%
+		    	}
+		    }
+		    .slider-02{
+		    	width: 50%
+		    }
+
+			}
+	}
+
+}
+// thongsokythuat
+.thongsokythuat{
+	font-family: "Helvetica Neue,Helvetica,Arial,sans-serif";
+	h6{
+		font-size: 18px;
+		color: #999	;
+		text-transform: capitalize;
+	}
+	.ndts{
+		color: #999;
+		
+		 
+
+		p{
+			margin-top: 10px;
+			border-bottom: 1px solid #ccc;
+
+		}
+	}
+	.ndtsaccordion{
+			}
+	
+}
+// hinhanh-phukien
+.hinhanh-phukien{
+	.hinhanh-thucte{
+		position:relative;
+		
+
+		h5{
+			color: #999;
+			font-size: 20px;
+			text-transform: capitalize;
+
+		}
+		.hinh-anh-01{
+			width: 100%;
+			border: none;
+			margin:0;
+			
+
+		}
+		
+
+		div{
+			padding:5px;				
+			img{
+				width: 100%;	
+				border:1px solid #ccc;
+				padding:10px;
+
+			}
+			h5{ 
+				font-size: 10px;
+			}
+			p{
+				font-size: 10px;
+			}
+		}	
+				
+				
+
+		
+		
+
+
+	}
+	.phukientuongthich{
+		div{
+			img{ width:100%;}
+		}
+	}
+}
+// danhgiachitiet
+.danhgiachitiet{
+	h5{
+		text-transform:capitalize;
+		font-size: 20px;
+		color:#999;
+		font-weight: normal;
+
+	}
+	div{
+		img{
+			width: 100%;
+		}
+	}
+	.text-danhgiachitiet{
+		p{
+			padding-top: 20px;
+		}
+	}
+}
+// baiviethamkhao
+.baivietthamkhao{
+	h5{
+		text-transform:capitalize;
+		font-size: 20px;
+		color:#999;
+		font-weight: normal;
+	}
+	div{
+		div{
+			img{
+				width: 100%;
+			}
+			p{
+				margin:0;
+				padding:0;
+			}
+		}
+	}
+}
+// trang services
+// tieudedichvu
+.tieudedichvu{
+	text-transform:uppercase;
+	color:#666699;
+	font-family:'Helvetica';
+
+}
+.textdichvu{
+	font-family:'Helvetica';
+}
+.main-dichvu{
+	div{
+		p{
+			text-align: center;
+			margin-top: 20px;
+			text-transform: uppercase;
+			color: #999;
+			
+		}
+	}
+}

@@ -1,0 +1,33 @@
+﻿@*@model IList<Web_Shop_SettingIphone.Models.Entity.GroupNew>*@
+<!-- start main-2 -->
+@*@if (Model.Count > 0)
+{
+    foreach (var item in Model)
+    {
+        <div class="main-2 container">
+            <div class="ndhienthi col-md-6 col-xs-12 col-sm-12 col-lg-3">
+                <div class="pic">
+                    @if (item.Logogroup != "" || item.Logogroup != null )
+                    {
+                        <a href="/dich-vu/@item.Tag">
+                            <img src="@item.Logogroup" alt="@item.Name">
+                        </a>
+                    }
+                    else
+                    {
+                        <a href="/dich-vu/@item.Tag"><img src="/images/no-image.jpg" alt="@item.Name"></a>
+                    }
+                </div>
+                <div class="event-info">
+                    <a href="/dich-vu/@item.Tag">
+                        <span class="main-title">XEM THÊM</span>
+                    </a>
+                </div>
+            </div>
+            @{Html.RenderAction("dichvuCategorydichvuActiveHome", "Module", new { IdCategory = item.Id });}
+        </div>
+    }
+}*@
+<div class="main-2 container">
+    @{Html.RenderAction("dichvuCategorydichvuActiveHome_", "Module");}
+</div>

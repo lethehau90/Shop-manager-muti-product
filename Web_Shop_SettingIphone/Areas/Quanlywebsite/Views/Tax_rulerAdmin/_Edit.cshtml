@@ -1,0 +1,175 @@
+﻿<div class="panel-heading" id="update_paner">
+    <div class="portlet box green">
+        <div class="portlet-title">
+            <div class="caption">
+                <header>
+                    <i class="fa fa-user"></i> Cập nhật danh mục <span class="Editcatelog"></span>
+                </header>
+            </div>
+            <div class="tools">
+                <a href="javascript:;" class="collapse"> </a> <!--collapse-->
+
+            </div>
+        </div>
+        <div class="portlet-body flip-scroll">
+            <!-- /.panel-heading -->
+            <div class="panel-body">
+                <!-- Nav tabs -->
+                <ul class="nav nav-tabs">
+                    <li class="active">
+                        <a href="#Adtendanhmuc" data-toggle="tab">Tên Danh mục Thuế</a>
+                    </li>
+                    <li>
+                        <a href="#Adthietlap" data-toggle="tab">Thiết lập</a>
+                    </li>
+                    <li>
+                        <a href="#Admota" data-toggle="tab">Mô tả Thuế</a>
+                    </li>
+                    <li>
+                        <a href="#AdFile_tax" data-toggle="tab">File upload Thuế</a>
+                    </li>
+                </ul>
+                <!-- Tab panes -->
+                <div class="tab-content">
+
+                    <div class="tab-pane fade in active" id="Adtendanhmuc">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="form-group hidden">
+                                    <label>ID</label>
+                                    <input class="form-group" id="TxtId" placeholder="">
+                                </div>
+                                <div class="form-group">
+                                    <label>Tên danh mục (Tiếng việt)</label>
+                                    <input class="form-group easyui-validatebox tb" id="TxtName" data-options="prompt:'Nhập tên danh mục tiếng việt',required:true" type="text" placeholder="">
+                                </div>
+                                <div class="form-group">
+                                    <label>Tên danh mục (Tiếng Anh)</label>
+                                    <input class="form-group easyui-validatebox tb" id="TxtNameEn" data-options="prompt:'Nhập tên danh mục tiếng anh',required:true" type="text" placeholder="">
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="tab-pane fade" id="Adthietlap">
+                        <div class="row">
+                            <div class="col-md-12">
+
+                                <div class="form-group">
+                                    <label>Khu vực</label>
+                                    <input class="form-group easyui-validatebox tb" id="TxtProvince" data-options="prompt:'Nhập tên Province liên kết',required:true" type="text" placeholder="">
+                                </div>
+                                <div role="form">
+                                    <label class="Txtgia">Phần trăm thuế</label> <br />
+                                    <div class="form-group input-group col-lg-2">
+                                        <input type="text" class="form-group  easyui-validatebox tb" id="TxtTax_pri" value="0" onkeypress="return isNumberKey(event);">
+                                        <span class="input-group-addon">%</span>
+                                    </div>
+                                </div>
+                                <span class="TxtTax_pri"></span>
+                                <div class="form-group">
+                                    <label class="TxtOrd">Sắp xếp</label> <br />
+                                    <input class="form-group" type="number" id="TxtOrd" value="1" min="1">
+                                </div>
+
+                                <div class="form-group">
+                                    <label class="checkbox-inline">Kích hoạt </label>
+                                    <input id="CKActive" class="checkbox-inline" type="checkbox" checked="checked" value="1">
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="tab-pane fade" id="Admota">
+                        <div class="form-group">
+                            <label>Nội dung tiếng việt <span class="TxtDescription"></span></label>
+                            <textarea class="form-control" id="TxtDescription" rows="3"></textarea>
+                        </div>
+                        <div class="form-group">
+                            <label>Nội dung tiếng Anh<span class="TxtDescriptionEn"></span></label>
+                            <textarea class="form-control" id="TxtDescriptionEn" rows="3"></textarea>
+                        </div>
+                    </div>
+
+                    <div class="tab-pane fade" id="AdFile_tax">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="form-group">
+                                    <label>Up load File Thuế<span class="TxtFile_tax"></span></label>
+                                    <div class="form-group">
+                                        <div class="col-md-12 pading-left-Select">
+                                            <div class="col-md-3">
+                                                <input class="form-group-sm easyui-validatebox tb" id="TxtFile_tax" data-options=" prompt:'hình ảnh',required:true" type="text" placeholder="">
+                                            </div>
+                                            <div class="col-md-2">
+                                                <span class="form-group">
+                                                    <button type="button" class="btn btn-white" id="SelectFile_tax">Chọn Ảnh!</button>
+                                                </span>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="clear-fix"></div>
+                <div class="padding-form">
+                    <div class="form-group">
+                        <button type="submit" id="Save" class="btn btn-default"><i class="fa fa-save"></i> Lưu Lại</button>
+                        <button type="submit" id="Cancel" class="btn btn-default"><i class="fa fa-times-circle"></i> Hủy bỏ</button>
+                    </div>
+                </div>
+            </div>
+            <!-- /.panel-body -->
+
+        </div>
+    </div>
+
+</div>
+
+<!--jquery action-->
+<script src="/Areas/Quanlywebsite/JavaScrip/Sanpham/Dactinh/Tax_ruler/Create.js"></script>
+<script src="/Areas/Quanlywebsite/JavaScrip/Sanpham/Dactinh/Tax_ruler/Update.js"></script>
+<script src="/Areas/Quanlywebsite/JavaScrip/Sanpham/Dactinh/Tax_ruler/read.js"></script>
+<script src="/Areas/Quanlywebsite/JavaScrip/Sanpham/Dactinh/Tax_ruler/Active.js"></script>
+<script src="/Areas/Quanlywebsite/JavaScrip/Sanpham/Dactinh/Tax_ruler/Delete.js"></script>
+<script src="/Areas/Quanlywebsite/JavaScrip/Sanpham/Dactinh/Tax_ruler/Cancel.js"></script>
+<script src="/Areas/Quanlywebsite/JavaScrip/Sanpham/Dactinh/Tax_ruler/Save.js"></script>
+
+<!--javascrip File_taxs ckfinder  -->
+<script language="javascript" type="text/javascript">
+    $(function () {
+        $("#SelectFile_tax").click(function () {
+            var finder = new CKFinder();
+            finder.selectActionFunction = function (fileUrl) {
+                $("#TxtFile_tax").val(fileUrl);
+            };
+            finder.popup();
+        });
+    });
+</script>
+
+<!--javascrip textbox ckeditor  -->
+<script type="text/javascript">
+    var editor;
+    function createEditor(languageCode, id) {
+        var editor = CKEDITOR.replace(id, {
+            language: languageCode
+        });
+
+    }
+    $(function () {
+        createEditor('vi', 'TxtDescription');  //mã code tiếng việt
+        createEditor('vi', 'TxtDescriptionEn'); //mã code tiếng anh
+    });
+
+</script>
+
+
+

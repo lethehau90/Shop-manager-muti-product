@@ -1,0 +1,10 @@
+﻿@model IList<Web_Shop_SettingIphone.Models.Entity.Config>
+@if (Model.Count > 0)
+{
+    foreach (var item in Model)
+    {
+        <title>@item.Title</title>
+        <meta name="description" content="@item.Description" />
+        <meta name="keywords" content="@item.Keyword" />
+    }
+}

@@ -1,0 +1,27 @@
+﻿@model IList<Web_Shop_SettingIphone.Models.Entity.GroupNewsNewsDetail>
+@if (Model.Count > 0)
+{
+    <div class="row news-lienquan">
+        <div class="col-sm-12">
+            <div class="title">
+                <h3 class="">Các tin liên quan</h3>
+            </div>
+        </div>
+        @foreach (var item in Model)
+        {
+            <div class="col-sm-4" itemscope="" itemtype="http://schema.org/NewsArticle">
+                <meta itemscope="" itemprop="mainEntityOfPage" itemtype="https://schema.org/WebPage" itemid="https://google.com/article">
+
+                <div class="news-lienquan-item">
+                    <a href="/@ViewBag.category/@item.Tag" class="absolute-all"></a>
+                    <div class="embed-responsive embed-responsive-16by9" itemprop="image" itemscope="" itemtype="https://schema.org/ImageObject">
+                        <figure data-feedback="fb:likes, fb:comments">
+                            <img src="@item.Image" class="img-responsive" alt="@item.Name">
+                        </figure>
+                    </div>
+                    <h4 itemprop="headline">@item.Name</h4>
+                </div>
+            </div>
+        }
+    </div>
+}

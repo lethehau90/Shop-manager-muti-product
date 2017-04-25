@@ -1,0 +1,63 @@
+﻿
+@model  IList<Web_Shop_SettingIphone.Models.Entity.CTdonhang>
+<section class="panel">
+                        <header class="panel-heading">
+                          Giỏ hàng
+                        </header>
+    <div class="panel-body">
+        <table class="table table-hover p-table">
+            <thead>
+                <tr>
+                    <th>Hình Ảnh</th>
+                    <th>Tên Sản Phẩm </th>
+                    <th>Màu sắc </th>
+                    <th>Dung lượng</th>
+                    <th>Số Lượng</th>
+                    <th>Giá bán</th>
+                    <th class="hidden">Giảm Thêm</th>
+                    <th>Thành tiền</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    var thanhtien=item.Soluong *item .Giaban;
+                    string src = item.Hinhanh == "" || item.Hinhanh == null ? "/images/no-image.jpg" : item.Hinhanh; <!--load anh-->
+
+                    <tr>
+                        <td>
+                            <img width="50px" src="@src" class="imglogo ShowImgZoom img-responsive" />
+                        </td>
+                        <td>
+                            <a href="/san-pham/@item.danhmucsanpham/@item.chitietsanpham" target="_blank">@item.Tensanpham</a>
+                        </td>
+                        <td>
+                            @item.Mausac
+                        </td>
+                        <td>
+                            @item.Dungluong
+                        </td>
+                        <td>
+                            @item.Soluong
+                        </td>
+                        <td>
+                            @string.Format("{0:0,0.0}",item.Giaban) VNĐ
+                        </td>
+                        <td class="hidden">
+                            @item.Giamthem %
+                        </td>
+                        <td>
+                            <span class="label label-info"> @string.Format("{0:00,0.0}",thanhtien*(100-item.Giamthem)/100) VNĐ </span>
+                        </td>
+                    </tr>
+                }
+                <tr >
+                    <td></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    
+    
+   
+</section>

@@ -1,0 +1,59 @@
+﻿@{
+    Layout = null;
+}
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+
+    <title></title>
+    <script type="text/javascript">
+
+        function exec_refresh() {
+            window.status = "Dang chuyen toi ..." + myvar;
+            myvar = myvar + " .";
+            var timerID = setTimeout("exec_refresh();", 200);
+            if (timeout > 0) {
+                timeout -= 1;
+            }
+            else {
+                clearTimeout(timerID);
+                window.status = "";
+                window.location = "/";//chuyển tới trang chủ
+            }
+        }
+
+        var myvar = "";
+        var timeout = 20;
+        exec_refresh();
+
+    </script>
+</head>
+
+<body>
+    <div>
+        <div>
+            <center>
+
+                @* <div><img src="../images/index.jpg" /></div>*@
+                <div style="margin:20px; width:500px; background:#f0f0f0; padding:20px;">
+                    <h3>ĐẶT HÀNG THÀNH CÔNG</h3> <br />
+                 
+
+                    Cảm ơn Quý Khách đã đặt hàng . <br />
+
+                    !Chúng tôi nhanh chóng xác nhận đơn hàng và gửi Mail đơn hàng cho Quý Khách. Chúng tôi sẽ liên hệ với bạn trong khoảng thời gian gần nhất. <br />Chúc bạn một ngày vui vẻ !"<br />
+
+
+                    <div style="padding :10px; color :red ; font-size: 16px">
+
+                    </div>
+
+                    <img src="/Images/ajax-loader2.gif" />
+                </div><a style="text-decoration:none; display :none " href='../'>TRANG CHỦ</a>
+            </center>
+        </div>
+    </div>
+</body>
+</html>

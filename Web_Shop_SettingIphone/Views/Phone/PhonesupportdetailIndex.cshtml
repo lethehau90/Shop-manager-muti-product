@@ -1,0 +1,49 @@
+﻿@{
+    Layout = "~/Views/Shared/_LayoutPhonedetail.cshtml";
+}
+@model IList<Web_Shop_SettingIphone.Models.Entity.Tintuc>
+<title>@ViewBag.title</title>
+<meta name="description" content="@ViewBag.Description" />
+<meta name="keywords" content="@ViewBag.Keyword" />
+<div id="main-content">
+    <div class="container">
+        <div class="row">
+
+            <div class="col-md-9" itemscope="">
+
+                @if (Model.Count > 0)
+                {
+                    <article class="news-detail news-wrapper">
+                        <h2 class="news-detail-title" itemprop="headline">@Model[0].Name</h2>
+                        <div class="news-detail-meta clearfix">
+                            <div class="pull-left">
+                                <span class="date"><i class="fa fa-calendar"></i>@string.Format("{0:dd/MM/yyyy}", Model[0].Ngaydang)</span> - <span class="date-status">Tin mới</span>
+                            </div>
+                        </div>
+
+                        <div class="paragraph">
+                            @Html.Raw(Model[0].Noidung)
+                        </div>
+
+
+                    </article>
+                }
+
+                @{Html.RenderAction("SamePhonedetailHTIndex", "Phone", new { tag = Model[0].Tag });}
+
+            </div>
+
+            @{Html.RenderAction("HotSamePhonedetailIndex", "Phone", new { tag = Model[0].Tag });}
+
+
+
+        </div>
+
+    </div>
+
+
+    <div>
+    </div>
+
+
+</div>

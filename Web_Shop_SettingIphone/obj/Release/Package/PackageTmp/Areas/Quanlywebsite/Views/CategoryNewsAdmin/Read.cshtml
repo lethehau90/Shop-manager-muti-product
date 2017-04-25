@@ -1,0 +1,62 @@
+﻿@{
+    ViewBag.Title = "Tin Bài Viết";
+    Layout = "~/Areas/Quanlywebsite/Views/Shared/_LayoutAdmin_List.cshtml";
+}
+<div class="row">
+    <div class="col-lg-12">
+        <h1 class="page-header">Nhóm Tin Bài Viết</h1>
+    </div>
+    <!-- /.col-lg-12 -->
+</div>
+<div class="row">
+    <div class="panel panel-default">
+
+        <div class="panel-heading">
+            <div class="row">
+                <div class="col-lg-6 col-md-6 col-sm-6">
+                    <span class="listgroup">
+                        <i class="fa fa-user"> </i> Quản lý Nhóm Tin Bài Viết
+                    </span>
+                </div>
+
+                <div class="col-lg-6 col-md-6 col-sm-6 text-right" id="divright">
+                    @*<input id="box1" type="checkbox" onclick="toggle(this)" />
+                        <label for="box1">Tất cả/bỏ chọn</label>*@
+                    <button type="button" id="Insert_2" class="btn btn-primary"><i class="fa  fa-plus-square"></i> Thêm Cấp 2</button>
+                    <button type="button" id="Insert" class="btn btn-primary"><i class="fa  fa-plus-square"></i> Thêm Cấp 3</button>
+                </div>
+            </div>
+        </div>
+        <div class="panel panel-default hidden">
+            <div class="panel-heading">
+                <div class="row">
+                    <div class="col-lg-9 col-md-9 col-sm-9">
+                        <a href="@Url.Action("Read", "CategoryNewsAdmin")" class="btn btn-danger" id="bt-All" data-container="body" data-toggle="popover" data-placement="left" data-original-title="" title="" aria-describedby="popover613464">
+                            Tất cả
+                        </a>
+                        <a href="@Url.Action("Read", "CategoryNewsAdmin", new { filter = "highlight" })" class="btn btn-default" id="bt-highlight" data-container="body" data-toggle="popover" data-placement="left" data-original-title="" title="" aria-describedby="popover613464">
+                            Nổi bật
+                        </a>
+                        <a href="@Url.Action("Read", "CategoryNewsAdmin", new { filter = "normal" })" class=" btn btn-default" id="bt-normal" data-container="body" data-toggle="popover" data-placement="left" data-original-title="" title="" aria-describedby="popover613464">
+                            Bình thường
+                        </a>
+                    </div>
+                    <div class="col-lg-3 col-md-3 col-sm-3 text-right" style="padding-top:5px; padding-right:10px">
+                        Có @ViewBag.Count Tin bài viết
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- /.panel-heading -->
+        @{ Html.RenderPartial("_AjaxRead"); }
+
+        <!-- /.panel-body -->
+    </div>
+    <!-- /.col-lg-12 -->
+</div>
+
+
+
+<link href="/Areas/Quanlywebsite/Style/Menu/css.css" rel="stylesheet" />
+<script src="/Areas/Quanlywebsite/Style/Menu/js.js"></script>
+

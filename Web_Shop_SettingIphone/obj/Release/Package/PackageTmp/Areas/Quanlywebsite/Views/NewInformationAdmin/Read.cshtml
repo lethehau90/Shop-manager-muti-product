@@ -1,0 +1,27 @@
+﻿@{
+    ViewBag.Title = "Tin Trang Chủ";
+    Layout = "~/Areas/Quanlywebsite/Views/Shared/_LayoutAdmin_List.cshtml";
+}
+<div class="row">
+    <div class="col-lg-12">
+        <h1 class="page-header">Tin trang chủ (Hiển thị tin đầu tiên vào trang chủ)</h1>
+    </div>
+    <!-- /.col-lg-12 -->
+</div>
+<div class="row">
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <div class="row">
+                <div class="col-lg-6 col-md-6 col-sm-6">
+                    <span class="listgroup">
+                        <i class="fa fa-user"> </i> Bài viết cho tin trang chủ
+                    </span>
+                </div>
+            </div>
+        </div>
+        <!-- /.panel-heading -->
+        @{ Html.RenderPartial("_Edit"); }
+        <!-- /.panel-body -->
+    </div>
+    <!-- /.col-lg-12 -->
+</div>

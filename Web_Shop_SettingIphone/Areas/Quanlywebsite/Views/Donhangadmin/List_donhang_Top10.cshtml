@@ -1,0 +1,167 @@
+﻿@{
+    ViewBag.Title = "Danh Sách Hình Đơn Hàng Top 10  Mơi Nhất";
+    Layout = "~/Areas/Quanlywebsite/Views/Shared/_LayoutAdmin_List.cshtml";
+}
+@model  IList<Web_Shop_SettingIphone.Models.Entity.Donhang>
+<script type="text/javascript" language="javascript">
+    function DeleteConfirmation() {
+        if (confirm("Are you sure,Bạn muốn xóa dòng đã chọn ?") == true)
+            return true;
+        else
+            return false;
+    }
+</script>
+
+<script language="JavaScript">
+   
+    
+    function toggle(source) {
+        checkboxes = document.getElementsByName('checkRow');
+        for(var i=0, n=checkboxes.length;i<n;i++) {
+            checkboxes[i].checked = source.checked;
+        }
+    }
+</script>
+<section class="wrapper site-min-height">
+              <!-- page start-->
+              <section class="panel">
+                  <header class="panel-heading">
+                      All Danh Sách  Đơn Hàng Top 10 Mới Nhất
+                     
+                      <span class="pull-right hidden">
+                          @*  @Html.ActionLink("Export to Excel", "Excel")*@
+                          
+                           <a href="@Url.Action("Excel_ToDay", "Donhangadmin")" class=" btn btn-success btn-xs"> <i class="fa fa-asterisk"></i> Xuất Ra Excel Đơn hàng Hôm Nay</a>
+                         
+                          <a href="@Url.Action("Excel_10Top", "Donhangadmin")" class=" btn btn-success btn-xs"> <i class="fa fa-asterisk"></i> Xuất Ra Excel Đơn hàng Top 10 new </a>
+                          <input type="button" onclick="senddell()" value="Xóa các mục đã chọn" class="btn btn-success btn-xs"  style=" cursor: pointer;" />
+                          <a href="@Url.Action("List_donhang_Top10", "Donhangadmin")" class=" btn btn-success btn-xs"> <i class="fa fa-refresh"></i> Refresh (làm mới)</a>
+                      </span>
+                  </header>
+                  
+                  
+                  <div class="row">
+                  <div class="col-lg-12">
+                      <div class="alert alert-success fade in">
+                          <button data-dismiss="alert" class="close close-sm" type="button">
+                              <i class="fa fa-times"></i>
+                          </button>
+                          Hiện Tại Tìm Thấy @ViewBag.count Danh Sách Hình Đơn Hàng
+                      </div>
+                  </div>
+              </div>
+                  <table width="100%" class="table table-striped table-bordered table-hover" id="dataTables-example">
+                      <thead>
+                          <tr>
+                              <th style="text-align: center">
+                                  <input type="checkbox" onclick="toggle(this)" /> Chọn All<br />
+                              </th>
+
+                              <th>Name</th>
+                              <th>Ngày đặt hàng</th>
+                              @*<th>Phí Dịch Vụ</th>*@
+                              <th>Tổng tiền</th>
+                              <th>Duyệt</th>
+
+
+                              <th>Chức Năng</th>
+
+                          </tr>
+                      </thead>
+                      <tbody>
+                          @foreach (var item in Model)
+                          {
+
+                              <tr>
+                                  <td class="p-name" style="text-align :center">
+                                      <input type="checkbox" name="checkRow" value="bar1" class="dell" index="@item.IDhd"> <br />
+
+                                  </td>
+
+
+
+                                  <td class="p-name">
+                                      <a href="#">@Html.DisplayFor(modelitem => item.Hoten)</a>
+                                      @* <br>
+                            <small>Created 27.11.2014</small>*@
+                                  </td>
+                                  <td class="p-team">
+
+
+                                      @String.Format("{0:dd/MM/yyyy}", item.ngaydathang)
+
+                                  </td>
+                                  @*<td class="p-progress">
+                                      @string.Format("{0:0,000}", Convert.ToInt32(item.Hinhthucgiaohang)) VNĐ
+
+                                  </td>*@
+
+
+                                  <td class="p-name">
+                                      @*@Html.DisplayFor(modelitem=>item.Active)*@
+                                      <span class="label label-primary">
+                                          @string.Format("{0:0,00.0}", item.Tongtienhang) VNĐ
+
+                                      </span>
+                                  </td>
+
+                                  <td class="p-name">
+                                      <span class="label label-primary">
+                                          <a href="#" class="label label-primary btn-active" data-id="@item.IDhd">@Html.Raw(item.Duyet == "1" ? "<strong>Đã Duyệt</strong>" : "<strong>Chưa Duyệt</strong>")</a>
+                                      </span>
+                                  </td>
+
+
+
+                                  <td>
+                                      @* <a class="btn btn-primary btn-xs" href="#"><i class="fa fa-folder"></i> View </a>*@
+                                      <a class="btn btn-info btn-xs" href="@Url.Action("Edit_donhang", "Donhangadmin", new { id = item.IDhd })"><i class="fa fa-pencil"></i> Edit </a>
+                                      <a class="btn btn-danger btn-xs" href="@Url.Action("Xoaone", "Donhangadmin", new { id = item.IDhd })"><i class="fa fa-trash-o"></i> Delete </a>
+                                      @*         @Ajax.ActionLink("Xoá", "Delete", new { id = item.IDhd }, new AjaxOptions
+                            {
+                                Confirm = "Bạn có muốn xoá bản ghi này?",
+                                OnComplete = "$('#row_" + @item.IDhd + "').remove()",
+                                HttpMethod = "Delete"
+                            })*@
+                                  </td>
+                              </tr>
+
+                          }
+
+                      </tbody>
+                  </table>
+                  
+                  <div class="clear"></div>
+
+
+
+              </section>
+              <!-- page end-->
+          </section>
+<script type="text/javascript">
+    function senddell() {
+        var id = [];
+        $(".dell:checked").each(function () {
+            var v = $(this).attr("index");
+            id.push(v);
+        });
+        if (id.length > 0) {
+            var cf = confirm("Bạn có chắc chắn muốn xóa không?");
+            if (cf == true) {
+                $.ajax({
+                    type: "Post",
+                    dataType: "json",
+                    contentType: 'application/json; charset=utf-8',
+                    url: "/QuantriAdmin/Donhangadmin/XoaAll",
+                    data: JSON.stringify(id),
+                    success: function () {
+                        window.location = "/QuantriAdmin/Donhangadmin/List_donhang_Top10";
+                    }
+                });
+            }
+        } else {
+            alert("Bạn chưa chon dữ liệu muốn xóa!");
+        }
+    }
+</script>
+<script src="/Areas/Quanlywebsite/JavaScrip/ThongKe/Hoadon/Active.js"></script>

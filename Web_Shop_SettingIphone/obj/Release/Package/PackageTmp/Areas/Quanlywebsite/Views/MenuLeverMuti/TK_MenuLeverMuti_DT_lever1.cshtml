@@ -1,0 +1,16 @@
+﻿@model IList<Web_Shop_SettingIphone.Models.Entity.DientuMenuSitemathang>
+
+
+<select id="select" name="SelectCategory_tk" class="form-control chosen">
+    <option value="">Chọn danh mục</option>
+    @foreach (var item in Model)
+    {
+        <option value="@item.Id">
+            |-- @item.MenuName
+        </option>
+        {
+            Html.RenderAction("MenuLeverMuti_DT_lever2", "MenuLeverMuti", new { id = item.Id, select = ViewBag.select });
+        }
+    }
+</select>
+
